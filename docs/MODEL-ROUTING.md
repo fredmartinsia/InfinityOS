@@ -1,8 +1,8 @@
 # Roteamento de modelos
 
-O InfiniteOS escolhe o modelo certo para cada tarefa — barateando o que dá e
-mantendo qualidade onde importa. O roteador fica em `~/.infinite-os/route.py` e a
-config em `~/.infinite-os/router.config.yaml`.
+O InfinityOS escolhe o modelo certo para cada tarefa — barateando o que dá e
+mantendo qualidade onde importa. O roteador fica em `~/.infinity-os/route.py` e a
+config em `~/.infinity-os/router.config.yaml`.
 
 ## Lógica
 
@@ -18,10 +18,10 @@ config em `~/.infinite-os/router.config.yaml`.
 ## Uso
 
 ```bash
-python3 ~/.infinite-os/route.py --task "refatorar esta função recursiva"
-python3 ~/.infinite-os/route.py --task "resumir este PDF de 200 páginas" --dry-run
-python3 ~/.infinite-os/route.py --type image_generation
-python3 ~/.infinite-os/route.py --score 8 --json
+python3 ~/.infinity-os/route.py --task "refatorar esta função recursiva"
+python3 ~/.infinity-os/route.py --task "resumir este PDF de 200 páginas" --dry-run
+python3 ~/.infinity-os/route.py --type image_generation
+python3 ~/.infinity-os/route.py --score 8 --json
 ```
 
 Exemplo de saída:

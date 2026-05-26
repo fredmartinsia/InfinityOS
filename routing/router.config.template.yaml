@@ -1,6 +1,6 @@
 # ============================================================================
-#  infinite-os — configuração do roteador de modelos
-#  Renderizada para ~/.infinite-os/router.config.yaml na instalação.
+#  infinity-os — configuração do roteador de modelos
+#  Renderizada para ~/.infinity-os/router.config.yaml na instalação.
 #  Editável à mão. O route.py lê este arquivo (se pyyaml existir) ou usa
 #  os defaults embutidos.
 # ============================================================================

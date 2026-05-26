@@ -1,6 +1,6 @@
 # Cliente: VS Code
 
-O VS Code usa o InfiniteOS através da **extensão do Claude Code**, que lê a mesma
+O VS Code usa o InfinityOS através da **extensão do Claude Code**, que lê a mesma
 configuração em `~/.claude/`. Ou seja: skills, squads, hooks e RAG funcionam
 igual ao terminal.
 

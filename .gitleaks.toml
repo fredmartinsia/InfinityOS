@@ -1,6 +1,6 @@
-# Config do gitleaks para o infinite-os.
+# Config do gitleaks para o infinity-os.
 # Estende as regras padrão e ignora falsos-positivos conhecidos.
-title = "infinite-os gitleaks"
+title = "infinity-os gitleaks"
 
 [extend]
 useDefault = true

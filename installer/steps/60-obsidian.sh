@@ -122,7 +122,7 @@ ui_ok "Estrutura criada: ${FOLDERS[*]}"
 log "obsidian: folders=${FOLDERS[*]}"
 
 # --- 4) REGRAS + GUIA -------------------------------------------------------
-VPX="$VP" python3 - "$INFINITE_OS_ROOT/vault-template/📋 REGRAS DO VAULT.template.md" "$VP/📋 REGRAS DO VAULT.md" <<'PY'
+VPX="$VP" python3 - "$INFINITY_OS_ROOT/vault-template/📋 REGRAS DO VAULT.template.md" "$VP/📋 REGRAS DO VAULT.md" <<'PY'
 import os, sys, io
 src, dst = sys.argv[1], sys.argv[2]
 if not os.path.exists(dst):
@@ -135,7 +135,7 @@ ui_ok "REGRAS DO VAULT instaladas."
 {
   echo "# 📊 INDEX — Vault Principal"
   echo
-  echo "> Gerado pelo infinite-os em $(date '+%Y-%m-%d'). Estrutura sob medida para o seu perfil."
+  echo "> Gerado pelo infinity-os em $(date '+%Y-%m-%d'). Estrutura sob medida para o seu perfil."
   echo
   echo "## Pastas"
   echo

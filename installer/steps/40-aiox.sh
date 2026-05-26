@@ -5,8 +5,8 @@
 # ============================================================================
 ui_header "5/8 — Framework AIOX (opcional)"
 
-if [ "${INFINITE_OS_SKIP_AIOX:-0}" = "1" ]; then
-  ui_dim "Passo do AIOX pulado (INFINITE_OS_SKIP_AIOX=1)."
+if [ "${INFINITY_OS_SKIP_AIOX:-0}" = "1" ]; then
+  ui_dim "Passo do AIOX pulado (INFINITY_OS_SKIP_AIOX=1)."
   return 0 2>/dev/null || true
 fi
 

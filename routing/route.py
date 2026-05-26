@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # ============================================================================
-#  infinite-os — roteador de modelos
+#  infinity-os — roteador de modelos
 #  Decide qual modelo/CLI usar para uma tarefa, com base na complexidade e na
 #  disponibilidade das ferramentas instaladas. Zero dependências obrigatórias
 #  (usa pyyaml se existir para ler a config; senão, usa defaults embutidos).
@@ -19,7 +19,7 @@ import shutil
 import sys
 
 CONFIG_PATH = os.path.expanduser(
-    os.environ.get("INFINITE_OS_ROUTER_CONFIG", "~/.infinite-os/router.config.yaml")
+    os.environ.get("INFINITY_OS_ROUTER_CONFIG", "~/.infinity-os/router.config.yaml")
 )
 
 # --- Defaults embutidos (espelham router.config.template.yaml) --------------
@@ -109,7 +109,7 @@ def resolve(cfg, target: str):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Roteador de modelos do infinite-os")
+    ap = argparse.ArgumentParser(description="Roteador de modelos do infinity-os")
     ap.add_argument("--task", default="", help="descrição da tarefa")
     ap.add_argument("--score", type=int, help="complexidade 0-10 (sobrepõe heurística)")
     ap.add_argument("--type", help="tipo de tarefa (override): " +

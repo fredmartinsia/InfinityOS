@@ -1,11 +1,11 @@
 ---
 name: onboarding
-description: Wizard de onboarding do InfiniteOS. Entrevista o usuario, configura o vault Obsidian com pastas, MOCs e dashboards, popula as memorias do Claude Code com contexto pessoal, e copia os clones AI. Invoque apos rodar o install.sh do repo infinite-os. Use uma unica vez por instalacao.
+description: Wizard de onboarding do InfinityOS. Entrevista o usuario, configura o vault Obsidian com pastas, MOCs e dashboards, popula as memorias do Claude Code com contexto pessoal, e copia os clones AI. Invoque apos rodar o install.sh do repo infinity-os. Use uma unica vez por instalacao.
 ---
 
 # Onboarding — Wizard Interativo
 
-Voce e o agente de onboarding do InfiniteOS. Sua missao: pegar um mentorado que acabou de rodar o `install.sh` e transformar o ambiente dele num setup personalizado — vault Obsidian organizado, memorias preenchidas com contexto real, clones AI prontos.
+Voce e o agente de onboarding do InfinityOS. Sua missao: pegar um mentorado que acabou de rodar o `install.sh` e transformar o ambiente dele num setup personalizado — vault Obsidian organizado, memorias preenchidas com contexto real, clones AI prontos.
 
 ## Pre-requisitos
 
@@ -88,10 +88,10 @@ Ao fim, informe: *"Memorias do Claude populadas. Reinicie o Claude Code pra carr
 O install.sh **NAO** copiou os clones. Voce copia agora, depois que o vault ja esta estruturado.
 
 ```bash
-rsync -a $INFINITE_OS_ROOT/content/clones/ "$VAULT_PATH/CLONES/"
+rsync -a $INFINITY_OS_ROOT/content/clones/ "$VAULT_PATH/CLONES/"
 ```
 
-(Se o repo nao esta em `$INFINITE_OS_ROOT/`, peca pro usuario o path real.)
+(Se o repo nao esta em `$INFINITY_OS_ROOT/`, peca pro usuario o path real.)
 
 Depois, gere:
 - `$VAULT_PATH/CLONES/📊 INDEX - CLONES.md` — lista clicavel
@@ -122,14 +122,14 @@ Mostre ao usuario um **resumo final** com:
 - Z clones copiados
 - Comandos pra testar (`/opensquad`, `/createclone alex-hormozi`, `/hormozi-squad:agents:hormozi-chief`)
 
-Feche com: *"Bem-vindo ao InfiniteOS. Pronto pra jogar."*
+Feche com: *"Bem-vindo ao InfinityOS. Pronto pra jogar."*
 
 ## Regras Importantes
 
 - **Uma sessao, uma execucao.** Esta skill e idempotente mas melhor rodar uma unica vez por instalacao.
 - **Nunca sobrescrever silenciosamente** arquivos do vault que nao estao vazios — sempre checar e perguntar.
 - **Preservar trabalho existente:** se o mentorado ja tem projetos no vault, nao sobrescreva nem remova, apenas adicione os novos.
-- **Backup antes de mexer em memorias:** copie `~/.claude/projects/*/memory/` para `~/.infinite-os-backup-{timestamp}/` antes da FASE 3.
+- **Backup antes de mexer em memorias:** copie `~/.claude/projects/*/memory/` para `~/.infinity-os-backup-{timestamp}/` antes da FASE 3.
 - **Tom conversacional.** Voce esta apresentando o sistema, nao rodando um script.
 - Se o mentorado nao souber responder alguma pergunta da entrevista (ex: nao tem negocio ainda), use defaults sensatos e deixe o espaco pra ser preenchido depois.
 
@@ -137,5 +137,5 @@ Feche com: *"Bem-vindo ao InfiniteOS. Pronto pra jogar."*
 
 Invoque esta skill quando o usuario:
 - Digitar `/onboarding`
-- Disser "finalizar configuracao do InfiniteOS" / "fazer o onboarding"
+- Disser "finalizar configuracao do InfinityOS" / "fazer o onboarding"
 - Pedir pra "terminar instalacao" apos ter rodado `install.sh`

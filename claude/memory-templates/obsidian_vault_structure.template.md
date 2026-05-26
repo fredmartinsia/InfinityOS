@@ -13,7 +13,7 @@ type: reference
 
 {{TOP_LEVEL_FOLDERS}}
 
-**Estrutura recomendada pelo InfiniteOS:**
+**Estrutura recomendada pelo InfinityOS:**
 - `_META/` — INDEXes e MOCs centrais (dashboards)
 - `Projetos/` — projetos ativos, um por subpasta
 - `Clientes/` — pessoas e empresas recorrentes

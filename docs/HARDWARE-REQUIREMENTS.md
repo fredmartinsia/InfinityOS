@@ -3,7 +3,7 @@
 O instalador analisa seu computador (RAM, núcleos, GPU/Apple Silicon) e recomenda
 o modelo local adequado, antes de baixar qualquer coisa. Você sempre confirma.
 
-## Mínimo para o InfiniteOS
+## Mínimo para o InfinityOS
 
 - macOS, Linux ou WSL
 - Python 3.9+, git

@@ -5,7 +5,7 @@ versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
 ## [0.1.0] — Não lançado
 
-Primeira versão completa do InfiniteOS.
+Primeira versão completa do InfinityOS.
 
 ### Adicionado
 - **Instalador "modo idiota"** (`install.sh` + 8 passos): preflight de hardware,

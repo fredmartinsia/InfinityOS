@@ -36,7 +36,7 @@ operação e siga o fluxo: responder "Sim" → `python3 ~/.claude/scripts/vault_
 
 **`route.py` escolhe sempre o Claude** — os outros CLIs não estão instalados
 (`which gemini`, `which ollama`...). Instale-os ou ajuste
-`~/.infinite-os/router.config.yaml`.
+`~/.infinity-os/router.config.yaml`.
 
 ## Multi-IDE
 
@@ -46,4 +46,4 @@ e cole no cliente. Ver [MULTI-IDE.md](MULTI-IDE.md) e `clients/`.
 ## Desinstalar / reverter
 
 `./uninstall.sh` restaura o backup mais recente do `~/.claude`
-(`~/.infinite-os-backup-<data>`).
+(`~/.infinity-os-backup-<data>`).

@@ -1,23 +1,23 @@
-# install-manifest — SHA256 de cada arquivo do infinite-os
+# install-manifest — SHA256 de cada arquivo do infinity-os
 # Gerado por scripts/gen-manifest.py. Não editar à mão.
 file_count: 1368
 files:
   - path: ".github/workflows/ci.yml"
-    sha256: bfa595f90cc5971503b29858c0e8de99c765a64bb46130528f4ce5018fc1174b
+    sha256: 83ff71f2222fbfd3f1cdce47c2027cb0957d1ba9c883ad437a63e3b3fec833a4
   - path: ".gitignore"
-    sha256: c74dd26f6f5ee0979683a83eec8a947a38bbd6f9c9dd77ac47c0a3fbac9e992d
+    sha256: d765519feb2ef60840e0a4324ad8ad9e2bc3eb9e034bc4385244e9f179434edd
   - path: ".gitleaks.toml"
-    sha256: 6bd5a8d985e9eea6540d8a57c0479c8709dd8258fd2ed18c7864b485ebf740a3
+    sha256: bec87458c896794c4a94f636196ab539c73b90fecdf2491359151c283b2c732d
   - path: "CHANGELOG.md"
-    sha256: c99223ec3a7808e8cbcf4a73af16a72cd8597af5c383a7139dc12a57412a0c21
+    sha256: da4c40835b8f722421322c1f3941cbccebecb17bb7f8032b3b937c1741400418
   - path: "LICENSE"
-    sha256: 9bdb7b9d43406483f229948fa8f5a94a67e038c7b58f161d648ca406960bcfa7
+    sha256: e5022d767cecd8ec40692e7164be497e8e457c95b8fda033b912f0e034226d14
   - path: "README.md"
-    sha256: cef3ce58688c7b90395eaf4b644ad2dcd703d1df9366cd543f692bb92dd2d7ee
+    sha256: 16a0006f29ae205074284b218e595f610ebe9a8f1a07ff90589a6c46ef8f6714
   - path: "VERSION"
     sha256: e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67
   - path: "claude/memory-templates/MEMORY.template.md"
-    sha256: e4e6ec005cb5efff8f3ce5144e8b625fb585e463f7783a96436caccb167e9980
+    sha256: c7501064899cfc10a2c2addc47c647d0bafd3598f5e90df1693a873d7d964bf8
   - path: "claude/memory-templates/domain_vocabulary.template.md"
     sha256: 4caea62da493f358c62c756101ae920c9c0205917f7a2e36e91296edee6a865b
   - path: "claude/memory-templates/feedback_patterns.template.md"
@@ -25,13 +25,13 @@ files:
   - path: "claude/memory-templates/obsidian_skills_knowledge.md"
     sha256: 72126e64934d3e382f0be2a8da9e307eb4173a7e13a4397402513cac0577907a
   - path: "claude/memory-templates/obsidian_vault_structure.template.md"
-    sha256: 9e653e971d0256880a57966b93cbcbbd6b01865db956fea499062d5a62a9d408
+    sha256: 924fb4cd6d80e32f83d7eede7130fb66116ee3ec12ca85a9c1a01f9e3b75dba3
   - path: "claude/memory-templates/rag_hook_setup.template.md"
     sha256: 75e1b32fbcea23e714f9195796a985185b80ab9d5ff319c95c68f93b3bd13819
   - path: "claude/memory-templates/tech_stack_preferences.template.md"
     sha256: a35c67082ea6249edbdcf4a42dbaadc053413e9c2ec149506fd349e8cb9eb504
   - path: "claude/memory-templates/tools_installed.md"
-    sha256: 40beda8984ab81955f292de1721e837502f38fc278fc95433eea86f6583f52bf
+    sha256: 05da05eaa0faa98119fc3fec9d5592d8664fb6126913ea634f642639c0515b10
   - path: "claude/memory-templates/user_language_preference.md"
     sha256: be04692e61a24b9c53930dac3623270046c1a67ee120346918766b1b3c9116f7
   - path: "claude/memory-templates/user_profile.template.md"
@@ -39,7 +39,7 @@ files:
   - path: "claude/memory-templates/work_style.template.md"
     sha256: 1a2120b6d1997a46540325e53d1dbb430bcfca6b4e91dc6251eb1c5f9efd9fe6
   - path: "claude/memory-templates/workflow_automation_philosophy.md"
-    sha256: 87571bf576c3c7e5f690aeaa4dca7fdb35deab4efdf9eaba45356eaa21e46f72
+    sha256: e6c97ca53dc7e62fc89696a0a5914f4af3bce0fb038712f33a762bc321d82e45
   - path: "claude/scripts/vault_grant.py"
     sha256: ffb2ec1c762f8c9c57e3e4de496bb13cc37862cedd4b3dbed19d2f3d2da1acc8
   - path: "claude/scripts/vault_guard.py"
@@ -47,13 +47,13 @@ files:
   - path: "claude/scripts/vault_guard_setup.py"
     sha256: cb4625dea76ef39958c9958da22ebe49b39f97d8e3933281b0d5b4b7465eddf3
   - path: "claude/scripts/vault_rag.py"
-    sha256: 65fc9a1a57d36bf7e25cbcf300b0bc43a42dd913ad760a5b03fbb382b42d06f4
+    sha256: 16f3d6677b0711d5e5cad7d45b1c8952962b2675b158bc79463da6076fd71130
   - path: "claude/scripts/vault_unlock.py"
     sha256: 46e5d9058ca87f86faae38f9e513da5827e6c790af5db21c5e08106fca2a4d9c
   - path: "claude/scripts/vault_writer.py"
-    sha256: 2dcd4603f610235a27f181ba38c2c5f15614f31b1478a16440e771d76c9c4bf2
+    sha256: 7e9f6a8d245f84a8725cda3d06d376fc19fd20078aa25f9ff0d431084b30dd24
   - path: "claude/scripts/vault_writer_bg.py"
-    sha256: 5084f185d2d99aa4626fe3ee76b66a5128528db57370cc0a2b7ef79199587d01
+    sha256: 17cb5ef18122028fe1027ee41bce0572b5b91759711486e478717830a38a4adc
   - path: "claude/settings.template.json"
     sha256: b60f61ed8f024525cc9ef8736206ba1c720cd0c3b0aa21142c9e3286e2c64514
   - path: "claude/skills/createclone/SKILL.md"
@@ -79,11 +79,11 @@ files:
   - path: "claude/skills/obsidian-markdown/references/PROPERTIES.md"
     sha256: 392953b5838c3ab3df135b5a914f100ae7b95e4501b6a2e5c8dc63da3ac7558b
   - path: "claude/skills/onboarding/SKILL.md"
-    sha256: e73095e17b895ea1d1bd08f7b9cdfed05af7e786810c993e6c2515d52cd7c2dd
+    sha256: f134aaa8115a8d2d3103587923a583f5b27bc9d78dd61554172b2a7a4170138e
   - path: "claude/skills/onboarding/apply-answers.md"
-    sha256: 79f21f6781f30b6658f7a087b0ad8dd0861f33adb3e38657c003eaf1c6722f5b
+    sha256: 66ef6bc0a7236289a1a32f4ca5734a0955986c0a68082bf4f28b745f7bfe3f32
   - path: "claude/skills/onboarding/interview-script.md"
-    sha256: 29c5e07a552fd6ca9e85b20ea31bc1df5c0b4b8606116923b76a14f5351eee67
+    sha256: af1209f3005cf9a316d8c71db8de885994c59e516e85bb0d23f004f7808ebc1a
   - path: "claude/skills/onboarding/templates/cliente.md"
     sha256: 87f0041bd37190c9627b0e80982d9deb0e4c49f49f314cb1d5c990684b4e184b
   - path: "claude/skills/onboarding/templates/dashboard-overview.md"
@@ -99,15 +99,15 @@ files:
   - path: "claude/skills/prd/SKILL.md"
     sha256: f5395f014448e1e970cac40b8f814949b7fdbfe0b6db6be275be750895e955ca
   - path: "clients/antigravity/README.md"
-    sha256: 9696620c7141338d471dbe17690c7d0f2aca175d35879d908a6a18621e82e064
+    sha256: b5fc2daf94d9f888a7bedb1157c98fa6bc2387f97625532ba4ed20c9347b30dd
   - path: "clients/claude-code/README.md"
-    sha256: 3584b641b3e958e6b1d548618953763629dc2e94fe52dbdcd4596f818e5e91d0
+    sha256: a1fc9e7f1def8ac725fe7d3687e13babb4d06ce55a16b914aa4477aa447ce153
   - path: "clients/codex/README.md"
-    sha256: e16c9f6f85bb781aedbb1966179668311559437ed8a24f5d8c73158560e21e2a
+    sha256: 52f4d2e055acec1d45f2fb9cb70b0ff9258c3edbd8ddda035dec2cccf998d89a
   - path: "clients/gemini-cli/README.md"
-    sha256: f9f1d4eb4d04fabb35d977b93d764503b7802474c866d415e9b22088f30f6db9
+    sha256: 9c71cce3cabd9b6b523386a55ef2218e80b4adc330a7329e0ec0933f995f4e18
   - path: "clients/vscode/README.md"
-    sha256: c0cf5906fbe43d9a363d0f68e725e8ddceb20a21e823d636ac05c7ed981e7fb8
+    sha256: ec414677f4832358a7dca6574e4cba1c9bd6dfaadfec28e0d986cc74249b0a18
   - path: "content/clones/alex-hormozi/alex-hormozi_01_README.md"
     sha256: 5aa090fb6518533d17084d5192797e4c8107ffea3b2c5bd277426a9b2c51a069
   - path: "content/clones/alex-hormozi/alex-hormozi_02_SYSTEM_PROMPT_CHATGPT.md"
@@ -2619,49 +2619,49 @@ files:
   - path: "content/squads/traffic-masters/workflows/wf-campaign-launch.yaml"
     sha256: 363455f419645d0542a736becaef87606a3281a2ea2823493d881a2538c17306
   - path: "docs/ARCHITECTURE.md"
-    sha256: 3e48070774a9f07e9936836c272ef71610e2d6ab1a7695e775da343ed0aaccfa
+    sha256: 253accb5f98820969655f68aadd87b5312dd01f7b577ab067d3da1be6a4d73fc
   - path: "docs/CLONES.md"
     sha256: 547ec18f985466fb631b6b6b7551518526ec0972a5d1d0d67b418f7dd2348c40
   - path: "docs/HARDWARE-REQUIREMENTS.md"
-    sha256: a5bd8880b2c7138a4aea69903d83e3b8b4eaf4f21485c4f3ab559b894cca7d5e
+    sha256: 15978a363b4a12ffe30df7681acfeebc6b28bc8794c1885dd95cfdb87c9eb326
   - path: "docs/INSTALL.md"
-    sha256: 78e85301851ae58de303af95d338ec489dccd478340d63db35b153016c4f4c84
+    sha256: 2f458a9ecfa484f341d29e578463da0c6d3c336991518b97d07dc756a3c3e7a3
   - path: "docs/MODEL-ROUTING.md"
-    sha256: dbca65cece25aa6a96606d404cf208e5ad9de0c5cc2d43196d7b2d5c11fec1fe
+    sha256: 2874b198bc891a49f31faed8c57b652298096476460e00417e5ce763013dcca4
   - path: "docs/MULTI-IDE.md"
-    sha256: a7f557914d4e4ab1395fd790c0723e8230766d165627ad9f528e55f974959701
+    sha256: 2eb6c018002204172c6e33c5ab87f4642ea9586c2e99ba58cea46e024fc0a2c3
   - path: "docs/ONBOARDING.md"
     sha256: 5310cde5de77181f6e28a5d6d92703ed5756cd2ad6995468aa04abc4ee559ae0
   - path: "docs/RAG-HOOK.md"
-    sha256: 57735161cfef8e41683d34530fddaf3e78bd4c67a3b21a36115f3a3534144079
+    sha256: b29337b37f8205a061e8c2fb88b62fb7380d70f07e662d8a27d2d3d3a0bde05f
   - path: "docs/SQUADS.md"
     sha256: 737281bf02ff7adc7e98741e844f1e76740ae40303871013a32392286ed88da8
   - path: "docs/TROUBLESHOOTING.md"
-    sha256: a9c7563cafb4de7f058b5d5f19117d9fa00cbc676f20de51bb5d03b4e9018ce4
+    sha256: 86caafe4354e06964ca26576d8adfbc46da17a691746e632764f2d93aefaa551
   - path: "install.sh"
-    sha256: 6dbe7e1996ab623af3780e4b821407fcaf82916aad5d3b0fe5251b8ea94c37b6
+    sha256: 6e77086f1bb7530588d69b52fc09d0d2f0138235da3671a9d84f4dff430b707b
   - path: "installer/lib/env.sh"
-    sha256: 47e2b3a9abb152d86f1df08e2ca21c39dfb04730c74d69a364e03673041b36b1
+    sha256: 3e458c2be0cd09f40c173e437a48ba3c56012966faa42d1dde355664876c8f15
   - path: "installer/lib/log.sh"
-    sha256: 006bbe410fe02b73f0232dca09f170c70ae5201ad0e82f2245e4883e649f2c97
+    sha256: 74fec524dc0846220539109e5f37e173fb6f2144dd736050dc02cabf241dc4e8
   - path: "installer/lib/ui.sh"
-    sha256: 30ac503536386a0fd2fc83a744069b819c0fc26fb10793494350a8e5bc1e6316
+    sha256: 7d15765236f2260cdf7256391ac41b895715be0a620287ef49d871e1376dd811
   - path: "installer/steps/00-preflight.sh"
     sha256: 248c94c609dede68573a8a74d6dd9453437bd0e5dc653daa4ef97f55cd82d13c
   - path: "installer/steps/10-clis.sh"
-    sha256: d9d1a34220d3da861258b311b55505486961cb69e0ae882b82312675e4e588ef
+    sha256: 51bb715679acdb71a0cacc1c8483473398054b28c6f20c26504427e814746a02
   - path: "installer/steps/20-models.sh"
-    sha256: 6bde0d77d342b319c1ad1d0e552be5330720f62d4096789505d6dbe3c848b452
+    sha256: 0a71a24426118a940bb7db4c0724dc6300a709d92d1fea4c7319bee16d354d4c
   - path: "installer/steps/30-claude-core.sh"
-    sha256: fb53e62a3529549addabb2a375031388bc10651e55b2009912487edbe3267c61
+    sha256: ca8775c0386201ec2707ce28ee3142bb383069659708186245a0d2af42f01a83
   - path: "installer/steps/40-aiox.sh"
-    sha256: 6a66d68378c0c02c2aa0748f037bff78747582843ee44eab92ffa88e12f79c94
+    sha256: df9b60fb168a5ec0e7949b7097a5f17e61fada570b17e6d7287b79381496a073
   - path: "installer/steps/50-content.sh"
-    sha256: ccf9b7ea62655e881b9dc00a24b0f2f8e9f4269aa5c7f3abfc859a49553eb7a1
+    sha256: 773e1300e7d8f2dad0ebbd196eb94d2f3a8dc4634550e9187229f98400773629
   - path: "installer/steps/60-obsidian.sh"
-    sha256: e53417f7fe62f2e074e8c74f75a2a233d0055e8944972fdbb1b0acb5a8d239fb
+    sha256: 3a98c3034ff20eb8958e80b9ed50bc2045ee33affd23e5e5c0c59cd690f13ccb
   - path: "installer/steps/70-smoke-test.sh"
-    sha256: 4b8863390640c0eda56c4560959154fccf985f03306a25ab01e080c33d997a0e
+    sha256: 46487475a2df41eed50b3f30a1784d23437168333fb028fb5e60d7531f441c75
   - path: "opensquad/_memory/company.template.md"
     sha256: 97dc114cdcadd43c65146d6e6bbf0d2f6a317484f9547af235f09ff22e31abfa
   - path: "opensquad/_memory/preferences.template.md"
@@ -2721,20 +2721,20 @@ files:
   - path: "opensquad/core/skills.engine.md"
     sha256: bcb5f45b4163c3123d8f4a349ebb54df35e5ba7c45e253c2d5c388139aa314f9
   - path: "routing/hardware-tiers.yaml"
-    sha256: 64dad707650f86cc7b6d2f13ae7dfefb116c3f5b83310826dc2cc527fa0c3837
+    sha256: ab7262324464f37cbc647cef8a306f5cbe383468416159794450554913253e69
   - path: "routing/route.py"
-    sha256: 9dc3975b499a104e206762119837bbc348533c9ec796a686b66c3a1ae3fddcb2
+    sha256: 5bada45d2def2ff91f0ca3e91a0114a33423b55487f75455e891bd956889182d
   - path: "routing/router.config.template.yaml"
-    sha256: 37f0cd01e22085eb3af67a156e01f9fc6f698f26b780d13c51073379d75f7318
+    sha256: b9efab5e2aafcd36e5589f9d688339161a1809f6fd69c4f31f3f632f28b2e7ef
   - path: "scripts/gen-manifest.py"
-    sha256: f878585329b1365b37c3fff2075fab2367e296b4569728a59e2e772e0b83278c
+    sha256: 511b84d1b7a9de93bb049ecc3c783f2452b8f144ea25f8ae41b7967611373049
   - path: "scripts/hooks/pre-push"
     sha256: efded554ea12ab848e56e3ff763e32187d037dda1e1ba66f6989ac47d0696f2a
   - path: "scripts/install-hooks.sh"
     sha256: 039339a1943a9378ccfe5620d5f4420384c87336671d088974746050f58633ea
   - path: "scripts/sanitize-check.sh"
-    sha256: e9488e6da52125fd2eb869385d8b5b9a9695516ba0fe6291420674d1f34fff12
+    sha256: ef9a2ccf2bc0e3e6a75ea8560cf2392bd030f38ddd76f5b7ff8df467a2107691
   - path: "uninstall.sh"
-    sha256: 3362d0d897b3acb3cfae527968b103496e886f97c2267cd96c6de45c2c520ab7
+    sha256: 8540307cbbf00abb3ed505a22bcdde4b84883444d7df9bc1da4dbabae80704a8
   - path: "vault-template/📋 REGRAS DO VAULT.template.md"
     sha256: 60806205cde65dab68537a0bc4b9ce4546e9d2c9e499a4567efa59eb689f4fe5

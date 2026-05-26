@@ -4,7 +4,7 @@ Roteiro **guia** para a FASE 1 do `/onboarding`. Nao leia isso como formulario �
 
 ## Abertura
 
-> "Opa, beleza? Bem-vindo ao InfiniteOS. Antes de configurar teu setup, preciso te conhecer um pouco — vou fazer umas perguntas e com as tuas respostas vou organizar teu vault Obsidian e preparar o Claude pra entender teu contexto. Sem formulario — pode responder na boa, como se a gente ta conversando. Se nao souber alguma coisa, tambem ta OK, a gente ajusta depois. Bora?"
+> "Opa, beleza? Bem-vindo ao InfinityOS. Antes de configurar teu setup, preciso te conhecer um pouco — vou fazer umas perguntas e com as tuas respostas vou organizar teu vault Obsidian e preparar o Claude pra entender teu contexto. Sem formulario — pode responder na boa, como se a gente ta conversando. Se nao souber alguma coisa, tambem ta OK, a gente ajusta depois. Bora?"
 
 ## Bloco 1 — Identidade
 

@@ -3,8 +3,8 @@
 ## TL;DR
 
 ```bash
-git clone <URL-DO-REPO> infinite-os
-cd infinite-os
+git clone <URL-DO-REPO> infinity-os
+cd infinity-os
 ./install.sh
 ```
 
@@ -28,7 +28,7 @@ Depois, no Claude Code: `/onboarding`.
 
 - Enter = "sim" nos passos com default positivo.
 - Nada é instalado sem confirmação.
-- Antes de tocar no `~/.claude`, é feito **backup** em `~/.infinite-os-backup-<data>`.
+- Antes de tocar no `~/.claude`, é feito **backup** em `~/.infinity-os-backup-<data>`.
 
 ## Flags
 
@@ -38,8 +38,8 @@ Depois, no Claude Code: `/onboarding`.
 ```
 
 Variáveis úteis para CI/testes (pulam etapas de rede):
-`INFINITE_OS_SKIP_CLIS`, `INFINITE_OS_SKIP_MODELS`, `INFINITE_OS_SKIP_AIOX`,
-`INFINITE_OS_SKIP_PLUGINS` (todas = `1` para pular).
+`INFINITY_OS_SKIP_CLIS`, `INFINITY_OS_SKIP_MODELS`, `INFINITY_OS_SKIP_AIOX`,
+`INFINITY_OS_SKIP_PLUGINS` (todas = `1` para pular).
 
 ## Desinstalar
 

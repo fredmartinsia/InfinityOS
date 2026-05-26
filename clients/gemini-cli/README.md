@@ -1,12 +1,12 @@
 # Cliente: Gemini CLI
 
-A Gemini CLI tem dois papéis no InfiniteOS:
+A Gemini CLI tem dois papéis no InfinityOS:
 
 1. **Modelo roteado** — o roteador manda tarefas de contexto gigante,
    extração/OCR e ingestão de documentos para o Gemini:
 
    ```bash
-   python3 ~/.infinite-os/route.py --task "resumir este PDF de 200 páginas" --dry-run
+   python3 ~/.infinity-os/route.py --task "resumir este PDF de 200 páginas" --dry-run
    # → gemini  [gemini/gemini-2.5-pro]  — comando: gemini -p {prompt}
    ```
 

@@ -1,10 +1,10 @@
 ---
 name: Filosofia de Automacao e Multi-Agent
-description: Como pensar sobre automacao, squads, clones, multi-LLM routing e RAG no InfiniteOS
+description: Como pensar sobre automacao, squads, clones, multi-LLM routing e RAG no InfinityOS
 type: user
 ---
 
-Este e o "como pensar" por tras do InfiniteOS. Entender esses principios e critico pra propor solucoes que facam sentido no ecossistema.
+Este e o "como pensar" por tras do InfinityOS. Entender esses principios e critico pra propor solucoes que facam sentido no ecossistema.
 
 ## Principio 1: Orquestracao multi-modelo por especialidade
 
@@ -99,7 +99,7 @@ Interceptar comandos customizados com hooks pra disparar pipelines:
 
 ## Principio 7: "Skill" = funcionalidade instalada no ambiente
 
-Para o InfiniteOS, "instalar uma skill" significa um destes:
+Para o InfinityOS, "instalar uma skill" significa um destes:
 1. Copiar pasta pra `~/.claude/skills/` (ex: obsidian-skills)
 2. Clonar pipeline pra `~/squads/`
 3. Adicionar hook em `settings.json`

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-#  infinite-os — biblioteca de UX "modo idiota"
+#  infinity-os — biblioteca de UX "modo idiota"
 #  Prompts simples, defaults seguros (Enter = sim), cores e linguagem clara.
 #  Filosofia: qualquer pessoa, sem jargão, consegue ir até o fim.
 # ============================================================================
@@ -27,7 +27,7 @@ ui_error()   { printf "%s✗ %s%s\n" "$C_RED" "$1" "$C_RESET" >&2; }
 ui_banner() {
   printf "\n%s%s" "$C_BOLD" "$C_CYAN"
   printf "  ╔══════════════════════════════════════════╗\n"
-  printf "  ║          %-32s║\n" "${1:-InfiniteOS}"
+  printf "  ║          %-32s║\n" "${1:-InfinityOS}"
   printf "  ║   Seu sistema de agentes, replicável     ║\n"
   printf "  ╚══════════════════════════════════════════╝%s\n\n" "$C_RESET"
 }

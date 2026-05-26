@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # ============================================================================
-#  infinite-os — desinstalador
+#  infinity-os — desinstalador
 #  Restaura o backup do ~/.claude feito antes da última instalação.
 # ============================================================================
 set -uo pipefail
-INFINITE_OS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
-. "$INFINITE_OS_ROOT/installer/lib/env.sh"
-. "$INFINITE_OS_ROOT/installer/lib/ui.sh"
+INFINITY_OS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+. "$INFINITY_OS_ROOT/installer/lib/env.sh"
+. "$INFINITY_OS_ROOT/installer/lib/ui.sh"
 
 ui_banner "$PRODUCT_NAME — desinstalar"
 
@@ -34,7 +34,7 @@ for item in settings.json scripts skills commands; do
 done
 
 # Remove a config do roteador (não estava no ~/.claude)
-[ -d "$HOME/.infinite-os" ] && ui_dim "Mantida a pasta ~/.infinite-os/ (roteador). Remova manualmente se quiser."
+[ -d "$HOME/.infinity-os" ] && ui_dim "Mantida a pasta ~/.infinity-os/ (roteador). Remova manualmente se quiser."
 
 ui_ok "Restauração concluída."
 ui_dim "Plugins de marketplace e conteúdo do vault NÃO são removidos automaticamente."

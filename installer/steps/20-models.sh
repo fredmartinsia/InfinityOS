@@ -8,8 +8,8 @@ ui_header "3/8 — Modelo local (opcional)"
 # Default mesmo sem download (o roteador referencia este nome)
 CHOSEN_LOCAL_MODEL="qwen3-coder:30b"
 
-if [ "${INFINITE_OS_SKIP_MODELS:-0}" = "1" ]; then
-  ui_dim "Passo de modelos locais pulado (INFINITE_OS_SKIP_MODELS=1)."
+if [ "${INFINITY_OS_SKIP_MODELS:-0}" = "1" ]; then
+  ui_dim "Passo de modelos locais pulado (INFINITY_OS_SKIP_MODELS=1)."
   export CHOSEN_LOCAL_MODEL
   return 0 2>/dev/null || true
 fi

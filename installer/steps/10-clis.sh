@@ -5,8 +5,8 @@
 #  Exporta: HAS_OLLAMA (para o passo de modelos locais).
 # ============================================================================
 ui_header "2/8 — Ferramentas de linha de comando (CLIs)"
-if [ "${INFINITE_OS_SKIP_CLIS:-0}" = "1" ]; then
-  ui_dim "Passo de CLIs pulado (INFINITE_OS_SKIP_CLIS=1)."
+if [ "${INFINITY_OS_SKIP_CLIS:-0}" = "1" ]; then
+  ui_dim "Passo de CLIs pulado (INFINITY_OS_SKIP_CLIS=1)."
   return 0 2>/dev/null || true
 fi
 ui_info "Vou checar quais CLIs você já tem. Para cada que faltar, pergunto se posso instalar."

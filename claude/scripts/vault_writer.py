@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Vault Writer — Stop hook do InfiniteOS.
+Vault Writer — Stop hook do InfinityOS.
 Lê o transcript e lança o worker em background sem bloquear o Claude.
 """
 import sys

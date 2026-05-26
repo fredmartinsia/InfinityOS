@@ -1,6 +1,6 @@
 # Cliente: Antigravity
 
-Mesmo modelo do Codex: o InfiniteOS é consumido via **prompts portáveis** dos clones
+Mesmo modelo do Codex: o InfinityOS é consumido via **prompts portáveis** dos clones
 e squads, já que o Antigravity tem seu próprio modelo de extensões.
 
 ## Usar um clone
@@ -12,7 +12,7 @@ e squads, já que o Antigravity tem seu próprio modelo de extensões.
 
 ## Roteamento
 
-O `~/.infinite-os/route.py` continua útil para decidir o modelo por tarefa — o
+O `~/.infinity-os/route.py` continua útil para decidir o modelo por tarefa — o
 resultado (Gemini/Qwen/Codex/Claude) orienta qual backend acionar no Antigravity.
 
 > O conhecimento do vault (RAG) é nativo do Claude Code; no Antigravity, traga

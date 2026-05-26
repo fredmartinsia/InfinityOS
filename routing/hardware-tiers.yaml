@@ -1,5 +1,5 @@
 # ============================================================================
-#  infinite-os — tiers de hardware → modelos locais recomendados (Ollama)
+#  infinity-os — tiers de hardware → modelos locais recomendados (Ollama)
 #  Usado pelo passo 20-models.sh (model-advisor) para recomendar o que baixar.
 #  O instalador detecta RAM/GPU e cruza com estes tiers.
 # ============================================================================

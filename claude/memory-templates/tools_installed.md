@@ -1,10 +1,10 @@
 ---
-name: Ferramentas Instaladas pelo InfiniteOS
+name: Ferramentas Instaladas pelo InfinityOS
 description: CLIs, skills, hooks e plugins instalados pelo install.sh
 type: reference
 ---
 
-Inventario do que o `install.sh` do InfiniteOS instala no ambiente.
+Inventario do que o `install.sh` do InfinityOS instala no ambiente.
 
 ## Scripts em `~/.claude/scripts/`
 
@@ -24,7 +24,7 @@ Todos respeitam `CLAUDE_VAULT_PATH` (env var) — default `~/Documents/Obsidian 
 - `json-canvas` — Arquivos `.canvas` (JSON Canvas spec 1.0).
 - `defuddle` — Extracao limpa de conteudo web.
 - `prd` — Gerador de Product Requirements Documents.
-- `onboarding` — Wizard de onboarding do InfiniteOS (usado uma vez na instalacao).
+- `onboarding` — Wizard de onboarding do InfinityOS (usado uma vez na instalacao).
 
 ## Plugins (Squads) Instalados via `claude plugin install`
 

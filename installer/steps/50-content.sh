@@ -9,7 +9,7 @@ ui_header "6/8 — Conteúdo (squads + clones)"
 # --- Squads → comandos do Claude Code ---------------------------------------
 mkdir -p "$CLAUDE_HOME/commands"
 nsq=0
-for d in "$INFINITE_OS_ROOT"/content/squads/*/; do
+for d in "$INFINITY_OS_ROOT"/content/squads/*/; do
   name="$(basename "$d")"
   rm -rf "$CLAUDE_HOME/commands/$name"
   cp -R "$d" "$CLAUDE_HOME/commands/$name"
@@ -23,7 +23,7 @@ ui_ok "$nsq squads instalados em ~/.claude/commands/."
 CLONES_DST="${VAULT_PATH:-$DEFAULT_VAULT_PATH}/CLONES"
 mkdir -p "$CLONES_DST"
 ncl=0
-for d in "$INFINITE_OS_ROOT"/content/clones/*/; do
+for d in "$INFINITY_OS_ROOT"/content/clones/*/; do
   name="$(basename "$d")"
   if [ ! -d "$CLONES_DST/$name" ]; then
     cp -R "$d" "$CLONES_DST/$name"

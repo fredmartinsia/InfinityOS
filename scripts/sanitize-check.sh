@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-#  infinite-os — gate de zero vazamento
+#  infinity-os — gate de zero vazamento
 #  Falha (exit 1) se achar segredos, PII ou dados de projeto no repositório.
 #  Roda localmente, no git pre-push hook e no CI.
 # ============================================================================

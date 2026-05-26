@@ -1,6 +1,6 @@
 # RAG automático (Obsidian → Claude)
 
-O InfiniteOS injeta automaticamente o contexto relevante do seu vault Obsidian em
+O InfinityOS injeta automaticamente o contexto relevante do seu vault Obsidian em
 cada prompt, via o hook `vault_rag.py` (evento `UserPromptSubmit`).
 
 ## Como funciona

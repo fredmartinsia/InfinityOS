@@ -45,7 +45,7 @@ Detalhes de como aplicar as respostas da entrevista da FASE 1 nos arquivos do si
 **Passo 1 — Backup:**
 ```bash
 TS=$(date +%Y%m%d-%H%M%S)
-cp -R ~/.claude/projects/*/memory/ ~/.infinite-os-backup-$TS/memory/
+cp -R ~/.claude/projects/*/memory/ ~/.infinity-os-backup-$TS/memory/
 ```
 
 **Passo 2 — Identificar path da memoria:**

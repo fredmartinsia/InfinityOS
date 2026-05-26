@@ -16,7 +16,7 @@ Use o roteador para decidir quando vale chamar o Codex (validação cruzada,
 raciocínio fino):
 
 ```bash
-python3 ~/.infinite-os/route.py --type cross_validation
+python3 ~/.infinity-os/route.py --type cross_validation
 # → codex  [codex/default]
 ```
 

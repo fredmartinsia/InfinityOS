@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ============================================================================
-#  infinite-os — instalador (modo idiota)
-#  git clone ... && cd infinite-os && ./install.sh
+#  infinity-os — instalador (modo idiota)
+#  git clone ... && cd infinity-os && ./install.sh
 #
 #  Guiado, com defaults seguros (Enter = sim). Detecta seu computador,
 #  pergunta antes de instalar qualquer coisa, faz backup e valida no fim.
@@ -9,13 +9,13 @@
 set -uo pipefail
 
 # Raiz do repo = pasta deste script
-INFINITE_OS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
-export INFINITE_OS_ROOT
+INFINITY_OS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+export INFINITY_OS_ROOT
 
 # Carrega libs
-. "$INFINITE_OS_ROOT/installer/lib/env.sh"
-. "$INFINITE_OS_ROOT/installer/lib/ui.sh"
-. "$INFINITE_OS_ROOT/installer/lib/log.sh"
+. "$INFINITY_OS_ROOT/installer/lib/env.sh"
+. "$INFINITY_OS_ROOT/installer/lib/ui.sh"
+. "$INFINITY_OS_ROOT/installer/lib/log.sh"
 
 log_init
 
@@ -54,7 +54,7 @@ STEPS=(
 
 run_step() {
   local name="$1"
-  local file="$INFINITE_OS_ROOT/installer/steps/${name}.sh"
+  local file="$INFINITY_OS_ROOT/installer/steps/${name}.sh"
   if [ ! -f "$file" ]; then
     ui_warn "Passo ausente: $name (pulado)"
     log "MISSING STEP: $file"

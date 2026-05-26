@@ -14,7 +14,7 @@
 
 ## Ambiente Tecnico
 - [Stack Tecnologica e Ferramentas Preferidas](tech_stack_preferences.md) — Frameworks, hosting, CLIs
-- [Ferramentas Instaladas](tools_installed.md) — O que foi instalado pelo InfiniteOS
+- [Ferramentas Instaladas](tools_installed.md) — O que foi instalado pelo InfinityOS
 - [RAG Hook Configuration](rag_hook_setup.md) — Hook que injeta contexto do vault em cada prompt
 
 ## Obsidian Vault

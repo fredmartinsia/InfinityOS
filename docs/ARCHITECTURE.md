@@ -1,6 +1,6 @@
 # Arquitetura
 
-O InfiniteOS é um "sistema operacional de orquestração de agentes" em camadas,
+O InfinityOS é um "sistema operacional de orquestração de agentes" em camadas,
 montado sobre o Claude Code como motor primário.
 
 ```
@@ -12,7 +12,7 @@ montado sobre o Claude Code como motor primário.
 │   • UserPromptSubmit → vault_rag.py (injeta contexto do vault)│
 │   • Stop → vault_writer.py          (salva insights)          │
 ├──────────────────────────────────────────────────────────────┤
-│  ROTEAMENTO (~/.infinite-os/route.py)                            │
+│  ROTEAMENTO (~/.infinity-os/route.py)                            │
 │   complexidade/tipo → Claude | Gemini | Qwen/Ollama | Codex   │
 ├──────────────────────────────────────────────────────────────┤
 │  CONTEÚDO                                                     │

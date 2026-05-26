@@ -1,5 +1,5 @@
 # ============================================================================
-#  infinite-os — .gitignore (BLINDAGEM ZERO-VAZAMENTO)
+#  infinity-os — .gitignore (BLINDAGEM ZERO-VAZAMENTO)
 #  Nada de segredos, dados pessoais ou de projeto entra no repositório.
 # ============================================================================
 
@@ -40,4 +40,4 @@ history.jsonl
 
 # --- Backups locais do instalador -------------------------------------------
 *-backup-*/
-.infinite-os-backup-*/
+.infinity-os-backup-*/

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧠 InfiniteOS
+# 🧠 InfinityOS
 
 **Um sistema operacional de orquestração de agentes — replicável em qualquer máquina.**
 
@@ -15,8 +15,8 @@ instalável com um comando.
 ## ⚡ Quickstart
 
 ```bash
-git clone <URL-DO-REPO> infinite-os
-cd infinite-os
+git clone <URL-DO-REPO> infinity-os
+cd infinity-os
 ./install.sh
 ```
 

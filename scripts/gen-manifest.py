@@ -34,7 +34,7 @@ def main():
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
-        f.write("# install-manifest — SHA256 de cada arquivo do infinite-os\n")
+        f.write("# install-manifest — SHA256 de cada arquivo do infinity-os\n")
         f.write("# Gerado por scripts/gen-manifest.py. Não editar à mão.\n")
         f.write(f"file_count: {len(entries)}\n")
         f.write("files:\n")

@@ -23,12 +23,12 @@ else
 fi
 
 # Roteador
-if [ -f "$HOME/.infinite-os/route.py" ] && python3 "$HOME/.infinite-os/route.py" --task "teste" >/dev/null 2>&1; then
+if [ -f "$HOME/.infinity-os/route.py" ] && python3 "$HOME/.infinity-os/route.py" --task "teste" >/dev/null 2>&1; then
   check_ok "Roteador de modelos (route.py) responde"
 else
   check_warn "route.py não respondeu"
 fi
-[ -f "$HOME/.infinite-os/router.config.yaml" ] && check_ok "Config do roteador presente" || check_warn "router.config.yaml ausente"
+[ -f "$HOME/.infinity-os/router.config.yaml" ] && check_ok "Config do roteador presente" || check_warn "router.config.yaml ausente"
 
 # Contagens
 nsk=$(ls -1d "$CLAUDE_HOME"/skills/*/ 2>/dev/null | wc -l | tr -d ' ')

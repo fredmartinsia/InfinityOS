@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # ============================================================================
-#  infinite-os — logging
+#  infinity-os — logging
 #  Registra cada passo em $INSTALL_LOG para diagnóstico posterior.
 # ============================================================================
 
 log_init() {
-  : "${INSTALL_LOG:=$HOME/.infinite-os-install.log}"
+  : "${INSTALL_LOG:=$HOME/.infinity-os-install.log}"
   {
-    printf '\n===== infinite-os install %s =====\n' "$(date '+%Y-%m-%d %H:%M:%S')"
+    printf '\n===== infinity-os install %s =====\n' "$(date '+%Y-%m-%d %H:%M:%S')"
     printf 'host=%s os=%s shell=%s\n' "$(uname -n)" "$(uname -s)" "${SHELL:-?}"
   } >>"$INSTALL_LOG" 2>/dev/null || true
 }

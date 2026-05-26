@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Vault Writer BG — Worker em background do Stop hook do InfiniteOS.
+Vault Writer BG — Worker em background do Stop hook do InfinityOS.
 Lê transcript, chama Gemini, detecta projeto (existente ou novo), grava no Obsidian.
 Retry 2x com backoff. Novos projetos vão para .draft.md.
 

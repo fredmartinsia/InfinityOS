@@ -52,7 +52,7 @@ jobs:
           export CLAUDE_HOME="$RUNNER_TEMP/.claude"
           export DEFAULT_VAULT_PATH="$RUNNER_TEMP/vault"
           export CLAUDE_RAG_CACHE_DIR="$RUNNER_TEMP/.claude/cache"
-          export INFINITE_OS_SKIP_CLIS=1 INFINITE_OS_SKIP_MODELS=1 INFINITE_OS_SKIP_AIOX=1 INFINITE_OS_SKIP_PLUGINS=1
+          export INFINITY_OS_SKIP_CLIS=1 INFINITY_OS_SKIP_MODELS=1 INFINITY_OS_SKIP_AIOX=1 INFINITY_OS_SKIP_PLUGINS=1
           bash install.sh -y
       - name: Validar resultado
         run: |

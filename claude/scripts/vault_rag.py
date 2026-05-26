@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-RAG Hook para Claude Code — InfiniteOS
+RAG Hook para Claude Code — InfinityOS
 Injeta contexto do Obsidian automaticamente em cada prompt.
 
 Configuração:
@@ -269,7 +269,7 @@ def get_vault_mtime() -> float:
 
 
 def dry_run():
-    print(f"[infinite-os vault_rag] VAULT_PATH = {VAULT_PATH}")
+    print(f"[infinity-os vault_rag] VAULT_PATH = {VAULT_PATH}")
     if not Path(VAULT_PATH).exists():
         print("  [WARN] Vault não existe. Configure CLAUDE_VAULT_PATH.")
         return 1
@@ -281,7 +281,7 @@ def dry_run():
 
 def reindex():
     """Constrói o índice FTS agora (usado pelo instalador, p/ RAG pronto na 1ª sessão)."""
-    print(f"[infinite-os vault_rag] Reindexando: {VAULT_PATH}")
+    print(f"[infinity-os vault_rag] Reindexando: {VAULT_PATH}")
     if not Path(VAULT_PATH).exists():
         print("  [WARN] Vault não existe. Configure CLAUDE_VAULT_PATH.")
         return 1
