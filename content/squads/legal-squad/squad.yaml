@@ -1,0 +1,119 @@
+name: legal-squad
+version: "1.0.0"
+short-title: "Legal Squad"
+description: "O squad jurídico definitivo — 7 agentes especializados cobrindo contratos, compliance, RGPD/LGPD, propriedade intelectual e jurisdições globais (BR, PT, US, UAE, Indonésia e mais). Roteamento inteligente entre Haiku/Sonnet/Opus baseado na complexidade de cada task."
+author: "Synkra AIOS"
+license: MIT
+slashPrefix: "legal-squad"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - legal
+  - contract
+  - compliance
+  - LGPD
+  - GDPR
+  - IP
+  - jurisdiction
+  - DPA
+  - arbitration
+  - B2B
+
+components:
+  agents:
+    # Tier 0 — Orchestrator
+    - legal-chief.md
+    # Tier 1 — Operators
+    - contract-architect.md
+    - risk-auditor.md
+    # Tier 1 — Jurisdiction Advisors
+    - patricia-peck.md
+    - manuel-lopes-rocha.md
+    - jurisdiction-navigator.md
+  tasks:
+    # Triage & Review
+    - diagnose.md
+    - review.md
+    # Contract Operations
+    - audit-contract.md
+    - red-team-review.md
+    - compliance-check.md
+    - draft-ip-clause.md
+    - compare-jurisdictions.md
+    - create-contract.md
+    - generate-dpa.md
+    - adapt-to-jurisdiction.md
+    - revise-contract.md
+  workflows:
+    - wf-audit-existing-contracts.yaml
+    - wf-create-new-contract.yaml
+  checklists:
+    - output-quality.md
+
+config:
+  extends: extend
+
+routing_matrix:
+  data_protection_br:
+    primary: patricia-peck
+    secondary: jurisdiction-navigator
+    triggers: ["LGPD", "ANPD", "dados pessoais", "consentimento", "titular de dados", "DPA brasil", "contexto brasileiro"]
+  data_protection_pt_eu:
+    primary: manuel-lopes-rocha
+    secondary: patricia-peck
+    triggers: ["RGPD", "GDPR", "CNPD", "e-Privacy", "SCCs", "Schrems II", "Portugal", "Europa", "UE"]
+  data_protection_other:
+    primary: jurisdiction-navigator
+    secondary: manuel-lopes-rocha
+    triggers: ["CCPA", "PDPL", "UU PDP", "PDPA Singapore", "ICO", "privacy UAE", "Indonesia data"]
+  contract_drafting:
+    primary: contract-architect
+    secondary: legal-chief
+    triggers: ["redigir contrato", "criar contrato", "modelo de contrato", "novo contrato", "minuta", "draft"]
+  contract_audit:
+    primary: risk-auditor
+    secondary: legal-chief
+    triggers: ["auditar", "revisar contrato", "analisar riscos", "buracos no contrato", "achar falhas", "gaps"]
+  ip_rights:
+    primary: contract-architect
+    secondary: patricia-peck
+    triggers: ["propriedade intelectual", "direitos autorais", "IP", "criativos", "código-fonte", "portfólio", "cessão"]
+  liability_limitation:
+    primary: contract-architect
+    secondary: risk-auditor
+    triggers: ["limitação de responsabilidade", "indenização", "cap", "exclusões", "responsabilidade civil"]
+  consumer_law:
+    primary: jurisdiction-navigator
+    secondary: risk-auditor
+    triggers: ["consumidor", "CDC", "PROCON", "B2C", "DL 24/2014", "FTC", "consumer protection"]
+  dpa_generation:
+    primary: jurisdiction-navigator
+    secondary: contract-architect
+    triggers: ["DPA", "acordo de tratamento", "data processing agreement", "subprocessador", "processamento de dados"]
+  jurisdiction_comparison:
+    primary: jurisdiction-navigator
+    secondary: contract-architect
+    triggers: ["comparar jurisdição", "adaptar para", "funciona em ambos", "PT e BR", "versão americana", "qual país"]
+  adapt_contract:
+    primary: jurisdiction-navigator
+    secondary: contract-architect
+    triggers: ["adaptar contrato", "outra jurisdição", "novo país", "versão para", "localizar contrato"]
+  termination_breach:
+    primary: contract-architect
+    secondary: risk-auditor
+    triggers: ["rescisão", "inadimplemento", "distrato", "notificação prévia", "cura", "multa rescisória"]
+  non_compete:
+    primary: patricia-peck
+    secondary: contract-architect
+    triggers: ["non-compete", "não concorrência", "cláusula restritiva", "aliciamento", "non-solicitation", "concorrência"]
+  cross_border:
+    primary: jurisdiction-navigator
+    secondary: contract-architect
+    triggers: ["cross-border", "internacional", "governing law", "lei aplicável", "multi-jurisdição", "exportar serviço"]
+  litigation_risk:
+    primary: risk-auditor
+    secondary: jurisdiction-navigator
+    triggers: ["litígio", "processo", "juízo", "enforceability", "execução judicial", "arbitragem internacional"]

@@ -1,0 +1,171 @@
+workflow:
+  id: wf-audit-existing-contracts
+  name: "Auditoria de Contratos Existentes"
+  version: "1.0.0"
+  description: |
+    Workflow completo para auditar contratos existentes. Detecta jurisdição,
+    realiza red-team adversarial, valida compliance regulatória, consolida
+    revisões e entrega contrato corrigido com relatório de riscos.
+    Projetado para os 5 contratos VV Traffic Data mas reutilizável em qualquer contrato.
+  trigger: "*audit-existing-contracts"
+  entry_agent: legal-chief
+  estimated_duration: "30-45 min por contrato"
+  type: sequential
+  model_routing:
+    high: claude-opus-4-5
+    medium: claude-sonnet-4-5
+    low: claude-haiku-4-5
+
+phases:
+  - id: phase_0
+    name: "Intake & Jurisdiction Detection"
+    agent: legal-chief
+    model: high
+    task: diagnose.md
+    description: |
+      Legal Chief recebe o contrato, detecta a jurisdição (via linguagem, referências legais,
+      moeda, partes identificadas), identifica o domínio e a parte a proteger.
+      Produz contract_metadata para guiar as fases seguintes.
+    inputs:
+      - contract_file: "Path ou texto do contrato"
+      - party_role: "prestador | cliente (quem queremos proteger)"
+    outputs:
+      - contract_metadata:
+          jurisdiction_code: "br | pt | us | ae | id | eu | uk | sg | mx"
+          domain: "contract_audit"
+          party_role: "prestador | cliente"
+          contract_type: "trafego | site | ecommerce | landing | conteudo | outro"
+    checkpoint:
+      gate: "Jurisdição identificada e papel da parte confirmado"
+      veto: "Se jurisdição impossível de detectar: pausar e perguntar ao usuário"
+
+  - id: phase_1
+    name: "Red-Team Adversarial Audit"
+    agent: risk-auditor
+    model: high
+    task: audit-contract.md
+    depends_on: [phase_0]
+    description: |
+      Risk Auditor lê o contrato como a contraparte mais difícil possível.
+      Aplica adversarial_methodology e audit_checklist completo.
+      Produz risk_report com todos os riscos por severidade.
+    inputs:
+      - contract_file: "Contrato completo"
+      - contract_metadata: "Output do phase_0"
+    outputs:
+      - risk_report:
+          critical_risks: "Lista de riscos CRITICAL com descrição e recomendação"
+          high_risks: "Lista de riscos HIGH"
+          medium_risks: "Lista de riscos MEDIUM"
+          low_risks: "Lista de riscos LOW"
+          summary: "Nota geral 0-10 + principais vulnerabilidades"
+    checkpoint:
+      gate: "Relatório de riscos completo com severidades"
+      user_pause: true
+      pause_message: "⚖️ Relatório de riscos pronto. Revise antes de prosseguir para as correções."
+      veto: "Se >5 riscos CRITICAL: Legal Chief apresenta recomendação de reescrever ao invés de corrigir"
+
+  - id: phase_2
+    name: "Compliance Check"
+    agent: jurisdiction_advisor
+    model: medium
+    task: compliance-check.md
+    depends_on: [phase_0]
+    parallel_with: [phase_1]
+    description: |
+      Advisor da jurisdição detectada (patricia-peck para BR, manuel-lopes-rocha para PT/EU,
+      jurisdiction-navigator para demais) valida compliance regulatória:
+      data protection, consumer law, fiscal. Corre em paralelo com phase_1.
+    inputs:
+      - contract_file: "Contrato completo"
+      - jurisdiction_code: "Do contract_metadata"
+    outputs:
+      - compliance_report:
+          data_protection: "Status DPA / base legal / transferências"
+          consumer_law: "Aplicável? Conformidade?"
+          fiscal: "Obrigações mencionadas corretamente?"
+          missing_clauses: "Lista de cláusulas obrigatórias ausentes"
+    routing:
+      br: patricia-peck
+      pt: manuel-lopes-rocha
+      eu: manuel-lopes-rocha
+      uk: jurisdiction-navigator
+      us: jurisdiction-navigator
+      ae: jurisdiction-navigator
+      id: jurisdiction-navigator
+      sg: jurisdiction-navigator
+      mx: jurisdiction-navigator
+
+  - id: phase_3
+    name: "IP & Special Clauses Review"
+    agent: contract-architect
+    model: medium
+    task: draft-ip-clause.md
+    depends_on: [phase_1]
+    condition: "contract_type in [site, ecommerce, landing, conteudo] OR ip_gap in risk_report.critical_risks"
+    description: |
+      Contract Architect analisa especificamente as cláusulas de propriedade intelectual
+      e produz cláusula IP revisada adaptada ao tipo de contrato e jurisdição.
+    outputs:
+      - ip_clause_revised: "Cláusula IP completa pronta para inserção"
+      - ip_recommendations: "Mudanças recomendadas com justificativa"
+
+  - id: phase_4
+    name: "Consolidated Revision"
+    agent: contract-architect
+    model: low
+    task: revise-contract.md
+    depends_on: [phase_1, phase_2, phase_3]
+    description: |
+      Contract Architect aplica todas as correções identificadas:
+      riscos do risk_report + gaps do compliance_report + IP revisado.
+      Produz dois outputs: contrato limpo e versão com rastreamento de alterações.
+    inputs:
+      - contract_file: "Contrato original"
+      - risk_report: "Output phase_1"
+      - compliance_report: "Output phase_2"
+      - ip_clause_revised: "Output phase_3 (se existir)"
+    outputs:
+      - contract_revised_clean: "Contrato corrigido sem marcações"
+      - contract_revised_tracked: "Contrato com todas as alterações visíveis"
+      - change_log: "Lista de cada alteração com justificativa"
+    checkpoint:
+      gate: "Todas as correções CRITICAL e HIGH aplicadas"
+      user_pause: true
+      pause_message: "📜 Contrato revisado pronto. Revise as alterações antes do quality gate final."
+
+  - id: phase_5
+    name: "Final Quality Gate"
+    agent: legal-chief
+    model: high
+    task: review.md
+    depends_on: [phase_4]
+    description: |
+      Legal Chief aplica o output-quality.md checklist completo sobre o contrato revisado.
+      Produz verdict final: PASS / REVISE / FAIL com justificativa.
+    inputs:
+      - contract_revised_clean: "Output phase_4"
+      - risk_report: "Output phase_1 — para verificar se todos os CRITICAL foram endereçados"
+    outputs:
+      - verdict: "PASS | REVISE | FAIL"
+      - final_report: "Checklist preenchido + recomendações finais"
+      - contract_final: "Contrato aprovado para uso"
+
+meta_report:
+  trigger: "Após processar todos os contratos do lote"
+  agent: legal-chief
+  model: high
+  description: |
+    Legal Chief cruza os relatórios de todos os contratos auditados e produz
+    meta-relatório comparativo: gaps recorrentes, cláusulas universalmente problemáticas,
+    recomendação de template unificado (DPA compartilhado, cláusula IP padronizada, etc.)
+  outputs:
+    - meta_risk_report: "Padrões recorrentes + prioridades de correção"
+    - template_recommendations: "Cláusulas que devem ser padronizadas em todos os contratos"
+
+completion_criteria:
+  - "Todos os riscos CRITICAL endereçados"
+  - "Compliance regulatória validada para a jurisdição"
+  - "IP clause clara durante e após vigência"
+  - "Quality gate PASS pelo legal-chief"
+  - "Contrato entregue em versão limpa + tracked changes"

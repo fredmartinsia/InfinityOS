@@ -1,0 +1,89 @@
+jurisdiction:
+  code: MX
+  name: "México"
+  legal_system: civil_law
+  language: ["es"]
+
+data_protection:
+  framework: "LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión de Particulares) — promulgada 5 jul/2010, vigente desde jul/2010; reglamento: Reglamento de la LFPDPPP (21 dez/2011); lineamientos del aviso de privacidad (IFAI — Acuerdo P/EXT/02/2013); supervisor: INAI (Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales); discussão em andamento de nova ley modernizada"
+  key_laws:
+    - "LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión de Particulares, 2010)"
+    - "Reglamento de la LFPDPPP (2011)"
+    - "Lineamientos del Aviso de Privacidad (IFAI/INAI, 2013)"
+    - "Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados (2017 — sector público)"
+    - "NOM-151-SCFI-2016 (mensajes de datos y digitalización de documentos)"
+  supervisory_authority: "INAI (Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales) — autoridad federal independiente; puede imponer multas, realizar auditorías y ordenar medidas correctivas; multas: hasta 320.000 días de UMA (~USD 3.3M en 2024) para infracciones graves"
+  dpa_equivalent: "Contrato de encargado de datos: entre responsable (controlador) y encargado (processador) — formalmente exigido pela LFPDPPP art. 52 quando dados são transmitidos a terceiros processadores; cláusulas mínimas: limitação de uso, medidas de segurança, devolução/destruição de dados ao término"
+  international_transfers: "LFPDPPP art. 36: transferência internacional requiere: (1) consentimento expresso do titular; OU (2) cláusulas contratuales que garantan nivel de protección equivalente; OU (3) acuerdo intergubernamental; sem adequacy decision formal da UE para o México; sem lista de países adequados oficial do INAI; aviso de privacidad deve incluir informação sobre transferências internacionais"
+
+contract_law:
+  basis: "Sistema dual: Código Civil Federal (CCF — para actos civiles de carácter federal) + Código de Comercio (CC — para actos de comercio); cada estado federal tiene seu próprio Código Civil estadual; Código Civil CDMX (Distrito Federal) é o mais referenciado e completo; princípio de autonomia de la voluntad (art. 1832 CCF)"
+  key_codes:
+    - "Código Civil Federal (CCF)"
+    - "Código Civil para el Distrito Federal / CDMX (ampliamente aplicado)"
+    - "Código de Comercio (reformado — art. 89-114: comercio electrónico)"
+    - "Ley Federal de Protección al Consumidor (LFPC — PROFECO)"
+    - "Ley Federal del Trabajo (LFT — para contratos laborales)"
+    - "Ley de Concursos Mercantiles (insolvencia)"
+  statute_of_frauds: "Código de Comercio: contratos mercantiles generalmente válidos sin forma específica; excepciones: contratos sobre bienes inmuebles (escritura pública ante Notario Público obligatoria para transmisión), sociedad (escritura ante Notario), fideicomiso; contratos >50 UMA en valor: recomendado por escrito com CFDI; reforma de 2003 al Código de Comercio: contratos electrónicos legalmente válidos"
+  typical_governing_law:
+    - "Ley federal mexicana (para contratos con partes domésticas — Código Civil Federal o Código de Comercio)"
+    - "Ley del estado federativo aplicable (según el foro pactado)"
+    - "New York law (común en contratos B2B internacionales con partes mexicanas — financiamiento, M&A)"
+  e_signature:
+    valid: true
+    framework: "Código de Comercio art. 89-114 (reformado 2003, con modificaciones 2018): firma electrónica avanzada con efectos jurídicos plenos cuando: (1) atribuible al firmante; (2) mantenida bajo su control exclusivo; (3) detectable cualquier alteración; NOM-151-SCFI-2016 (preservación de mensajes de datos); FIEL/e.firma (Firma Electrónica Avanzada) del SAT — usada para documentos fiscales (CFDI); PSC (Prestadores de Servicios de Certificación) autorizados por la SE"
+
+dispute_resolution:
+  common_forums:
+    - "Juzgado de Distrito (fuero federal — controversias mercantiles federales, amparo)"
+    - "Juzgado Civil / Tribunal Superior de Justicia del Estado (fuero común — contratos civiles locales)"
+    - "Tribunal Federal de Justicia Administrativa (TFJA) — contratos con gobierno federal"
+    - "Juzgados de lo Mercantil (Ciudad de México — controversias comerciales)"
+  common_arbitration:
+    - "CAM (Centro de Arbitraje de México — antes: CANACO Centro de Arbitraje) — principal cámara nacional"
+    - "CANACO (Cámara Nacional de Comercio de la Ciudad de México) — cámara arbitral histórica"
+    - "ICC México (Comité Nacional Mexicano de la CCI)"
+    - "AMCHAM Arbitration Center"
+  international_arbitration: "ICC (Paris) con sede en Ciudad de México ampliamente aceptada; Código de Comercio art. 1415-1463 (Ley de Arbitraje basada en Ley Modelo UNCITRAL 2006); México miembro de la Convención de Nueva York desde 1971; CIADI (ICSID) para disputas con el Estado en tratados de inversión (USMCA/T-MEC Capítulo 14)"
+  enforcement: "Convención de Nueva York ratificada (1971); laudos arbitrales extranjeros: reconocimiento via Código de Comercio art. 1461-1463 ante Juez de Distrito; proceso puede tomar 6-18 meses; sentencias judiciales extranjeras: reconocimiento via exequátur (Código Federal de Procedimientos Civiles art. 571-577) — demorado e imprevisible; preferir arbitraje para contratos internacionales"
+
+consumer_law:
+  framework: "Ley Federal de Protección al Consumidor (LFPC) — PROFECO (Procuraduría Federal del Consumidor) como autoridad enforcement; NOM-051 para etiquetado; regulación específica para comercio electrónico (NOM-247-SE-2021)"
+  key_laws:
+    - "Ley Federal de Protección al Consumidor (LFPC)"
+    - "NOM-247-SE-2021 (Comercio electrónico — información y publicidad)"
+    - "NOM-184-SCFI-2018 (prácticas comerciales — requisitos informativos)"
+    - "Reglamento de la Ley Federal de Protección al Consumidor"
+    - "Ley Federal de Telecomunicaciones y Radiodifusión (LFTR) para servicios de telecomunicaciones"
+  b2c_critical:
+    - "Derecho de retracto (cancelación): 5 días hábiles para contratos celebrados fuera del establecimiento o por internet (art. 56 LFPC) — sin penalización"
+    - "Información obligatoria: precio total en MXN, características del bien/servicio, condiciones de entrega y devolución (NOM-247-SE-2021 para e-commerce)"
+    - "Cláusulas abusivas: nulas por ministerio de ley (art. 90 LFPC) — exclusión de responsabilidad, prórroga automática sin aviso, renuncia de derechos del consumidor"
+    - "PROFECO: conciliación gratuita; puede imponer multas de hasta 3.8M UMA (~USD 40k por infracción — 2024)"
+    - "Contratos de adhesión: deben registrarse ante PROFECO si uso masivo (art. 86 LFPC)"
+
+fiscal:
+  value_added: "IVA (Impuesto al Valor Agregado): 16% tasa general; 0% zona fronteriza norte (Decreto 2019 — Baja California, Sonora, Chihuahua, Coahuila, Nuevo León, Tamaulipas — lista de municipios específicos); 0% para exportaciones de bienes y servicios; exentos: alimentos sin transformación, medicamentos, libros; servicios digitales de residentes en el extranjero: obligación de registro en SAT y cobro de IVA (Reforma 2020 — art. 18-B a 18-J LIVA)"
+  withholding: "ISR (Impuesto Sobre la Renta) retención en la fuente para pagadores mexicanos: servicios técnicos a no-residentes sin EP en México: 25% sobre ingreso bruto (art. 167 LISR); regalías (royalties): 35% tasa general, reducible por CDT (MX-US: 10% software, 10% regalías en general; MX-UE países: per CDT bilateral; MX-BR: sin CDT vigente — tasa general aplica); dividendos: 10% retención adicional sobre dividendos de utilidades generadas desde 2014; intereses: 4.9-21% según tipo y beneficiario"
+  b2b_services: "CFDI (Comprobante Fiscal Digital por Internet): OBLIGATORIO para todas las facturas — emisión via PAC (Proveedor Autorizado de Certificación) autorizado por SAT; versión 4.0 desde 2022; servicios digitales extranjeros: desde 2020, plataformas digitales no-residentes que prestan servicios a usuarios MX deben registrarse en SAT y retener IVA 16% + ISR 1-4%; contrato B2B con empresa MX: solicitar constancia de situación fiscal (RFC) del pagador"
+
+formalities:
+  signature: "Firma autógrafa (manuscrita) o firma electrónica avanzada válidas para contratos mercantiles (Código de Comercio); FIEL/e.firma del SAT requerida para documentos fiscales (CFDI); escritura pública ante Notario Público: obligatoria para transmisión de bienes inmuebles, constitución de sociedades, poderes notariales para actos de dominio, fideicomisos; Corredor Público: puede dar fe de contratos mercantiles sin necesidad de Notario"
+  notarization: "Notario Público (función fedataria pública, designado por el Gobierno del Estado): obligatorio para: escrituras de bienes raíces, constitución y modificación de sociedades, poderes notariales para actos de dominio o para usar ante autoridades, capitulaciones matrimoniales; Corredor Público (fedatario mercantil federal): contratos mercantiles, actas de asamblea, avalúos; apostillamiento: México es parte de la Convención de La Haya de 1961 — apostilla disponible en las Secretarías de Gobierno de cada Estado"
+  language: "Español: idioma oficial — contratos con partes domésticas en español recomendado para enforceability óptima; contratos B2B internacionales: pueden ser bilingues (ES/EN) con cláusula de prevalencia; contratos con consumidores: información obligatoria en español (LFPC); contratos laborales: español obligatorio (LFT art. 25)"
+  registration: "RPC (Registro Público de Comercio): registro de sociedades y contratos mercantiles con efectos erga omnes; IMPI (Instituto Mexicano de la Propiedad Industrial): registro de marcas, patentes, modelos de utilidad; INDAUTOR (Instituto Nacional del Derecho de Autor): registro de obras; contratos de licencia de PI: inscripción en IMPI para hacerlos valer contra terceros; SAT: RFC (Registro Federal de Contribuyentes) para toda persona física o moral con actividad económica"
+
+red_flags:
+  - "CFDI obligatorio: TODA factura en México debe emitirse como CFDI (Comprobante Fiscal Digital por Internet) via PAC autorizado por SAT; contratos sin CFDI correspondiente = riesgo fiscal (no deducibilidad del gasto para el pagador, multas); verificar RFC del cliente y que sea contribuyente activo antes de celebrar contratos"
+  - "Cláusula de no-competencia en contratos de trabajo: limitada por LFT art. 5 — prohibición de acuerdo que impida al trabajador ejercer su profesión; en contratos B2B mercantiles: más permisivo pero debe ser razonable en tiempo, territorio y actividad; sin compensación explícita: riesgo de nulidad; en CDMX: criteria más estrictos aplicados por Juzgados de lo Civil"
+  - "Contratos con el gobierno (Contratación Pública): Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público (LAASSP) y Ley de Obras Públicas (LOPSRM) — régimen especial; compranet.gob.mx; cláusula de anticorrupción y manifestación de no conflicto de interés obligatorias; auditoría de la ASF (Auditoría Superior de la Federación) posible; disputas: TFJA (Contencioso Administrativo)"
+  - "Zona fronteriza norte IVA 0%: aplica solo para establecimientos físicos en la franja fronteriza de 20km; servicios digitales prestados desde esa zona NO califican automáticamente — verificar criterios SAT; error frecuente en contratos de servicios"
+  - "Notarización: Notario Público en México es figura de derecho público (designado por el Estado, no un profesional privado como en EE.UU.) — sus honorarios están regulados y sus actos tienen fe pública; para M&A, constitución de empresas y contratos inmobiliarios, Notario es imprescindible; buscar Notario con experiencia en transacciones internacionales (especialmente CDMX)"
+  - "T-MEC/USMCA (Tratado México-Estados Unidos-Canadá, 2020): protecciones de inversión (Capítulo 14) más limitadas que NAFTA para empresas US/CA en México — ISDS solo para sectores específicos; cláusulas de estabilización contractual recomendadas para inversiones de largo plazo; revisión del T-MEC prevista para 2026"
+
+recommended_clauses:
+  governing_law: "Ley federal mexicana (Código de Comercio + CCF) para contratos con partes domésticas; especificar 'leyes federales de los Estados Unidos Mexicanos, con exclusión de sus normas de conflicto de leyes'; para contratos internacionales: New York law o lei inglesa con cláusula de arbitraje internacional; foro de elección: CDMX (Ciudad de México) para contratos domésticos"
+  arbitration: "CAM (Centro de Arbitraje de México) para disputas domésticas; ICC con sede en Ciudad de México o Miami para disputas internacionales; UNCITRAL ad hoc es alternativa; incluir procedimiento de mediación previa (30 días); cláusula escalonada: negociación → mediación → arbitraje; confidencialidad explícita; idioma español o bilingue ES/EN"
+  indemnification: "Daños y perjuicios: daño emergente (daño directo) + lucro cesante (ganancias dejadas de percibir) — ambos indemnizables (CCF art. 2108-2109); cláusula penal convencional: válida como liquidación anticipada de daños (CCF art. 1840); cap: múltiplo de los honorarios pagados en 12 meses; exclusión de daños indirectos y consecuentes válida en B2B; indemnización por violación de LFPDPPP crítica para contratos con procesadores de datos"
+  ip_assignment: "Ley Federal del Derecho de Autor (LFDA — Decreto 1996, reformas 2023): cesión de derechos patrimoniales de autor debe ser por escrito; obras por encargo: titularidad del mandante solo si pactado expresamente; software: protegido como obra literaria (art. 102 LFDA); patentes: Ley de Propiedad Industrial (LPI 2020) — registro en IMPI; cesión de marcas: inscripción en IMPI necesaria para surtir efectos ante terceros; moral rights: inalienables en México — no waivable (art. 21 LFDA); importante: contrato debe especificar alcance territorial (MX, regional, mundial)"

@@ -1,0 +1,110 @@
+# Component Canon — 32 componentes obrigatórios em todo DESIGN.md gerado
+# Derivados de uma análise dos 71 design systems profissionais.
+# `component-author` (Brad Frost) usa esta lista como "must cover".
+
+categorias:
+  buttons:
+    must:
+      - button-primary
+      - button-secondary
+      - button-ghost
+      - button-icon-only
+    optional:
+      - button-destructive
+      - button-loading
+      - button-with-icon
+      - button-link
+
+  inputs:
+    must:
+      - input-text
+      - input-textarea
+      - input-select
+      - input-search
+    optional:
+      - input-checkbox
+      - input-radio
+      - input-toggle
+      - input-file-upload
+      - input-date
+
+  cards:
+    must:
+      - card-default
+      - card-interactive  # com hover state
+    optional:
+      - card-with-image
+      - card-stats
+      - card-compact
+
+  navigation:
+    must:
+      - nav-top-bar
+      - nav-sidebar
+      - link-default
+      - breadcrumb
+    optional:
+      - tabs
+      - pagination
+      - footer
+
+  feedback:
+    must:
+      - alert-info
+      - alert-success
+      - alert-error
+      - alert-warning
+      - badge-default
+      - tooltip
+    optional:
+      - toast
+      - banner
+
+  containers:
+    must:
+      - modal-default
+      - drawer
+    optional:
+      - popover
+      - dropdown-menu
+      - accordion
+
+  data:
+    optional:
+      - table
+      - list-item
+      - empty-state
+      - loading-skeleton
+      - chart-placeholder
+
+  typography_blocks:
+    must:
+      - hero-headline
+      - section-heading
+      - body-paragraph
+      - code-block
+    optional:
+      - blockquote
+      - caption-with-icon
+
+# REGRAS
+# - Total mínimo: 20 componentes (todos os "must" acima = 22, então alguns são flexíveis)
+# - Total alvo: 35-50 (incluindo variações de estado: hover, focus, active, disabled)
+# - Cada componente DEVE ter: background-color, text-color, padding, border-radius, font-token, use-case
+# - Estados (hover/focus/active/disabled) viram entradas separadas SE diferirem visualmente
+# - Use sempre tokens referenciados ({colors.x}, {typography.y}), nunca hex inline
+
+# Padrão de documentação (replicar dos 71 referenciais):
+#
+# **`button-primary`** — Primary CTA across all marketing surfaces.
+# - Background: `{colors.primary}`
+# - Text: `{colors.on-primary}`
+# - Typography: `{typography.button}`
+# - Padding: 12px 20px
+# - Rounded: `{rounded.md}`
+# - Hover: `{colors.primary-hover}` (lighter +5%)
+# - Focus: `2px solid {colors.primary}` outline, 4px offset
+# - Use: "Get started", "Sign up", "Buy now"
+#
+# Não use: descrições vagas como "Primary button for important actions"
+# Use: contexto de uso real ("Primary CTA across all marketing surfaces")

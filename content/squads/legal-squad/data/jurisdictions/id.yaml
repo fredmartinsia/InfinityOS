@@ -1,0 +1,84 @@
+jurisdiction:
+  code: ID
+  name: "Indonésia"
+  legal_system: civil_law
+  language: ["id", "en"]
+
+data_protection:
+  framework: "Lei de Proteção de Dados Pessoais: UU PDP (Undang-Undang Pelindungan Data Pribadi) — Lei No. 27 de 2022, aprovada out/2022, período de transição de 2 anos encerrado out/2024; em vigor pleno desde out/2024. Supervisor: Kementerian Komunikasi dan Digital (Komdigi, ex-Kominfo). Anterior: Peraturan Pemerintah (PP) No. 71/2019 — parcialmente substituída"
+  key_laws:
+    - "UU No. 27/2022 (UU PDP — Lei de Proteção de Dados Pessoais)"
+    - "PP No. 71/2019 (Penyelenggaraan Sistem dan Transaksi Elektronik)"
+    - "UU No. 11/2008 (ITE — Informasi dan Transaksi Elektronik) conforme alterada pela UU 19/2016"
+    - "Peraturan Menteri Kominfo No. 20/2016 (proteção data pengguna online — parcialmente vigente)"
+  supervisory_authority: "Kementerian Komunikasi dan Digital (Komdigi) — Direktorat Jenderal Aplikasi Informatika; previsão de criação de autoridade independente ainda em discussão regulatória"
+  dpa_equivalent: "UU PDP exige perjanjian pemrosesan data (DPA) entre pengendali (controlador) e prosesor; cláusulas mínimas definidas na UU PDP art. 54; penalidades: multa administratif sampai 2% dari pendapatan tahunan (annual revenue)"
+  international_transfers: "UU PDP art. 56: transferência internacional permitida somente para países com nível de proteção equivalente (lista a ser publicada pelo governo) OU mediante persetujuan (consentimento específico) OU kontrak standar (cláusulas contratuais padrão aprovadas); notificação ao Komdigi obrigatória; data lokalisasi: setor público e serviços strategis podem exigir localização de dados no território nacional"
+
+contract_law:
+  basis: "KUH Perdata (Kitab Undang-Undang Hukum Perdata) — Burgerlijk Wetboek holandês de 1847, adaptado e ainda em vigor; princípio pacta sunt servanda; boa-fé (itikad baik) como princípio geral; contratos eletrônicos regulados pela UU ITE"
+  key_codes:
+    - "KUH Perdata (Burgerlijk Wetboek — Código Civil, 1847)"
+    - "KUHD (Kitab Undang-Undang Hukum Dagang — Código Comercial)"
+    - "UU No. 11/2008 (ITE — Informasi dan Transaksi Elektronik)"
+    - "PP No. 71/2019 (Penyelenggaraan Sistem dan Transaksi Elektronik)"
+    - "UU No. 8/1999 (Perlindungan Konsumen — CDC indonésio)"
+  statute_of_frauds: "Regra geral: contratos verbais válidos; exigência de escrito para: cessões imobiliárias (akta PPAT), contratos de hipoteca (hak tanggungan), penhor registrado, contratos de trabalho certos; contratos de alto valor recomendados por escrito com autenticação notarial"
+  typical_governing_law:
+    - "Hukum Indonesia (para contratos com partes locais — Judiciário indonésio pode afirmar competência)"
+    - "Singapore law (comum para contratos B2B internacionais com partes indonésias — neutro e familiar)"
+    - "English law (para contratos com partes europeias/americanas)"
+  e_signature:
+    valid: true
+    framework: "UU ITE (Lei 11/2008) + PP No. 71/2019 + Permenkominfo No. 11/2022: distingue Tanda Tangan Elektronik Tersertifikasi (assinatura eletrônica certificada — certificado digital de PSrE-Kominfo) com força legal plena equivalente a manuscrita, e Tanda Tangan Elektronik Tidak Tersertifikasi (não-certificada — válida mas presunção mais fraca); PSrE (Penyelenggara Sertifikasi Elektronik): Balai Sertifikasi Elektronik (BSrE-BSSN) e provedores privados acreditados"
+
+dispute_resolution:
+  common_forums:
+    - "Pengadilan Negeri (Tribunal de Primeira Instância — civil geral)"
+    - "Pengadilan Niaga (Tribunal Comercial — falência, HKI/IP, PKPU)"
+    - "Badan Penyelesaian Sengketa Konsumen (BPSK) — disputas de consumo"
+    - "Pengadilan Tata Usaha Negara (PTUN) — disputas com governo)"
+  common_arbitration:
+    - "BANI (Badan Arbitrase Nasional Indonesia) — câmara mais relevante para disputas com partes locais"
+    - "BAPMI (Badan Arbitrase Pasar Modal Indonesia) — mercado de capitais"
+    - "BASYARNAS (Badan Arbitrase Syariah Nasional) — contratos sharia/islâmicos"
+  international_arbitration: "ICC (Paris) e SIAC (Singapura) — amplamente aceitos para contratos internacionais com partes indonésias; UNCITRAL ad hoc; Indonésia membro da Convenção de Nova Iorque desde 1981 (Keppres 34/1981); enforcement: Lei Arbitragem (UU No. 30/1999) — sentença asing perlu pendaftaran di PN Jakarta Pusat"
+  enforcement: "Convenção de Nova Iorque ratificada; enforcement de sentenças arbitrais estrangeiras: registro obrigatório no Pengadilan Negeri Jakarta Pusat; processo pode levar 6-18 meses; enforcement de sentenças judiciais estrangeiras: sem reciprocidade formal — praticamente não-reconhecidas; preferir arbitragem"
+
+consumer_law:
+  framework: "UU No. 8/1999 (Undang-Undang Perlindungan Konsumen — UUPK); BPSK para resolução de disputas; OJK (Otoritas Jasa Keuangan) para setor financeiro"
+  key_laws:
+    - "UU No. 8/1999 (Perlindungan Konsumen)"
+    - "PP No. 58/2001 (Pembinaan dan Pengawasan Penyelenggaraan Perlindungan Konsumen)"
+    - "Peraturan OJK No. 6/POJK.07/2022 (perlindungan konsumen sektor jasa keuangan)"
+  b2c_critical:
+    - "Tanggung jawab produk (product liability): produsen responsável por danos — inversão do ônus da prova (art. 22 UUPK)"
+    - "Klausula baku (contratos de adesão): nula se substancialmente prejudicial ao consumidor (art. 18 UUPK)"
+    - "Proibição de iklan menyesatkan (publicidade enganosa) — sujeito a sanksi pidana (sanção penal)"
+    - "E-commerce: PP No. 80/2019 (perdagangan melalui sistem elektronik) — informasi barang/jasa obrigatória, hak pengembalian (direito de devolução) em caso de ketidaksesuaian"
+    - "BPSK: mediasi, konsiliasi ou arbitragem gratuita para disputas <Rp 200 juta"
+
+fiscal:
+  value_added: "PPN (Pajak Pertambahan Nilai — VAT): 11% desde 1 abril 2022 (antes 10%); subindo para 12% a partir de 1 jan/2025 (UU HPP 2021); jasa kena pajak (serviços tributáveis) incluem jasa teknologi informasi; ekspor jasa: 0% (PPN 0% para layanan ke luar negeri); PMSE (perdagangan melalui sarana elektronik): kewajiban PPN untuk PMSE asing (Netflix, Spotify, etc. — PMK 60/2022)"
+  withholding: "PPh (Pajak Penghasilan) Pasal 26: 20% WHT bruto sobre pagamentos a non-residentes (dividendos, bunga, royalti, sewa, jasa) — reduzível via P3B (tax treaty); Indonesia tem P3B com ~70 países incluindo Singapura (10-15%), Belanda (10%), Jepang (10%), US (10-15%); jasa teknik (technical services): Pasal 23 (2-6% para residente) ou Pasal 26 (20% para non-residente)"
+  b2b_services: "Impor jasa (importação de serviços): PPN 11% wajib dipungut oleh penerima jasa dalam negeri (reverse charge pelo contratante local); PPh Pasal 26 sobre remessa ao exterior; CFOP equivalente: Faktur Pajak obrigatória; nota: beberapa jasa dikecualikan (jasa yang tidak kena pajak — JKP excluded)"
+
+formalities:
+  signature: "Tanda tangan basah (assinatura física) ou tanda tangan elektronik tersertifikasi válida; para contratos com entidades pemerintah (governo): tanda tangan elektronik tersertifikasi BSrE preferida; akta notaris (escritura notarial) obrigatória para: pendirian PT (constituição de empresa), hibah (doação), wasiat (testamento), hak atas tanah (direitos sobre terrenos)"
+  notarization: "Notaris (Notário Público regulado pela UU No. 30/2004 — Jabatan Notaris): obrigatório para akta autentik (documentos autênticos); PPAT (Pejabat Pembuat Akta Tanah): específico para atos sobre tanah (terrenos); legalisasi: Kementerian Luar Negeri + Kedutaan negara destino para uso no exterior; Indonesia aderiu à Convenção de Haia sobre Apostila em 2022"
+  language: "Bahasa Indonesia: OBRIGATÓRIA para kontrak dengan pihak Indonesia (UU No. 24/2009 tentang Bendera, Bahasa, dan Lambang Negara, Pasal 31) — contratos puramente em inglês com partes domésticas são potencialmente nulos (Putusan MA No. 601 K/Pdt/2015 como precedente); contratos internacionais: bilíngue (Bahasa + English) com cláusula de prevalência; versão Bahasa Indonesia deve existir"
+  registration: "PT (Perseroan Terbatas): pendaftaran di Kementerian Hukum dan HAM (AHU); contratos de cessão imobiliária: akta PPAT + registro no BPN (Badan Pertanahan Nasional); HKI (Hak Kekayaan Intelektual): registro no DJKI (Direktorat Jenderal Kekayaan Intelektual)"
+
+red_flags:
+  - "Bahasa Indonesia obrigatória: contratos com partes domésticas indonésias SEM versão em Bahasa Indonesia podem ser declarados nulos por tribunais indonésios (UU 24/2009 art. 31); SEMPRE criar versão bilíngue ou indonésia; Mahkamah Agung tem precedentes de nulidade"
+  - "Entidade local para atividades tertentas: sebagian besar kegiatan usaha mengharuskan pendirian PT PMA (PT Penanaman Modal Asing) ou kemitraan lokal; Daftar Negatif Investasi (DNI) — lista de setores restritos ou proibidos para investimento estrangeiro (diganti: Peraturan Presiden No. 10/2021 + No. 49/2021)"
+  - "UU PDP enforcement: em vigor pleno desde out/2024 — penalidades administrativas até 2% da receita anual; sanksi pidana (penal) para violações graves (penjara hingga 6 tahun); gap de implementação ainda em desenvolvimento — acompanhar regulamentações de Komdigi"
+  - "Data lokalisasi (localização de dados): setores estratégicos (perbankan, telekomunikasi, kesehatan, pemerintahan) podem exigir penyimpanan data di dalam wilayah Indonesia — verifique regulamentação setorial específica antes de usar cloud servers externos"
+  - "Korupsi e compliance: Indonésia ratificou UNCAC; UU No. 20/2001 (Tipikor — anticorrupção) com KPK (Komisi Pemberantasan Korupsi) ativo; contratos com pihak pemerintah: due diligence de compliance obrigatória; anti-gratifikasi cláusulas recomendadas"
+  - "Enforcement de sentenças judiciais estrangeiras: praticamente não-reconhecidas — sem tratado de reciprocidade judicial; para contratos com partes indonésias, cláusula de arbitragem internacional (SIAC ou ICC) é essencial para enforcement efetivo"
+
+recommended_clauses:
+  governing_law: "Hukum Singapura (Singapore law) para contratos B2B internacionais com partes indonésias — neutro, familiar para partes ASEAN, courts sofisticados; alternativa: hukum Inggris (English law); para contratos domésticos: hukum Indonesia (necessário para Bahasa-mandated contracts)"
+  arbitration: "SIAC (Singapore International Arbitration Centre) com seat em Singapura — padrão regional para disputas com partes indonésias; BANI para disputas puramente domésticas; SIAC Rules 2025; bahasa: inglês; mediation sebelum arbitragem recomendada; klausa penyelesaian sengketa bertahap: negosiasi 30 hari → mediasi → arbitrasi"
+  indemnification: "Ganti rugi (indenização): kerugian langsung (perdas diretas) e kehilangan keuntungan (lucros cessantes) — ambos ressarcíveis no KUH Perdata; exclusão de consequential damages válida em B2B; cap típico: total fees pagas nos últimos 12 meses; data breach indemnification crítica dado UU PDP em vigor"
+  ip_assignment: "Cessão de HKI (Hak Kekayaan Intelektual): registro no DJKI para marcas e patentes; cipta (copyright): automático, registro voluntário mas recomendado; perjanjian pengalihan hak cipta: harus tertulis (escrita); software: hak cipta dimiliki pembuat (criador) salvo perjanjian kerja que preveja transferência; moral rights: alienáveis parcialmente"

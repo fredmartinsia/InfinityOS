@@ -1,0 +1,102 @@
+# 11 Archetypes visuais — derivados da skill design-md de Alan Nicholas
+# Cada Design System criado precisa ser classificado em um destes antes de gerar tokens.
+# Use `reference-engine` para classificar.
+
+archetypes:
+  shadcn-neutral:
+    description: "Neutral, hairline borders, mínimo de cor. Tipo Vercel + shadcn/ui."
+    canvas_tone: "branco puro ou off-white #fafafa"
+    typography_voice: "sans geométrico moderno (Geist, Inter SemiBold) com letter-spacing negativo agressivo (-2.0 a -3.0px)"
+    color_economy: "monocromático com 1 acento neutro; cor reservada para estado"
+    signature: "shadow-as-border (0px 0px 0px 1px rgba(0,0,0,0.08))"
+    examples_in_pack: [vercel, linear.app, raycast, mintlify, opencode.ai]
+
+  carbon-enterprise:
+    description: "Sober, denso, multi-tenant ready. IBM Carbon style."
+    canvas_tone: "branco com #f4f4f4 surface secundário"
+    typography_voice: "IBM Plex Sans/Mono — humanista mas técnica"
+    color_economy: "azul institucional + slate; semântica forte"
+    signature: "data tables densas, padding apertado, focus rings 2px"
+    examples_in_pack: [ibm, hashicorp, sanity, sentry]
+
+  apple-glass:
+    description: "Galeria de museu, photography-first, 1 azul de ação."
+    canvas_tone: "branco puro + parchment off-white #f5f5f7"
+    typography_voice: "SF Pro Display + SF Pro Text, body em 17px (não 16)"
+    color_economy: "preto/branco + 1 único azul de ação (#0066cc)"
+    signature: "uma sombra drop só (em product imagery)"
+    examples_in_pack: [apple, bmw, bmw-m, porsche]
+
+  polaris-friendly:
+    description: "Calmo, espaçado, multi-merchant. Shopify Polaris."
+    canvas_tone: "off-white #fafbfb"
+    typography_voice: "Inter ou similar humanista, peso 500 padrão"
+    color_economy: "verde-marca + neutros com semântica gentil"
+    signature: "cards com radius generoso, shadows suaves multi-layer"
+    examples_in_pack: [shopify, intercom, cal]
+
+  marketing-gradient:
+    description: "Energético, gradientes, animação visível. Site marketing."
+    canvas_tone: "dark deep ou branco com gradient overlay"
+    typography_voice: "display sans pesado (700+) com inline tagline serif/script para contraste"
+    color_economy: "2 cores em gradient + neutros"
+    signature: "gradient mesh, blur backgrounds, scroll-triggered animations"
+    examples_in_pack: [framer, runwayml, replicate, lovable, x.ai]
+
+  brutalist-mono:
+    description: "Mono fonts, hairlines duros, zero ornamento."
+    canvas_tone: "branco ou preto absoluto"
+    typography_voice: "monospace dominante (JetBrains Mono, Geist Mono)"
+    color_economy: "monocromático estrito + 1 acento eletrico opcional"
+    signature: "borders 1px sólidos, zero shadows, alinhamento ultra-rígido"
+    examples_in_pack: [warp, ollama, voltagent]
+
+  govuk-conservative:
+    description: "Acessibilidade primeiro, contraste alto, fontes do sistema."
+    canvas_tone: "branco institucional"
+    typography_voice: "Transport ou system sans, peso forte"
+    color_economy: "azul institucional + amarelo aviso + neutros"
+    signature: "focus rings amarelos espessos, hierarquia clara, semantic HTML rigoroso"
+    examples_in_pack: [vodafone, mastercard]
+
+  porsche-precision:
+    description: "Premium automotivo, espaço extremo, photography-led."
+    canvas_tone: "branco quase ausente, deixa imagem dominar"
+    typography_voice: "geometric sans (Porsche Next, Helvetica) leve em display"
+    color_economy: "monocromático rigoroso, marca fica nas curvas/imagens"
+    signature: "hero photography fullbleed, type pequeno em relação à imagem"
+    examples_in_pack: [bugatti, ferrari, lamborghini, tesla]
+
+  ant-china-enterprise:
+    description: "Ant Design / Alibaba — denso, abrangente, formal."
+    canvas_tone: "branco com surface #fafafa"
+    typography_voice: "PingFang SC + SF Pro fallback"
+    color_economy: "azul Ant + paleta semântica completa de 10+"
+    signature: "componentes ricos (DatePicker, Cascader), tables com batch-actions"
+    examples_in_pack: [binance, kraken]
+
+  community-polished:
+    description: "Friendly, ilustrativo, calor humano. Apps de comunidade."
+    canvas_tone: "warm off-white ou cream #faf9f5"
+    typography_voice: "serif headline (Tiempos, Copernicus) + sans body"
+    color_economy: "warm coral/orange + neutros editoriais; evita azul tech"
+    signature: "ilustrações soft, cards com avatares, tom editorial"
+    examples_in_pack: [claude, notion, slack, miro]
+
+  material-elevation:
+    description: "Material Design — elevation systematic, ripple, paper metaphor."
+    canvas_tone: "branco com shadows medindo elevation"
+    typography_voice: "Roboto + Roboto Slab/Mono — sistema completo"
+    color_economy: "primary/secondary + tonal palettes (50-900)"
+    signature: "cards flutuantes com elevation z1-z5, FAB (floating action button), ripple"
+    examples_in_pack: [meta, pinterest, spotify, mongodb]
+
+# Como usar:
+# 1. reference-engine recebe brand brief
+# 2. Classifica em 1 dos 11 baseado em: setor, público, mood, restrições técnicas
+# 3. Token-architect e Component-author leem o archetype escolhido para puxar:
+#    - Canvas tone como base do colors.canvas/surface
+#    - Typography voice como ponto de partida do type ramp
+#    - Color economy como restrição de palette size
+#    - Signature como o componente "marca registrada" do DS
+# 4. Usa exemplos_in_pack como referências candidatas para Primária + Tom + Contraste

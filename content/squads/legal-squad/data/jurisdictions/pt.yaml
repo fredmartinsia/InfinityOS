@@ -1,0 +1,86 @@
+jurisdiction:
+  code: PT
+  name: "Portugal"
+  legal_system: civil_law
+  language: ["pt"]
+
+data_protection:
+  framework: "Regulamento Geral de Proteção de Dados (RGPD / GDPR) — Reg. UE 2016/679, diretamente aplicável; complementado pela Lei 58/2019 (execução nacional do RGPD) e Lei 41/2004 (comunicações eletrónicas)"
+  key_laws:
+    - "Regulamento (UE) 2016/679 (RGPD)"
+    - "Lei 58/2019 (execução do RGPD em Portugal)"
+    - "Lei 41/2004 (comunicações eletrónicas — transpõe Diretiva ePrivacy)"
+    - "Lei 46/2012 (proteção de dados em comunicações eletrónicas)"
+  supervisory_authority: "Comissão Nacional de Proteção de Dados (CNPD)"
+  dpa_equivalent: "DPA (Data Processing Agreement) obrigatório entre responsável e subcontratante (art. 28 RGPD); cláusulas mínimas definidas pelo RGPD"
+  international_transfers: "Regime UE: transferências para países terceiros exigem mecanismo adequado — adequacy decision da Comissão Europeia (ex: US-DPF, UK, CH, JP, KR), SCCs (Decisão 2021/914/UE), BCRs aprovadas pelo CNPD/EDPB, ou exceções art. 49 RGPD"
+
+contract_law:
+  basis: "Código Civil (Decreto-Lei 47.344/1966, múltiplas revisões) — princípio da liberdade contratual (art. 405), boa-fé (art. 762), responsabilidade civil (art. 798)"
+  key_codes:
+    - "Decreto-Lei 47.344/1966 (Código Civil)"
+    - "Código Comercial (em reforma — DL 19.481/1930 com alterações)"
+    - "DL 24/2014 (contratos celebrados à distância e fora do estabelecimento — consumidores)"
+    - "DL 84/2021 (garantias bens com elementos digitais — transpõe Dir. 2019/771 e 2019/770)"
+    - "DL 7/2004 (comércio eletrónico)"
+  statute_of_frauds: "Regra geral: contratos sem forma especial são válidos por qualquer meio; exigência de escritura pública para atos sobre imóveis; contratos de consumo à distância: confirmação em suporte duradouro obrigatória (art. 5 DL 24/2014)"
+  typical_governing_law:
+    - "Lei portuguesa (para contratos com consumidores residentes em PT — imperativo)"
+    - "Reg. Roma I (CE 593/2008): autonomia das partes em contratos B2B internacionais; limites em contratos de trabalho e consumo"
+  e_signature:
+    valid: true
+    framework: "Regulamento eIDAS (UE) 910/2014 — diretamente aplicável; DL 290-D/99 (assinatura digital — revogado parcialmente pelo eIDAS); QES (Assinatura Eletrónica Qualificada) equivale a assinatura manuscrita em todos os EM; AdES (Avançada) admissível para maioria dos contratos comerciais; CC com chip suporta QES"
+
+dispute_resolution:
+  common_forums:
+    - "Tribunais Judiciais (1ª instância — Vara Cível)"
+    - "Tribunal Arbitral Necessário (casos específicos por lei)"
+    - "Julgados de Paz (até €15.000)"
+    - "Centros de Arbitragem de Conflitos de Consumo (CACCL, CIAB, etc.)"
+  common_arbitration:
+    - "Centro de Arbitragem Comercial da Câmara de Comércio e Indústria Portuguesa (CAC/CCIP)"
+    - "CNIACC — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo"
+    - "ARBITRARE — Centro de Arbitragem para Relações de Consumo"
+    - "CAAD — Centro de Arbitragem Administrativa e Fiscal"
+  international_arbitration: "ICC (Paris); LCIA (Londres); as partes podem escolher câmara internacional com sede em Lisboa ou outro EM; Lei 63/2011 (Lei de Arbitragem Voluntária) modernizada e alinhada com UNCITRAL Model Law"
+  enforcement: "Convenção de Nova Iorque (1958) ratificada; sentenças estrangeiras: exequatur no Tribunal da Relação competente; dentro da UE: Reg. Bruxelas I Bis (UE) 1215/2012 — reconhecimento automático"
+
+consumer_law:
+  framework: "DL 24/2014 (contratos à distância), DL 84/2021 (garantias bens digitais e bens com elementos digitais), Lei de Defesa do Consumidor (Lei 24/96); ANACOM e ASAE como reguladores setoriais"
+  key_laws:
+    - "Lei 24/96 (Lei de Defesa do Consumidor)"
+    - "DL 24/2014 (contratos à distância e fora do estabelecimento)"
+    - "DL 84/2021 (garantias — transpõe Dir. 2019/770 e 2019/771)"
+    - "DL 7/2004 (comércio eletrónico)"
+    - "Lei 144/2015 (resolução alternativa de litígios de consumo)"
+  b2c_critical:
+    - "Direito de livre resolução: 14 dias corridos para contratos à distância (art. 10 DL 24/2014) — sem penalização, apenas custos de devolução"
+    - "Garantia legal: 3 anos para bens móveis novos (antes 2 anos — ampliado pelo DL 84/2021); 2 anos para bens digitais e conteúdos digitais"
+    - "Informação pré-contratual obrigatória: identidade, preço total, condições, direito de resolução (art. 4 DL 24/2014)"
+    - "Cláusulas contratuais gerais (CCG): DL 446/85 — nulidade de cláusulas abusivas, sorpresa ou contrárias à boa-fé"
+    - "Resolução alternativa obrigatória: empresas devem indicar entidade RAL competente"
+
+fiscal:
+  value_added: "IVA (Imposto sobre o Valor Acrescentado): taxa normal 23% (continental), 18% (Açores), 22% (Madeira); taxa intermédia 13%/9%; taxa reduzida 6%/4%; serviços digitais B2C: OSS (One-Stop-Shop) disponível para fornecedores não-UE"
+  withholding: "Retenção na fonte para não-residentes: 25% sobre rendimentos de prestações de serviços; 25% sobre royalties; reduzível via CDT — Portugal tem rede extensa (incluindo BR: CDT Portugal-Brasil, royalties a 15%); Diretiva Juros e Royalties (2003/49/CE) para pagamentos intra-UE B2B isenta de retenção"
+  b2b_services: "Serviços B2B intra-UE: IVA autoliquidação pelo adquirente (reverse charge, art. 6 CIVA); exportação de serviços para fora da UE: isenta de IVA (art. 6 CIVA); retenção na fonte aplicável conforme CDT do país do prestador"
+
+formalities:
+  signature: "Assinatura manuscrita ou eletrónica (eIDAS) suficiente para contratos comerciais; QES recomendada para contratos de alto valor; contratos de arrendamento: forma escrita obrigatória (Lei 6/2006)"
+  notarization: "Escritura pública obrigatória para: compra e venda de imóveis, hipotecas, doações de imóveis, constituição de sociedades com imóveis. Reconhecimento de assinatura: não obrigatório para a maioria dos contratos comerciais mas recomendado para contratos com efeitos perante terceiros"
+  language: "Português — língua oficial dos contratos com consumidores portugueses; contratos B2B internacionais podem ser em inglês ou bilíngues; versão portuguesa prevalece em litígios perante tribunais portugueses"
+  registration: "Registo Comercial: obrigatório para constituição e alterações de sociedades (Código do Registo Comercial); registo de marcas/patentes: INPI Portugal + EUIPO; cessão de créditos: notificação ao devedor para oponibilidade (art. 583 CC)"
+
+red_flags:
+  - "RGPD enforcement pela CNPD: multas até €20M ou 4% do volume de negócios global anual (o que for maior); CNPD tem sido ativa — atenção a transferências internacionais e DPAs com subcontratantes"
+  - "DL 84/2021 (bens digitais): prazos de garantia ampliados e obrigação de atualizações de segurança/funcionalidade durante 'período razoável' — impacto relevante para SaaS e produtos com software"
+  - "Cláusulas contratuais gerais (CCG): DL 446/85 — proibição de cláusulas de limitação de responsabilidade por dolo ou culpa grave, exclusão do direito de resolução, forum selection abusivo em contratos de adesão"
+  - "Prescrição ordinária: 20 anos (art. 309 CC); mercantil: 5 anos (art. 317 Código Comercial); prazo mais curto para empreitada (5 anos, art. 1225 CC) — verificar prazo específico conforme tipo contratual"
+  - "Não-concorrência pós-cessação: Código Civil art. 1170 — válido máximo 2 anos; deve ser limitado geograficamente e à atividade exercida; compensação não legalmente obrigatória mas fortemente recomendada para enforceability"
+  - "Pós-Brexit: contratos UK-PT deixam de beneficiar de Bruxelas I Bis e Roma I — cláusulas de jurisdição e lei aplicável mais críticas; verificar se mecanismo adequado UK GDPR ↔ RGPD em vigor"
+
+recommended_clauses:
+  governing_law: "Lei portuguesa para contratos com consumidores (imperativo); para B2B: escolha livre (Reg. Roma I) — lei inglesa e suíça comuns em contratos internacionais com partes PT; especificar expressamente 'excluindo suas normas de conflito de leis'"
+  arbitration: "CAC (Lisboa) para disputas domésticas; ICC ou LCIA com sede em Lisboa, Paris ou Genebra para internacionais; incluir mediação prévia (Lei 29/2013); cláusula de língua (PT ou EN) e número de árbitros (1 para <€500k; 3 para >€500k)"
+  indemnification: "Danos diretos e previsíveis (art. 563 CC); exclusão de danos indiretos e lucros cessantes admissível em B2B; limitação por cap (múltiplo das fees pagas nos últimos 12 meses) — válida salvo dolo ou culpa grave (DL 446/85 em CCG)"
+  ip_assignment: "Direitos de autor: CDADC (DL 63/85) — cessão deve ser expressa, escrita e especificar modalidades (art. 41); obras por encomenda: titularidade do encomendante apenas se expressamente previsto; software: regime especial (DL 252/94 — trabalho assalariado: titularidade da empresa por lei); marcas e patentes: registo no INPI para proteção"

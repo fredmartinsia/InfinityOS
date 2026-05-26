@@ -1,0 +1,86 @@
+jurisdiction:
+  code: AE
+  name: "Emirados Árabes Unidos (UAE)"
+  legal_system: mixed
+  language: ["ar", "en"]
+
+data_protection:
+  framework: "Sistema dual: (1) Federal Decree-Law No. 45 of 2021 on Personal Data Protection (PDPL) — mainland UAE, em vigor desde set/2022; (2) DIFC Data Protection Law 2020 (DIFC Law No. 5 of 2020) — Dubai International Financial Centre (common law zone); (3) ADGM Data Protection Regulations 2021 — Abu Dhabi Global Market (common law zone)"
+  key_laws:
+    - "Federal Decree-Law No. 45 of 2021 (UAE PDPL — mainland)"
+    - "DIFC Data Protection Law 2020 (DIFC DP Law No. 5/2020)"
+    - "ADGM Data Protection Regulations 2021"
+    - "UAE Cybercrime Law (Federal Decree-Law No. 34 of 2021)"
+    - "Health Data Law — Dubai (Dubai Law No. 10 of 2019)"
+  supervisory_authority: "UAE PDPL: UAE Data Office (UDO) — mainland; DIFC: Commissioner of Data Protection (DIFC); ADGM: Office of Data Protection (ADGM)"
+  dpa_equivalent: "UAE PDPL: Data Processing Agreement obrigatório com processadores terceiros; DIFC DP Law: Controller-Processor Agreement obrigatório com cláusulas mínimas específicas do DIFC"
+  international_transfers: "UAE PDPL: transferências para países com 'nível adequado de proteção' (lista publicada pela UDO) ou via salvaguardas contratuais aprovadas; DIFC: regime similar ao GDPR — adequacy, SCCs DIFC, BCRs, consentimento; sem equivalência formal de adequacy UE→UAE ainda — usar SCCs"
+
+contract_law:
+  basis: "Dual: mainland UAE = Código Civil Federal (Federal Law No. 5 of 1985 — baseado no Egyptian Civil Code/Código de Napoleão); DIFC = English common law (DIFC Contract Law, DIFC Law No. 6 of 2004); ADGM = English law (ADGM Application of English Law Regulations 2015)"
+  key_codes:
+    - "UAE Civil Code (Federal Law No. 5 of 1985)"
+    - "UAE Commercial Code (Federal Law No. 18 of 1993)"
+    - "DIFC Contract Law (DIFC Law No. 6 of 2004)"
+    - "DIFC Law of Obligations (DIFC Law No. 5 of 2005)"
+    - "Federal Decree-Law No. 46 of 2021 (Electronic Transactions and Trust Services)"
+  statute_of_frauds: "UAE Civil Code: contratos verbais geralmente válidos; contratos imobiliários, sociedades e poderes notariais exigem escrito; DIFC: writing required apenas onde lei específica exige; regra geral de common law: parole evidence rule aplicável"
+  typical_governing_law:
+    - "DIFC law (para contratos internacionais — maior previsibilidade, common law em inglês)"
+    - "English law (amplamente aceito em contratos B2B internacionais com partes UAE/DIFC)"
+    - "UAE Civil Code (para contratos mainland)"
+  e_signature:
+    valid: true
+    framework: "Federal Decree-Law No. 46 of 2021 on Electronic Transactions and Trust Services — assinatura eletrônica válida; distingue assinatura eletrônica simples, avançada e qualificada; autoridade certificadora: UAE Trust List; DIFC: Electronic Transactions Law (DIFC Law No. 2 of 2017) alinhado com UNCITRAL"
+
+dispute_resolution:
+  common_forums:
+    - "Dubai Courts (mainland — Civil Court of First Instance, Court of Appeal, Court of Cassation)"
+    - "DIFC Courts (common law, inglês — Small Claims Tribunal até USD 200k; Court of First Instance; Court of Appeal)"
+    - "Abu Dhabi Courts (mainland Abu Dhabi)"
+    - "ADGM Courts (Abu Dhabi Global Market — common law)"
+  common_arbitration:
+    - "DIAC (Dubai International Arbitration Centre) — principal câmara UAE desde 2021 (absorveu DIFC-LCIA)"
+    - "ADCCAC (Abu Dhabi Commercial Conciliation and Arbitration Centre)"
+    - "CRCICA (Cairo Regional Centre for International Commercial Arbitration — reconhecido na região)"
+  international_arbitration: "ICC com sede DIFC/Dubai; DIAC Rules 2022 (modernizados, alinhados com práticas internacionais); LCIA (sede Londres — ainda preferido por partes internacionais); UAE é membro da Convenção de Nova Iorque desde 2006"
+  enforcement: "Convenção de Nova Iorque ratificada (Federal Decree No. 43 of 2006); enforcement em mainland via Federal Law No. 6 of 2018 (Arbitration Law); DIFC Courts têm tratados de enforcement mútuos com vários países; enforcement de sentenças DIFC em mainland via 'conduit jurisdiction' DIFC→Dubai Courts"
+
+consumer_law:
+  framework: "Federal Law No. 15 of 2020 on Consumer Protection (repeal e substituição da Lei de 2006); Ministerio de Economia supervisiona; DIFC: próprias regras de proteção ao consumidor (DIFC Consumer Protection Law)"
+  key_laws:
+    - "Federal Law No. 15 of 2020 (Consumer Protection)"
+    - "Cabinet Decision No. 66 of 2023 (Implementing Regulations of Consumer Protection Law)"
+    - "Federal Law No. 14 of 2023 (on Competition)"
+    - "DIFC Consumer Protection Law (DIFC Law No. 1 of 2023)"
+  b2c_critical:
+    - "Direito de devolução: 14 dias para compras online (eCommerce — Cabinet Decision No. 22/2020)"
+    - "Publicidade enganosa proibida; preços em AED obrigatórios para produtos no UAE"
+    - "Garantia mínima legal: produtos deficientes devem ser reparados, substituídos ou reembolsados"
+    - "Proibição de cláusulas que isentem fornecedor de responsabilidade por produtos defeituosos"
+    - "DIFC: Consumer Protection Law 2023 — direitos mais robustos, alinhados com práticas internacionais"
+
+fiscal:
+  value_added: "VAT (Value Added Tax): 5% (introduzido Jan/2018, Federal Decree-Law No. 8 of 2017); zero-rated: exportações, serviços internacionais, certos serviços financeiros; isentos: serviços financeiros (exceto fee-based), residential real estate. Free zones específicas (DIFC, ADGM): tratamento VAT especial — zona 'designated'"
+  withholding: "Withholding tax: ZERO — UAE não tem WHT sobre dividendos, juros, royalties ou serviços pagos a não-residentes (vantagem competitiva central); Corporate Tax: 9% sobre lucros >AED 375.000 (USD ~102k) desde junho/2023 (Federal Decree-Law No. 47 of 2022); Free zones: isenção de 0% se 'qualifying free zone person' com 'qualifying income'"
+  b2b_services: "Sem WHT em serviços B2B; VAT 5% sobre serviços prestados no UAE; serviços para clientes fora UAE: zero-rated se 'place of supply' fora; B2B intra-UAE: reverse charge em alguns setores (real estate, gold, diamonds)"
+
+formalities:
+  signature: "Assinatura eletrônica válida (Federal Decree-Law 46/2021); contratos em língua árabe geralmente necessários para mainland — contratos em inglês válidos mas árabe prevalece em disputas perante cortes mainland; DIFC/ADGM: inglês é o idioma oficial"
+  notarization: "Notarização obrigatória para: escrituras imobiliárias, contratos de sociedade, poderes notariais, documentos familiares; 'Notary Public' do Ministério da Justiça (mainland) ou DIFC Notary para documentos DIFC; legalização via UAE Ministry of Foreign Affairs para uso internacional"
+  language: "Árabe: língua oficial do Estado — contratos com entidades governamentais em árabe obrigatório; mainland B2B: árabe recomendado (prevalece em tribunal); DIFC/ADGM: inglês é suficiente e padrão; contratos bilíngues: especificar qual versão prevalece"
+  registration: "Registro de empresa: DED (Dubai Economic Department) para mainland; DIFC Registrar of Companies para DIFC; free zone authority para free zones específicas (JAFZA, DAFZA, etc.); registro de marks: UAE Ministry of Economy (IP Department)"
+
+red_flags:
+  - "Dual legal system: clareza absoluta sobre qual jurisdição governa é crítica — contrato com governing law 'UAE law' sem especificação de DIFC vs mainland pode gerar ambiguidade; para B2B internacional, DIFC law + DIFC Courts ou arbitragem DIAC é a escolha mais previsível"
+  - "Sharia law (mainland): influencia contratos de financiamento (riba — proibição de juros), contratos de seguros (takaful vs conventional), e alguns contratos de distribuição; para contratos de dívida com juros, estruturar via DIFC ou preferir LIBOR/SOFR alternatives halal-compliant"
+  - "Agência comercial exclusiva: UAE Commercial Agencies Law (Federal Law No. 18 of 1981, reformada) — agente registrado tem proteções extraordinárias (difícil rescisão); registro no Ministério da Economia cria direito de exclusividade territorial quase irrevogável; EVITAR registro inadvertido"
+  - "Labour law (mainland): UAE Labour Law (Federal Decree-Law No. 33 of 2021) — non-compete válido por até 2 anos com restrições geográficas e de atividade razoáveis, mas enforcement depende de comprovação de prejuízo real; DIFC: Employee Workplace Relations Law mais flexível"
+  - "Free zone vs mainland: empresa em free zone geralmente não pode operar diretamente no mainland UAE sem distribuidor ou LLC mainland; 100% de propriedade estrangeira permitida em mainland desde 2021 (Cabinet Resolution 55/2021) — mas setores estratégicos excluídos"
+  - "Liquidez de sentenças: enforcement de sentenças estrangeiras (não-arbitral) em mainland pode ser imprevisível; preferir arbitragem com sede em DIFC ou exterior para garantir enforcement via NY Convention"
+
+recommended_clauses:
+  governing_law: "DIFC law para contratos B2B internacionais (common law, inglês, maior previsibilidade); alternativamente, English law com seat of arbitration em DIAC/Dubai ou ICC/Londres; evitar 'UAE law' genérico sem especificação de jurisdição"
+  arbitration: "DIAC Rules 2022 com sede em Dubai (DIFC) para contratos regionais; ICC ou LCIA com sede em Londres para contratos com partes europeias/americanas; lingua: inglês; fast-track para disputas <USD 1M; cláusula de confidencialidade na arbitragem"
+  indemnification: "Indemnification mútua para violações de data protection (PDPL, DIFC DP Law); cap de responsabilidade baseado em fees pagas (excluindo dolo/gross negligence); exclusão de indirect/consequential damages — explicitamente válida em DIFC; mainland: limitações podem ser restringidas pelo juiz"
+  ip_assignment: "Cessão de IP para partes UAE: registro de marcas no UAE Ministry of Economy IP Dept; patentes: UAE Patent Office (GCC Patent Office para região); copyright: automático mas registro recomendado; trabalho por encomenda (mainland): contrato deve prever cessão expressa; DIFC: works-for-hire com assignment backup"

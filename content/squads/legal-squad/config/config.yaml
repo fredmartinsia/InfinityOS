@@ -1,0 +1,78 @@
+# ═══════════════════════════════════════════════════════════════════
+# Squad: Legal Squad
+# Domain: Contracts, Compliance, IP & Multi-Jurisdiction Law
+# Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════════
+
+squad: legal-squad
+version: "1.0.0"
+
+cross_cutting_tensions:
+  - "Civil law (BR/PT/EU) vs Common law (US/UK/Singapore/DIFC)"
+  - "Formalismo legal vs Pragmatismo negocial"
+  - "Proteção máxima do prestador vs Equilíbrio B2B"
+  - "Jurisdição única vs Multi-jurisdição"
+
+agents:
+  legal-chief:
+    id: legal-chief
+    title: "Legal Squad Orchestrator"
+    tier: 0
+    model_preference: opus
+    sub_group: "Orchestration"
+    handoffs_to: [contract-architect, risk-auditor, patricia-peck, manuel-lopes-rocha, jurisdiction-navigator]
+
+  contract-architect:
+    id: contract-architect
+    title: "Contract Drafting & Structuring Specialist"
+    tier: 1
+    model_preference: sonnet
+    sub_group: "Operators"
+    handoffs_to: [risk-auditor, legal-chief]
+
+  risk-auditor:
+    id: risk-auditor
+    title: "Adversarial Contract Review Specialist"
+    tier: 1
+    model_preference: opus
+    sub_group: "Operators"
+    handoffs_to: [legal-chief, contract-architect]
+
+  patricia-peck:
+    id: patricia-peck
+    title: "Brazil Digital Law & LGPD Specialist"
+    tier: 1
+    model_preference: opus
+    sub_group: "Jurisdiction Advisors"
+    handoffs_to: [contract-architect, legal-chief]
+
+  manuel-lopes-rocha:
+    id: manuel-lopes-rocha
+    title: "Portugal & EU Law Specialist"
+    tier: 1
+    model_preference: opus
+    sub_group: "Jurisdiction Advisors"
+    handoffs_to: [contract-architect, legal-chief]
+
+  jurisdiction-navigator:
+    id: jurisdiction-navigator
+    title: "Global Jurisdiction Polyglot"
+    tier: 1
+    model_preference: sonnet
+    sub_group: "Jurisdiction Advisors"
+    data_source: "data/jurisdictions/*.yaml"
+    handoffs_to: [contract-architect, legal-chief]
+
+complexity_tiers:
+  high:
+    model: opus
+    tasks: [diagnose, audit-contract, red-team-review, review]
+    rationale: "Adversarial reasoning, holistic judgment, multi-variable triage"
+  medium:
+    model: sonnet
+    tasks: [compliance-check, draft-ip-clause, compare-jurisdictions]
+    rationale: "Rule-based interpretation, structured lookup, template adaptation"
+  low:
+    model: haiku
+    tasks: [create-contract, generate-dpa, adapt-to-jurisdiction, revise-contract]
+    rationale: "Deterministic template fill, schema substitution, structured output"

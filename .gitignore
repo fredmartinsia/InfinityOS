@@ -1,0 +1,43 @@
+# ============================================================================
+#  infinite-os — .gitignore (BLINDAGEM ZERO-VAZAMENTO)
+#  Nada de segredos, dados pessoais ou de projeto entra no repositório.
+# ============================================================================
+
+# --- Segredos / credenciais -------------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials.json
+**/secrets.*
+settings.local.json
+vault_guard.sha256
+vault_unlock.json
+
+# --- Estado / caches / bancos -----------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+.cache/
+cache/
+
+# --- Dados gerados por usuário (NUNCA versionar) ----------------------------
+output/
+_investigations/
+_browser_profile/
+_memory/memories.md
+state.json
+history.jsonl
+**/memory/feedback_*.md
+**/memory/project_*.md
+**/transcripts/
+
+# --- Backups locais do instalador -------------------------------------------
+*-backup-*/
+.infinite-os-backup-*/

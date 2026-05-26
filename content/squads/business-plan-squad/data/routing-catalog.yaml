@@ -1,0 +1,263 @@
+# Routing Catalog — business-plan-squad
+# Mapeia palavras-chave da fala do usuário para especialistas específicos.
+# Usado pelo /business-plan-chief para sugerir o especialista certo.
+
+version: "1.0.0"
+language_default: pt-BR
+
+# ═══════════════════════════════════════════════════════════════════
+# HIGHEST PRIORITY — Roteamento externo para capital-squad
+# ═══════════════════════════════════════════════════════════════════
+fundo_perdido_portugal:
+  external_squad: capital-squad
+  external_entry: capital-chief
+  trigger_keywords:
+    - "PRR"
+    - "Portugal 2030"
+    - "PT 2030"
+    - "PT2030"
+    - "Compete 2030"
+    - "Banco de Fomento"
+    - "Banco Português de Fomento"
+    - "BPF"
+    - "IFD"
+    - "Instituição Financeira de Desenvolvimento"
+    - "RFAI"
+    - "SIFIDE"
+    - "DLRR"
+    - "CFEI"
+    - "fundo perdido"
+    - "fundo a fundo perdido"
+    - "subvenção em Portugal"
+    - "incentivo IAPMEI"
+    - "candidatura PT 2030"
+    - "aviso de candidatura"
+    - "auxílio de Estado"
+    - "linha BPF"
+    - "majoração"
+    - "tax planning Portugal"
+  trigger_context:
+    - usuário explicitamente menciona "vou aplicar a fundo perdido em Portugal"
+    - usuário menciona "candidatura ao PRR"
+  action: |
+    Gerar sumário de pré-handoff e rotear para /capital-chief.
+    NÃO tentar fazer o trabalho do capital-squad dentro do business-plan-squad.
+
+# ═══════════════════════════════════════════════════════════════════
+# Especialistas do business-plan-squad
+# ═══════════════════════════════════════════════════════════════════
+
+validacao_cliente:
+  primary: steve-blank
+  secondary: eric-ries
+  triggers:
+    - "validar ideia"
+    - "validar hipótese"
+    - "como saber se cliente quer"
+    - "customer discovery"
+    - "entrevistar clientes"
+    - "get out of the building"
+    - "early adopters"
+    - "product-market fit"
+    - "PMF"
+    - "fit produto-cliente"
+    - "como achei meus primeiros clientes"
+
+mvp_iteracao:
+  primary: eric-ries
+  secondary: steve-blank
+  triggers:
+    - "MVP"
+    - "minimum viable product"
+    - "produto mínimo"
+    - "Build-Measure-Learn"
+    - "BML loop"
+    - "innovation accounting"
+    - "validated learning"
+    - "vanity metrics"
+    - "actionable metrics"
+    - "pivot"
+    - "perseverar ou pivotar"
+    - "cohort"
+    - "experimento"
+    - "smoke test"
+    - "concierge MVP"
+    - "wizard of oz"
+
+modelo_negocio:
+  primary: alexander-osterwalder
+  secondary: null
+  triggers:
+    - "business model canvas"
+    - "BMC"
+    - "modelo de negócio"
+    - "9 blocos"
+    - "proposta de valor"
+    - "value proposition"
+    - "VPC"
+    - "value proposition canvas"
+    - "jobs to be done"
+    - "pains and gains"
+    - "como cobrar"
+    - "como gerar receita"
+    - "revenue streams"
+    - "canais de distribuição"
+    - "customer segments"
+    - "estrutura de custos"
+    - "key partnerships"
+    - "key activities"
+
+tam_sam_som:
+  primary: bill-aulet
+  secondary: null
+  triggers:
+    - "TAM"
+    - "SAM"
+    - "SOM"
+    - "tamanho de mercado"
+    - "market sizing"
+    - "addressable market"
+    - "beachhead"
+    - "beachhead market"
+    - "end user profile"
+    - "persona"
+    - "DMU"
+    - "decision making unit"
+    - "MIT method"
+    - "disciplined entrepreneurship"
+    - "24 steps"
+    - "bottom-up estimate"
+    - "top-down estimate"
+    - "LTV"
+    - "COCA"
+    - "lifetime value"
+    - "customer acquisition cost"
+
+analise_competitiva:
+  primary: michael-porter
+  secondary: null
+  triggers:
+    - "5 forças"
+    - "five forces"
+    - "Porter"
+    - "concorrência"
+    - "concorrente"
+    - "competidor"
+    - "competition"
+    - "cadeia de valor"
+    - "value chain"
+    - "estratégia competitiva"
+    - "competitive strategy"
+    - "posicionamento estratégico"
+    - "strategic positioning"
+    - "estratégia genérica"
+    - "cost leadership"
+    - "differentiation"
+    - "focus strategy"
+    - "stuck in the middle"
+    - "vantagem competitiva"
+    - "competitive advantage"
+    - "trade-off"
+    - "barreiras de entrada"
+    - "switching cost"
+    - "poder de barganha"
+
+defensibilidade_diferenciacao:
+  primary: peter-thiel
+  secondary: null
+  triggers:
+    - "monopólio"
+    - "monopoly"
+    - "defensibility"
+    - "defensibilidade"
+    - "moat"
+    - "zero to one"
+    - "0 to 1"
+    - "secret"
+    - "segredo do negócio"
+    - "last mover"
+    - "first mover"
+    - "network effect"
+    - "efeito de rede"
+    - "proprietary technology"
+    - "tecnologia proprietária"
+    - "economies of scale"
+    - "branding"
+    - "marca defensável"
+    - "founder vision"
+    - "contrarian"
+    - "what important truth"
+    - "Thiel"
+    - "7 questions"
+    - "definite optimism"
+
+financeiro_valuation:
+  primary: aswath-damodaran
+  secondary: null
+  triggers:
+    - "DCF"
+    - "discounted cash flow"
+    - "valuation"
+    - "valor da empresa"
+    - "CAPEX"
+    - "OPEX"
+    - "investimento inicial"
+    - "WACC"
+    - "weighted average cost of capital"
+    - "CAPM"
+    - "beta"
+    - "equity risk premium"
+    - "ERP"
+    - "terminal value"
+    - "NPV"
+    - "VPL"
+    - "IRR"
+    - "TIR"
+    - "payback"
+    - "projeção financeira"
+    - "projeção 5 anos"
+    - "fluxo de caixa"
+    - "FCF"
+    - "free cash flow"
+    - "EBITDA"
+    - "DRE"
+    - "P&L"
+    - "income statement"
+    - "balance sheet"
+    - "múltiplos"
+    - "comparáveis"
+    - "sensibilidade"
+    - "análise de cenário"
+    - "Damodaran"
+    - "valuation by country"
+
+# ═══════════════════════════════════════════════════════════════════
+# Default fallback
+# ═══════════════════════════════════════════════════════════════════
+default:
+  primary: business-plan-chief
+  description: "Ponto de entrada padrão. Faz onboarding profundo e roteia."
+
+# ═══════════════════════════════════════════════════════════════════
+# Cross-squad routing
+# ═══════════════════════════════════════════════════════════════════
+external_routing:
+  copy_for_pitch:
+    keywords: ["pitch deck", "investor deck", "executive summary copy", "pitch para investidor"]
+    route_to: copy-master-chief
+    note: "Após BP fechado, /copy-master-chief para redação do pitch"
+
+  brand_positioning:
+    keywords: ["nome da empresa", "branding", "logo", "identidade visual", "posicionamento de marca"]
+    route_to: brand-chief
+    note: "Após estratégia competitiva definida"
+
+  legal_review:
+    keywords: ["estrutura societária", "holding", "SPV", "pacto de acionistas", "contrato"]
+    route_to: legal-chief
+    note: "Para revisão jurídica das estruturas propostas no BP"
+
+  board_second_opinion:
+    keywords: ["second opinion", "Ray Dalio", "Charlie Munger", "Buffett", "conselheiro"]
+    route_to: board-chair
+    note: "Para 'second opinion' do advisory-board"

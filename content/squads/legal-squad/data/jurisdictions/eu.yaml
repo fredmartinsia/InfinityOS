@@ -1,0 +1,94 @@
+jurisdiction:
+  code: EU
+  name: "União Europeia (genérico — sem estado-membro específico)"
+  legal_system: civil_law
+  language: ["multilingual — 24 línguas oficiais"]
+
+data_protection:
+  framework: "GDPR (General Data Protection Regulation) — Regulamento (UE) 2016/679, diretamente aplicável em todos os 27 estados-membro desde 25 mai/2018; sem necessidade de transposição; complementado por leis nacionais de execução (ex: BDSG alemão, DPA 2018 britânica pré-Brexit, CNIL francesa); EDPB (European Data Protection Board) como coordenador supranacional"
+  key_laws:
+    - "Regulamento (UE) 2016/679 (GDPR)"
+    - "Diretiva (UE) 2016/680 (proteção dados — lei penal e ordem pública)"
+    - "Regulamento (UE) 2018/1725 (proteção dados pelas instituições UE)"
+    - "Diretiva ePrivacy 2002/58/CE (cookies e comunicações eletrónicas — revisão em andamento)"
+    - "Regulamento (UE) 2022/2554 (DORA — resiliência digital setor financeiro, desde jan/2025)"
+    - "Regulamento (UE) 2022/868 (Data Governance Act — dados públicos)"
+    - "Regulamento (UE) 2023/2854 (Data Act — dados industriais e IoT, desde set/2025)"
+  supervisory_authority: "DPA nacional de cada estado-membro (CNIL-FR, BfDI-DE, ICO-UK pré-Brexit, Garante-IT, AEPD-ES, etc.); EDPB: coordenação e guidelines vinculantes; 'one-stop-shop': DPA do país do estabelecimento principal é lead supervisory authority para empresas com atividades cross-border"
+  dpa_equivalent: "DPA (Data Processing Agreement) — art. 28 GDPR, OBRIGATÓRIO entre controller e processor; cláusulas mínimas definidas no art. 28(3) GDPR; standard contractual clauses (SCCs): Decisão da Comissão 2021/914/UE (módulos C2C, C2P, P2C, P2P)"
+  international_transfers: "Permitidas apenas com mecanismo adequado: (1) Adequacy Decision da Comissão (US: EU-US DPF jul/2023; UK, CH, JP, KR, NZ, IL, AR, CA — parcial, outros); (2) SCCs (Standard Contractual Clauses — Decisão 2021/914/UE) + TIA (Transfer Impact Assessment); (3) BCRs (Binding Corporate Rules) aprovadas pela DPA; (4) Exceções art. 49 (consentimento, execução de contrato, interesse público, etc.) — apenas para transferências não repetitivas"
+
+contract_law:
+  basis: "NÃO harmonizado federalmente — cada estado-membro tem seu próprio Código Civil; harmonização via diretivas específicas (consumo, B2C digital); Reg. Roma I (CE 593/2008) rege lei aplicável a contratos internacionais na UE; Reg. Bruxelas I Bis (UE 1215/2012) rege jurisdição e reconhecimento de sentenças"
+  key_codes:
+    - "Regulamento Roma I (CE 593/2008 — lei aplicável a contratos)"
+    - "Regulamento Bruxelas I Bis (UE 1215/2012 — jurisdição e sentenças)"
+    - "Diretiva 2011/83/UE (direitos dos consumidores — transposta em cada EM)"
+    - "Diretiva 2019/770/UE (fornecimento de conteúdos e serviços digitais — transposta)"
+    - "Diretiva 2019/771/UE (venda de bens com elementos digitais — transposta)"
+    - "Diretiva 2000/31/CE (comércio eletrónico — e-Directive)"
+    - "Regulamento (UE) 2022/1925 (DMA — Digital Markets Act, desde mai/2023)"
+    - "Regulamento (UE) 2022/2065 (DSA — Digital Services Act, desde fev/2024)"
+  statute_of_frauds: "Varia por estado-membro; regra geral na UE: liberdade de forma para contratos comerciais B2B; requisitos escritos para contratos de consumo à distância (Diretiva 2011/83/UE — confirmação em suporte duradouro); imóveis geralmente exigem escrito e registro"
+  typical_governing_law:
+    - "Lei do estado-membro com maior conexão (Roma I art. 4) na ausência de escolha"
+    - "English law (ampla escolha mesmo pós-Brexit — válida pelo Roma I para contratos celebrados antes do Brexit; pós-Brexit: pelo Roma I ainda vigente no UK para contratos pré-2021)"
+    - "Leis dos 'big 4': lei alemã, francesa, holandesa ou irlandesa são escolhas comuns para contratos intra-UE"
+  e_signature:
+    valid: true
+    framework: "eIDAS Regulamento (UE) 910/2014 — diretamente aplicável em todos os EM: (1) QES (Qualified Electronic Signature) = equivale a assinatura manuscrita em toda a UE (art. 25(2)); (2) AdES (Advanced Electronic Signature) — admissível para maioria dos contratos comerciais; (3) SES (Simple Electronic Signature) — mínima presunção; eIDAS 2.0 (Regulamento (UE) 2024/1183) — EU Digital Identity Wallet, em implementação até 2026"
+
+dispute_resolution:
+  common_forums:
+    - "Tribunais nacionais de cada estado-membro (Reg. Bruxelas I Bis: competência baseada em domicílio do réu ou eleição de foro)"
+    - "CJUE (Tribunal de Justiça da UE) — prejudiciais, mas não julgamento de contratos privados"
+    - "ODR Platform (Online Dispute Resolution — ec.europa.eu/consumers/odr) para disputas B2C online"
+  common_arbitration:
+    - "ICC (International Chamber of Commerce — Paris): câmara mais usada globalmente para contratos UE"
+    - "DIS (Deutsche Institution für Schiedsgerichtsbarkeit — Frankfurt/Alemanha)"
+    - "SCC (Stockholm Chamber of Commerce — Suécia): preferido para contratos com partes do Leste Europeu e Russia"
+    - "SIAC (Singapura) e LCIA (Londres) também amplamente aceitos por partes europeias"
+    - "CEPANI (Bélgica), NCC (Netherlands Commercial Court), VIAC (Viena)"
+  international_arbitration: "Sem câmara supranacional UE; partes europeias tipicamente escolhem ICC ou LCIA; seats comuns: Paris, Genebra, Amsterdã, Viena, Frankfurt; NY Convention ratificada por todos os EM"
+  enforcement: "Sentenças judiciais intra-UE: Reg. Bruxelas I Bis — reconhecimento automático (abolição de exequatur); sentenças de países terceiros: lei nacional de cada EM; sentenças arbitrais: NY Convention (todos os EM são membros)"
+
+consumer_law:
+  framework: "Harmonização mínima via diretivas — cada EM pode prever proteções adicionais; Diretiva 2011/83/UE (direitos dos consumidores), Diretiva 2019/770/UE e 2019/771/UE (conteúdo e bens digitais), Diretiva 2005/29/CE (práticas comerciais desleais); órgão nacional de defesa do consumidor em cada EM"
+  key_laws:
+    - "Diretiva 2011/83/UE (direitos dos consumidores)"
+    - "Diretiva 2019/770/UE (conteúdos e serviços digitais)"
+    - "Diretiva 2019/771/UE (venda de bens com elementos digitais)"
+    - "Diretiva 2005/29/CE (práticas comerciais desleais)"
+    - "Diretiva 93/13/CEE (cláusulas abusivas em contratos de consumo)"
+    - "Regulamento (UE) 2022/2065 (DSA — plataformas digitais e proteção do consumidor online)"
+  b2c_critical:
+    - "Direito de arrependimento: 14 dias para contratos à distância e fora do estabelecimento (Diretiva 2011/83/UE) — sem penalização"
+    - "Conteúdos digitais e SaaS: Diretiva 2019/770 — garantia legal de conformidade, atualizações obrigatórias, direito de resolução"
+    - "Cláusulas abusivas: Diretiva 93/13/CEE — nulidade de cláusulas que criam desequilíbrio significativo em detrimento do consumidor; lista negra e cinzenta"
+    - "DSA (Digital Services Act): plataformas intermediárias com >45M usuários na UE = Very Large Online Platforms — obrigações extras de due diligence, transparência algorítmica, auditoria anual"
+    - "GDPR: consentimento de dados pessoais de menores <16 anos (ou <13-16 conforme EM) exige consentimento parental"
+
+fiscal:
+  value_added: "VAT (IVA) varia por estado-membro: min 15% (regra mínima UE), máximo 27% (Hungria); taxas mais comuns: DE 19%, FR 20%, ES 21%, IT 22%, NL 21%, PL 23%; B2B cross-border intra-UE: reverse charge mechanism (adquirente declara e deduz — VAT Information Exchange System, VIES); B2C digital services (OSS — One-Stop-Shop): fornecedor declara VAT de todos os EM numa única declaração (Reg. UE 2017/2455, vigente jul/2021); threshold €10.000/ano para OSS"
+  withholding: "WHT intra-UE: Diretiva Juros e Royalties (2003/49/CE) — isenção de WHT para pagamentos de juros e royalties entre empresas associadas de EM diferentes (participação mínima 25%); Diretiva Matriz-Filial (2011/96/UE) — isenção de WHT sobre dividendos intra-UE; fora da UE: WHT varia por EM e CDT bilateral"
+  b2b_services: "B2B intra-UE: reverse charge para serviços gerais (place of supply = lugar do adquirente — Reg. UE 282/2011); exportação para fora da UE: zero-rated (mas verificar regras de place of supply); Pilar 2 OCDE (GMT — Global Minimum Tax de 15%): Diretiva (UE) 2022/2523, implementada em todos os EM para grupos com receita >€750M"
+
+formalities:
+  signature: "eIDAS — QES válida em todos os EM para qualquer contrato salvo exceções legais específicas; AdES amplamente aceita; nenhum requisito de forma supranacional para contratos comerciais B2B — verificar lei nacional do contrato"
+  notarization: "Varia por EM e tipo de ato; via de regra: imóveis (escritura pública obrigatória na maioria dos EM), constituição de sociedades de responsabilidade limitada (DE: GmbH exige notarização; FR/IT: SAS/SRL menos formal), contratos de hipoteca; apostilamento (Convenção de Haia 1961) para uso fora da UE"
+  language: "Regulamento Bruxelas I Bis: processos em tribunais nacionais — idioma do foro; Regulamento Roma I: contrato válido em qualquer idioma; consumidores: Diretiva 2011/83/UE — informação pré-contratual no idioma do EM do consumidor; GDPR: avisos de privacidade no idioma do titular dos dados"
+  registration: "Empresa: Diretiva de Digitalização 2019/1151/UE — registro empresarial e publicidade online harmonizados; marcas: EUIPO (marca comunitária — um registro cobre todos os 27 EM); patentes europeias: EPO (depois validação nacional) ou Patente Unitária UE (desde jun/2023 — cobre 17 EM); imóveis: registro nacional de cada EM"
+
+red_flags:
+  - "GDPR: multas até €20M ou 4% do volume de negócios global anual (o que for maior); DPA de lead supervisory authority pode iniciar investigação de ofício; representante art. 27 GDPR obrigatório para entidades fora da UE que processam dados de titulares UE sem estabelecimento na UE; GDPR é extraterritorial"
+  - "DSA/DMA (2023/2024): Digital Services Act — qualquer intermediário online com usuários na UE tem obrigações de transparência, notice-and-takedown e relatórios; DMA (Digital Markets Act) — gatekeepers designados (Apple, Google, Meta, Amazon, etc.) têm obrigações ex ante — impacto em contratos de distribuição digital"
+  - "DORA (Digital Operational Resilience Act — desde jan/2025): entidades financeiras reguladas na UE + seus ICT third-party providers estratégicos (cloud, dados, software) — contratos devem incluir cláusulas DORA obrigatórias (art. 30): exit strategy, auditoria, SLA, localização de dados, continuidade; mapeamento de CTPP (critical ICT third-party providers)"
+  - "Cláusulas de não-concorrência pós-emprego: varia por EM; França e Alemanha: compensação obrigatória (50% do salário base — FR; valor razoável — DE); máximo 2 anos comum na maioria dos EM; Holanda: cláusula em contrato de trabalho com justificativa escrita obrigatória (Código Civil NL 2023)"
+  - "Pilar 2 OCDE (GMT 15%): Diretiva (UE) 2022/2523 — todos os EM implementando para anos fiscais a partir de 2024; grupos com revenue >€750M: verifique GloBE rules, QDMTT, IIR e UTPR por EM; impacto em estruturas de holding, royalties e preços de transferência"
+  - "AI Act (Regulamento UE 2024/1689 — Lei de IA): em vigor ago/2024, com período de transição por categoria de risco; proibições: fev/2025; obrigações sistemas de alto risco: ago/2026; fornecedores de sistemas de IA classificados como 'alto risco' têm obrigações de compliance, documentação e auditoria; impacto em contratos de software com IA"
+
+recommended_clauses:
+  governing_law: "Lei de um EM específico — escolha livre entre B2B (Roma I art. 3); opções comuns: lei inglesa (mesmo pós-Brexit, amplamente escolhida), lei alemã, lei suíça (neutra); para consumidores: lei do EM de residência habitual é imperativa (Roma I art. 6); especificar 'excluding its conflict of laws rules'"
+  arbitration: "ICC (Paris) para contratos de alto valor; DIS (Frankfurt) para partes alemãs; SCC (Estocolmo) para partes nórdicas/Leste Europeu; seat recomendado: Paris, Genebra, Amsterdã ou Frankfurt; incluir cláusula expedited procedure para disputas <€1M; confidencialidade expressa"
+  indemnification: "Indemnification mútua para violações do GDPR (art. 82 — responsabilidade solidária de controller e processor); DORA indemnification se aplicável; cap baseado em fees (excluindo violações de data protection, IP e confidencialidade que podem ser uncapped); exclusão de danos indiretos — válida em B2B salvo dolo/culpa grave"
+  ip_assignment: "Cessão de direitos autorais: varia por EM — FR: direitos morais inalienáveis (mesmo após cessão patrimonial); DE: autor retém Urheberrecht, cede apenas Nutzungsrechte (direitos de uso); UK: works-for-hire mais próximo do US; para certeza pan-europeia: cessão de todos os direitos de exploração em todos os territórios + waiver de direitos morais onde permitido; registro de marca EUIPO para cobertura UE em um registro"

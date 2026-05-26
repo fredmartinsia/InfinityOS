@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  sanitize:
+    name: Gate de sanitização (zero vazamento)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Gate de sanitização
+        run: bash scripts/sanitize-check.sh
+
+  gitleaks:
+    name: gitleaks (segredos)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rodar gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITLEAKS_CONFIG: .gitleaks.toml
+
+  shell:
+    name: Lint dos scripts (shellcheck) + syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: shellcheck
+        run: |
+          shellcheck -S warning install.sh uninstall.sh \
+            installer/lib/*.sh installer/steps/*.sh scripts/*.sh || true
+      - name: bash -n (syntax)
+        run: |
+          for f in install.sh uninstall.sh installer/lib/*.sh installer/steps/*.sh scripts/*.sh; do
+            bash -n "$f"
+          done
+
+  install-dryrun:
+    name: Instalação a seco (sandbox)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rodar instalador em sandbox (sem rede)
+        run: |
+          export CLAUDE_HOME="$RUNNER_TEMP/.claude"
+          export DEFAULT_VAULT_PATH="$RUNNER_TEMP/vault"
+          export CLAUDE_RAG_CACHE_DIR="$RUNNER_TEMP/.claude/cache"
+          export INFINITE_OS_SKIP_CLIS=1 INFINITE_OS_SKIP_MODELS=1 INFINITE_OS_SKIP_AIOX=1 INFINITE_OS_SKIP_PLUGINS=1
+          bash install.sh -y
+      - name: Validar resultado
+        run: |
+          test -f "$RUNNER_TEMP/.claude/settings.json"
+          test "$(ls -1d "$RUNNER_TEMP"/.claude/commands/*/ | wc -l)" -ge 15
+          test "$(ls -1d "$RUNNER_TEMP"/vault/CLONES/*/ | wc -l)" -ge 50

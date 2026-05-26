@@ -1,0 +1,53 @@
+# ============================================================================
+#  infinite-os — tiers de hardware → modelos locais recomendados (Ollama)
+#  Usado pelo passo 20-models.sh (model-advisor) para recomendar o que baixar.
+#  O instalador detecta RAM/GPU e cruza com estes tiers.
+# ============================================================================
+
+tiers:
+  - id: minimal
+    min_ram_gb: 0
+    max_ram_gb: 8
+    can_run_local: false
+    note: "RAM insuficiente para um modelo local confortável. Prefira usar nuvem (Claude/Gemini)."
+    recommended: []
+    optional: ["qwen2.5:3b"]      # cabe apertado; só se a pessoa insistir
+
+  - id: light
+    min_ram_gb: 8
+    max_ram_gb: 16
+    can_run_local: true
+    note: "Dá para um modelo 7B de código com folga moderada."
+    recommended: ["qwen2.5-coder:7b"]
+    optional: ["llama3.1:8b", "qwen2.5:7b"]
+
+  - id: standard
+    min_ram_gb: 16
+    max_ram_gb: 32
+    can_run_local: true
+    note: "Confortável para 14B; bom equilíbrio qualidade/custo."
+    recommended: ["qwen2.5-coder:14b"]
+    optional: ["qwen3-coder:14b", "qwen2.5-coder:7b"]
+
+  - id: power
+    min_ram_gb: 32
+    max_ram_gb: 64
+    can_run_local: true
+    note: "Roda 30B de código (o sweet spot para código)."
+    recommended: ["qwen3-coder:30b"]
+    optional: ["qwen2.5-coder:14b"]
+
+  - id: workstation
+    min_ram_gb: 64
+    max_ram_gb: 100000
+    can_run_local: true
+    note: "Folga para 30B+ e múltiplos modelos carregados."
+    recommended: ["qwen3-coder:30b"]
+    optional: ["qwen2.5-coder:32b"]
+
+# Bônus por GPU dedicada / Apple Silicon (unified memory):
+# se houver GPU forte (>= 16 GB VRAM) ou Apple Silicon, o advisor pode subir um tier.
+gpu_bonus:
+  apple_silicon: 1     # M-series: sobe 1 tier
+  vram_gb_threshold: 16
+  vram_bonus: 1

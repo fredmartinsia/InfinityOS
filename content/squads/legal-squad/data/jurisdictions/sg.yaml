@@ -1,0 +1,90 @@
+jurisdiction:
+  code: SG
+  name: "Singapura"
+  legal_system: common_law
+  language: ["en"]
+
+data_protection:
+  framework: "PDPA 2012 (Personal Data Protection Act 2012 — Act 26 of 2012), com emendas significativas pela PDPA Amendment Act 2020 (em vigor 1 fev/2021) e PDPA Amendment Act 2021; PDPC (Personal Data Protection Commission) é o supervisor; framework baseado em opt-out + consentimento; sem adequacy regime formal mas ativo no APEC CBPR (Cross-Border Privacy Rules) desde 2012"
+  key_laws:
+    - "Personal Data Protection Act 2012 (PDPA — Cap. 26)"
+    - "PDPA Amendment Act 2020 (emendas de consentimento, breach notification, etc.)"
+    - "PDPA Amendment Act 2021 (mandatory breach notification, enhanced enforcement, data portability)"
+    - "Advisory Guidelines on Key Concepts (PDPC — atualizadas periodicamente)"
+    - "Computer Misuse Act 1993 (Cap. 50A)"
+    - "MAS Technology Risk Management Guidelines 2021 (setor financeiro)"
+  supervisory_authority: "PDPC (Personal Data Protection Commission) — Singapore Economic Development Board oversight; enforcement ativo; multas até SGD 1M ou 10% do annual turnover anual local (o que for maior — post-2021 amendment para organizações com annual turnover >SGD 10M)"
+  dpa_equivalent: "Data Processing Agreement: não formalmente mandatório pela PDPA mas altamente recomendado e prática de mercado padrão; obrigação de contratação de processadores com proteções adequadas (PDPA s.4(3)); MAS TRM exige contratos formais com third-party service providers para entidades financeiras"
+  international_transfers: "PDPA s.26: organizações devem garantir proteção comparável antes de transferir dados ao exterior; mecanismos: (1) contractual data protection clauses (pDPA standard clauses — PDPC published templates); (2) binding corporate rules (BCRs); (3) APEC CBPR/PRP certification; sem lista formal de países adequados mas SG reconhece DE FACTO os países com GDPR; adequacy de facto para EU, UK, US (DPF), CH, JP"
+
+contract_law:
+  basis: "Singapore Contract Act (Cap. 53) — codificação do common law inglês adaptado; Misrepresentation Act (Cap. 390); Sale of Goods Act (Cap. 393); courts singaporeanos seguem English case law como persuasive authority mas têm desenvolvido jurisprudência própria (especialmente SGHC e SGCA)"
+  key_codes:
+    - "Contracts Act (Cap. 53)"
+    - "Sale of Goods Act (Cap. 393)"
+    - "Supply of Goods Act (Cap. 394)"
+    - "Misrepresentation Act (Cap. 390)"
+    - "Unfair Contract Terms Act (UCTA — Cap. 396)"
+    - "Consumer Protection (Fair Trading) Act (CPFTA — Cap. 52A)"
+    - "Electronic Transactions Act (ETA — Cap. 88)"
+  statute_of_frauds: "Civil Law Act s.6: contratos para venda de propriedade imobiliária, garantias de terceiros devem ser por escrito; regra geral para contratos comerciais: liberdade de forma; contratos de alto valor: recomendado por escrito para evitar parole evidence rule"
+  typical_governing_law:
+    - "Singapore law — neutro, sofisticado, amplamente aceito pela comunidade de negócios ASEAN e global"
+    - "English law — também amplamente escolhido por partes internacionais com conexão SG"
+    - "Singapore law preferred: SIAC, Singapore courts, Singapore seat — ecossistema coerente"
+  e_signature:
+    valid: true
+    framework: "Electronic Transactions Act 2010 (ETA Cap. 88) — assinaturas eletrônicas válidas para maioria dos contratos; distingue: assinatura eletrônica simples (válida), e assinatura eletrônica segura (maior presunção probatória — com certificado digital de CA acreditada); exceções: testamentos, trusts sobre imóveis, negociable instruments; SingPass/Myinfo para autenticação digital governamental; DocuSign e Adobe Sign amplamente aceitos em contratos comerciais"
+
+dispute_resolution:
+  common_forums:
+    - "Singapore Courts: High Court (General Division + Appellate Division); Court of Appeal (jurisdição final); Singapore International Commercial Court (SICC — disputas internacionais em inglês, juízes de common law e civil law)"
+    - "Small Claims Tribunals (SCT — disputas consumidor até SGD 20.000)"
+    - "Employment Claims Tribunals (ECT — disputas trabalhistas até SGD 30.000)"
+  common_arbitration:
+    - "SIAC (Singapore International Arbitration Centre) — hub ASEAN e global; SIAC Rules 2025; um dos top 3 centros globais de arbitragem"
+    - "SIMC (Singapore International Mediation Centre) — mediação internacional"
+    - "ICC Singapore (escritório regional ICC)"
+    - "WIPO Arbitration and Mediation Centre Singapore (IP disputes)"
+  international_arbitration: "Singapore = seat de arbitragem preferencial para disputas ASEAN, China-ASEAN, India-ASEAN; International Arbitration Act 1994 (IAA, Cap. 143A) — alinhado com UNCITRAL Model Law; Singapore é membro da NY Convention desde 1986; SICC para disputas judiciais internacionais sem arbitragem"
+  enforcement: "Convenção de Nova Iorque ratificada (IAA Cap. 143A implementa); enforcement de sentenças arbitrais estrangeiras: via IAA e court leave — processo relativamente eficiente (4-8 semanas); enforcement de sentenças judiciais estrangeiras: Reciprocal Enforcement of Foreign Judgments Act (REFJA) — lista restrita de países (UK, outros); para países não-listados: common law action on judgment debt"
+
+consumer_law:
+  framework: "Consumer Protection (Fair Trading) Act (CPFTA Cap. 52A) — proteção contra práticas comerciais desleais e false representations; Lemon Law (emenda 2012 ao CPFTA) para bens defeituosos; MAS Financial Advisory Industry Review para serviços financeiros a consumidores"
+  key_laws:
+    - "Consumer Protection (Fair Trading) Act (CPFTA Cap. 52A)"
+    - "Sale of Goods Act (Cap. 393) — implied terms de qualidade e fitness"
+    - "Unfair Contract Terms Act (UCTA Cap. 396) — reasonableness test"
+    - "MAS Financial Advisers Act (FAA Cap. 110) para serviços financeiros"
+    - "Competition and Consumer Commission of Singapore (CCCS) guidelines"
+  b2c_critical:
+    - "CPFTA: unfair practices = civil remedy (rescisão + reembolso) e enforcement pela CASE (Consumers Association of Singapore)"
+    - "Lemon Law (CPFTA emenda 2012): comprador pode exigir repair, replacement ou refund dentro de 6 meses após entrega (defeito presumido pré-existente)"
+    - "UCTA: exclusão de responsabilidade por morte ou lesão corporal por negligência — sempre nula; outras exclusões: reasonableness test"
+    - "Contratos de consumo com termos injustos: UCTA + CPFTA — proteção similar ao UK consumer law"
+    - "E-commerce: Electronic Transactions Act + PDPA aplicáveis; sem direito geral de arrependimento (diferente da UE) — depende de política do vendedor ou CPFTA se houver misrepresentation"
+
+fiscal:
+  value_added: "GST (Goods and Services Tax): 9% desde 1 jan/2024 (subiu de 8% em jan/2023, de 7% até dez/2022); exportações: 0% (zero-rated); serviços financeiros: isentos; B2B cross-border services: imported services sujeitos a GST para negócios registrados em SG (reverse charge desde jan/2020); threshold de registro: SGD 1M em taxable turnover/ano"
+  withholding: "WHT para não-residentes: dividendos (single-tier — sem WHT); juros: 15%; royalties: 10%; serviços técnicos/management fees: 17% (corporate tax rate) ou taxa de treaty; SG tem rede de ~100 CDTs incluindo BR (CDT Brasil-Singapura não existe — sem treaty; WHT padrão aplicável), US (WHT reduzido), UK (CDT vigente), China, Índia, Japão, ASEAN; ganhos de capital: isentos (sem capital gains tax)"
+  b2b_services: "Sem imposto de retenção sobre dividendos de saída; WHT sobre royalties e juros pagos ao exterior (reducível via CDT); GST reverse charge para serviços B2B importados desde jan/2020; Singapura tem corporate tax rate de 17% mas com extensive incentivos: Pioneer Certificate, Development and Expansion Incentive (DEI), Financial Sector Incentive (FSI) — taxa efetiva pode ser 5-10% para setores elegíveis"
+
+formalities:
+  signature: "Assinatura eletrônica válida (ETA Cap. 88); contratos sobre imóveis: escrito obrigatório (Conveyancing and Law of Property Act); garantias de terceiros: escrito obrigatório (Civil Law Act s.6); contratos comerciais em geral: liberdade de forma; deeds: requerem forma específica (assinatura, testemunha, entrega); Singapore Academy of Law (SAL) é o corpo profissional legal"
+  notarization: "Commissioner for Oaths e Notary Public (Legal Profession Act) para documentos para uso no exterior; Singapore High Court notariza documentos via Notary Public; apostilamento: Singapura é membro da Convenção de Haia desde 2021 — apostila disponível via Singapore Academy of Law; legalização consular para países não-Haia"
+  language: "Inglês — língua oficial dos negócios e do sistema legal; sem requisito legal de idioma para contratos B2B; contratos com consumidores: devem ser inteligíveis (reasonable consumer standard); contratos bilíngues: especificar versão prevalente"
+  registration: "ACRA (Accounting and Corporate Regulatory Authority): registro de empresas; Bizfile portal; IRAS para registro fiscal; IPOS (Intellectual Property Office of Singapore): registro de marcas, patentes, designs; IPOS é parte do sistema Madrid (marcas), PCT (patentes); Land Titles Register: registro de propriedade imobiliária (Singapore Land Authority)"
+
+red_flags:
+  - "Singapura como holding company/IP holding: estrutura muito comum para APEC — requer substance (empregados, escritório, decisões reais em SG); OECD BEPS e GMT 15% (Pilar 2): SG implementando Qualified Domestic Minimum Top-up Tax (QDMTT) e IIR para grupos com revenue >€750M — impacto em estruturas de baixa tributação"
+  - "PDPA cross-border: transferência de dados para países terceiros — mecanismo contratual (DPA cláusulas PDPC) é o mais comum; sem adequacy formal mas APEC CBPR certification disponível; para fluxo SG→BR: usar standard contractual clauses PDPC; atenção a setores regulados (bancos: MAS TRM exige aprovação para offshore data processing)"
+  - "Distribuição ASEAN via Singapura: empresa SG pode atuar como hub regional mas atividades em mercados locais (ID, TH, PH, VN, MY) exigem presença local e compliance regulatório de cada país — não é possível operar diretamente em toda a ASEAN apenas com entidade SG"
+  - "Non-compete: reasonableness test (scope, duration, geography) aplicado com rigor pelo SGHC; 1-2 anos é defensável para senior employees com acesso a trade secrets; recomendado garden leave remunerado como alternativa; proteção de confidential information via equity (breach of confidence) é mais robusta que non-compete em SG"
+  - "Enforcement de contratos online/e-commerce: Singapore courts receptivos a termos de serviço online (clickwrap/browsewrap) se adequada notificação e oportunidade de leitura — mas standard mais rigoroso para consumidores (UCTA + CPFTA)"
+  - "MAS licensing: atividades financeiras reguladas (payment, lending, investment advisory, crypto) exigem licença MAS antes de operar; Payment Services Act 2019 (PS Act — emendado 2021) regula crypto e digital payment services; non-compliance é offence criminal"
+
+recommended_clauses:
+  governing_law: "Singapore law — escolha natural para contratos com partes ASEAN, China e Índia; neutro, sofisticado, courts excelentes (SICC) e infraestrutura arbitral (SIAC) de classe mundial; especificar 'the laws of Singapore, excluding its conflict of laws rules'"
+  arbitration: "SIAC Rules 2025 com seat em Singapura — padrão para contratos de médio e alto valor; SIAC Expedited Procedure para disputas <SGD 6M; incluir Pre-Arbitral Referee Procedure para medidas urgentes; SIMC para mediação prévia obrigatória (Med-Arb clause inovadora: mediação SIMC → arbitragem SIAC se não resolvido); lingua: inglês"
+  indemnification: "Indemnification por violações do PDPA (breach notification + multas PDPC + third-party claims); cap: 12 meses de fees (típico SG mercado de tech); carve-outs ilimitados para: confidencialidade, IP, fraud, PDPA; exclusão de special, indirect, consequential damages — válida em B2B (UCTA reasonableness test satisfeito para partes sofisticadas); mutual indemnification para IP third-party claims"
+  ip_assignment: "Copyright: Copyright Act 2021 (SG reformou lei em 2021) — obra criada por empregado em curso de emprego pertence ao empregador; obra por contratado: pertence ao contratado salvo acordo escrito; assignment por escrito obrigatório (Copyright Act s.195); moral rights: existem mas waivable; IPOS: registro de marcas e patentes; para proteção ASEAN: ATIGA IP Protocol + registros nacionais em cada país target"

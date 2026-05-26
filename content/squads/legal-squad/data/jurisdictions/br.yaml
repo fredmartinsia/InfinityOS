@@ -1,0 +1,81 @@
+jurisdiction:
+  code: BR
+  name: "Brasil"
+  legal_system: civil_law
+  language: ["pt"]
+
+data_protection:
+  framework: "Lei Geral de Proteção de Dados Pessoais (LGPD) — Lei 13.709/2018, em vigor desde set/2020; sanções administrativas desde ago/2021"
+  key_laws:
+    - "Lei 13.709/2018 (LGPD)"
+    - "Decreto 10.474/2020 (estrutura ANPD)"
+    - "Resolução ANPD CD/ANPD 15/2024 (fiscalização)"
+  supervisory_authority: "Autoridade Nacional de Proteção de Dados (ANPD)"
+  dpa_equivalent: "DPA entre controlador e operador obrigatório (art. 39 LGPD); cláusulas mínimas definidas pela ANPD"
+  international_transfers: "Permitidas via: (1) adequacy decision da ANPD; (2) cláusulas-padrão contratuais (SCCs) aprovadas pela ANPD; (3) normas corporativas globais (BCRs); (4) consentimento específico do titular; (5) cumprimento de obrigação legal; (6) políticas globais aprovadas pela ANPD para grupos econômicos"
+
+contract_law:
+  basis: "Código Civil (Lei 10.406/2002) — autonomia privada, boa-fé objetiva (art. 422), função social do contrato (art. 421)"
+  key_codes:
+    - "Lei 10.406/2002 (Código Civil)"
+    - "Lei 8.078/1990 (Código de Defesa do Consumidor — CDC)"
+    - "Lei 13.874/2019 (Declaração de Direitos de Liberdade Econômica)"
+    - "Lei 9.307/1996 (Lei de Arbitragem)"
+  statute_of_frauds: "Regra geral: contratos acima de 30 salários mínimos devem ser reduzidos a escrito (art. 227 CC); contratos imobiliários exigem escritura pública quando valor supera 30 SM; contratos empresariais: liberdade de forma (Lei 13.874/2019)"
+  typical_governing_law:
+    - "Lei brasileira (obrigatório para relações de consumo e contratos com partes BR sem cláusula internacional)"
+    - "LINDB art. 9: obrigações regidas pela lei do lugar onde constituídas"
+  e_signature:
+    valid: true
+    framework: "MP 2.200-2/2001 (ICP-Brasil — assinatura digital certificada com máxima presunção legal); Lei 14.063/2020 (amplia categorias: simples, avançada e qualificada para atos públicos e privados); padrão ICP-Brasil = assinatura qualificada equivalente a manuscrita"
+
+dispute_resolution:
+  common_forums:
+    - "Justiça Estadual (vara cível — contratos em geral)"
+    - "Justiça Federal (contratos com ente federal ou questão federal)"
+    - "Juizado Especial Cível — JEC (causas até 40 SM)"
+  common_arbitration:
+    - "CAM-CCBC (Centro de Arbitragem e Mediação da Câmara de Comércio Brasil-Canadá)"
+    - "CAMARB (Câmara de Mediação e Arbitragem Empresarial Brasil)"
+    - "FGV — Câmara de Mediação e Arbitragem"
+    - "CIESP/FIESP — Centro de Arbitragem e Mediação"
+  international_arbitration: "ICC (sede São Paulo admitida); ICDR; câmaras internacionais amplamente aceitas — Brasil é membro da Convenção de Nova Iorque desde 2002 (Decreto 4.311/2002)"
+  enforcement: "Convenção de Nova Iorque (1958) ratificada; homologação de sentenças estrangeiras: STJ (art. 105, I, 'i', CF/88); prazo médio 6-18 meses"
+
+consumer_law:
+  framework: "CDC (Lei 8.078/1990) — norma de ordem pública, inderrogável por contrato; aplicação ampla incluindo serviços digitais e SaaS B2C"
+  key_laws:
+    - "Lei 8.078/1990 (CDC)"
+    - "Decreto 7.962/2013 (comércio eletrônico)"
+    - "Lei 14.181/2021 (superendividamento)"
+  b2c_critical:
+    - "Direito de arrependimento: 7 dias corridos para compras fora do estabelecimento (art. 49 CDC)"
+    - "Inversão do ônus da prova em favor do consumidor (art. 6, VIII)"
+    - "Nulidade de cláusulas abusivas (art. 51): limitação de responsabilidade, renúncia a direitos, foro de eleição prejudicial"
+    - "Garantia legal: 30 dias (produtos não-duráveis) / 90 dias (duráveis) — não pode ser excluída"
+    - "Responsabilidade solidária de toda a cadeia de fornecimento"
+
+fiscal:
+  value_added: "ISS (Imposto Sobre Serviços): municipal, 2–5% sobre prestação de serviços; PIS (0,65–1,65%) + COFINS (3–7,6%) sobre receita; regime cumulativo (Simples/Presumido) ou não-cumulativo (Lucro Real)"
+  withholding: "IRRF para não-residentes: 15% (países sem CDT — rendimentos em geral); 25% (paraísos fiscais — lista IN RFB 1.037/2010); CIDE 10% sobre remessa de royalties e assistência técnica; IOF sobre operações de câmbio (geralmente 0,38% para remessas)"
+  b2b_services: "Importação de serviços: incidência de ISS (2–5% pelo tomador), PIS-Importação (1,65%) e COFINS-Importação (7,6%); CIDE para contratos de tecnologia/royalties; retenção IRRF conforme tabela progressiva por tipo de serviço"
+
+formalities:
+  signature: "Regra geral: assinatura simples (física ou eletrônica) suficiente para contratos comerciais; assinatura qualificada ICP-Brasil recomendada para maior segurança jurídica; 2 testemunhas tornam contrato título executivo extrajudicial (art. 784, III CPC)"
+  notarization: "Obrigatória para: escrituras imobiliárias; procurações para atos de disposição; reconhecimento de firma exigido para alguns contratos societários; apostilamento (Convenção de Haia) para uso no exterior"
+  language: "Português obrigatório para contratos com consumidores brasileiros; contratos B2B internacionais podem ser bilíngues; versão portuguesa prevalece em caso de conflito"
+  registration: "Registro de contratos de cessão de IP no INPI para oponibilidade a terceiros; contratos de transferência de tecnologia: averbação no INPI obrigatória para remessa de royalties ao exterior (IN INPI 70/2017); contratos imobiliários: registro no Cartório de Registro de Imóveis"
+
+red_flags:
+  - "Prescrição: ação de cobrança de dívida = 3 anos (art. 206, §3, V CC); inadimplemento contratual geral = 10 anos (art. 205); prazo corre da data do inadimplemento — monitorar rigorosamente"
+  - "CDC imperativo em B2C: cláusulas de limitação de responsabilidade, foro estrangeiro e renúncia a direitos são nulas quando contraparte é consumidor; não há exceção negocial"
+  - "Eleição de foro estrangeiro em contratos com partes brasileiras: eficácia limitada — Judiciário brasileiro pode afirmar competência (arts. 21-25 CPC/2015); preferir arbitragem internacional para maior previsibilidade"
+  - "LGPD: multas até 2% do faturamento no BR (limite R$ 50M por infração); ANPD em fase de maturação regulatória — atenção às resoluções em andamento"
+  - "Contratos de não-competição: válidos mas devem ter prazo razoável (2 anos recomendado), escopo geográfico e remuneração compensatória adequada; sem prazo definido, risco de nulidade"
+  - "Remessa de royalties ao exterior: limitação fiscal — dedutibilidade máxima 5% da receita líquida para contratos de transferência de tecnologia (Portaria MF 436/1958 e legislação correlata)"
+
+recommended_clauses:
+  governing_law: "Lei brasileira para contratos com partes locais; para B2B internacional, admissível escolha de lei estrangeira com cláusula de arbitragem internacional — senão aplica-se LINDB art. 9"
+  arbitration: "Câmara CAM-CCBC ou CAMARB para disputas domésticas; ICC com sede em São Paulo para internacionais; valor da causa > R$ 1M recomenda arbitragem; incluir mediação prévia obrigatória (CPCL art. 334)"
+  indemnification: "Indenização por perdas e danos: perdas diretas + lucros cessantes (art. 402 CC); cláusula penal moratória (art. 408) e compensatória (art. 409) com limites — não pode exceder obrigação principal (art. 412); juros moratórios legais: 1% a.m. + correção pelo IPCA/IGP-M"
+  ip_assignment: "Cessão de direitos autorais deve ser expressa e específica (Lei 9.610/98, art. 49); software: Lei 9.609/98 — titularidade do empregador em relação de emprego (art. 4); cessão de patentes: registro INPI necessário para oponibilidade; works-for-hire: contrato deve especificar modalidades e territórios cedidos"

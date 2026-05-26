@@ -1,0 +1,223 @@
+name: business-plan-squad
+version: "1.0.0"
+short-title: "Business Plan Squad"
+description: "Squad universal de 7 especialistas reais + orquestrador para construção de Business Plans rigorosos de qualquer tipo de negócio (físico, digital, e-commerce, hotelaria, indústria, serviço) em qualquer geografia (PT, BR, EU, EUA, Dubai, Ásia). Cobre validação de mercado, modelo de negócio, TAM/SAM/SOM disciplinado MIT, estratégia competitiva Harvard, finanças NYU Stern, escala Lean e diferenciação radical Thiel. Rotear para capital-squad quando aplicação a fundo perdido em Portugal (PRR, PT 2030, BPF)."
+author: "o usuário"
+license: MIT
+slashPrefix: "business-plan-squad"
+language: pt-BR
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - business-plan
+  - plano-de-negocio
+  - customer-development
+  - lean-startup
+  - business-model-canvas
+  - value-proposition
+  - tam-sam-som
+  - market-sizing
+  - competitive-strategy
+  - 5-forcas
+  - cadeia-de-valor
+  - dcf
+  - capex
+  - valuation
+  - financial-projections
+  - mvp
+  - pivot
+  - monopoly
+  - moat
+  - defensibility
+  - go-to-market
+  - universal
+  - replicavel-global
+
+components:
+  agents:
+    - business-plan-chief.md
+    - steve-blank.md
+    - eric-ries.md
+    - alexander-osterwalder.md
+    - bill-aulet.md
+    - michael-porter.md
+    - aswath-damodaran.md
+    - peter-thiel.md
+  tasks:
+    - create-business-plan.md
+    - analyze-market.md
+    - build-financials.md
+    - validate-hypothesis.md
+    - route-to-funding.md
+  checklists:
+    - output-quality.md
+  data:
+    - routing-catalog.yaml
+
+entry_agent: business-plan-chief
+
+tiers:
+  tier_0_orchestrator:
+    agents:
+      - business-plan-chief
+    role: "Discovery profundo, checkpoint de roteamento para capital-squad, orquestração sequencial dos 7 especialistas, consolidação do BP final."
+
+  tier_1_validacao:
+    agents:
+      - steve-blank      # Customer Development
+      - eric-ries        # Lean Startup, MVP, Pivot
+    role: "Validar hipóteses do negócio ANTES de escrever o plano. Get out of the building + Build-Measure-Learn."
+
+  tier_1_modelo:
+    agents:
+      - alexander-osterwalder  # Business Model Canvas + Value Proposition Canvas
+    role: "Desenhar o modelo de negócio em 9 blocos visuais. VPC para encaixe produto-cliente."
+
+  tier_1_mercado:
+    agents:
+      - bill-aulet       # MIT Disciplined Entrepreneurship — TAM/SAM/SOM
+      - michael-porter   # Harvard — 5 Forças, Cadeia de Valor, posicionamento
+    role: "Dimensionar mercado (top-down + bottom-up) e analisar competição estrutural."
+
+  tier_1_financas:
+    agents:
+      - aswath-damodaran  # NYU Stern — DCF, CAPEX, projeções, valuation
+    role: "Toda parte financeira: CAPEX, projeções 5 anos, DCF, WACC, sensibilidades."
+
+  tier_1_diferenciacao:
+    agents:
+      - peter-thiel       # Zero to One, monopólios, last mover, defensibility
+    role: "Vantagem competitiva sustentável. 'Por que esse negócio em específico vai vencer e não ser imitado?'"
+
+routing_matrix:
+  fundo_perdido_portugal:
+    primary: capital-chief
+    secondary: business-plan-chief
+    triggers: ["PRR", "Portugal 2030", "PT 2030", "Compete 2030", "BPF", "Banco de Fomento", "IFD", "fundo perdido", "subvenção PT", "incentivo IAPMEI", "candidatura PT", "RFAI", "SIFIDE"]
+    external_squad: capital-squad
+    handoff: "Quando o usuário sinaliza intenção de captar via fundos públicos portugueses, o business-plan-chief gera handoff documentado e roteia para /capital-chief. O capital-squad executa o discovery específico de captação e retorna escopo. business-plan-chief pode ser reativado depois para consolidar."
+
+  validacao_cliente:
+    primary: steve-blank
+    secondary: eric-ries
+    triggers: ["validação", "hipótese", "cliente", "MVP", "produto-mercado", "fit", "early adopters", "get out of the building", "customer discovery"]
+
+  mvp_iteracao:
+    primary: eric-ries
+    secondary: steve-blank
+    triggers: ["MVP", "minimum viable product", "iteração", "pivot", "Build-Measure-Learn", "innovation accounting", "cohort", "validated learning"]
+
+  modelo_negocio:
+    primary: alexander-osterwalder
+    secondary: null
+    triggers: ["business model canvas", "BMC", "proposta de valor", "value proposition", "VPC", "modelo de negócio", "9 blocos", "monetização", "revenue stream"]
+
+  tam_sam_som:
+    primary: bill-aulet
+    secondary: null
+    triggers: ["TAM", "SAM", "SOM", "tamanho de mercado", "market sizing", "beachhead", "addressable market", "end user profile", "DMU", "decision making unit", "disciplined entrepreneurship", "24 steps"]
+
+  analise_competitiva:
+    primary: michael-porter
+    secondary: null
+    triggers: ["5 forças", "five forces", "concorrência", "competidor", "cadeia de valor", "value chain", "estratégia competitiva", "posicionamento", "trade-off", "vantagem competitiva", "Porter", "diferenciação", "custo", "foco", "nicho"]
+
+  financeiro_valuation:
+    primary: aswath-damodaran
+    secondary: null
+    triggers: ["DCF", "valuation", "CAPEX", "OPEX", "WACC", "CAPM", "beta", "terminal value", "NPV", "IRR", "payback", "projeção financeira", "fluxo de caixa", "FCF", "EBITDA", "múltiplos", "comparáveis", "sensibilidade", "equity risk premium"]
+
+  diferenciacao_defensibilidade:
+    primary: peter-thiel
+    secondary: null
+    triggers: ["monopólio", "diferenciação", "defensibilidade", "moat", "zero to one", "secret", "last mover", "network effect", "proprietary tech", "brand", "economies of scale", "founder vision", "contrarian"]
+
+  default:
+    primary: business-plan-chief
+    description: "Ponto de entrada padrão. Faz onboarding profundo + roteia."
+
+advisors:
+  vault_clones_base: "{{VAULT_PATH}}/CLONES/"
+  clones:
+    steve-blank:
+      vault_path: "{{VAULT_PATH}}/CLONES/steve-blank/"
+      core_files:
+        - steve-blank_06_KNOWLEDGE_COMPLETE.md
+        - steve-blank_07_THINKING_COMPLETE.md
+        - steve-blank_05_COMMUNICATION_COMPLETE.md
+        - steve-blank_04_PSYCHOLOGY_COMPLETE.md
+        - steve-blank_10_EXAMPLES.md
+    eric-ries:
+      vault_path: "{{VAULT_PATH}}/CLONES/eric-ries/"
+      core_files:
+        - eric-ries_06_KNOWLEDGE_COMPLETE.md
+        - eric-ries_07_THINKING_COMPLETE.md
+        - eric-ries_05_COMMUNICATION_COMPLETE.md
+        - eric-ries_04_PSYCHOLOGY_COMPLETE.md
+        - eric-ries_10_EXAMPLES.md
+    alexander-osterwalder:
+      vault_path: "{{VAULT_PATH}}/CLONES/alexander-osterwalder/"
+      core_files:
+        - alexander-osterwalder_06_KNOWLEDGE_COMPLETE.md
+        - alexander-osterwalder_07_THINKING_COMPLETE.md
+        - alexander-osterwalder_05_COMMUNICATION_COMPLETE.md
+        - alexander-osterwalder_04_PSYCHOLOGY_COMPLETE.md
+        - alexander-osterwalder_10_EXAMPLES.md
+    bill-aulet:
+      vault_path: "{{VAULT_PATH}}/CLONES/bill-aulet/"
+      core_files:
+        - bill-aulet_06_KNOWLEDGE_COMPLETE.md
+        - bill-aulet_07_THINKING_COMPLETE.md
+        - bill-aulet_05_COMMUNICATION_COMPLETE.md
+        - bill-aulet_04_PSYCHOLOGY_COMPLETE.md
+        - bill-aulet_10_EXAMPLES.md
+    michael-porter:
+      vault_path: "{{VAULT_PATH}}/CLONES/michael-porter/"
+      core_files:
+        - michael-porter_06_KNOWLEDGE_COMPLETE.md
+        - michael-porter_07_THINKING_COMPLETE.md
+        - michael-porter_05_COMMUNICATION_COMPLETE.md
+        - michael-porter_04_PSYCHOLOGY_COMPLETE.md
+        - michael-porter_10_EXAMPLES.md
+    aswath-damodaran:
+      vault_path: "{{VAULT_PATH}}/CLONES/aswath-damodaran/"
+      core_files:
+        - aswath-damodaran_06_KNOWLEDGE_COMPLETE.md
+        - aswath-damodaran_07_THINKING_COMPLETE.md
+        - aswath-damodaran_05_COMMUNICATION_COMPLETE.md
+        - aswath-damodaran_04_PSYCHOLOGY_COMPLETE.md
+        - aswath-damodaran_10_EXAMPLES.md
+    peter-thiel:
+      vault_path: "{{VAULT_PATH}}/CLONES/peter-thiel/"
+      core_files:
+        - peter-thiel_06_KNOWLEDGE_COMPLETE.md
+        - peter-thiel_07_THINKING_COMPLETE.md
+        - peter-thiel_05_COMMUNICATION_COMPLETE.md
+        - peter-thiel_04_PSYCHOLOGY_COMPLETE.md
+        - peter-thiel_10_EXAMPLES.md
+
+external_squads:
+  capital-squad:
+    purpose: "Captação de capital em Portugal (BPF + PT 2030 + PRR + IFD + tax planning)"
+    entry: capital-chief
+    when_to_route: "Sempre que o usuário sinalizar intenção de aplicar a fundo perdido ou financiamento estatal português."
+    path: "~/.claude/commands/capital-squad/"
+
+output_base_dir: "./output"
+
+context_loading:
+  required_before_any_action:
+    - "$HOME/CLAUDE.md"
+  recommended:
+    - "Project-level CLAUDE.md (se existir no projeto ativo)"
+    - "{{VAULT_PATH}}/_memoria/"
+    - "company.md ou equivalente no projeto ativo"
+
+quality_gates:
+  onboarding_completion: "business-plan-chief não pode acionar especialistas sem completar as 8 perguntas de onboarding"
+  routing_checkpoint: "Checkpoint de roteamento para capital-squad é obrigatório antes de prosseguir com BP completo"
+  sequential_orchestration: "Especialistas são acionados na ordem prescrita; cada output é validado antes do próximo"
+  final_consolidation: "BP final deve ter as 10 seções padrão preenchidas com substância (zero placeholders)"

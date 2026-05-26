@@ -1,0 +1,14 @@
+InfiniteOS — Licença de Uso Interno (Privada)
+
+Copyright (c) 2026
+
+Este repositório é PRIVADO e destinado ao uso interno da equipe.
+Não é permitida a redistribuição pública sem autorização expressa.
+
+Componentes de terceiros:
+- O framework AIOX NÃO é redistribuído aqui; é instalado pelo usuário final
+  via `npx aiox-core@latest install`, sob a licença do próprio AIOX.
+- Os "clones" são representações de figuras públicas para fins de estudo e
+  produtividade interna; use de forma responsável e conforme as leis aplicáveis.
+
+O software é fornecido "COMO ESTÁ", sem garantias de qualquer tipo.

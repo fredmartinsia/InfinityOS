@@ -1,0 +1,58 @@
+name: design-system-squad
+version: "1.0.0"
+description: "Squad criador de Design Systems profissionais no padrão DESIGN.md de Alan Nicholas. Usa 71 sistemas reais como referência, classifica em archetypes, gera tokens W3C + componentes + preview HTML standalone. Orquestra clones reais de Alan Nicholas, Brad Frost, Nathan Curtis e Erik Spiekermann."
+language: pt-BR
+slashPrefix: "design-system-squad"
+
+entry_agent: design-system-chief
+
+tiers:
+  tier_0_orchestrator:
+    agents: [design-system-chief]
+  tier_1_clones:
+    agents: [alan-nicholas, brad-frost, nathan-curtis, erik-spiekermann]
+  tier_2_specialists:
+    agents: [brand-bridge, reference-engine, voice-writer, quality-auditor]
+
+components:
+  agents:
+    - agents/design-system-chief.md
+    - agents/alan-nicholas.md
+    - agents/brad-frost.md
+    - agents/nathan-curtis.md
+    - agents/erik-spiekermann.md
+    - agents/brand-bridge.md
+    - agents/reference-engine.md
+    - agents/voice-writer.md
+    - agents/quality-auditor.md
+  tasks:
+    - tasks/create.md
+    - tasks/clone.md
+    - tasks/audit.md
+    - tasks/export.md
+  checklists:
+    - checklists/anti-ai-checklist.md
+  data:
+    reference_systems_dir: data/reference-systems
+    archetypes: data/archetypes.yaml
+    anti_patterns: data/anti-patterns.md
+    font_substitutes: data/font-substitutes.md
+    component_canon: data/component-canon.yaml
+    cliche_blacklist: data/cliche-blacklist.md
+  scripts:
+    render_preview: scripts/render-preview.mjs
+
+output:
+  base_dir: "{cwd}/design system"
+  per_brand_subdir: "{brand-slug}"
+  artifacts:
+    - DESIGN.md
+    - preview.html
+    - tokens.json
+    - README.md
+
+cross_squad_dependencies:
+  brand_squad:
+    mode: read-only
+    expected_input: "{cwd}/output/{brand-slug}/brand.md"
+    on_missing: "Falhar e instruir usuário a rodar /brand-chief primeiro"

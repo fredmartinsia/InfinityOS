@@ -1,0 +1,155 @@
+workflow:
+  id: wf-create-new-contract
+  name: "Criação de Novo Contrato"
+  version: "1.0.0"
+  description: |
+    Workflow para criar contratos novos do zero a partir de briefing estruturado.
+    Otimizado para custo: Haiku no draft inicial, Sonnet na especialização,
+    Opus no red-team e quality gate. Aplicável a qualquer tipo de serviço e jurisdição.
+  trigger: "*create-new-contract"
+  entry_agent: legal-chief
+  estimated_duration: "45-75 min"
+  type: sequential
+  model_routing:
+    high: claude-opus-4-5
+    medium: claude-sonnet-4-5
+    low: claude-haiku-4-5
+
+phases:
+  - id: phase_0
+    name: "Briefing Intake"
+    agent: legal-chief
+    model: high
+    task: diagnose.md
+    description: |
+      Legal Chief coleta o briefing completo do contrato:
+      partes, tipo de serviço, jurisdição, valores, duração, escopo, entregáveis.
+      Se algum campo obrigatório estiver faltando, pausa e pergunta antes de prosseguir.
+    required_fields:
+      - parte_prestadora: "Nome, registro (CNPJ/NIF/EIN), endereço, representante"
+      - parte_cliente: "Nome, registro, endereço, representante"
+      - tipo_servico: "tráfego pago | site | e-commerce | landing page | conteúdo | outro"
+      - jurisdicao: "br | pt | us | ae | id | eu | uk | sg | mx"
+      - valor: "Valor mensal ou total, moeda"
+      - duracao: "Meses ou one-off"
+      - escopo: "O que está incluído (bullet points mínimos)"
+      - entregaveis: "O que será produzido e entregue"
+    checkpoint:
+      gate: "Todos os campos obrigatórios preenchidos"
+      user_pause: true
+      pause_message: "⚖️ Briefing completo. Confirme as informações antes de gerar o contrato."
+      veto: "Não iniciar draft sem briefing completo — dados faltantes criam contratos inválidos"
+
+  - id: phase_1
+    name: "Contract Draft"
+    agent: contract-architect
+    model: low
+    task: create-contract.md
+    depends_on: [phase_0]
+    description: |
+      Contract Architect gera o draft completo do contrato usando o briefing confirmado.
+      Aplica template adequado para o tipo de serviço e jurisdição.
+      Inclui todas as seções padrão + deixa marcadores para as fases de especialização.
+    outputs:
+      - contract_draft_v1: "Contrato completo draft — todas as cláusulas, alguns [PLACEHOLDER]"
+      - open_items: "Lista de itens que precisam de especialização (IP, DPA, SLA)"
+
+  - id: phase_2a
+    name: "IP Clause"
+    agent: contract-architect
+    model: medium
+    task: draft-ip-clause.md
+    depends_on: [phase_1]
+    parallel_with: [phase_2b, phase_2c]
+    condition: "tipo_servico in [site, ecommerce, landing, conteudo] OR entregaveis inclui criação intelectual"
+    description: "Gera cláusula IP completa adaptada ao tipo de entregável e jurisdição."
+    outputs:
+      - ip_clause: "Cláusula IP completa pronta para inserção"
+
+  - id: phase_2b
+    name: "DPA Generation"
+    agent: jurisdiction_advisor
+    model: low
+    task: generate-dpa.md
+    depends_on: [phase_1]
+    parallel_with: [phase_2a, phase_2c]
+    condition: "contrato envolve tratamento de dados pessoais de terceiros"
+    description: |
+      Advisor da jurisdição gera DPA completo (LGPD/GDPR/CCPA/etc.)
+      pronto para ser inserido como Anexo II do contrato.
+    routing:
+      br: patricia-peck
+      pt: manuel-lopes-rocha
+      eu: manuel-lopes-rocha
+      outros: jurisdiction-navigator
+    outputs:
+      - dpa_annex: "DPA completo como Anexo II"
+
+  - id: phase_2c
+    name: "Jurisdiction Compliance"
+    agent: jurisdiction_advisor
+    model: medium
+    task: compliance-check.md
+    depends_on: [phase_1]
+    parallel_with: [phase_2a, phase_2b]
+    description: |
+      Verifica se o draft v1 está conforme a legislação da jurisdição:
+      consumer law, fiscal, forma (notarização?), idioma obrigatório.
+    outputs:
+      - jurisdiction_adjustments: "Lista de ajustes obrigatórios para a jurisdição"
+
+  - id: phase_3
+    name: "Integration & Merge"
+    agent: contract-architect
+    model: low
+    task: create-contract.md
+    depends_on: [phase_2a, phase_2b, phase_2c]
+    description: |
+      Contract Architect integra o draft v1 com a cláusula IP, o DPA,
+      e os ajustes de jurisdição. Produz o draft v2 completo e coeso.
+    outputs:
+      - contract_draft_v2: "Contrato completo com todos os elementos integrados"
+
+  - id: phase_4
+    name: "Red-Team Attack"
+    agent: risk-auditor
+    model: high
+    task: red-team-review.md
+    depends_on: [phase_3]
+    description: |
+      Risk Auditor ataca o draft v2 como a contraparte mais difícil.
+      Se encontrar riscos CRITICAL: contrato volta para phase_3 (máx 2 iterações).
+      Se encontrar apenas HIGH/MEDIUM/LOW: produz relatório e segue.
+    outputs:
+      - adversarial_report: "Riscos encontrados por severidade"
+      - approved_for_delivery: "true | false (false = volta para phase_3)"
+    max_iterations: 2
+    iteration_trigger: "critical_risks.count > 0"
+
+  - id: phase_5
+    name: "Final Review & Delivery"
+    agent: legal-chief
+    model: high
+    task: review.md
+    depends_on: [phase_4]
+    condition: "approved_for_delivery == true"
+    description: |
+      Legal Chief aplica o output-quality.md checklist completo.
+      Produz verdict PASS/REVISE/FAIL e entrega o pacote final.
+    outputs:
+      - verdict: "PASS | REVISE | FAIL"
+      - contract_final: "Contrato final aprovado"
+      - annexes: "DPA (se gerado) + SLA (se gerado)"
+      - execution_guide: "Instruções para assinatura: partes, representantes, testemunhas, método (eletrônico/físico)"
+    checkpoint:
+      gate: "verdict == PASS"
+      user_pause: true
+      pause_message: "⚖️ Contrato final pronto para revisão. Aprovação antes de enviar ao cliente."
+
+completion_criteria:
+  - "Briefing completo confirmado pelo usuário"
+  - "Draft gerado com todas as cláusulas padrão"
+  - "IP clause, DPA e ajustes de jurisdição integrados"
+  - "Red-team sem flags CRITICAL"
+  - "Quality gate PASS"
+  - "Execution guide entregue"

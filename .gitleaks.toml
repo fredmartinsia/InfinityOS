@@ -1,0 +1,16 @@
+# Config do gitleaks para o infinite-os.
+# Estende as regras padrão e ignora falsos-positivos conhecidos.
+title = "infinite-os gitleaks"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Falsos-positivos conhecidos (exemplos de documentação)"
+regexes = [
+  '''your-secret-key''',          # exemplo em best-practices/technical-writing.md
+  '''AWS_SECRET_ACCESS_KEY="your-secret-key"''',
+]
+paths = [
+  '''installer/manifest/install-manifest\.yaml''',  # só hashes SHA256
+]

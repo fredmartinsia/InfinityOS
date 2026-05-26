@@ -1,0 +1,91 @@
+jurisdiction:
+  code: US
+  name: "Estados Unidos da América"
+  legal_system: common_law
+  language: ["en"]
+
+data_protection:
+  framework: "Sem lei federal omnibus de privacidade; sistema de patchwork setorial federal + estadual. Leis setoriais federais: HIPAA (saúde), COPPA (menores <13 anos), GLBA (financeiro), FERPA (educação), FCRA (crédito). Leis estaduais omnibus crescentes desde 2023"
+  key_laws:
+    - "CCPA / CPRA (California Consumer Privacy Act / California Privacy Rights Act — 2018/2020, em vigor 2023)"
+    - "VCDPA (Virginia Consumer Data Protection Act — 2023)"
+    - "CPA (Colorado Privacy Act — 2023)"
+    - "CTDPA (Connecticut Data Privacy Act — 2023)"
+    - "UCPA (Utah Consumer Privacy Act — 2023)"
+    - "Texas TDPSA (2024), Oregon OCPA (2024), Montana MCDPA (2024)"
+    - "HIPAA (Health Insurance Portability and Accountability Act — 1996/2013 Omnibus Rule)"
+    - "COPPA (Children's Online Privacy Protection Act — 1998/2013)"
+    - "GLBA (Gramm-Leach-Bliley Act — 1999)"
+  supervisory_authority: "FTC (Federal Trade Commission) — enforcement federal (unfair/deceptive practices); CPPA (California Privacy Protection Agency) para CCPA/CPRA; AGs estaduais para leis estaduais"
+  dpa_equivalent: "DPA (Data Processing Agreement) não exigido por lei federal; CCPA exige 'service provider agreements' com limitações de uso; HIPAA exige Business Associate Agreements (BAA); contratualmente recomendado em todos os contratos B2B com acesso a dados pessoais"
+  international_transfers: "UE → US: EU-US Data Privacy Framework (DPF) — aprovado Jul/2023 pela Comissão Europeia (Decision 2023/1795); substituiu Privacy Shield invalidado pelo Schrems II; empresas devem autocertificar-se no DoC; alternativamente: SCCs com Transfer Impact Assessment (TIA). UK → US: UK addendum às SCCs. Sem restrições legais para US → fora (exceto acordos setoriais)"
+
+contract_law:
+  basis: "Common law dos contratos (offer, acceptance, consideration, mutual assent); cada estado tem seu próprio body of law; Delaware Court of Chancery e New York SDNY são os mais sofisticados para contratos comerciais"
+  key_codes:
+    - "UCC Article 2 (Uniform Commercial Code — sale of goods, adotado em todos os estados exceto Louisiana)"
+    - "UCC Article 2A (leasing de bens)"
+    - "ESIGN Act (15 U.S.C. §7001 — assinatura eletrônica federal)"
+    - "UETA (Uniform Electronic Transactions Act — adotado em 47 estados)"
+    - "UCITA (Uniform Computer Information Transactions Act — adotado apenas em VA e MD)"
+  statute_of_frauds: "UCC §2-201: contratos de venda de bens acima de $500 devem ser por escrito (threshold elevado para $5.000 no Revised UCC 2003, não amplamente adotado); common law: contratos não executáveis em 1 ano devem ser escritos; real estate: escrito obrigatório"
+  typical_governing_law:
+    - "Delaware (Delaware General Corporation Law — padrão para M&A e venture; Court of Chancery especializado)"
+    - "New York (SDNY — sofisticado, ampla jurisprudência comercial; NY Choice of Law §5-1401 permite escolha mesmo sem conexão)"
+    - "California (para contratos com partes ou consumidores em CA — sujeito a CCPA, non-compete ban, etc.)"
+  e_signature:
+    valid: true
+    framework: "ESIGN Act (federal, 2000) + UETA (estadual) — assinatura eletrônica tem força legal equivalente à manuscrita para maioria dos contratos; exceções: testamentos, adoção, divórcio, cancelamento de seguro de saúde, documentos judiciais. DocuSign, Adobe Sign, HelloSign amplamente aceitos"
+
+dispute_resolution:
+  common_forums:
+    - "Federal District Courts (jurisdição federal — diversity jurisdiction: partes de estados diferentes + >$75k)"
+    - "State Courts (contratos estaduais — Delaware Court of Chancery para equity/corporate)"
+    - "Small Claims Courts (limites variam: $2.500 a $25.000 por estado)"
+  common_arbitration:
+    - "AAA (American Arbitration Association) — Commercial Arbitration Rules"
+    - "JAMS (Judicial Arbitration and Mediation Services) — amplamente usado em tech e M&A"
+    - "FINRA Arbitration (setor financeiro)"
+  international_arbitration: "AAA-ICDR (International Centre for Dispute Resolution); ICC com sede em NY; seat preferencial: New York ou Delaware; FAA (Federal Arbitration Act, 9 U.S.C.) rege arbitragem federal — pró-arbitragem"
+  enforcement: "Convenção de Nova Iorque (1958) ratificada pelo US; FAA implementa NY Convention (Chapter 2); enforcement de sentenças estrangeiras: varia por estado (Uniform Foreign Money Judgments Recognition Act); NY reconhece sentenças estrangeiras com reciprocidade"
+
+consumer_law:
+  framework: "FTC Act Sec. 5 (unfair or deceptive acts) federal; proteções estaduais — California (CLRA, UCL, FAL) são as mais rígidas; sem direito de arrependimento federal geral (limitado: FTC Cooling-Off Rule para vendas porta-a-porta)"
+  key_laws:
+    - "FTC Act (15 U.S.C. §45)"
+    - "CCPA/CPRA (California)"
+    - "CLRA — California Consumers Legal Remedies Act"
+    - "Magnuson-Moss Warranty Act (garantias de produtos)"
+    - "TCPA (Telephone Consumer Protection Act — marketing)"
+  b2c_critical:
+    - "Class action waiver: deve ser explícita e em destaque; AT&T Mobility v. Concepcion (2011) — arbitration + class waiver enforceável federalmente; mas CFPB pode limitar em produtos financeiros"
+    - "Limitation of liability (LOL): válida para negligência simples; geralmente unenforceable para gross negligence ou willful misconduct"
+    - "Auto-renewal (California): SB 313 — disclosure obrigatória e cancellation fácil; outros estados seguindo"
+    - "Dark patterns: FTC enforcement crescente — cancelamento deve ser tão fácil quanto contratação (Click-to-Cancel Rule, 2024)"
+    - "CCPA opt-out: 'Do Not Sell or Share My Personal Information' obrigatório para empresas >$25M revenue, >100k users ou >50% receita de dados"
+
+fiscal:
+  value_added: "Sem IVA federal; sales tax estadual e local: 0% (OR, MT, NH, DE, AK) a 10.25% (Chicago, IL); nexus econômico (South Dakota v. Wayfair, 2018) — vendas >$100k ou >200 transações em um estado criam obrigação de coletar sales tax; serviços frequentemente isentos (varia por estado)"
+  withholding: "W-8BEN (pessoa física não-residente) / W-8BEN-E (entidade estrangeira): para reduzir ou eliminar withholding de 30% sobre US-source income (FDAP); treaty rates variam (BR-US: sem CDT — 30% bruto; PT-US: CDT em vigor — royalties 10%); FATCA para instituições financeiras estrangeiras"
+  b2b_services: "Serviços prestados por não-residentes a empresas US: geralmente sujeitos a 30% withholding (FDAP income) salvo treaty; ECI (Effectively Connected Income): tributado à alíquota regular (21% corporate); Form 1042-S para reporte; importante: 'tech services' vs 'royalties' — distinção crucial para withholding"
+
+formalities:
+  signature: "Assinatura eletrônica amplamente válida (ESIGN + UETA); DocuSign padrão de mercado; contratos de alto valor: recomendado notarização para enforceability em outros países; para uso no exterior: Apostilla da Convenção de Haia"
+  notarization: "Não obrigatória para a maioria dos contratos comerciais; exigida para: real estate deeds, mortgages, affidavits, poderes notariais; remote online notarization (RON) disponível em 40+ estados"
+  language: "Inglês — padrão; sem requisito legal de idioma para contratos B2B; para consumidores hispânicos em CA: disclosure em espanhol pode ser exigida (California Civil Code §1632)"
+  registration: "UCC-1 Financing Statement: para garantias em bens pessoais (perfection of security interest); IP: registro USPTO para marcas e patentes; copyright: registro Library of Congress recomendado para enforcement (acesso a statutory damages)"
+
+red_flags:
+  - "Non-compete: varia radicalmente por estado — California Business & Professions Code §16600 proíbe quase completamente (FTC Rule 2024 de âmbito federal foi bloqueada judicialmente em ago/2024 — verificar status); New York: limites rígidos (NY Executive Law emenda 2024 — máximo 1 ano, apenas para key employees); Texas/Florida: permissivos com reasonableness test; Delaware: moderado"
+  - "Class action waiver: deve ser explícita, destacada e parte de cláusula de arbitragem válida; se inválida, expõe a class action — potencial passivo multi-milionário"
+  - "WARN Act (Worker Adjustment and Retraining Notification Act): rescisão coletiva ≥50 empregados requer 60 dias de aviso — violação gera 60 dias de salário e benefícios por empregado; estados têm mini-WARN mais rígidos (CA, NY)"
+  - "Intellectual Property — work for hire: US Copyright Act §101 — works specially commissioned devem ter acordo escrito; software de empregado: pertence ao empregador; contractor: pertence ao contractor salvo cessão expressa"
+  - "Indemnification por gross negligence ou willful misconduct: limitação de responsabilidade (LOL) pode ser unenforceable; mutual indemnification para third-party IP claims é prática padrão em tech"
+  - "CCPA/CPRA: aplicável se empresa tem receita >$25M, ou processa dados de >100k consumidores CA, ou >50% da receita vem de venda de dados pessoais — verifique threshold; penalidades: $2.500/violação não intencional, $7.500/intencional"
+  - "Delaware LLC/Corp: escolha de Delaware como governing law sem conexão real é válida (6 Del. C. §2708) — mas atenção à 'internal affairs doctrine' vs. contratos comerciais simples"
+
+recommended_clauses:
+  governing_law: "Delaware ou New York para B2B tech internacional; especificar 'the laws of the State of [X], without regard to its conflict of laws principles'; para contratos com consumidores: lei do estado do consumidor pode ser imperativa"
+  arbitration: "AAA Commercial Rules ou JAMS Streamlined (disputas <$250k) / Comprehensive (>$250k); seat: New York ou Wilmington (DE); English language; waiver of jury trial; class action waiver explícita e destacada; 30-day cure period antes de iniciar arbitragem"
+  indemnification: "Mutual indemnification para third-party claims de IP infringement; indemnification por violação de data privacy (CCPA/HIPAA se aplicável); cap: typically 12 months of fees paid (exceto para indemnification, confidentiality e IP — podem ser uncapped); exclusão de indirect, consequential, punitive damages"
+  ip_assignment: "Work-for-hire language + assignment como backup (§101 Copyright Act); assignment de todos os direitos, title e interest worldwide, incluindo patent rights, copyrights, trade secrets; moral rights waiver para jurisdições que reconhecem (EU, BR); developer retém portfolio rights não-exclusivos (licença de uso apenas)"

@@ -1,0 +1,91 @@
+jurisdiction:
+  code: UK
+  name: "Reino Unido (pós-Brexit)"
+  legal_system: common_law
+  language: ["en"]
+
+data_protection:
+  framework: "UK GDPR (retained EU law — UK GDPR) + Data Protection Act 2018 (DPA 2018); aplicável desde 1 jan/2021 (pós-Brexit); ICO (Information Commissioner's Office) é o supervisor nacional; substancialmente alinhado ao EU GDPR mas com divergências crescentes; DPDI Bill (Data Protection and Digital Information Bill) — projeto de lei para reformar UK GDPR, status a verificar em 2025"
+  key_laws:
+    - "UK GDPR (Retained EU Law — Schedule 1, European Union (Withdrawal) Act 2018)"
+    - "Data Protection Act 2018 (DPA 2018)"
+    - "Privacy and Electronic Communications Regulations 2003 (PECR — cookies, e-marketing)"
+    - "Network and Information Systems (NIS) Regulations 2018 (cibersegurança infraestrutura crítica)"
+    - "Computer Misuse Act 1990"
+  supervisory_authority: "ICO (Information Commissioner's Office) — Wilmslow, Cheshire; enforcement ativo; multas até £17.5M ou 4% do turnover global anual (o que for maior); ICO pode emitir enforcement notices e sanções sem processo judicial"
+  dpa_equivalent: "Art. 28 UK GDPR: DPA (Data Processing Agreement) obrigatório entre controller e processor; UK International Data Transfer Agreement (IDTA) e UK addendum às SCCs da UE — aprovados pela ICO para transferências internacionais saindo do UK"
+  international_transfers: "UK → países terceiros: UK IDTA (International Data Transfer Agreement, em vigor mar/2022) ou UK addendum às SCCs da UE (em vigor mar/2022); adequacy regulations UK: US (UK-US Data Bridge, em vigor out/2023), EEA e Gibraltar automático; EU → UK: adequacy decision da Comissão Europeia (Decision 2021/1772) — atualmente válida, revisável; UK → UE: adequacy regulation UK reconhece EEA como adequado — sem necessidade de mecanismo adicional"
+
+contract_law:
+  basis: "English common law: offer, acceptance, consideration, intention to create legal relations; Law of Contract (sem código único — case law); England & Wales e Escócia são sistemas legais distintos (Escócia: mixed civil/common law — Scottish Law); Northern Ireland: common law, alinhado com England & Wales"
+  key_codes:
+    - "Sale of Goods Act 1979"
+    - "Supply of Goods and Services Act 1982"
+    - "Consumer Rights Act 2015 (CRA 2015 — B2C)"
+    - "Unfair Contract Terms Act 1977 (UCTA 1977 — B2B e B2C)"
+    - "Misrepresentation Act 1967"
+    - "Law of Property Act 1925 (imóveis)"
+    - "Companies Act 2006"
+  statute_of_frauds: "Contracts (applicable in England & Wales): Law of Property (Miscellaneous Provisions) Act 1989 — contratos sobre land e imóveis devem ser por escrito; garantias de terceiros (guarantees): Statute of Frauds 1677 exige escrito; regra geral para contratos comerciais: liberdade de forma"
+  typical_governing_law:
+    - "English law (padrão internacional — ampla adoção mesmo por partes sem conexão com UK; sofisticado body of case law)"
+    - "Scots law (contratos com conexão à Escócia — sistema de civil law com influências roman law)"
+    - "New York law (alternativa comum para contratos financeiros internacionais)"
+  e_signature:
+    valid: true
+    framework: "Electronic Communications Act 2000 + eIDAS (retained in UK law — UK eIDAS); UK Law Commission confirmation (2019): electronic signatures válidas para maioria dos contratos comerciais; wet ink signature ainda exigida para: deeds (contratos sob seal), wills, land transactions (com exceções); DocuSign, Adobe Sign amplamente aceitos; qualificada (QES) = máxima presunção probatória"
+
+dispute_resolution:
+  common_forums:
+    - "High Court of Justice (England & Wales) — Business and Property Courts: Commercial Court (COMCO), Technology and Construction Court (TCC), Chancery Division"
+    - "Court of Session (Escócia — Outer House para 1ª instância, Inner House para apelação)"
+    - "County Court (disputas até £100k — England & Wales)"
+    - "UK Supreme Court (jurisdição final para todo o UK)"
+  common_arbitration:
+    - "LCIA (London Court of International Arbitration) — uma das principais câmaras globais; LCIA Rules 2020"
+    - "ICC London (ICC com sede em Londres)"
+    - "CIArb (Chartered Institute of Arbitrators — formação e arbitragem ad hoc)"
+    - "ICSID (disputas com estados soberanos — UK é membro do ICSID Convention)"
+  international_arbitration: "England & Wales: Arbitration Act 1996 (em reforma — Arbitration Bill 2024 em tramitação); London é o seat preferencial global junto com Genebra, Singapura e Paris; pós-Brexit: UK saiu da supervisão CJUE — maior autonomia doutrinária; enforcement via NY Convention"
+  enforcement: "Convenção de Nova Iorque ratificada (Arbitration Act 1996 Part II); sentenças judiciais: pós-Brexit, sem reconhecimento automático na UE (perdeu Bruxelas I Bis); enforcement de sentenças UK na UE via lei nacional de cada EM + reciprocidade; enforcement de sentenças estrangeiras no UK: regime de common law (judgments debt enforcement) ou tratados bilaterais"
+
+consumer_law:
+  framework: "Consumer Rights Act 2015 (CRA 2015) — principal lei de proteção ao consumidor pós-Brexit, engloba e moderniza UCTA e Sale of Goods Act para B2C; Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013 (CCRs); Competition and Markets Authority (CMA) para enforcement"
+  key_laws:
+    - "Consumer Rights Act 2015 (CRA 2015)"
+    - "Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013"
+    - "Consumer Protection from Unfair Trading Regulations 2008 (CPUTR)"
+    - "Financial Services and Markets Act 2000 (FSMA) + Consumer Duty (FCA PS22/9, 2023)"
+    - "Digital Markets, Competition and Consumers Act 2024 (DMCC Act — nova lei aprovada)"
+  b2c_critical:
+    - "Right to cancel: 14 days para contratos à distância e fora do estabelecimento (CCRs 2013)"
+    - "CRA 2015: goods devem ser de satisfactory quality, fit for purpose e as described; serviços digitais: software e conteúdo digital devem ser de qualidade satisfatória"
+    - "Unfair terms (CRA 2015 Part 2): cláusulas não-negociadas que criam desequilíbrio significativo em detrimento do consumidor são não-vinculantes — transparency requirement"
+    - "UCTA 1977 (B2B): exclusão de negligência causadora de morte ou lesão corporal nunca válida; outras exclusões: reasonableness test"
+    - "Blue pencil doctrine: courts podem reduzir cláusulas abusivas em vez de anular integralmente — distinto da abordagem civil law"
+    - "Consumer Duty (FCA 2023): para serviços financeiros — good outcomes para clientes retail, fair value, clarity of communications"
+
+fiscal:
+  value_added: "VAT (Value Added Tax): 20% taxa padrão; 5% taxa reduzida (energia doméstica, absorventes, etc.); 0% (zero-rated: alimentos básicos, vestuário infantil, livros, exportações); serviços B2B para não-residentes: geralmente fora do escopo do VAT UK (place of supply = UK se prestador UK para consumidor UK); pós-Brexit: sem OSS da UE — UK tem seu próprio regime de VAT para serviços digitais B2C estrangeiros (VAT MOSS UK encerrado; agora: registro direto no HMRC)"
+  withholding: "WHT sobre royalties: 20% para não-residentes (reducível via tax treaty — UK tem rede extensa de ~130 CDTs; PT-UK: royalties 10%; US-UK: royalties 0%); WHT sobre juros: 20% (reducível via treaty; US-UK: 0%); dividendos: sem WHT em geral (UK Dividend Exemption); Corporate Tax: 25% para lucros >£250.000 (desde abr/2023); 19% para lucros <£50.000 (small profits rate)"
+  b2b_services: "Serviços B2B de não-residente para empresa UK: UK VAT aplicável se place of supply é UK (reverse charge pelo receptor UK para a maioria dos serviços); serviços de empresa UK para não-residente: fora do escopo VAT UK (zero-rated para efeitos de reclaim); pós-Brexit: UK é tratado como 'third country' pela UE — verificar VAT registration em cada EM da UE se necessário"
+
+formalities:
+  signature: "Electronic signatures: válidas para maioria dos contratos comerciais (Electronic Communications Act 2000); deeds: ainda exigem wet ink signature ou assinatura eletrônica qualificada com testemunha (Law Commission 2019 confirmou assinatura eletrônica válida para deeds se testemunha testemunha eletronicamente); HMRC: aceita assinaturas eletrônicas para documentos fiscais"
+  notarization: "Notarização: menos comum no sistema common law inglês; Notary Public para: documentos para uso no exterior (legalização via Foreign and Commonwealth Development Office + apostila para países NY Convention), poderes notariais para jurisdições civil law, autenticação de documentos de identidade; apostilamento: UK saiu da obrigação EU de reconhecimento mútuo — apostila da Haia necessária para uso em países contratantes"
+  language: "Inglês — padrão; sem requisito legal de idioma para contratos B2B; contratos com consumidores: informação pré-contratual no idioma do consumidor recomendada para proteção contra impugnação; contratos bilíngues: especificar versão prevalente"
+  registration: "Companies House: registro obrigatório de empresas (Companies Act 2006); Land Registry: registro de propriedade imobiliária (HM Land Registry); IP: UKIPO (UK Intellectual Property Office) para marcas e patentes pós-Brexit (registros EU não têm mais efeito automático no UK); UCC equivalente UK: Companies Act — charges sobre ativos devem ser registradas em Companies House (21 dias)"
+
+red_flags:
+  - "Pós-Brexit — transferência de dados UK→UE: adequacy decision da Comissão Europeia em favor do UK atualmente válida mas revisável (primeira revisão prevista); transferência UE→UK: idem; UK→US: UK-US Data Bridge (out/2023); monitorar DPDI Bill — pode criar divergências adicionais com EU GDPR"
+  - "Jurisdição England & Wales vs. Escócia: são sistemas legais distintos — contratos devem especificar 'England and Wales' OU 'Scotland' como governing jurisdiction; 'UK law' é impreciso e pode gerar ambiguidade; Irish law (Northern Ireland vs. Republic of Ireland) — adicional complexidade para operações irlandesas"
+  - "Pós-Brexit — enforcement de sentenças judiciais na UE: UK perdeu Bruxelas I Bis; sentença judicial UK na UE agora depende de lei nacional de cada EM + common law reciprocidade (muito menos eficiente); RECOMENDAÇÃO: usar arbitragem (LCIA/ICC com seat em Londres) para contratos internacionais — enforcement via NY Convention mantido"
+  - "Garden leave vs. non-compete: non-compete pós-emprego sujeito ao blue pencil doctrine — courts reduzem mas raramente anulam; garden leave (pagamento durante período de restrição) é mais enforcement-friendly; scope, duration e geography devem ser proporcionais ao interesse legítimo; tip: cláusula de 12 meses com garden leave remunerado tem alta taxa de enforcement"
+  - "UCTA 1977 (B2B): exclusão de responsabilidade por morte/lesão corporal por negligência — SEMPRE nula; outras exclusões: reasonableness test (UCTA s.11 + Schedule 2); particularmente crítico em contratos de serviços profissionais — cláusulas LOL abrangentes podem ser parcialmente ineficazes"
+  - "FCA Consumer Duty (desde jul/2023): empresas reguladas pela FCA prestando serviços a clientes retail devem demonstrar 'good outcomes' — contratos de serviços financeiros B2C devem ser revisados para compliance; non-compliance: enforcement da FCA + reputational risk"
+
+recommended_clauses:
+  governing_law: "English law (England and Wales) — especificar expressamente para evitar confusão com lei escocesa; 'the laws of England and Wales, excluding its conflict of laws rules'; English law amplamente escolhida por partes globais mesmo sem conexão com UK"
+  arbitration: "LCIA Rules 2020 com seat em Londres — padrão para contratos internacionais de alto valor; ICC London para disputas multi-partes complexas; fast-track LCIA para disputas <£500.000; London = juridicamente seguro, árbitros experientes, infraestrutura sólida; incluir mediation step 30 dias antes de arbitragem (CEDR como mediador)"
+  indemnification: "Indemnification por violações do UK GDPR (multas ICO + third-party claims do titular de dados); cap estruturado: (1) direct losses sem cap ou com cap amplo; (2) consequential losses excluídos; típico: 12 meses de fees pagas como cap geral; carve-outs ilimitados para: death/personal injury, fraud, wilful misconduct, IP infringement, confidentiality, data protection; mutual indemnification para third-party IP claims"
+  ip_assignment: "Copyright: CDPA 1988 (Copyright, Designs and Patents Act) — works made in course of employment pertencem ao empregador; contractor: pertence ao contractor salvo cessão expressa (assignment); assignment deve ser por escrito assinado pelo assignor; moral rights: inalienáveis mas waivable (CDPA s.87); UKIPO: registro de marcas pós-Brexit separado do EUIPO (registro EU não cobre UK); patents: UKIPO + EPO (com validação no UK separada da patente unitária EU)"

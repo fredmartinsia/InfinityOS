@@ -1,0 +1,110 @@
+name: frontend-squad
+version: "1.0.0"
+short-title: "Frontend Squad"
+description: "Squad de execução frontend premium — sites institucionais, landing pages, formulários interativos, SaaS e sistemas com animações nível Awwwards (scroll storytelling, frame-by-frame video, micro-interactions, 3D/WebGL). Consome design system pronto do design-system-squad e entrega o build animado em cima dele."
+author: "o usuário / o negócio do usuário"
+license: MIT
+language: pt-BR
+slashPrefix: "frontend-squad"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - frontend
+  - web-design
+  - animation
+  - scroll-storytelling
+  - webgl
+  - three-js
+  - gsap
+  - framer-motion
+  - landing-page
+  - saas-ui
+  - micro-interactions
+  - awwwards
+
+entry_agent: frontend-chief
+
+tiers:
+  tier_0_orchestrator:
+    agents: [frontend-chief]
+  tier_1_animation_storytelling:
+    agents: [olivier-larose, bruno-simon, cassie-evans]
+    role: "Animação e narrativa cinematográfica — a alma do padrão FIFA"
+  tier_2_engineering_polish:
+    agents: [emil-kowalski, rauno-freiberg, sam-selikoff]
+    role: "Engenharia de componentes + design engineering polish + implementação prática"
+  tier_3_css_a11y:
+    agents: [josh-comeau]
+    role: "CSS moderno + acessibilidade + mental models"
+
+components:
+  agents:
+    - agents/frontend-chief.agent.md
+    - agents/olivier-larose.agent.md
+    - agents/bruno-simon.agent.md
+    - agents/cassie-evans.agent.md
+    - agents/emil-kowalski.agent.md
+    - agents/rauno-freiberg.agent.md
+    - agents/sam-selikoff.agent.md
+    - agents/josh-comeau.agent.md
+  tasks:
+    - tasks/build-premium-landing-page.md
+    - tasks/build-institutional-site.md
+    - tasks/build-saas-interface.md
+    - tasks/build-interactive-form.md
+    - tasks/build-3d-hero-or-frame-video.md
+    - tasks/build-scroll-section.md
+    - tasks/audit-and-polish-existing.md
+    - tasks/extract-from-reference.md
+    - tasks/review.md
+  checklists:
+    - checklists/output-quality.md
+    - checklists/motion-quality.md
+  data:
+    reference_systems_dir: data/reference-systems
+
+cross_squad_dependencies:
+  design-system-squad:
+    mode: read-only
+    consumes:
+      - "DESIGN.md"
+      - "tokens.json"
+      - "preview.html"
+      - "brand-manual"
+    expected_input_paths:
+      - "{cwd}/design system/{brand-slug}/"
+      - "{cwd}/o negócio do usuário-brand/v2/"
+      - "{cwd}/o negócio do usuário-brand/deploy/"
+    on_missing: "Pedir ao usuário rodar /design-system-chief primeiro OU apontar caminho do DS pronto"
+    relationship: upstream
+
+direct_commands:
+  - frontend-chief
+  - olivier-larose
+  - bruno-simon
+  - cassie-evans
+  - emil-kowalski
+  - rauno-freiberg
+  - sam-selikoff
+  - josh-comeau
+
+output:
+  base_dir: "{cwd}/squads/frontend-squad/output"
+  per_project_subdir: "{project-slug}"
+  artifacts:
+    - "index.html (ou pages do Next.js)"
+    - "animations/*.{ts,js}"
+    - "components/*.{tsx,jsx}"
+    - "report.md (perf + a11y + decisões de stack)"
+
+non_negotiables:
+  - "NUNCA reinventar tokens — sempre consumir do design system pronto"
+  - "NUNCA ignorar prefers-reduced-motion"
+  - "NUNCA entregar sem rodar checklists output-quality.md + motion-quality.md"
+  - "NUNCA pular checkpoint de plano de roteamento com o usuário"
+  - "Toda animação tem propósito narrativo — decoração descartável é vetada"
+  - "Performance budget é definido ANTES da implementação, não checado depois"
+  - "Mobile-first em LPs (≥60% do tráfego); desktop-first em SaaS"

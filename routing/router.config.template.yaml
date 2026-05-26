@@ -1,0 +1,67 @@
+# ============================================================================
+#  infinite-os — configuração do roteador de modelos
+#  Renderizada para ~/.infinite-os/router.config.yaml na instalação.
+#  Editável à mão. O route.py lê este arquivo (se pyyaml existir) ou usa
+#  os defaults embutidos.
+# ============================================================================
+
+# Alvos de roteamento. Cada um tem um provider, o id do modelo e o
+# comando de CLI (template) usado para invocá-lo. {prompt} e {file} são
+# substituídos em runtime.
+targets:
+  claude:
+    provider: anthropic
+    cli: claude
+    model: default
+    cost: alto
+    # Claude Code já é o motor; "rotear para claude" = resolver inline.
+    command: "(inline no Claude Code)"
+
+  gemini:
+    provider: google
+    cli: gemini
+    model: gemini-2.5-pro
+    cost: medio
+    command: "gemini -p {prompt}"
+    good_for: [contexto-gigante, ingestao-documentos, ocr, extracao-estruturada]
+
+  qwen:
+    provider: ollama
+    cli: ollama
+    model: {{LOCAL_MODEL}}      # ajustado pelo model-advisor conforme hardware
+    cost: baixo
+    command: "ollama run {model} {prompt}"
+    good_for: [scripting, refactor, tarefas-programaticas, raciocinio-codigo]
+
+  codex:
+    provider: openai
+    cli: codex
+    model: default
+    cost: medio
+    command: "codex exec {prompt}"
+    good_for: [validacao-cruzada, raciocinio-fino]
+
+# Regras por faixa de complexidade (score 0-10).
+# O route.py estima o score por heurística de palavras-chave se não for dado.
+complexity_routing:
+  - range: [0, 2]      # trivial: responder, formatar, perguntas simples
+    target: claude
+  - range: [3, 6]      # médio: documentos grandes, extração, OCR
+    target: gemini
+  - range: [7, 10]     # pesado: raciocínio de código, refactors grandes
+    target: qwen
+
+# Overrides por tipo de tarefa (têm prioridade sobre o score).
+task_overrides:
+  huge_context: gemini        # >100k tokens de entrada
+  image_generation: gemini    # google/gemini-*-image
+  code_refactor: qwen
+  cross_validation: codex
+
+# Cadeia de fallback se o alvo escolhido não estiver instalado/disponível.
+# Sempre termina em "claude" (o motor está sempre presente).
+fallback:
+  qwen:   [qwen, gemini, claude]
+  gemini: [gemini, claude]
+  codex:  [codex, claude]
+  claude: [claude]

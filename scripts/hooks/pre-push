@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# ============================================================================
+#  git pre-push hook — bloqueia o push se o gate de sanitização falhar.
+#  Instale com: bash scripts/install-hooks.sh
+# ============================================================================
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
+[ -z "$REPO_ROOT" ] && exit 0
+
+if [ -x "$REPO_ROOT/scripts/sanitize-check.sh" ]; then
+  if ! bash "$REPO_ROOT/scripts/sanitize-check.sh"; then
+    echo
+    echo "🛑 push BLOQUEADO: o gate de sanitização encontrou conteúdo sensível."
+    echo "   Resolva os itens acima. (Para emergência: git push --no-verify)"
+    exit 1
+  fi
+fi
+exit 0
