@@ -3,7 +3,7 @@
 #  Passo 00 — Preflight: detecta o computador e os pré-requisitos.
 #  Exporta: OS_KIND, RAM_GB, CPU_CORES, IS_APPLE_SILICON, HAS_NVIDIA, VRAM_GB
 # ============================================================================
-ui_header "1/8 — Analisando seu computador"
+ui_header "1/11 · Analisando seu computador"
 
 # --- Sistema operacional ----------------------------------------------------
 case "$(uname -s)" in

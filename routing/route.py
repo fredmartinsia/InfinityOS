@@ -95,7 +95,11 @@ def target_for_score(cfg, score: int) -> str:
 def is_available(cfg, target: str) -> bool:
     if target == "claude":
         return True  # o motor está sempre presente
-    cli = cfg["targets"].get(target, {}).get("cli", target)
+    tgt = cfg["targets"].get(target, {})
+    model = tgt.get("model", "")
+    if model in ("none", "", None):
+        return False  # instalador não baixou modelo local nenhum p/ este alvo
+    cli = tgt.get("cli", target)
     return shutil.which(cli) is not None
 
 

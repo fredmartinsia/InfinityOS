@@ -3,7 +3,7 @@
 #  Passo 40 — AIOX (framework de agentes po/architect/dev/qa/...).
 #  Instalado pelo instalador oficial via npx (não redistribuímos a cópia).
 # ============================================================================
-ui_header "5/8 — Framework AIOX (opcional)"
+ui_header "7/11 · Framework AIOX (opcional)"
 
 if [ "${INFINITY_OS_SKIP_AIOX:-0}" = "1" ]; then
   ui_dim "Passo do AIOX pulado (INFINITY_OS_SKIP_AIOX=1)."

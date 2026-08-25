@@ -43,6 +43,7 @@ ui_dim  "Log completo em: $INSTALL_LOG"
 # Lista ordenada de passos
 STEPS=(
   "00-preflight"
+  "05-detect"
   "10-clis"
   "20-models"
   "25-credentials"
@@ -50,6 +51,7 @@ STEPS=(
   "40-aiox"
   "50-content"
   "60-obsidian"
+  "65-lightrag"
   "70-smoke-test"
 )
 

@@ -3,7 +3,7 @@
 #  Passo 30 — Núcleo Claude Code: backup, scripts/skills, settings.json,
 #  roteador e proteção do vault. Exporta VAULT_PATH e LANGUAGE.
 # ============================================================================
-ui_header "4/8 — Núcleo do Claude Code"
+ui_header "6/11 · Núcleo do Claude Code"
 
 mkdir -p "$CLAUDE_HOME"
 
@@ -49,16 +49,24 @@ PY
 ui_ok "settings.json renderizado (hooks de RAG, proteção e idioma)."
 
 # --- Roteador de modelos ----------------------------------------------------
+# CHOSEN_LOCAL_MODEL vem do passo 20 (analise real de RAM/disco). Se a pessoa
+# nao instalou modelo local, usamos o sentinela "none" em vez de um nome fixo
+# de modelo que nunca foi baixado: route.py trata "none" como alvo local
+# indisponivel e cai direto pro fallback em nuvem (gemini/claude).
 mkdir -p "$HOME/.infinity-os"
 cp "$INFINITY_OS_ROOT/routing/route.py" "$HOME/.infinity-os/route.py"
 cp "$INFINITY_OS_ROOT/routing/hardware-tiers.yaml" "$HOME/.infinity-os/hardware-tiers.yaml"
-LOCAL_MODEL="${CHOSEN_LOCAL_MODEL:-qwen3-coder:30b}" python3 - "$INFINITY_OS_ROOT/routing/router.config.template.yaml" "$HOME/.infinity-os/router.config.yaml" <<'PY'
+LOCAL_MODEL="${CHOSEN_LOCAL_MODEL:-none}" python3 - "$INFINITY_OS_ROOT/routing/router.config.template.yaml" "$HOME/.infinity-os/router.config.yaml" <<'PY'
 import os, sys, io
 src, dst = sys.argv[1], sys.argv[2]
 s = io.open(src, encoding="utf-8").read().replace("{{LOCAL_MODEL}}", os.environ["LOCAL_MODEL"])
 io.open(dst, "w", encoding="utf-8").write(s)
 PY
-ui_ok "Roteador de modelos em ~/.infinity-os/ (modelo local: ${CHOSEN_LOCAL_MODEL:-qwen3-coder:30b})."
+if [ -n "${CHOSEN_LOCAL_MODEL:-}" ]; then
+  ui_ok "Roteador de modelos em ~/.infinity-os/ (modelo local: ${CHOSEN_LOCAL_MODEL})."
+else
+  ui_ok "Roteador de modelos em ~/.infinity-os/ (sem modelo local instalado, tarefas de codigo pesado usam nuvem)."
+fi
 
 # --- Memory templates -------------------------------------------------------
 SLUG="$(printf '%s' "$HOME" | sed 's#/#-#g')"

@@ -13,7 +13,7 @@
 #  Todos os provedores são opcionais. O harness funciona só com o Claude Code.
 # ============================================================================
 
-ui_header "4/9 · Chaves de API dos provedores"
+ui_header "5/11 · Chaves de API dos provedores"
 
 if [ "${INFINITY_OS_SKIP_CREDS:-0}" = "1" ]; then
   ui_dim "Passo de chaves pulado (INFINITY_OS_SKIP_CREDS=1)."

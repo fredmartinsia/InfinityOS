@@ -7,7 +7,7 @@
 #  - REGRAS + GUIA + README/INDEX dinâmico (reflete as pastas escolhidas)
 #  - Constrói o índice RAG agora (não no 1º prompt)
 # ============================================================================
-ui_header "7/8 — Obsidian + RAG"
+ui_header "9/11 · Obsidian + RAG"
 
 # Robustez: se rodado isolado (--step=60), o passo 00 não setou OS_KIND.
 if [ -z "${OS_KIND:-}" ]; then
@@ -82,7 +82,30 @@ add_folder() {  # evita duplicatas
   FOLDERS+=("$1")
 }
 
-if [ "${ASSUME_YES:-0}" != "1" ]; then
+# Vault que já existe e já tem conteúdo: NÃO montar estrutura por cima.
+# Criar pasta nova num vault já bagunçado só aumenta a bagunça. Quem já tem
+# conteúdo é atendido pela skill de reorganização, que olha o que existe antes
+# de propor qualquer mudança.
+SKIP_STRUCTURE=0
+if [ "${INSTALL_MODE:-fresh}" = "upgrade" ]; then
+  notas_existentes=$(find "$VP" -name "*.md" -not -path "*/.obsidian/*" 2>/dev/null | wc -l | tr -d ' ')
+  if [ "${notas_existentes:-0}" -gt 10 ]; then
+    SKIP_STRUCTURE=1
+    echo
+    ui_ok "Seu vault já tem $notas_existentes notas. Não vou criar pasta nenhuma por cima."
+    ui_info "Mexer na estrutura de um vault que já está em uso é justamente o que"
+    ui_info "costuma bagunçar tudo. Isso é trabalho para a próxima etapa."
+    ui_dim "Depois da instalação, abra o Claude Code e rode:  /organizar-vault"
+    ui_dim "Ela mostra o retrato do que está desorganizado, propõe a arrumação,"
+    ui_dim "faz backup e só move depois que você confirmar. Nada é apagado."
+    # garante apenas as pastas que o sistema precisa para funcionar
+    for d in SQUADS CLONES; do
+      [ -d "$VP/$d" ] || { mkdir -p "$VP/$d"; ui_dim "  criei só a pasta $d, que o sistema precisa"; }
+    done
+  fi
+fi
+
+if [ "$SKIP_STRUCTURE" = "0" ] && [ "${ASSUME_YES:-0}" != "1" ]; then
   ui_info "Vamos montar a estrutura do seu vault. Escolha um perfil de base:"
   preset="$(ui_choice "Qual perfil combina mais com você?" \
     "Prestador de serviço / Agência" \
@@ -117,9 +140,13 @@ if [ "${ASSUME_YES:-0}" != "1" ]; then
 fi
 
 # Cria as pastas escolhidas
-for d in "${FOLDERS[@]}"; do mkdir -p "$VP/$d"; done
-ui_ok "Estrutura criada: ${FOLDERS[*]}"
-log "obsidian: folders=${FOLDERS[*]}"
+if [ "$SKIP_STRUCTURE" = "0" ]; then
+  for d in "${FOLDERS[@]}"; do mkdir -p "$VP/$d"; done
+  ui_ok "Estrutura criada: ${FOLDERS[*]}"
+  log "obsidian: folders=${FOLDERS[*]}"
+else
+  log "obsidian: estrutura preservada (vault em uso, upgrade)"
+fi
 
 # --- 4) REGRAS + GUIA -------------------------------------------------------
 VPX="$VP" python3 - "$INFINITY_OS_ROOT/vault-template/📋 REGRAS DO VAULT.template.md" "$VP/📋 REGRAS DO VAULT.md" <<'PY'
@@ -132,26 +159,39 @@ PY
 ui_ok "REGRAS DO VAULT instaladas."
 
 # --- 5) README/INDEX dinâmico (reflete as pastas escolhidas) ----------------
-{
-  echo "# 📊 INDEX — Vault Principal"
-  echo
-  echo "> Gerado pelo infinity-os em $(date '+%Y-%m-%d'). Estrutura sob medida para o seu perfil."
-  echo
-  echo "## Pastas"
-  echo
-  for d in "${FOLDERS[@]}"; do
-    echo "- **$d/** — $(describe_folder "$d")"
-  done
-  echo
-  echo "## Como usar"
-  echo
-  echo "- Squads: \`/<nome-do-squad>\` no Claude Code (ex.: \`/hormozi-squad\`)."
-  echo "- Clones: estão em \`CLONES/\` e são carregados pelos squads/skills."
-  echo "- O RAG injeta automaticamente o contexto relevante deste vault a cada prompt."
-  echo
-  echo "_Veja as regras em \`📋 REGRAS DO VAULT.md\`._"
-} > "$VP/📊 INDEX - VAULT PRINCIPAL.md"
-ui_ok "README/INDEX dinâmico gerado (descreve exatamente as suas pastas)."
+INDEX_FILE="$VP/📊 INDEX - VAULT PRINCIPAL.md"
+
+if [ "$SKIP_STRUCTURE" = "1" ]; then
+  # vault em uso: não temos perfil escolhido, e reescrever o índice apagaria
+  # o que a pessoa organizou. Quem cuida disso é a skill de reorganização.
+  ui_dim "Índice do vault não foi tocado (seu vault já está em uso)."
+else
+  # se já existe um índice editado, guarda a versão da pessoa em vez de perder
+  if [ -f "$INDEX_FILE" ]; then
+    cp "$INDEX_FILE" "$INDEX_FILE.seu" 2>/dev/null && \
+      ui_info "Seu índice anterior foi guardado como 📊 INDEX - VAULT PRINCIPAL.md.seu"
+  fi
+  {
+    echo "# 📊 INDEX · Vault Principal"
+    echo
+    echo "> Gerado pelo infinity-os em $(date '+%Y-%m-%d'). Estrutura sob medida para o seu perfil."
+    echo
+    echo "## Pastas"
+    echo
+    for d in "${FOLDERS[@]}"; do
+      echo "- **$d/**: $(describe_folder "$d")"
+    done
+    echo
+    echo "## Como usar"
+    echo
+    echo "- Squads: \`/<nome-do-squad>\` no Claude Code (ex.: \`/hormozi-squad\`)."
+    echo "- Clones: estão em \`CLONES/\` e são carregados pelos squads/skills."
+    echo "- O RAG injeta automaticamente o contexto relevante deste vault a cada prompt."
+    echo
+    echo "_Veja as regras em \`📋 REGRAS DO VAULT.md\`._"
+  } > "$INDEX_FILE"
+  ui_ok "README/INDEX dinâmico gerado (descreve exatamente as suas pastas)."
+fi
 
 # --- 6) Índice RAG construído AGORA -----------------------------------------
 if [ -f "$CLAUDE_HOME/scripts/vault_rag.py" ]; then

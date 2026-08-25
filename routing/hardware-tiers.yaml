@@ -1,53 +1,60 @@
 # ============================================================================
-#  infinity-os — tiers de hardware → modelos locais recomendados (Ollama)
+#  infinity-os - tiers de hardware -> modelos locais recomendados (Ollama)
 #  Usado pelo passo 20-models.sh (model-advisor) para recomendar o que baixar.
 #  O instalador detecta RAM/GPU e cruza com estes tiers.
 # ============================================================================
+#
+#  A escolha NAO e so por RAM: o instalador mede RAM livre, memoria de video
+#  (VRAM ou unificada) e ESPACO LIVRE EM DISCO de verdade, e recomenda a
+#  maior opcao desta escada que caiba com folga no menor dos dois limites.
+#
+#  size_gb = tamanho real de download/memoria em disco (quantizacao padrao
+#  Q4_K_M do Ollama, conferido em ollama.com/library em 2026-08). Regra geral
+#  de bolso: cerca de 0,6 GB por bilhao de parametros. O valor real medido
+#  fica um pouco acima disso; use o size_gb da tabela, nao so a regra de
+#  bolso, para decidir.
+# ============================================================================
 
-tiers:
-  - id: minimal
-    min_ram_gb: 0
-    max_ram_gb: 8
-    can_run_local: false
-    note: "RAM insuficiente para um modelo local confortável. Prefira usar nuvem (Claude/Gemini)."
-    recommended: []
-    optional: ["qwen2.5:3b"]      # cabe apertado; só se a pessoa insistir
+model_ladder:
+  - tag: "qwen3-coder:30b"
+    params_b: 30
+    size_gb: 19.0
+    note: "Sweet spot para codigo. MoE (so ~3.3B ativos por token, roda rapido mesmo pesando 30B)."
 
-  - id: light
-    min_ram_gb: 8
-    max_ram_gb: 16
-    can_run_local: true
-    note: "Dá para um modelo 7B de código com folga moderada."
-    recommended: ["qwen2.5-coder:7b"]
-    optional: ["llama3.1:8b", "qwen2.5:7b"]
+  - tag: "qwen2.5-coder:14b"
+    params_b: 14
+    size_gb: 9.0
+    note: "Bom equilibrio qualidade/custo para maquinas medianas."
 
-  - id: standard
-    min_ram_gb: 16
-    max_ram_gb: 32
-    can_run_local: true
-    note: "Confortável para 14B; bom equilíbrio qualidade/custo."
-    recommended: ["qwen2.5-coder:14b"]
-    optional: ["qwen3-coder:14b", "qwen2.5-coder:7b"]
+  - tag: "qwen2.5-coder:7b"
+    params_b: 7
+    size_gb: 4.7
+    note: "Roda bem em notebooks com 16 GB de RAM."
 
-  - id: power
-    min_ram_gb: 32
-    max_ram_gb: 64
-    can_run_local: true
-    note: "Roda 30B de código (o sweet spot para código)."
-    recommended: ["qwen3-coder:30b"]
-    optional: ["qwen2.5-coder:14b"]
+  - tag: "qwen2.5-coder:3b"
+    params_b: 3
+    size_gb: 1.9
+    note: "Leve, ainda util para tarefas simples de codigo."
 
-  - id: workstation
-    min_ram_gb: 64
-    max_ram_gb: 100000
-    can_run_local: true
-    note: "Folga para 30B+ e múltiplos modelos carregados."
-    recommended: ["qwen3-coder:30b"]
-    optional: ["qwen2.5-coder:32b"]
+  - tag: "qwen2.5-coder:1.5b"
+    params_b: 1.5
+    size_gb: 1.0
+    note: "So pra maquina muito limitada, qualidade bem reduzida."
 
-# Bônus por GPU dedicada / Apple Silicon (unified memory):
-# se houver GPU forte (>= 16 GB VRAM) ou Apple Silicon, o advisor pode subir um tier.
-gpu_bonus:
-  apple_silicon: 1     # M-series: sobe 1 tier
-  vram_gb_threshold: 16
-  vram_bonus: 1
+  - tag: "qwen2.5-coder:0.5b"
+    params_b: 0.5
+    size_gb: 0.5
+    note: "Ultimo degrau da escada. Se nem isso couber, use nuvem."
+
+# Regra de decisao (espelhada em 20-models.sh):
+# 1. memoria_disponivel_gb = RAM_total_gb - 8 (reserva pro sistema); se
+#    houver GPU NVIDIA dedicada com VRAM maior que essa sobra, usa a VRAM.
+# 2. disco_disponivel_gb = espaco livre em $HOME - 2 GB de margem.
+# 3. limite_gb = min(memoria_disponivel_gb, disco_disponivel_gb).
+# 4. Recomenda a maior linha do model_ladder cujo size_gb <= limite_gb.
+# 5. Se nenhuma couber, nao instala modelo local: o roteador usa nuvem
+#    (Claude/Gemini), que e o caminho normal e nao um erro.
+sizing_rule:
+  ram_reserve_gb: 8
+  disk_margin_gb: 2
+  bytes_per_billion_params_gb: 0.6   # regra de bolso; size_gb medido tem prioridade

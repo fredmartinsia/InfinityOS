@@ -4,7 +4,7 @@
 #  Uma confirmação por ferramenta. Nunca instala sem o "Sim".
 #  Exporta: HAS_OLLAMA (para o passo de modelos locais).
 # ============================================================================
-ui_header "2/8 — Ferramentas de linha de comando (CLIs)"
+ui_header "3/11 · Ferramentas de linha de comando (CLIs)"
 if [ "${INFINITY_OS_SKIP_CLIS:-0}" = "1" ]; then
   ui_dim "Passo de CLIs pulado (INFINITY_OS_SKIP_CLIS=1)."
   return 0 2>/dev/null || true

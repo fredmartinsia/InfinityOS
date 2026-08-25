@@ -20,6 +20,11 @@ cd infinity-os
 ./install.sh
 ```
 
+> **Já tem uma versão antiga instalada?** Rode o mesmo comando. O instalador
+> detecta sozinho, mostra o que encontrou, separa o que é seu do que veio do
+> pacote e não sobrescreve nada sem avisar. Leia o
+> [guia de atualização](docs/ATUALIZAR.md) antes.
+
 O instalador é **guiado e à prova de erros**: ele detecta seu computador,
 pergunta antes de instalar qualquer coisa e usa defaults seguros (basta
 apertar Enter). Ele faz backup do que já existe antes de sobrescrever, e cada
