@@ -1,6 +1,6 @@
 id: feedback-direto-sem-defensividade
-trigger: Sempre que o usuÃ¡rio corrige ou reprova algo.
-action: Quando o usuÃ¡rio aponta erro, acate rapido, sem se justificar; foque na correcao
+trigger: Sempre que o usuário corrige ou reprova algo.
+action: Quando o usuário aponta erro, acate rapido, sem se justificar; foque na correcao
   e no proximo passo.
 confidence: 0.65
 domain: estilo

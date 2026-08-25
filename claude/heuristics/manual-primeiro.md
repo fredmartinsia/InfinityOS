@@ -26,7 +26,7 @@ Pedidos de automacao, pipeline, escala de processo novo.
 - Automatizar um processo hipotetico que nunca foi testado na pratica.
 
 ## Evidencia
-- LightRAG: 'Manual Primeiro. Principio: so automatiza o que ja fez a mao; regra pedagogica do usuÃ¡rio'.
+- LightRAG: 'Manual Primeiro. Principio: so automatiza o que ja fez a mao; regra pedagogica do usuário'.
 
 ## Aplicacao deterministica
 N/A: requer julgamento do modelo (nao e mecanicamente verificavel).

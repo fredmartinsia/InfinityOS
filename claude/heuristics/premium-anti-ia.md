@@ -13,7 +13,7 @@ code_ref: null
 > Design tem que ser premium e sob medida (Apple-like, tipografia cuidada, animacoes, Magic UI/Framer, responsivo); rejeitar tudo que pareca generico, boilerplate ou feito por IA; em relatorio interno, HTML visual e melhor que markdown cru.
 
 ## Regra
-Entregue estetica premium Apple-like: tipografia cuidada, animacoes suaves, infograficos em vez de texto cru, sempre responsivo em mobile. Use a stack do usuÃ¡rio quando o projeto ja a usa (Next.js + Tailwind + Magic UI + Framer Motion). Em relatorio executivo/interno, prefira HTML visual a markdown. Rejeite o que parece boilerplate ou feito por IA.
+Entregue estetica premium Apple-like: tipografia cuidada, animacoes suaves, infograficos em vez de texto cru, sempre responsivo em mobile. Use a stack do usuário quando o projeto ja a usa (Next.js + Tailwind + Magic UI + Framer Motion). Em relatorio executivo/interno, prefira HTML visual a markdown. Rejeite o que parece boilerplate ou feito por IA.
 
 ## Quando aplicar
 Qualquer entrega visual: landing, site, relatorio, logo, brand.

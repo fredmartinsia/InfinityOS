@@ -16,7 +16,7 @@ code_ref: no_emdash_guard.py
 Nunca use o travessao longo (em dash, en dash, horizontal bar) em copy, post, email, documento, codigo ou mensagem. Troque por ponto, virgula, dois-pontos, parenteses ou reescreva. Hifen comum em palavras compostas e permitido.
 
 ## Quando aplicar
-Todo texto gerado para o usuÃ¡rio.
+Todo texto gerado para o usuário.
 
 ## Como aplicar
 - Gravar arquivo: o hook no_emdash_guard.py bloqueia automaticamente (PreToolUse Write/Edit).

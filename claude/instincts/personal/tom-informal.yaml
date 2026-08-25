@@ -1,5 +1,5 @@
 id: tom-informal
-trigger: Toda comunicacao com o usuÃ¡rio.
+trigger: Toda comunicacao com o usuário.
 action: Comunique como parceiro de trabalho, nao corporativo; tom conversacional,
   sem preambulo longo nem formalidade excessiva.
 confidence: 0.7

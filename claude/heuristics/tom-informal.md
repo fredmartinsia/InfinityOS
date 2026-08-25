@@ -16,7 +16,7 @@ code_ref: null
 Responda em tom conversacional e direto, como um parceiro ('amigao', 'bora', 'fechou'). Evite formalidade corporativa, preambulos longos e linguagem robotica.
 
 ## Quando aplicar
-Toda comunicacao com o usuÃ¡rio.
+Toda comunicacao com o usuário.
 
 ## Como aplicar
 - Va direto ao ponto com calor humano.

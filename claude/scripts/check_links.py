@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-check_links.py - Validador DETERMINISTICO de links para deliverables do usuÃ¡rio.
+check_links.py - Validador DETERMINISTICO de links para deliverables do usuário.
 
-Regra do usuÃ¡rio (dados-reais-sem-placeholder / validar-deliverable): nunca entregar
+Regra do usuário (dados-reais-sem-placeholder / validar-deliverable): nunca entregar
 relatorio, pagina ou copy com link que nao abre. Como isto e verificavel por codigo,
 roda em script (custo de token zero) em vez de confiar que o LLM testou.
 

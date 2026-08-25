@@ -39,7 +39,7 @@ biography:
   books:
     - title: "Tested Advertising Methods"
       year: 1932
-      significance: "THE foundational text on scientific headline writing and ad testing. Still in print after 90+ years. Multiple editions revised by usuÃ¡rio Hahn. Used in advertising courses at universities worldwide."
+      significance: "THE foundational text on scientific headline writing and ad testing. Still in print after 90+ years. Multiple editions revised by usuário Hahn. Used in advertising courses at universities worldwide."
     - title: "Advertising for Immediate Sales"
       year: 1936
     - title: "Making Ads Pay"

@@ -1,7 +1,7 @@
 id: nunca-desativar-campanha-boa
 trigger: Gestao de campanhas de trafego (Meta, Google, etc).
 action: Em trafego pago, nunca pause ou desative uma campanha com bom desempenho sem
-  autorizacao explicita do usuÃ¡rio; ele pediu essa regra apos perder performance.
+  autorizacao explicita do usuário; ele pediu essa regra apos perder performance.
 confidence: 0.85
 domain: trafego
 source: heuristics-reverse-2026-07-03

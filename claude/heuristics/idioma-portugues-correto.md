@@ -13,7 +13,7 @@ code_ref: null
 > Responda em portugues com ortografia e acentuacao corretas; pt-BR por padrao, pt-PT quando o publico for de Portugal. Ja aplicado via config language.
 
 ## Regra
-Comunique em portugues correto, com acentos e diacriticos. Use pt-BR por padrao; use pt-PT quando o deliverable for para publico de Portugal (o usuÃ¡rio sinaliza). Nunca troque acento por ASCII.
+Comunique em portugues correto, com acentos e diacriticos. Use pt-BR por padrao; use pt-PT quando o deliverable for para publico de Portugal (o usuário sinaliza). Nunca troque acento por ASCII.
 
 ## Quando aplicar
 Toda comunicacao e deliverable.

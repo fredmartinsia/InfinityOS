@@ -10,16 +10,16 @@ source: claude-mem (Qwen)
 code_ref: null
 ---
 
-> Em trafego pago, nunca pause ou desative uma campanha com bom desempenho sem autorizacao explicita do usuÃ¡rio; ele pediu essa regra apos perder performance.
+> Em trafego pago, nunca pause ou desative uma campanha com bom desempenho sem autorizacao explicita do usuário; ele pediu essa regra apos perder performance.
 
 ## Regra
-Ao operar contas de trafego, nunca pause/desative uma campanha que esta performando bem sem confirmacao explicita do usuÃ¡rio. Antes de qualquer acao que reduza veiculacao de uma campanha vencedora, pare e pergunte.
+Ao operar contas de trafego, nunca pause/desative uma campanha que esta performando bem sem confirmacao explicita do usuário. Antes de qualquer acao que reduza veiculacao de uma campanha vencedora, pare e pergunte.
 
 ## Quando aplicar
 Gestao de campanhas de trafego (Meta, Google, etc).
 
 ## Como aplicar
-- Antes de pausar/reduzir, cheque se a campanha esta performando; se sim, confirme com o usuÃ¡rio.
+- Antes de pausar/reduzir, cheque se a campanha esta performando; se sim, confirme com o usuário.
 - Documente por que a acao foi tomada.
 
 ## Anti-padroes

@@ -1,6 +1,6 @@
-# Heuristicas de trabalho do o usuÃ¡rio
+# Heuristicas de trabalho do o usuário
 
-Acervo canonico e portavel das heuristicas de como colaborar com o usuÃ¡rio, destiladas
+Acervo canonico e portavel das heuristicas de como colaborar com o usuário, destiladas
 por engenharia reversa de 2706 prompts reais (claude-mem) + LightRAG + memorias.
 
 ## Estrutura de cada heuristica

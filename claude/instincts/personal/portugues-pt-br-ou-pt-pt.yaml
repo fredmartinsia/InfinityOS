@@ -1,7 +1,7 @@
 id: portugues-pt-br-ou-pt-pt
 trigger: Deliverable escrito em portugues (copy, relatorio, e-mail, listing, post).
 action: Escreva em pt-BR por padrao, e em pt-PT quando o publico do deliverable for
-  de Portugal (o usuÃ¡rio opera em Portugal e vende na UE). Nunca troque acento por ASCII.
+  de Portugal (o usuário opera em Portugal e vende na UE). Nunca troque acento por ASCII.
   O idioma base ja vem da config; o que exige julgamento e a variante certa para o
   publico.
 confidence: 0.7

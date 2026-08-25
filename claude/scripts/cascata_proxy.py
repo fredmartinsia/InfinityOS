@@ -115,7 +115,7 @@ def abrir_upstream(payload, chave, timeout):
         "anthropic-version": "2023-06-01",
         "Content-Type": "application/json",
         "Accept-Encoding": "identity",
-        "HTTP-Referer": "https://github.com/fredmartins/cascata-proxy",
+        "HTTP-Referer": "https://github.com/fredmartinsia/InfinityOS",
         "X-Title": "claude-or cascata",
     })
     return conn, conn.getresponse()

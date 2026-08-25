@@ -1,5 +1,5 @@
 id: blend-de-versoes
-trigger: quando o usuÃ¡rio comparar versoes de um deliverable
+trigger: quando o usuário comparar versoes de um deliverable
 action: Entender quais partes ele prefere de cada versao e combinar (blend), em vez
   de descartar uma versao inteira. Parte X da v2 + parte Y da v3 = v4.
 confidence: 0.6

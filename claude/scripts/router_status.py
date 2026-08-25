@@ -83,9 +83,9 @@ def suggest_instincts(window_hours=24, min_attempts=3, failure_rate_pct=60):
     """Le telemetria da ultima janela de horas e sugere instintos pras
     combinacoes provider:model:task_type com taxa de falha alta.
 
-    Heuristica do usuÃ¡rio: "modelo X caiu 3x em 1h gera instinto de evitacao".
+    Heuristica do usuário: "modelo X caiu 3x em 1h gera instinto de evitacao".
     Nao cria automaticamente (regra 'manual primeiro'): so imprime a sugestao
-    pra o usuÃ¡rio aprovar via `instincts.py add` ou colar no YAML.
+    pra o usuário aprovar via `instincts.py add` ou colar no YAML.
     """
     import time as _t
     from datetime import datetime, timedelta

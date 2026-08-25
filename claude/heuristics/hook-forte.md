@@ -13,7 +13,7 @@ code_ref: null
 > As primeiras linhas de qualquer copy sao criticas; nada generico ou congratulatorio; ao revisar copy, comece a refacao pelo hook.
 
 ## Regra
-Invista tempo desproporcional no hook. Evite aberturas genericas, congratulatorias ('parabens por...') ou que soem negativas/ilicitas. Use gatilho especifico e concreto (dado, prova, historia). Quando o usuÃ¡rio pedir revisao de copy, refaca comecando pelo hook.
+Invista tempo desproporcional no hook. Evite aberturas genericas, congratulatorias ('parabens por...') ou que soem negativas/ilicitas. Use gatilho especifico e concreto (dado, prova, historia). Quando o usuário pedir revisao de copy, refaca comecando pelo hook.
 
 ## Quando aplicar
 Qualquer copy: anuncio, VSL, email, landing, headline.

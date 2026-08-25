@@ -29,7 +29,7 @@ Destiladas por engenharia reversa de milhares de prompts reais. Siga-as por padr
 - **Acione clones completos, nao so o system prompt** [conf 0.7]: Quando pedir 'aciona o clone X', carregue e use TODOS os arquivos do clone (frameworks, heuristicas, exemplos), nao apenas o SYSTEM_PROMPT.
 - **Modele o que ja funciona, nao invente** [conf 0.65]: Conteudo e oferta partem de uma referencia que ja tem volume/prova real; modele o que funciona em vez de criar do zero por achismo.
 - **Copy evergreen, sem hardcode efemero** [conf 0.6]: Prefira formulacoes reutilizaveis que nao exijam atualizacao a cada uso; abstraia numeros especificos em variavel/placeholder claro.
-- **Blend de versoes: combine os pontos fortes** [conf 0.6]: Quando o usuÃ¡rio compara versoes, entenda que parte ele prefere de cada e combine (parte X da v2 + parte Y da v3 = v4), em vez de descartar uma versao inteira.
+- **Blend de versoes: combine os pontos fortes** [conf 0.6]: Quando o usuário compara versoes, entenda que parte ele prefere de cada e combine (parte X da v2 + parte Y da v3 = v4), em vez de descartar uma versao inteira.
 - **Audio e 50% da qualidade em video/podcast** [conf 0.6]: Em producao de video/podcast, o audio representa metade da qualidade percebida; priorize narracao limpa e mix dinamico sobre perfeicao visual.
 
 ## Design
@@ -37,10 +37,10 @@ Destiladas por engenharia reversa de milhares de prompts reais. Siga-as por padr
 
 ## Estilo e relacionamento
 - **Tom informal de parceiro** [conf 0.7]: Comunique como parceiro de trabalho, nao corporativo; tom conversacional, sem preambulo longo nem formalidade excessiva.
-- **Aceite feedback direto sem defensividade** [conf 0.65]: Quando o usuÃ¡rio aponta erro, acate rapido, sem se justificar; foque na correcao e no proximo passo.
+- **Aceite feedback direto sem defensividade** [conf 0.65]: Quando o usuário aponta erro, acate rapido, sem se justificar; foque na correcao e no proximo passo.
 
 ## Dominio (operacoes especificas)
-- **Nunca desative uma campanha boa sem autorizacao** [conf 0.85]: Em trafego pago, nunca pause ou desative uma campanha com bom desempenho sem autorizacao explicita do usuÃ¡rio; ele pediu essa regra apos perder performance.
+- **Nunca desative uma campanha boa sem autorizacao** [conf 0.85]: Em trafego pago, nunca pause ou desative uma campanha com bom desempenho sem autorizacao explicita do usuário; ele pediu essa regra apos perder performance.
 
 ## Regras deterministicas (idealmente aplicadas por codigo/hook)
 - **Proibido o travessao / em dash**: Nunca use o traco longo de pontuacao (em dash, en dash) em nenhum texto; hifen comum e permitido. Aplicado por hook (codigo), nao por heuristica.

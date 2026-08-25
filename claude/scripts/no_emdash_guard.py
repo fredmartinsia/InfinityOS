@@ -2,7 +2,7 @@
 """
 no_emdash_guard.py - Hook PreToolUse (Write|Edit|MultiEdit).
 
-Regra dura e global do usuÃ¡rio: NUNCA usar o travessao / em dash (o caractere longo de
+Regra dura e global do usuário: NUNCA usar o travessao / em dash (o caractere longo de
 pontuacao) em NENHUM texto produzido para ele (copy, posts, e-mails, documentos,
 codigo, mensagens). Esse caractere denuncia texto gerado por IA. Hifen comum em
 palavras compostas e permitido; o travessao longo NAO.
@@ -16,7 +16,7 @@ parenteses ou reformulando a frase.
 Escape para casos legitimos raros (ex: citar um texto de terceiro verbatim):
 exportar ALLOW_EMDASH=1 antes da operacao.
 
-Convencao dos hooks do usuÃ¡rio: nunca derruba a sessao. Qualquer erro interno -> exit 0
+Convencao dos hooks do usuário: nunca derruba a sessao. Qualquer erro interno -> exit 0
 (fail-open), pois um guard de estilo jamais deve travar o trabalho por bug proprio.
 Somente a deteccao real de travessao usa exit 2 (fail-closed intencional).
 """
@@ -82,7 +82,7 @@ def main():
     msg = [
         "BLOQUEADO: travessao/em dash detectado no conteudo que voce ia gravar.",
         f"Arquivo: {path}",
-        "Regra global do usuÃ¡rio (sem excecao): nunca use o traco longo de pontuacao.",
+        "Regra global do usuário (sem excecao): nunca use o traco longo de pontuacao.",
         "Troque por ponto, virgula, dois-pontos, parenteses, ou reescreva a frase.",
         "Hifen comum (-) em palavras compostas continua permitido.",
         "",

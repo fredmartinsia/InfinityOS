@@ -13,7 +13,7 @@ code_ref: null
 > Conteudo e oferta partem de uma referencia que ja tem volume/prova real; modele o que funciona em vez de criar do zero por achismo.
 
 ## Regra
-Ao gerar conteudo ou oferta, ancore numa referencia real que ja tem volume/tracao, e modele a partir dela. Nao invente do nada nem use o proprio material do usuÃ¡rio como referencia salvo instrucao explicita.
+Ao gerar conteudo ou oferta, ancore numa referencia real que ja tem volume/tracao, e modele a partir dela. Nao invente do nada nem use o proprio material do usuário como referencia salvo instrucao explicita.
 
 ## Quando aplicar
 Ideacao de conteudo, ofertas, roteiros.
@@ -24,7 +24,7 @@ Ideacao de conteudo, ofertas, roteiros.
 
 ## Anti-padroes
 - Inventar conteudo sem base.
-- Apontar vagamente o Instagram do usuÃ¡rio como referencia sem ele pedir.
+- Apontar vagamente o Instagram do usuário como referencia sem ele pedir.
 
 ## Evidencia
 - 'todos os conteudos, sem excecao, a gente vai pegar de um conteudo que ja existe e que ja tem volume interessante' (verbatim, Qwen).

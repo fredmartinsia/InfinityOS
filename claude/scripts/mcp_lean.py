@@ -53,7 +53,7 @@ PLUGINS = {
 }
 BACKUPS_KEEP = 5
 
-# alvos que o usuÃ¡rio quer sempre ligados (usa muito): o clean do SessionEnd os pula,
+# alvos que o usuário quer sempre ligados (usa muito): o clean do SessionEnd os pula,
 # entao sobrevivem entre sessoes. Ainda da pra desligar manual com off <alvo>.
 PERSIST_ON = {"playwright"}
 
@@ -269,7 +269,7 @@ def cmd_autodetect():
     if not prompt:
         return
     msgs = []
-    # meta-ads NAO liga mais no squad de trafego (decisao usuÃ¡rio 2026-07-14): dados da Meta
+    # meta-ads NAO liga mais no squad de trafego (decisao usuário 2026-07-14): dados da Meta
     # vao via Graph API (curl / sync_meta.py), nunca por MCP (estoura o contexto).
     # Ver ~/.claude/commands/traffic-masters/POLICY-DADOS-META.md
     # Religar pontualmente: python3 ~/.claude/scripts/mcp_lean.py on meta-ads

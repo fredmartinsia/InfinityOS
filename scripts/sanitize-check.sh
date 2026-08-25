@@ -28,11 +28,21 @@ else
 fi
 
 # --- 2) PII / dados de projeto ----------------------------------------------
-# Padrões do usuÃ¡rio/projetos. 'nobres' sozinho é palavra comum em PT → só pegamos
-# as formas de MARCA (nobres 3d / nobrestech).
-PII_RE='fredmartins|fmartins|3d\.nobresamz|nobres[ ._-]?3d|nobrestech|clube ?infinit|vv group|morrinhos|marciano martins|fred martins|infizap'
+# Os termos privados de quem mantém o pacote (nome, marcas, clientes) NÃO ficam
+# versionados aqui: listá-los neste arquivo publicaria justamente o que eles
+# deveriam esconder. Crie um arquivo local, que o .gitignore já ignora:
+#
+#   echo 'minhamarca|meucliente|meunome' > scripts/.sanitize-terms.local
+#
+# Sem esse arquivo, o gate roda só com os padrões genéricos abaixo.
+PII_RE='@gmail\.com|@hotmail\.com|@outlook\.com|\+55 ?[0-9]{2} ?9?[0-9]{4}|\+351 ?[0-9]{9}'
+LOCAL_TERMS="$(dirname "$0")/.sanitize-terms.local"
+if [ -f "$LOCAL_TERMS" ]; then
+  EXTRA="$(tr -d '\n' < "$LOCAL_TERMS")"
+  [ -n "$EXTRA" ] && PII_RE="$PII_RE|$EXTRA"
+fi
 # Falsos-positivos conhecidos a ignorar:
-ALLOW='usuÃ¡rio Hahn'
+ALLOW='__nenhum__'
 if grep -rInE "${EXCLUDES[@]}" -i "$PII_RE" . 2>/dev/null | grep -vE "$ALLOW" >/tmp/aos_pii 2>/dev/null; then
   if [ -s /tmp/aos_pii ]; then
     echo "[PII/projeto] encontrados:"; cat /tmp/aos_pii; report "PII/projeto acima"
@@ -44,8 +54,8 @@ else
 fi
 
 # --- 2b) Nome próprio do autor ----------------------------------------------
-# 'usuÃ¡rio' como nome próprio. Allowlist: 'usuÃ¡rio Hahn' (revisor real do livro do Caples).
-if grep -rInE "${EXCLUDES[@]}" "\bFred\b" . 2>/dev/null | grep -vE "usuÃ¡rio Hahn" >/tmp/aos_name 2>/dev/null; then
+# 'usuário' como nome próprio. Allowlist: 'usuário Hahn' (revisor real do livro do Caples).
+if grep -rInE "${EXCLUDES[@]}" "\bFred\b" . 2>/dev/null | grep -vE "usuário Hahn" >/tmp/aos_name 2>/dev/null; then
   if [ -s /tmp/aos_name ]; then
     echo "[nome do autor] encontrados:"; cat /tmp/aos_name; report "nome do autor acima"
   else

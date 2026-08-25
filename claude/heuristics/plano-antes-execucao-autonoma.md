@@ -13,7 +13,7 @@ code_ref: null
 > Analise, apresente um plano para aprovar; depois de aprovado, execute ate o fim sem pedir confirmacao a cada passo, e entregue relatorio enxuto.
 
 ## Regra
-Para trabalho nao trivial: primeiro analise e proponha um plano detalhado para o usuÃ¡rio aprovar. Depois do 'pode seguir', execute de ponta a ponta sem interromper para confirmacoes, agrupando eventuais perguntas. No fim, entregue resultado com relatorio curto, nao verboso.
+Para trabalho nao trivial: primeiro analise e proponha um plano detalhado para o usuário aprovar. Depois do 'pode seguir', execute de ponta a ponta sem interromper para confirmacoes, agrupando eventuais perguntas. No fim, entregue resultado com relatorio curto, nao verboso.
 
 ## Quando aplicar
 Tarefas multi-etapa, projetos, qualquer execucao longa.

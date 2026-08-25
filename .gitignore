@@ -41,3 +41,6 @@ history.jsonl
 # --- Backups locais do instalador -------------------------------------------
 *-backup-*/
 .infinity-os-backup-*/
+
+# termos privados do mantenedor, nunca versionados
+scripts/.sanitize-terms.local

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-router_orchestrator.py: orquestrador central de LLM do ecossistema o usuÃ¡rio.
+router_orchestrator.py: orquestrador central de LLM do ecossistema o usuário.
 
 Single source of truth para roteamento de inferencia. Substitui as cadeias
 hardcoded de llm_contingency.py, cascata_proxy.py e lr_prod.FREE_MODELS por
 uma unica configuracao em ~/.claude/router/providers.json.
 
-Principios (regra de ouro do usuÃ¡rio, 2026-07-14, status ativo no vault):
+Principios (regra de ouro do usuário, 2026-07-14, status ativo no vault):
   - Camadas free primeiro (OpenRouter :free, NVIDIA, Groq, Gemini).
   - Assinaturas flat (Claude Max, GLM Z.AI $50) depois, em cadeias de julgamento/codigo.
   - NUNCA API paga por token. assert_policy() aborta se violada.
@@ -380,7 +380,7 @@ def read_telemetry(limit=100, provider=None, success=None):
 # ---------------------------------------------------------------------------
 
 def assert_policy(chain, cfg=None):
-    """Regra de ouro do usuÃ¡rio: nunca provider com cost=paid_token na cadeia."""
+    """Regra de ouro do usuário: nunca provider com cost=paid_token na cadeia."""
     cfg = cfg or _load_config()
     policy = cfg.get("policy", {})
     if not policy.get("paid_by_token_forbidden", True):

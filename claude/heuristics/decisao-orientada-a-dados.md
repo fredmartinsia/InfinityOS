@@ -19,7 +19,7 @@ Antes de recomendar ou decidir qualquer coisa, verifique se voce tem dados que s
 Qualquer pedido que envolva escolha, recomendacao, priorizacao, compra ou aposta de recurso.
 
 ## Como aplicar
-- Cheque a data dos dados: se estiverem velhos, atualize antes de usar (o usuÃ¡rio revisa relatorios organizados no Obsidian justamente para decidir com base em dado atual).
+- Cheque a data dos dados: se estiverem velhos, atualize antes de usar (o usuário revisa relatorios organizados no Obsidian justamente para decidir com base em dado atual).
 - Se faltar dado, rode a pesquisa (web, MCP, base) e traga a fonte junto.
 - Deixe explicito o que e dado e o que e estimativa.
 
@@ -29,7 +29,7 @@ Qualquer pedido que envolva escolha, recomendacao, priorizacao, compra ou aposta
 
 ## Evidencia
 - 313 dos 589 prompts de alto sinal tocam pesquisa/dados/verificacao (tema #1).
-- LightRAG: 'usuÃ¡rio reviews organized reports in Obsidian to decide which products will be produced'.
+- LightRAG: 'usuário reviews organized reports in Obsidian to decide which products will be produced'.
 
 ## Aplicacao deterministica
 N/A: requer julgamento do modelo (nao e mecanicamente verificavel).

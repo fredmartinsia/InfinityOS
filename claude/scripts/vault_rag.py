@@ -37,7 +37,7 @@ BUSINESS_TERMS = re.compile(
 
 PULL_NUDGE = (
     "## Memoria do negocio (modo pull)\n"
-    "Este prompt parece ser sobre o negocio do usuÃ¡rio. Antes de responder, consulte "
+    "Este prompt parece ser sobre o negocio do usuário. Antes de responder, consulte "
     "a memoria: use a ferramenta mcp__lightrag__consultar_negocio (grafo+vetor do "
     "vault) e/ou rode `python3 ~/.claude/scripts/vault_search.py \"<consulta>\"`. "
     "Para o que vale HOJE (planejamento atual), priorize notas em DECISOES/ com "
@@ -47,7 +47,7 @@ PULL_NUDGE = (
 FOLDER_WEIGHTS = {
     "clientes": 1.4,
     "projetos": 1.3,
-    "🧠 segundo cerebro": 1.3,  # hub de contexto destilado (perfil do usuÃ¡rio, temas)
+    "🧠 segundo cerebro": 1.3,  # hub de contexto destilado (perfil do usuário, temas)
     "infra": 1.2,
     "diario": 1.1,
 }
@@ -151,7 +151,7 @@ def lightrag_context(prompt: str):
         ctx = ctx[:LIGHTRAG_MAX_CHARS] + "\n... (contexto truncado)"
     return (
         "## Contexto do vault (LightRAG: grafo+vetor)\n"
-        "Entidades, relacoes e trechos relevantes do segundo cerebro do usuÃ¡rio:\n\n"
+        "Entidades, relacoes e trechos relevantes do segundo cerebro do usuário:\n\n"
         + ctx
     )
 

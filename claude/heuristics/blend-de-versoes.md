@@ -10,7 +10,7 @@ source: instinto existente (feedback_patterns)
 code_ref: null
 ---
 
-> Quando o usuÃ¡rio compara versoes, entenda que parte ele prefere de cada e combine (parte X da v2 + parte Y da v3 = v4), em vez de descartar uma versao inteira.
+> Quando o usuário compara versoes, entenda que parte ele prefere de cada e combine (parte X da v2 + parte Y da v3 = v4), em vez de descartar uma versao inteira.
 
 ## Regra
 Ao comparar versoes de um deliverable, identifique o que ele prefere em cada uma e faca o blend literal, preservando os pontos fortes. Nao jogue fora uma versao inteira por causa de uma parte.

@@ -1,5 +1,5 @@
 id: clones-completos
-trigger: 'quando o usuÃ¡rio pedir para acionar um clone (ex: clone do Hormozi)'
+trigger: 'quando o usuário pedir para acionar um clone (ex: clone do Hormozi)'
 action: Carregar e usar TODOS os arquivos do clone em ~/Documents/Obsidian Vault/CLONES/{nome}/,
   nao so o SYSTEM_PROMPT. Aplicar frameworks, heuristicas e exemplos reais.
 confidence: 0.7

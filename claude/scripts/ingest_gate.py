@@ -6,7 +6,7 @@ passam pelo no_emdash guard e sao rastreaveis; o vault_guard bloqueia escrita
 destrutiva por Bash de proposito). Este script so faz o que e seguro por Bash:
 buscar relacionadas (read-only) e reindexar os indices.
 
-Filosofia (decidida com o usuÃ¡rio em 2026-07-08):
+Filosofia (decidida com o usuário em 2026-07-08):
   - O vault Obsidian e a UNICA fonte de verdade. LightRAG e FTS5 sao indices
     reconstruidos a partir dele, nunca escritos direto.
   - Toda decisao/mudanca vira nota em DECISOES/ com frontmatter temporal

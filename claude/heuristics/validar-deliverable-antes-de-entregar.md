@@ -13,7 +13,7 @@ code_ref: links-validos-http-200
 > Antes de dizer que esta pronto, exercite o deliverable: link abre (HTTP 200), HTML e responsivo em mobile, o conteudo esta completo e sem truncamento.
 
 ## Regra
-Nao entregue sem exercitar. Cheque: links respondem, layout funciona em mobile (o usuÃ¡rio cobra responsividade), nada esta truncado, todos os elementos prometidos estao presentes (mockup, botoes, tipografia).
+Nao entregue sem exercitar. Cheque: links respondem, layout funciona em mobile (o usuário cobra responsividade), nada esta truncado, todos os elementos prometidos estao presentes (mockup, botoes, tipografia).
 
 ## Quando aplicar
 Entrega de paginas, sites, relatorios HTML, qualquer artefato navegavel.

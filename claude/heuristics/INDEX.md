@@ -1,4 +1,4 @@
-# Indice de heuristicas do usuÃ¡rio (v1.0)
+# Indice de heuristicas do usuário (v1.0)
 
 22 heuristicas destiladas por engenharia reversa. Gerado em 2026-07-03.
 
@@ -20,7 +20,7 @@
 - [Acione clones completos, nao so o system prompt](clones-completos.md) - conf 0.7: Quando pedir 'aciona o clone X', carregue e use TODOS os arquivos do clone (frameworks, heuristicas, exemplos), nao apenas o SYSTEM_PROMPT.
 - [Modele o que ja funciona, nao invente](modelar-o-que-ja-funciona.md) - conf 0.65 (nova): Conteudo e oferta partem de uma referencia que ja tem volume/prova real; modele o que funciona em vez de criar do zero por achismo.
 - [Copy evergreen, sem hardcode efemero](copy-evergreen.md) - conf 0.6: Prefira formulacoes reutilizaveis que nao exijam atualizacao a cada uso; abstraia numeros especificos em variavel/placeholder claro.
-- [Blend de versoes: combine os pontos fortes](blend-de-versoes.md) - conf 0.6: Quando o usuÃ¡rio compara versoes, entenda que parte ele prefere de cada e combine (parte X da v2 + parte Y da v3 = v4), em vez de descartar uma versao inteira.
+- [Blend de versoes: combine os pontos fortes](blend-de-versoes.md) - conf 0.6: Quando o usuário compara versoes, entenda que parte ele prefere de cada e combine (parte X da v2 + parte Y da v3 = v4), em vez de descartar uma versao inteira.
 - [Audio e 50% da qualidade em video/podcast](audio-metade-da-qualidade-em-video.md) - conf 0.6 (nova): Em producao de video/podcast, o audio representa metade da qualidade percebida; priorize narracao limpa e mix dinamico sobre perfeicao visual.
 
 ## Design
@@ -28,10 +28,10 @@
 
 ## Estilo e relacionamento
 - [Tom informal de parceiro](tom-informal.md) - conf 0.7 (nova): Comunique como parceiro de trabalho, nao corporativo; tom conversacional, sem preambulo longo nem formalidade excessiva.
-- [Aceite feedback direto sem defensividade](feedback-direto-sem-defensividade.md) - conf 0.65 (nova): Quando o usuÃ¡rio aponta erro, acate rapido, sem se justificar; foque na correcao e no proximo passo.
+- [Aceite feedback direto sem defensividade](feedback-direto-sem-defensividade.md) - conf 0.65 (nova): Quando o usuário aponta erro, acate rapido, sem se justificar; foque na correcao e no proximo passo.
 
 ## Dominio (operacoes especificas)
-- [Nunca desative uma campanha boa sem autorizacao](nunca-desativar-campanha-boa.md) - conf 0.85 (nova): Em trafego pago, nunca pause ou desative uma campanha com bom desempenho sem autorizacao explicita do usuÃ¡rio; ele pediu essa regra apos perder performance.
+- [Nunca desative uma campanha boa sem autorizacao](nunca-desativar-campanha-boa.md) - conf 0.85 (nova): Em trafego pago, nunca pause ou desative uma campanha com bom desempenho sem autorizacao explicita do usuário; ele pediu essa regra apos perder performance.
 
 ## Deterministicas (aplicadas por codigo, nao por heuristica)
 - [Proibido o travessao / em dash](proibido-travessao.md) - conf 0.95 [codigo] (nova): Nunca use o traco longo de pontuacao (em dash, en dash) em nenhum texto; hifen comum e permitido. Aplicado por hook (codigo), nao por heuristica.

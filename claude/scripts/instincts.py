@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Instincts — camada de "memoria que aprende" para o ambiente do usuÃ¡rio.
+Instincts — camada de "memoria que aprende" para o ambiente do usuário.
 
 Arquitetura inspirada no continuous-learning-v2 do everything-claude-code
 (affaan-m), porem re-implementada de forma leve e sob medida, enxertada no
@@ -9,7 +9,7 @@ encostar no vault_guard.
 
 Conceito: cada "instinto" e uma licao atomica (gatilho -> acao) com uma nota
 de confianca (0.3 tentativo .. 0.9 quase certo). A confianca REFORCA quando o
-padrao se confirma e DECAI quando o usuÃ¡rio corrige. Instintos ativos (>= 0.5)
+padrao se confirma e DECAI quando o usuário corrige. Instintos ativos (>= 0.5)
 sao injetados no inicio de cada sessao para que sejam de fato seguidos.
 
 Comandos:
@@ -20,7 +20,7 @@ Comandos:
   decay <id>           Desce a confianca (-0.2, piso 0.2; abaixo arquiva).
   show <id>            Mostra um instinto em detalhe.
   mine [--days N]      Garimpa correcoes no claude-mem.db e sugere instintos.
-  seed                 Cria os instintos iniciais a partir dos padroes do usuÃ¡rio.
+  seed                 Cria os instintos iniciais a partir dos padroes do usuário.
 """
 import argparse
 import datetime
@@ -147,7 +147,7 @@ def cmd_inject(args):
     items = items[:INJECT_CAP]
     if not items:
         return 0
-    lines = ["## 🧠 Instintos ativos (licoes aprendidas com o usuÃ¡rio — siga-as)"]
+    lines = ["## 🧠 Instintos ativos (licoes aprendidas com o usuário — siga-as)"]
     for d in items:
         lines.append(f"- [conf {d.get('confidence',0):.1f}] QUANDO {d.get('trigger','')}: "
                      f"{d.get('action','')} ({d.get('id')})")
@@ -288,11 +288,11 @@ SEEDS = [
          action="Investir tempo desproporcional no hook (primeiras linhas). Evitar aberturas genericas ou congratulatorias. Quando pedir revisao de copy, comecar a refacao pelo hook.",
          evidence="Recorrente: SORTEIOS e AMZSS. 'O hook ai nao esta legal', 'muito genericosao'."),
     dict(id="blend-de-versoes", domain="iteracao", confidence=0.6,
-         trigger="quando o usuÃ¡rio comparar versoes de um deliverable",
+         trigger="quando o usuário comparar versoes de um deliverable",
          action="Entender quais partes ele prefere de cada versao e combinar (blend), em vez de descartar uma versao inteira. Parte X da v2 + parte Y da v3 = v4.",
          evidence="AMZSS: v2+v3 -> v4. 'una a segunda versao com as informacoes da terceira'."),
     dict(id="clones-completos", domain="clones", confidence=0.7,
-         trigger="quando o usuÃ¡rio pedir para acionar um clone (ex: clone do Hormozi)",
+         trigger="quando o usuário pedir para acionar um clone (ex: clone do Hormozi)",
          action="Carregar e usar TODOS os arquivos do clone (via INFINITY_VAULT_PATH ou fallback local), nao so o SYSTEM_PROMPT. Aplicar frameworks, heuristicas e exemplos reais.",
          evidence="AMZSS: 'nao usa so o prompt do Alex; usa os frameworks, heuristicas e explora todos os arquivos'."),
 ]
