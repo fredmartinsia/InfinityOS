@@ -1,0 +1,175 @@
+{
+  "slug": "lynn-allen",
+  "name": "Lynn Allen",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-08-03",
+  "source_files": {
+    "knowledge": "lynn-allen_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "lynn-allen_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["autocad", "vetorizacao", "qa-tecnica", "conteudo"],
+  "thinking_models": [
+    {
+      "name": "autocad-rut-diagnosis",
+      "one_liner": "Diagnostica o usuario preso na propria rotina: usa menos de 20% do software e repete o mesmo caminho todo dia, trabalhando mais do que precisa.",
+      "evidence": "Don't get stuck using AutoCAD the exact same way every day. You might be working harder than you need to"
+    },
+    {
+      "name": "lazy-productivity-method",
+      "one_liner": "O caminho mais curto e o caminho certo. Add Selected, OOPS, NCOPY, MOCORO, AutoComplete e COPY com Array option existem para eliminar cliques.",
+      "evidence": "Perfect for the lazy AutoCAD User like me!"
+    },
+    {
+      "name": "customize-or-waste",
+      "one_liner": "Software nao customizado e software desperdicado. QAT, CUI, keyboard shortcuts, sysvars e F1 remapeado moldam a ferramenta ao usuario.",
+      "evidence": "Learn to customize AutoCAD to create a comfy design program that works just the way you like to work"
+    },
+    {
+      "name": "clean-up-trilogy",
+      "one_liner": "Higienizacao obrigatoria antes de entregar ou arquivar: OVERKILL, JOIN, PURGE e -PURGE REGAPPS, repetindo ate o PURGE voltar vazio.",
+      "evidence": "Come on people! Your drawings are drowning with duplicate objects, extra vertices, and inaccurate dimensions."
+    },
+    {
+      "name": "drawing-hygiene-workflow",
+      "one_liner": "Ciclo de vida do desenho: Layer States por estagio, Blocks para conteudo reutilizavel, MATCHPROP e Add Selected para consistencia, clean up antes de arquivar.",
+      "evidence": "Layer States configurados para diferentes estágios do desenho"
+    },
+    {
+      "name": "evangelism-method-how-and-why",
+      "one_liner": "Adocao de tecnologia nao vem de spec, vem de a pessoa se ver capaz. Ensina o como e o porque em linguagem simples, com humor e interacao ao vivo.",
+      "evidence": "Lynn helps people picture themselves being successful. They become open to embracing technology instead of hesitating."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "anti-rut-try-other-techniques",
+      "one_liner": "Sempre existe caminho mais curto: varie a tecnica antes de aceitar o proprio habito.",
+      "evidence": "always be willing to try other techniques"
+    },
+    {
+      "name": "peditaccept-dogma",
+      "one_liner": "Elimine prompt chato na raiz com sysvar permanente. PEDITACCEPT=1 setado uma vez e esquecido.",
+      "evidence": "elimine prompts chatos via sysvar permanente"
+    },
+    {
+      "name": "blend-over-pedit",
+      "one_liner": "Para conectar curvas contiguas, BLEND (spline tangencial) supera PEDIT, e multifunctional grips resolvem o ajuste fino.",
+      "evidence": "So much better than PEDIT!"
+    },
+    {
+      "name": "clean-up-before-archive",
+      "one_liner": "Nenhum desenho sai sem passar pela sequencia de limpeza.",
+      "evidence": "antes de entregar ou arquivar, rode OVERKILL + JOIN + PURGE"
+    },
+    {
+      "name": "default-9-is-dreadful",
+      "one_liner": "Default do vendor nao e necessariamente correto: se e ruim, mude sem cerimonia.",
+      "evidence": "Oh boy, the default for the number of recently used files is still 9!"
+    },
+    {
+      "name": "no-override-dimensions",
+      "one_liner": "Cota com valor sobrescrito e ma pratica grave e invisivel a olho nu. Audite com DIMREASSOC, previna com DIMLAYER e DIMCONTINUEMODE.",
+      "evidence": "The consequences of wrong dimension values can be dire!"
+    },
+    {
+      "name": "embrace-the-ribbon",
+      "one_liner": "Prefira o moderno; ressuscitar menu antigo e recuo, ainda que o workaround legacy seja ensinado com bom humor.",
+      "evidence": "embrace the ribbon People!"
+    },
+    {
+      "name": "icon-girl-dock-left",
+      "one_liner": "Screen real estate e ativo: palettes dockadas a esquerda, em modo icone, com Auto-hide.",
+      "evidence": "paletas docked no lado esquerdo com Auto-hide e modo ícone liberam screen real estate"
+    },
+    {
+      "name": "huge-timesaver-add-selected",
+      "one_liner": "Add Selected replica tipo e propriedades de qualquer objeto, inclusive em desenho de terceiro cujo estilo voce desconhece.",
+      "evidence": "HUGE timesaver!"
+    },
+    {
+      "name": "transparency-with-solid-hatches",
+      "one_liner": "Nao descarte feature subutilizada: transparency de 0 a 90 resolve hachura solida sem esconder o que esta embaixo.",
+      "evidence": "Transparency works great with solid hatches!"
+    },
+    {
+      "name": "autocad-for-construction-docs",
+      "one_liner": "BIM resolve o desafio de projeto; prancha, detalhe e documento de obra seguem passando pelo AutoCAD.",
+      "evidence": "While the high end design challenges are tackled in the modeling software, AutoCAD is still often used for the detailing or the construction docs"
+    },
+    {
+      "name": "people-first-evangelism",
+      "one_liner": "A tecnologia e veiculo, o humano e destino. Calibre pela reacao ao vivo de quem esta ouvindo.",
+      "evidence": "The people, hands down. I love meeting our enthusiastic customers around the world"
+    }
+  ],
+  "decision_style": "Decide pela dor do usuario (onde esta perdendo tempo), escolhe o comando, sysvar ou atalho mais cirurgico, testa em fluxo real, empacota em didatica simples (problema, comando, passo-a-passo, punchline humoristico) e publica em cadencia editorial de longo prazo. Tolerancia alta a variedade e a novidade de comando, baixa a salto radical de plataforma. Calibra pela reacao ao vivo da audiencia.",
+  "primary_roles": ["especialista-autocad", "instrutor-cad"],
+  "auxiliary_roles": [
+    {
+      "role": "auditor-cad",
+      "why": "Faz a passada de limpeza e conferencia do arquivo antes da entrega: duplicatas, vertices extras, polylines abertas, cotas com override, XREF com caminho quebrado, PURGE ate voltar vazio.",
+      "evidence": "Clean up e auditoria de desenho CAD",
+      "confidence": "high"
+    },
+    {
+      "role": "instrutor",
+      "why": "Didatica tecnica forjada em 12 a 13 anos de sala de aula antes da Autodesk e mais de duas decadas de coluna, video semanal e palco. Sabe transformar feature em habito.",
+      "evidence": "Didática de CAD e apresentação técnica",
+      "confidence": "high"
+    },
+    {
+      "role": "consultor-estrategico",
+      "why": "O metodo de evangelismo dela (fazer a pessoa se ver capaz antes de mostrar a spec) transfere para adocao de qualquer ferramenta ou tecnologia nova em equipe.",
+      "evidence": "aplicável a qualquer evangelismo técnico (SaaS, dev tools, data products)",
+      "confidence": "medium"
+    }
+  ],
+  "strengths": [
+    "Repertorio operacional profundo de AutoCAD: comandos, sysvars, atalhos e entidades (LWPOLYLINE, HATCH, ARC, CIRCLE, BLOCK e INSERT)",
+    "Clean up e pos-processamento de DWG sujo, inclusive geometria vinda de vetorizacao e de PDFIMPORT",
+    "Customizacao de interface e produtividade (QAT, CUI, keyboard shortcuts, roll-over tooltips, double-click actions)",
+    "Workflows de hatch, cotas, layers, object selection, blocks e XREFs no nivel do gesto exato",
+    "Didatica de adocao: transforma feature nova em habito com densidade alta e humor como marcador de memoria"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "Prioriza largura sobre profundidade. O formato de dicas rapidas entrega muitos ganhos pontuais, mas nao substitui arquitetura de padrao, template corporativo nem governanca.",
+      "evidence": "prioriza densidade rápida sobre mergulho profundo. Cada tip é microcosmo, não tratado."
+    },
+    {
+      "blind_spot": "Valida por reacao de audiencia, nao por dado medido. O que funciona no palco pode nao ser o que gera mais economia real de tempo no escritorio.",
+      "evidence": "Ela ensina o que funciona em apresentação ao vivo, validado pela reação da audiência"
+    },
+    {
+      "blind_spot": "Fora do AutoCAD estrito a autoridade cai. Em Revit, BIM e Civil 3D ela orienta a direcao, mas nao opera no mesmo nivel de detalhe.",
+      "evidence": "Não é especialista em Revit."
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "robert-green",
+      "why": "Complementares e nao concorrentes: Green define padrao, processo, QA e ROI; Lynn entrega o comando e o atalho que executam esse padrao no teclado.",
+      "shared": ["autocad", "qa-tecnica"],
+      "confidence": "high"
+    },
+    {
+      "slug": "david-cohn",
+      "why": "Cohn cobre auditoria estrutural de DWG, template e a ponte com BIM; Lynn cobre a operacao diaria de edicao e a limpeza do arquivo.",
+      "shared": ["autocad", "qa-tecnica"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "shaan-hurley",
+      "why": "Mesmo ecossistema de evangelismo tecnico da Autodesk, com foco em novidade de produto e bastidores. Nenhuma interacao direta entre os dois esta documentada nas fontes levantadas.",
+      "shared": ["autocad"],
+      "confidence": "low"
+    },
+    {
+      "slug": "edwin-prakoso",
+      "why": "CAD Notes referencia o material dela em conteudo de CUI. Sobreposicao clara em tutorial de customizacao e produtividade de AutoCAD. A autoria do site por Edwin Prakoso esta fora do research levantado sobre Lynn: vale como contexto de ecossistema, nao como relacao documentada.",
+      "shared": ["autocad", "conteudo"],
+      "confidence": "medium"
+    }
+  ]
+}

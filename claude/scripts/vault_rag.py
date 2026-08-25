@@ -1,15 +1,8 @@
 #!/usr/bin/env python3
 """
-RAG Hook para Claude Code — InfinityOS
+RAG Hook para Claude Code
 Injeta contexto do Obsidian automaticamente em cada prompt.
-
-Configuração:
-  CLAUDE_VAULT_PATH — caminho do vault Obsidian (default: ~/Documents/Obsidian Vault)
-  CLAUDE_RAG_MAX_TOKENS — orçamento de tokens do contexto (default: 450)
-  CLAUDE_RAG_TOP_CHUNKS — número de chunks por query (default: 6)
-  CLAUDE_RAG_DIARY_MAX_DAYS — cutoff de notas em Diario/ (default: 30)
-
-Baseado no guia do @thiagozaoo.
+Baseado no guia do @thiagozaoo
 """
 
 import sys
@@ -17,19 +10,44 @@ import json
 import os
 import sqlite3
 import re
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
-VAULT_PATH = os.path.expanduser(
-    os.environ.get("CLAUDE_VAULT_PATH", "~/Documents/Obsidian Vault")
+VAULT_PATH = os.environ.get("INFINITY_VAULT_PATH") or os.path.expanduser("~/Documents/Obsidian Vault")
+MAX_TOKENS = 450
+TOP_CHUNKS = 6
+DIARY_MAX_DAYS = 30
+
+# Modo de entrega do RAG (Tarefa H do handoff):
+#   push (default): injeta ate ~800 tokens de contexto em CADA prompt (atual).
+#   pull: NAO injeta conteudo; quando o prompt e do negocio, injeta 1 linha (~25t)
+#         lembrando o Claude de consultar mcp__lightrag__consultar_negocio /
+#         rodar vault_search.py. Economia grande; ativar via  export RAG_MODE=pull
+# Fica opt-in por env pra validar (10 perguntas) antes de virar padrao, sem risco.
+RAG_MODE = os.environ.get("RAG_MODE", "push").strip().lower()
+
+# Termos que indicam pergunta do negocio (gatilho do nudge no modo pull).
+BUSINESS_TERMS = re.compile(
+    r"sorteio|campanha|cliente|tr[aá]fego|oferta|criativo|nobres|vv\s*group|"
+    r"clube\s*infinity|projeto|an[uú]ncio|lan[cç]amento|copy|funil|venda|lead|"
+    r"decis[aã]o|planejamento|mudou|estrat[eé]gia",
+    re.IGNORECASE,
 )
-MAX_TOKENS = int(os.environ.get("CLAUDE_RAG_MAX_TOKENS", "450"))
-TOP_CHUNKS = int(os.environ.get("CLAUDE_RAG_TOP_CHUNKS", "6"))
-DIARY_MAX_DAYS = int(os.environ.get("CLAUDE_RAG_DIARY_MAX_DAYS", "30"))
+
+PULL_NUDGE = (
+    "## Memoria do negocio (modo pull)\n"
+    "Este prompt parece ser sobre o negocio do usuÃ¡rio. Antes de responder, consulte "
+    "a memoria: use a ferramenta mcp__lightrag__consultar_negocio (grafo+vetor do "
+    "vault) e/ou rode `python3 ~/.claude/scripts/vault_search.py \"<consulta>\"`. "
+    "Para o que vale HOJE (planejamento atual), priorize notas em DECISOES/ com "
+    "status: ativo e ignore as status: substituido. Cite a nota-fonte."
+)
 
 FOLDER_WEIGHTS = {
     "clientes": 1.4,
     "projetos": 1.3,
+    "🧠 segundo cerebro": 1.3,  # hub de contexto destilado (perfil do usuÃ¡rio, temas)
     "infra": 1.2,
     "diario": 1.1,
 }
@@ -57,6 +75,85 @@ def should_skip(prompt: str) -> bool:
 
 def estimate_tokens(text: str) -> int:
     return len(text) // 4
+
+
+# ---------------------------------------------------------------------------
+# LightRAG (grafo+vetor) — fonte primaria. Servidor local em :9621, modo
+# only_need_context (so recupera, nao gera com LLM = gratis e rapido). Passamos
+# keywords derivadas do prompt pra PULAR a extracao de keywords via LLM (que
+# custaria ~3s); assim a query fica em ~0.6s. Fallback pro FTS5 se o server cair.
+# ---------------------------------------------------------------------------
+LIGHTRAG_URL = "http://127.0.0.1:9621/query"
+LIGHTRAG_TIMEOUT = 10  # segundos; se estourar, cai no fallback FTS5 (margem p/ 1a query do dia)
+LIGHTRAG_MAX_CHARS = 3200  # ~800 tokens de contexto injetado
+
+_STOPWORDS = set("""
+a o e de da do das dos em no na nos nas um uma uns umas para por com sem que se
+ao aos as os à às pra pro como mais mas ou the of to and in on for with is are
+me te lhe meu minha seu sua qual quais quando onde quem porque entao ja ainda
+isso isto esse essa este esta aquele aquela voce vc fred quero preciso fazer
+""".split())
+
+
+def derive_keywords(prompt: str):
+    """Keywords sem LLM: palavras significativas + termos Capitalizados (entidades)."""
+    words = re.findall(r"[A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ0-9_\.\-]{2,}", prompt)
+    seen, kw, caps = set(), [], []
+    for w in words:
+        lw = w.lower()
+        if lw in _STOPWORDS or lw in seen:
+            continue
+        seen.add(lw)
+        kw.append(w)
+        if w[0].isupper():
+            caps.append(w)
+    kw = kw[:10]
+    # hl = temas (gerais); ll = entidades (Capitalizadas, mais especificas)
+    return kw, (caps[:8] or kw)
+
+
+def lightrag_context(prompt: str):
+    """Consulta o servidor LightRAG (vault_main) por contexto. Retorna str ou None."""
+    import urllib.request
+
+    hl, ll = derive_keywords(prompt)
+    if not hl:
+        return None
+    payload = json.dumps({
+        "query": prompt[:1000],
+        "mode": "mix",
+        "only_need_context": True,
+        "top_k": 6,
+        "chunk_top_k": 3,
+        "max_total_tokens": 800,
+        "max_entity_tokens": 400,
+        "max_relation_tokens": 300,
+        "hl_keywords": hl,
+        "ll_keywords": ll,
+        "enable_rerank": False,
+    }).encode("utf-8")
+    try:
+        req = urllib.request.Request(
+            LIGHTRAG_URL, data=payload,
+            headers={"content-type": "application/json"}, method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=LIGHTRAG_TIMEOUT) as resp:
+            body = json.loads(resp.read().decode("utf-8"))
+        ctx = (body.get("response") or "").strip()
+    except Exception:
+        return None
+    # ignora respostas vazias (so os cabecalhos de JSON sem dados)
+    if (not ctx or len(ctx) < 120
+            or '"entity"' not in ctx
+            or "chunk" not in ctx.lower()):
+        return None
+    if len(ctx) > LIGHTRAG_MAX_CHARS:
+        ctx = ctx[:LIGHTRAG_MAX_CHARS] + "\n... (contexto truncado)"
+    return (
+        "## Contexto do vault (LightRAG: grafo+vetor)\n"
+        "Entidades, relacoes e trechos relevantes do segundo cerebro do usuÃ¡rio:\n\n"
+        + ctx
+    )
 
 
 def get_folder_weight(file_path: str) -> float:
@@ -128,10 +225,19 @@ def build_index(conn: sqlite3.Connection):
         try:
             rel_path = str(md_file.relative_to(vault))
 
+            # CLONES/ fica de fora do indice: o clone consome o vault, mas nao deve
+            # ser injetado como contexto (evita o clone se auto-citar / eco).
+            if rel_path.startswith("CLONES/") or rel_path.startswith("CLONES\\"):
+                continue
+
             if is_diary_too_old(rel_path):
                 continue
 
             content = md_file.read_text(encoding="utf-8", errors="ignore")
+            # Gravacoes tem transcricao gigante: nao indexar o bloco de transcricao
+            # (poluiria os prompts). Indexa so resumo/decisoes/insights/mind map.
+            if "/Gravacoes/" in rel_path or rel_path.startswith("Gravacoes/"):
+                content = re.split(r"(?mi)^##+\s+Transcri[cç][aã]o\s+Completa", content)[0]
             content = re.sub(r"^---[\s\S]*?---\n", "", content)
             content = re.sub(r"#+ ", "", content)
             content = re.sub(r"\[\[([^\]]+)\]\]", r"\1", content)
@@ -147,7 +253,29 @@ def build_index(conn: sqlite3.Connection):
             continue
 
     conn.executemany("INSERT INTO vault_fts VALUES (?, ?)", rows)
+    _stamp_build(conn)
     conn.commit()
+
+
+def _stamp_build(conn: sqlite3.Connection):
+    """Grava quando o indice foi construido. E a marca que permite detectar
+    depois que o vault andou para a frente e o indice ficou para tras."""
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS vault_meta (key TEXT PRIMARY KEY, value REAL)"
+    )
+    conn.execute(
+        "INSERT OR REPLACE INTO vault_meta VALUES ('last_build', ?)", (time.time(),)
+    )
+
+
+def _last_build(conn: sqlite3.Connection) -> float:
+    try:
+        row = conn.execute(
+            "SELECT value FROM vault_meta WHERE key = 'last_build'"
+        ).fetchone()
+        return float(row[0]) if row else 0.0
+    except Exception:
+        return 0.0
 
 
 STOPWORDS_PT = {
@@ -168,18 +296,24 @@ STOPWORDS_PT = {
     "aqui", "ali", "la", "hoje", "ontem", "amanha",
     "agora", "depois", "antes", "entao", "logo",
     "muito", "mais", "menos", "bem", "mal",
+    "amigao", "irmao", "beleza", "fechou", "pegou", "visao", "sacou",
     "the", "of", "and", "to", "for", "in", "on", "at", "is", "are",
 }
 
 
 def search_vault(query: str, conn: sqlite3.Connection) -> list:
+    # Remove pontuacao e normaliza
     clean = re.sub(r'[^\w\s]', ' ', query.lower())
+    # Filtra stopwords e palavras muito curtas
     words = [w for w in clean.split() if w not in STOPWORDS_PT and len(w) >= 3]
+    # Limita a 10 palavras chave
     words = words[:10]
 
     if not words:
         return []
 
+    # Monta query FTS5 com OR pra ser mais permissivo
+    # Escapa palavras com aspas duplas pra evitar interpretacao de sintaxe FTS
     escaped = [f'"{w}"' for w in words]
     fts_query = " OR ".join(escaped)
 
@@ -245,10 +379,7 @@ def build_context(results: list) -> str:
 
 
 def get_db_path() -> str:
-    cache_dir = os.environ.get("CLAUDE_RAG_CACHE_DIR")
-    if not cache_dir:
-        home = os.path.expanduser(os.environ.get("CLAUDE_HOME", "~/.claude"))
-        cache_dir = os.path.join(home, "cache")
+    cache_dir = os.path.expanduser("~/.claude/cache")
     os.makedirs(cache_dir, exist_ok=True)
     return os.path.join(cache_dir, "vault_rag.db")
 
@@ -260,6 +391,9 @@ def get_vault_mtime() -> float:
     latest = 0.0
     for md_file in vault.rglob("*.md"):
         try:
+            rel = str(md_file.relative_to(vault))
+            if rel.startswith("CLONES/") or rel.startswith("CLONES\\"):
+                continue
             mtime = md_file.stat().st_mtime
             if mtime > latest:
                 latest = mtime
@@ -268,48 +402,89 @@ def get_vault_mtime() -> float:
     return latest
 
 
-def dry_run():
-    print(f"[infinity-os vault_rag] VAULT_PATH = {VAULT_PATH}")
-    if not Path(VAULT_PATH).exists():
-        print("  [WARN] Vault não existe. Configure CLAUDE_VAULT_PATH.")
-        return 1
-    md_count = sum(1 for _ in Path(VAULT_PATH).rglob("*.md"))
-    print(f"  Vault OK, {md_count} notas .md encontradas.")
-    print(f"  MAX_TOKENS={MAX_TOKENS}, TOP_CHUNKS={TOP_CHUNKS}, DIARY_MAX_DAYS={DIARY_MAX_DAYS}")
-    return 0
+COMPARE_LOG = os.path.expanduser("~/.claude/cache/rag_compare.log")
+
+# Piso entre duas reconstrucoes. Sem ele, editar o vault durante a conversa
+# dispararia rebuild a cada prompt. Com ele, o custo fica limitado.
+REBUILD_MIN_INTERVAL = 300  # segundos
 
 
-def reindex():
-    """Constrói o índice FTS agora (usado pelo instalador, p/ RAG pronto na 1ª sessão)."""
-    print(f"[infinity-os vault_rag] Reindexando: {VAULT_PATH}")
-    if not Path(VAULT_PATH).exists():
-        print("  [WARN] Vault não existe. Configure CLAUDE_VAULT_PATH.")
-        return 1
-    conn = sqlite3.connect(get_db_path())
+def needs_reindex(conn: sqlite3.Connection) -> bool:
+    """Decide se o indice precisa ser reconstruido.
+
+    Reconstroi quando a tabela esta ausente ou vazia (indice nao existe), e
+    tambem quando o vault andou para a frente desde o ultimo build. Sem a
+    segunda condicao o indice congela no primeiro build e passa a responder
+    com dado velho sem nenhum sinal de erro.
+    """
     try:
-        build_index(conn)
+        cursor = conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='vault_fts'"
+        )
+        if not cursor.fetchone():
+            return True
+        if conn.execute("SELECT COUNT(*) FROM vault_fts").fetchone()[0] == 0:
+            return True
+    except Exception:
+        return True
+
+    built = _last_build(conn)
+    if built <= 0:
+        # indice antigo, de antes desta marca existir: reconstroi uma vez
+        return True
+    if time.time() - built < REBUILD_MIN_INTERVAL:
+        return False
+    try:
+        return get_vault_mtime() > built
+    except Exception:
+        return False
+
+
+def fts5_context(prompt: str):
+    """Contexto via indice FTS5 local (fallback e modo compare). Reconstroi o
+    indice quando ele nao existe ou quando o vault mudou. Retorna (str, n)."""
+    try:
+        conn = sqlite3.connect(get_db_path())
         try:
-            n = conn.execute("SELECT COUNT(*) FROM vault_fts").fetchone()[0]
-            print(f"  Índice construído: {n} chunks.")
-        except Exception:
-            print("  Índice construído.")
-    finally:
-        conn.close()
-    return 0
+            if needs_reindex(conn):
+                build_index(conn)
+            results = search_vault(prompt, conn)
+            return build_context(results), len(results)
+        finally:
+            conn.close()
+    except Exception:
+        return "", 0
+
+
+def log_compare(prompt: str, lr_ctx, fts_ctx, fts_n: int):
+    """Modo sombra (RAG_COMPARE=1): registra LightRAG vs FTS5 por prompt, pra
+    decidir a migracao da leitura com dados em vez de no feeling. So observa."""
+    try:
+        lr_chars = len(lr_ctx) if lr_ctx else 0
+        lr_ents = lr_ctx.count('"entity"') if lr_ctx else 0
+        fts_chars = len(fts_ctx) if fts_ctx else 0
+        if lr_chars and (fts_chars == 0 or lr_ents >= 3 or lr_chars >= fts_chars):
+            winner = "LR"
+        elif fts_chars:
+            winner = "FTS5"
+        else:
+            winner = "none"
+        q = re.sub(r"\s+", " ", prompt.strip())[:80]
+        line = (f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] "
+                f"q=\"{q}\" | LR:{lr_chars}c/{lr_ents}ent | "
+                f"FTS5:{fts_n}res/{fts_chars}c | winner={winner}\n")
+        with open(COMPARE_LOG, "a") as f:
+            f.write(line)
+    except Exception:
+        pass
 
 
 def main():
-    if "--dry-run" in sys.argv:
-        sys.exit(dry_run())
-    if "--reindex" in sys.argv:
-        sys.exit(reindex())
-
-    raw = ""
     try:
         raw = sys.stdin.read()
         data = json.loads(raw)
     except Exception:
-        sys.stdout.write(raw)
+        sys.stdout.write(raw if 'raw' in dir() else "")
         return
 
     prompt = ""
@@ -337,41 +512,57 @@ def main():
         sys.stdout.write(json.dumps(data))
         return
 
-    db_path = get_db_path()
-    conn = sqlite3.connect(db_path)
-
-    try:
-        needs_rebuild = True
-        try:
-            cursor = conn.execute(
-                "SELECT name FROM sqlite_master WHERE type='table' AND name='vault_fts'"
-            )
-            if cursor.fetchone():
-                cursor = conn.execute("SELECT COUNT(*) FROM vault_fts")
-                count = cursor.fetchone()[0]
-                if count > 0:
-                    needs_rebuild = False
-        except Exception:
-            pass
-
-        if needs_rebuild:
-            build_index(conn)
-
-        results = search_vault(prompt, conn)
-        context = build_context(results)
-
-        if context:
+    # Modo pull (opt-in via RAG_MODE=pull): nao injeta conteudo. Se o prompt for
+    # do negocio, injeta so um nudge de 1 linha; o Claude puxa via MCP lightrag
+    # (consultar_negocio) ou vault_search.py, formulando a query com a conversa
+    # inteira. Retorna cedo pra nao rodar o push. Push segue intacto no default.
+    if RAG_MODE == "pull":
+        if BUSINESS_TERMS.search(prompt):
             existing_system = data.get("system_prompt", "")
-            if existing_system:
-                data["system_prompt"] = context + "\n\n" + existing_system
-            else:
-                data["system_prompt"] = context
+            data["system_prompt"] = (
+                PULL_NUDGE + "\n\n" + existing_system if existing_system else PULL_NUDGE)
+        sys.stdout.write(json.dumps(data))
+        return
 
-    finally:
-        conn.close()
+    # 1) Fonte primaria: LightRAG (grafo+vetor) via servidor local em :9621.
+    context = lightrag_context(prompt)
+
+    # Modo sombra (RAG_COMPARE=1): roda tambem o FTS5 e loga a comparacao, mas
+    # mantem o LightRAG como contexto real injetado. Custo: 1 query FTS5 local.
+    fts_ctx = None
+    if os.environ.get("RAG_COMPARE") == "1":
+        fts_ctx, fts_n = fts5_context(prompt)
+        log_compare(prompt, context, fts_ctx, fts_n)
+
+    # 2) Fallback: indice FTS5 local (se o servidor LightRAG estiver fora/vazio).
+    if not context:
+        if fts_ctx is None:
+            fts_ctx, _ = fts5_context(prompt)
+        context = fts_ctx or None
+
+    if context:
+        existing_system = data.get("system_prompt", "")
+        if existing_system:
+            data["system_prompt"] = context + "\n\n" + existing_system
+        else:
+            data["system_prompt"] = context
 
     sys.stdout.write(json.dumps(data))
 
 
 if __name__ == "__main__":
+    # Reconstrucao manual do indice FTS5 (fora do fluxo de hook):
+    #   python3 vault_rag.py --rebuild
+    if "--rebuild" in sys.argv:
+        _conn = sqlite3.connect(get_db_path())
+        try:
+            build_index(_conn)
+            n = _conn.execute("SELECT COUNT(*) FROM vault_fts").fetchone()[0]
+            files = _conn.execute(
+                "SELECT COUNT(DISTINCT file_path) FROM vault_fts"
+            ).fetchone()[0]
+            print(f"FTS5 reconstruido: {n} chunks de {files} arquivos.")
+        finally:
+            _conn.close()
+        sys.exit(0)
     main()

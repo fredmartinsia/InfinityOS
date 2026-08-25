@@ -1,0 +1,134 @@
+{
+  "slug": "kent-beck",
+  "name": "Kent Beck",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-20",
+  "source_files": {
+    "knowledge": "kent-beck_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "kent-beck_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "engenharia",
+    "produto",
+    "estrategia",
+    "first-principles",
+    "lideranca"
+  ],
+  "thinking_models": [
+    {
+      "name": "sistema-sempre-verde",
+      "one_liner": "manter os testes passando o tempo todo; nunca se afastar muito do verde",
+      "evidence": "\"write new code only if an automated test has failed\""
+    },
+    {
+      "name": "estrutura-vs-comportamento",
+      "one_liner": "toda mudanca e ou estrutura ou comportamento; nunca misture os dois",
+      "evidence": "\"tidying is a subset of refactoring\""
+    },
+    {
+      "name": "design-como-preparacao-para-mudanca",
+      "one_liner": "bom design e o que torna a proxima mudanca barata",
+      "evidence": "\"software design is preparation for change\""
+    },
+    {
+      "name": "gestao-de-risco-por-passos-pequenos",
+      "one_liner": "decompor a aposta grande em muitas apostas pequenas e reversiveis",
+      "evidence": "\"if small steps feel restrictive, take bigger steps\""
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "red-green-refactor",
+      "one_liner": "teste que falha, codigo minimo pra passar, depois limpa",
+      "evidence": "\"write new code only if an automated test has failed\""
+    },
+    {
+      "name": "make-it-work-make-it-right-make-it-fast",
+      "one_liner": "funcionar primeiro, limpar depois, otimizar so com medicao",
+      "evidence": "\"make it work, make it right, make it fast\""
+    },
+    {
+      "name": "yagni",
+      "one_liner": "nao construa para futuros imaginados; faca o que o teste de hoje pede e pare",
+      "evidence": "\"you aren't going to need it\""
+    },
+    {
+      "name": "make-the-change-easy-then-make-the-easy-change",
+      "one_liner": "se a mudanca esta dificil, arrume a estrutura antes (tidy first)",
+      "evidence": "\"for each desired change, make the change easy\""
+    },
+    {
+      "name": "separe-estrutura-de-comportamento",
+      "one_liner": "tidying e behavior change em commits separados",
+      "evidence": "\"tidying is a subset of refactoring\""
+    },
+    {
+      "name": "menor-passo-verificavel",
+      "one_liner": "diminua o passo quando inseguro, aumente quando confiante",
+      "evidence": "\"if small steps feel restrictive, take bigger steps\""
+    },
+    {
+      "name": "medo-vira-teste",
+      "one_liner": "onde da medo de mexer, escreva um teste primeiro",
+      "evidence": "\"write tests until fear is transformed into boredom\""
+    },
+    {
+      "name": "simple-design-4-regras",
+      "one_liner": "passa nos testes, revela a intencao, sem duplicacao, minimo, nessa ordem",
+      "evidence": "\"do the simplest thing that could possibly work\""
+    },
+    {
+      "name": "feedback-trata-o-otimismo",
+      "one_liner": "nao confie na estimativa; rode e veja",
+      "evidence": "\"optimism is an occupational hazard of programming\""
+    }
+  ],
+  "decision_style": "Empirismo incremental: reduz o problema ao menor passo verificavel, executa, le o feedback e ajusta o rumo. Prioriza reversibilidade e clareza sobre completude; erra barato e cedo muitas vezes em vez de caro e tarde uma vez.",
+  "primary_roles": [
+    "product-manager"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "frontend-engineer",
+      "why": "implementa pelo ciclo Red-Green-Refactor, entregando em passos pequenos e verdes",
+      "evidence": "\"write new code only if an automated test has failed\"",
+      "confidence": "high"
+    },
+    {
+      "role": "consultor-estrategico",
+      "why": "decadas coachando times de engenharia (Meta, Gusto), ensinando habitos e praticas",
+      "evidence": "\"software design is preparation for change\"",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "planejamento-incremental",
+    "escopo-minimo-yagni",
+    "tdd-red-green-refactor",
+    "simple-design",
+    "tidy-first",
+    "coaching-de-engenharia"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "contextos onde TDD tem custo alto sao subestimados por seguidores dogmaticos; Beck e mais nuancado que o estereotipo",
+      "evidence": "\"if small steps feel restrictive, take bigger steps\""
+    },
+    {
+      "blind_spot": "XP nasceu para times pequenos e co-localizados; traducao para organizacoes grandes e distribuidas e tensa",
+      "evidence": "\"make it work, make it right, make it fast\""
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "martin-fowler",
+      "why": "refactoring e design evolutivo complementam diretamente o Refactor do TDD e o Tidy First",
+      "shared": [
+        "engenharia",
+        "estrategia"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

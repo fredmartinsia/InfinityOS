@@ -1,0 +1,144 @@
+{
+  "slug": "martin-fowler",
+  "name": "Martin Fowler",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-20",
+  "source_files": {
+    "knowledge": "martin-fowler_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "martin-fowler_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "engenharia",
+    "estrategia",
+    "produto"
+  ],
+  "thinking_models": [
+    {
+      "name": "arquitetura-e-o-caro-de-mudar",
+      "one_liner": "arquitetura e o conjunto de decisoes dificeis de reverter; foque o cuidado nelas",
+      "evidence": "keynote 'Making Architecture Matter': arquitetura importa porque define a velocidade de evoluir o sistema"
+    },
+    {
+      "name": "design-stamina-hypothesis",
+      "one_liner": "bom design custa no comeco e paga dividendos depois da linha de stamina",
+      "evidence": "bliki DesignStaminaHypothesis"
+    },
+    {
+      "name": "premium-de-complexidade",
+      "one_liner": "toda arquitetura distribuida cobra um custo fixo que so vale se o sistema for grande o bastante",
+      "evidence": "bliki MicroservicePremium"
+    },
+    {
+      "name": "lei-de-conway",
+      "one_liner": "a arquitetura espelha a estrutura de comunicacao dos times",
+      "evidence": "A arquitetura tende a espelhar a estrutura de comunicação dos times"
+    },
+    {
+      "name": "design-evolucionario",
+      "one_liner": "deixe a arquitetura emergir com praticas que tornem a mudanca segura, em vez de prever tudo",
+      "evidence": "artigo 'Is Design Dead?'"
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "monolith-first",
+      "one_liner": "comece monolito modularizado; so quebre em microsservicos quando a dor justificar",
+      "evidence": "Almost all the successful microservice stories have started with a monolith that got too big and was broken up (bliki MonolithFirst)"
+    },
+    {
+      "name": "refatore-antes-da-feature",
+      "one_liner": "primeiro torne a mudanca facil, depois faca a mudanca facil",
+      "evidence": "first refactor the program to make it easy to add the feature, then add the feature (Refactoring)"
+    },
+    {
+      "name": "adie-o-irreversivel",
+      "one_liner": "mantenha decisoes flexiveis, reversiveis e adiadas o maximo possivel",
+      "evidence": "Mantenha decisões flexíveis, substituíveis e adiadas o máximo possível"
+    },
+    {
+      "name": "it-depends",
+      "one_liner": "recuse a bala de prata; nomeie as variaveis em vez de dar regra universal",
+      "evidence": "It depends (recuse a bala de prata)"
+    },
+    {
+      "name": "estrangule-nao-reescreva",
+      "one_liner": "modernize legado por fora, funcao por funcao, em vez de big-bang",
+      "evidence": "letting it grow slowly over several years until the old system is strangled (StranglerFigApplication)"
+    },
+    {
+      "name": "qualidade-interna-acelera",
+      "one_liner": "nao troque qualidade interna por velocidade; e falso trade-off",
+      "evidence": "bliki TradableQualityHypothesis"
+    },
+    {
+      "name": "if-it-hurts-do-it-more-often",
+      "one_liner": "aumente a frequencia da atividade dolorosa ate ela parar de doer",
+      "evidence": "mantra de Continuous Integration popularizado por Fowler"
+    },
+    {
+      "name": "codigo-para-humanos",
+      "one_liner": "otimize a leitura por pessoas, nao a esperteza",
+      "evidence": "Good programmers write code that humans can understand (Refactoring)"
+    }
+  ],
+  "decision_style": "decide pela reversibilidade e pelo custo de mudanca futura, preferindo a versao mais simples que resolve agora e adiando o compromisso caro ate a experiencia justificar, sempre com o trade-off explicito.",
+  "primary_roles": [
+    "chief-engineer"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "consultor-estrategico",
+      "why": "o raciocinio de decisao reversivel vs irreversivel e adiar o compromisso caro serve para decisoes de produto e estrategia, nao so de codigo",
+      "evidence": "diretamente útil para decisões de produto, não só de código",
+      "confidence": "high"
+    },
+    {
+      "role": "estrategista",
+      "why": "atua como mentor tecnico e revisor de codigo, tornando trade-offs visiveis antes do compromisso",
+      "evidence": "code smells e foco em legibilidade fazem dele um revisor natural",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "arquitetura de software",
+    "refactoring disciplinado",
+    "decisao monolito vs microsservicos",
+    "modernizacao de legado",
+    "tornar trade-offs explicitos",
+    "revisao de codigo por legibilidade"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies de consultoria de grande porte; conselho nem sempre transfere para startup pequena ou script unico",
+      "evidence": "nem todo conselho transfere bem para uma startup de duas pessoas ou um script único"
+    },
+    {
+      "blind_spot": "conservadorismo (monolith first) pode atrasar saltos legitimos onde comecar distribuido faz sentido",
+      "evidence": "há exceções legítimas onde começar distribuído faz sentido"
+    },
+    {
+      "blind_spot": "menos profundidade em performance de baixo nivel e dominios como ML",
+      "evidence": "com menos profundidade em performance de baixo nível ou domínios como machine learning"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "sam-selikoff",
+      "why": "Fowler da a moldura de arquitetura, Sam o craft de UI/frontend",
+      "shared": [
+        "engenharia",
+        "frontend"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "andrej-karpathy",
+      "why": "dominio adjacente de engenharia; Fowler cobre arquitetura, Karpathy cobre IA",
+      "shared": [
+        "engenharia"
+      ],
+      "confidence": "low"
+    }
+  ]
+}

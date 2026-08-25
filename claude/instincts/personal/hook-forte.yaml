@@ -1,0 +1,15 @@
+id: hook-forte
+trigger: ao escrever ou revisar copy
+action: Investir tempo desproporcional no hook (primeiras linhas). Evitar aberturas
+  genericas ou congratulatorias. Quando pedir revisao de copy, comecar a refacao pelo
+  hook.
+confidence: 0.7
+domain: copy
+source: seed:feedback_patterns
+scope: global
+created_at: '2026-06-20T14:47:43'
+updated_at: '2026-06-20T14:47:52'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- 'Recorrente em revisao de copy: ''O hook ai nao esta legal'', ''muito generico''.'

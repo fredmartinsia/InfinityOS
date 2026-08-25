@@ -111,7 +111,7 @@ Não "agende uma call". Mais "testem e me contem".
 
 ---
 
-## CALIBRAÇÃO pt-BR (para mercado a marca do usuário / Amazon ES)
+## CALIBRAÇÃO pt-BR (para mercado a marca do usuário / marketplace)
 
 ### Regras gerais
 - **"Você" direto**, sem "vocês" formal

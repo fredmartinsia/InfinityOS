@@ -15,20 +15,31 @@ instalável com um comando.
 ## ⚡ Quickstart
 
 ```bash
-git clone <URL-DO-REPO> infinity-os
+git clone https://github.com/fredmartinsia/InfinityOS.git infinity-os
 cd infinity-os
 ./install.sh
 ```
 
 O instalador é **guiado e à prova de erros**: ele detecta seu computador,
 pergunta antes de instalar qualquer coisa e usa defaults seguros (basta
-apertar Enter). Ao final, abra o Claude Code e rode:
+apertar Enter). Ele faz backup do que já existe antes de sobrescrever, e cada
+passo pode ser rodado isolado com `./install.sh --step=NN`.
+
+**Você não precisa ter nenhuma chave de API antes de começar.** No passo 4, o
+instalador pergunta provedor por provedor. Se você não tiver a chave, ele abre
+a página de cadastro no seu navegador, espera você gerar a chave, testa contra
+a API de verdade e só então guarda, em `~/.config`, com permissão restrita.
+Nenhuma chave entra neste repositório em momento algum.
+
+Ao final, abra o Claude Code e rode:
 
 ```
 /onboarding
 ```
 
-…para a entrevista que personaliza tudo ao seu jeito.
+Essa é a entrevista que personaliza tudo ao seu jeito: quem você é, com o que
+trabalha, se atende clientes ou toca projetos próprios. A estrutura do seu
+vault sai dessas respostas.
 
 ---
 

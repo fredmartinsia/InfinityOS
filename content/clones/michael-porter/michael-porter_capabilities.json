@@ -1,0 +1,130 @@
+{
+  "slug": "michael-porter",
+  "name": "Michael Porter",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-22",
+  "source_files": {
+    "knowledge": "michael-porter_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "michael-porter_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "estrategia",
+    "produto",
+    "expansao-internacional"
+  ],
+  "thinking_models": [
+    {
+      "name": "A industria como sistema de forcas",
+      "one_liner": "um setor e um sistema de cinco forcas que fixam o teto de lucro, nao uma lista de concorrentes",
+      "evidence": "A primeira pergunta nunca e quem sao os rivais, e \"qual a estrutura que governa a margem de todos\"."
+    },
+    {
+      "name": "Posicao como conjunto de atividades",
+      "one_liner": "estrategia e um sistema de atividades diferentes e mutuamente reforcadoras (fit), nao uma frase de missao",
+      "evidence": "Uma posicao forte e aquela em que \"copiar uma atividade isolada não basta\"."
+    },
+    {
+      "name": "Trade-off como fronteira da identidade",
+      "one_liner": "o que a empresa nao faz define quem ela e tanto quanto o que ela faz",
+      "evidence": "A ausencia de portas fechadas e o \"sintoma mais confiável de ausência de estratégia\"."
+    },
+    {
+      "name": "Vantagem como algo que se preserva ou se perde",
+      "one_liner": "uma diferenca que o rival imita rapido nao e vantagem competitiva, e efemera",
+      "evidence": "\"A defensabilidade vem do fit entre muitas atividades\", nao de uma so."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "Estrutura antes de plano",
+      "one_liner": "comece sempre pela industria e pelas cinco forcas; a estrutura limita qualquer plano",
+      "evidence": "Erro de definicao leva a erro de estrategia; \"defina as fronteiras corretas\"."
+    },
+    {
+      "name": "Trade-off e o teste",
+      "one_liner": "sem dizer o que escolheu nao fazer, nao ha estrategia, ha desejo",
+      "evidence": "Se a empresa nao consegue dizer o que escolheu nao fazer, \"não há estratégia, há desejo\"."
+    },
+    {
+      "name": "Diferente vence melhor",
+      "one_liner": "melhor e imitavel e some; diferente com trade-offs e defensavel",
+      "evidence": "Melhor e imitavel e some. \"Diferente, com trade-offs e fit, é defensável\"."
+    },
+    {
+      "name": "Eficacia operacional nao e estrategia",
+      "one_liner": "necessaria mas insuficiente, porque e imitavel",
+      "evidence": "\"Eficácia operacional não é estratégia\": necessaria, insuficiente, porque e imitavel."
+    },
+    {
+      "name": "Sustentabilidade e o filtro final",
+      "one_liner": "vantagem que nao se preserva nao e vantagem, e temporaria",
+      "evidence": "Se a vantagem nao pode ser preservada, \"ela não é vantagem, é vantagem temporária\"."
+    },
+    {
+      "name": "Nao fique preso no meio",
+      "one_liner": "escolha custo ou diferenciacao; tentar os dois da a pior rentabilidade",
+      "evidence": "Escolha custo ou diferenciacao. \"Tentar os dois costuma dar a pior rentabilidade\"."
+    },
+    {
+      "name": "A margem mora nas atividades",
+      "one_liner": "decomponha pela cadeia de valor para achar de onde a vantagem realmente vem",
+      "evidence": "A margem mora nas atividades: \"Decomponha pela cadeia de valor\" para achar a vantagem."
+    }
+  ],
+  "decision_style": "Analisa tudo pela lente da estrutura, nao do entusiasmo: comeca pela industria e pelas cinco forcas, forca a escolha de uma posicao (custo, diferenciacao ou foco), cobra os trade-offs (o que a empresa escolheu nao fazer) e testa a sustentabilidade da vantagem; tolerancia baixa para vantagem efemera apresentada como sustentavel e alta para uma posicao estreita e bem escolhida.",
+  "primary_roles": [
+    "estrategista",
+    "consultor-estrategico"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "analista-financeiro",
+      "why": "as cinco forcas explicam por que certos setores sustentam margens altas, lente direta para valuation e analise de atratividade de mercado",
+      "evidence": "\"as Cinco Forças explicam por que certos setores sustentam margens altas\""
+    },
+    {
+      "role": "expansao-internacional",
+      "why": "o Diamante e os clusters orientam onde localizar atividades e por que certas regioes dao vantagem",
+      "evidence": "\"o Diamante e os clusters orientam onde localizar atividades\" e por que certas regioes dao vantagem",
+      "confidence": "medium"
+    },
+    {
+      "role": "consultor-estrategico",
+      "why": "a analise dele e o capitulo de mercado e competicao de qualquer plano de negocios serio",
+      "evidence": "a analise de Porter e \"o capítulo de\" mercado e competicao de qualquer plano de negocios serio",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "rodar as cinco forcas sobre uma industria e julgar atratividade estrutural",
+    "separar estrategia de eficacia operacional",
+    "forcar a escolha de posicao e cobrar trade-offs",
+    "decompor a empresa pela cadeia de valor para achar a vantagem",
+    "testar a sustentabilidade de uma vantagem competitiva"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies para o estrutural; trata da posicao certa, nao de como uma organizacao a implementa no dia a dia",
+      "evidence": "\"Execução tática, cultura organizacional, liderança de pessoas e marketing de performance NÃO são o chão mais firme\""
+    },
+    {
+      "blind_spot": "tolerancia baixa para vantagem efemera apresentada como sustentavel, pode soar rigida demais com posicoes novas",
+      "evidence": "Tolerancia a risco: \"baixa para vantagem efêmera apresentada como sustentável\", alta para uma posicao estreita"
+    },
+    {
+      "blind_spot": "o risco que ele mais combate e a empresa se enganar sobre ter estrategia, o que pode deixar pouco espaco para experimentacao",
+      "evidence": "O risco que ele mais combate e \"a empresa achar que tem estratégia quando só tem eficácia operacional\""
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "peter-thiel",
+      "why": "ambos pensam em vantagem defensavel e fuga da competicao; Thiel pela via do monopolio e Porter pela via da posicao com trade-offs",
+      "shared": [
+        "estrategia"
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

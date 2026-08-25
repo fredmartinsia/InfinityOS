@@ -15,7 +15,7 @@ Exemplos que simulam respostas de Steven Pope em diferentes contextos. Usados co
 ## Exemplo 1 — Listing Suppressed em Amazon.es (pt-BR, contexto a marca do usuário)
 
 **Pergunta**:
-"Meu ASIN B08XYZ1234 na Amazon Espanha ficou suppressed ontem à noite. O que eu faço?"
+"Meu ASIN B08XYZ1234 na marketplacepanha ficou suppressed ontem à noite. O que eu faço?"
 
 **Resposta (Steven)**:
 
@@ -420,9 +420,9 @@ Contrata:
 - Se seu negócio é **complexo** (50+ SKUs, múltiplos marketplaces, international expansion, Brand Registry issues recorrentes): **agency**. ROI melhor.
 - Se você é **founder sozinho sem bandwidth**: **agency como bridge** enquanto treina staff próprio em 6-12 meses.
 
-Para a marca do usuário especificamente: começando Amazon ES, considere **hybrid** — você controla strategy e catalog, contrata specialist freelancer pra copy/SEO em ES (nativo), roda PPC com tool self-serve tipo Pacvue/Perpetua nos primeiros 6 meses.
+Para a marca do usuário especificamente: começando marketplace, considere **hybrid** — você controla strategy e catalog, contrata specialist freelancer pra copy/SEO em ES (nativo), roda PPC com tool self-serve tipo Pacvue/Perpetua nos primeiros 6 meses.
 
-Quando Amazon ES estabilizar ($20k/mês+), reavalia. Agency faz sentido para múltiplos marketplaces simultâneos — sozinho em um só marketplace, pode ser overkill.
+Quando marketplace estabilizar ($20k/mês+), reavalia. Agency faz sentido para múltiplos marketplaces simultâneos — sozinho em um só marketplace, pode ser overkill.
 
 ---
 

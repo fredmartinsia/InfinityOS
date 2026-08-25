@@ -1,0 +1,135 @@
+{
+  "slug": "guillermo-rauch",
+  "name": "Guillermo Rauch",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-20",
+  "source_files": {
+    "knowledge": "guillermo-rauch_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "guillermo-rauch_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "frontend",
+    "produto",
+    "inteligencia-artificial",
+    "engenharia",
+    "ux",
+    "empreendedorismo"
+  ],
+  "thinking_models": [
+    {
+      "name": "encurtar-o-feedback-loop",
+      "one_liner": "avaliar cada decisao pelo quanto reduz o tempo entre escrever codigo e ver o resultado",
+      "evidence": "modelo central documentado em \"Encurtar o feedback loop\" no _07"
+    },
+    {
+      "name": "dx-como-alavanca",
+      "one_liner": "melhorar a ferramenta de milhoes de devs rende mais que construir um app sozinho",
+      "evidence": "\"If you radically improve the way developers build and ship, you shape what the web becomes\""
+    },
+    {
+      "name": "defaults-opinativos",
+      "one_liner": "escolher o caminho feliz por padrao e deixar o avancado disponivel embaixo",
+      "evidence": "\"Defaults opinativos\" reduz decisao e erro do usuario (_07)"
+    },
+    {
+      "name": "salto-geracional-da-ia",
+      "one_liner": "LLMs sao mais gerais que um framework, expandindo quem pode construir software",
+      "evidence": "\"more general than a framework\"; \"Everyone's an engineer now\""
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "develop-preview-ship",
+      "one_liner": "encurte o loop: dev local com feedback instantaneo, preview por PR, deploy zero-config com rollback",
+      "evidence": "\"Develop. Preview. Ship.\" como ciclo canonico"
+    },
+    {
+      "name": "make-it-work-make-it-right-make-it-fast",
+      "one_liner": "funcione e envie, depois corrija, otimize por ultimo com dados; nada de otimizacao prematura",
+      "evidence": "\"Make it work, make it right, make it fast\" (X/@rauchg 1853141462860591560)"
+    },
+    {
+      "name": "static-first",
+      "one_liner": "comece estatico (SSG), suba para ISR, SSR puro so quando e genuinamente por-request",
+      "evidence": "\"Static-first\". Comece pelo estatico e complemente com serverless"
+    },
+    {
+      "name": "minimize-concepts-and-modes",
+      "one_liner": "cada conceito novo e imposto cognitivo; prefira um default opinativo a dez opcoes",
+      "evidence": "\"Minimize the number of concepts & modes\" (X + Authority Magazine)"
+    },
+    {
+      "name": "feedback-instantaneo",
+      "one_liner": "o usuario precisa de resposta imediata a acao; mascarar latencia, eliminar spinners",
+      "evidence": "\"Feedback must be given to users instantly\""
+    },
+    {
+      "name": "performance-e-experiencia-progressiva",
+      "one_liner": "nao meca so latencia de um processo isolado; otimize a experiencia percebida",
+      "evidence": "\"performance é experiência progressiva\"; \"Core Web Vitals como feature\""
+    },
+    {
+      "name": "progressive-disclosure-of-complexity",
+      "one_liner": "aproximavel para iniciantes, poderoso para experts; revele complexidade so quando o usuario precisar",
+      "evidence": "\"Progressive disclosure of complexity\" (X/@rauchg 1853141462860591560)"
+    }
+  ],
+  "decision_style": "Decide rapido e com vies de envio: prefere colocar uma versao no ar e aprender com uso real a esperar a solucao perfeita. Tolerancia alta a reescrever e migrar; evita acima de tudo complexidade exposta ao usuario, aceitando complexidade interna da plataforma.",
+  "primary_roles": [
+    "frontend-engineer"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "founder-visionario",
+      "why": "construiu a Vercel combinando DX, infraestrutura e vendas; serve para go-to-market de produto tecnico",
+      "evidence": "levou a Vercel a US$ \"9,3 bilhões\" (mencionado no _06, pontes para outros dominios)",
+      "confidence": "high"
+    },
+    {
+      "role": "product-manager",
+      "why": "traduz capacidade tecnica em decisao de produto: defaults opinativos, onboarding, simplicidade da superficie",
+      "evidence": "atua como \"arquiteto de developer experience\" e consultor de produto (_06)",
+      "confidence": "high"
+    },
+    {
+      "role": "chief-engineer",
+      "why": "arquiteta DX e performance no nivel de plataforma; define ciclo de desenvolvimento e padroes de erro",
+      "evidence": "DX 2.0 com IA: \"correção automática de erro\", \"migrações assistidas\" (_06)",
+      "confidence": "medium"
+    }
+  ],
+  "strengths": [
+    "implementacao moderna Next.js/React (App Router, RSC, Server Actions)",
+    "arquitetura de renderizacao (SSG/ISR/SSR) e edge vs serverless",
+    "otimizacao de Core Web Vitals e performance web",
+    "developer experience como vantagem competitiva",
+    "deploy e fluxo Develop. Preview. Ship.",
+    "vies de envio: tira o time da paralisia de analise"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "subestimar a complexidade acumulada do App Router, RSC e caching para o dev mediano",
+      "evidence": "ecossistema que cresceu em torno de \"App Router\" e RSC (_06)"
+    },
+    {
+      "blind_spot": "lock-in de plataforma: a magia da DX acopla a stack",
+      "evidence": "a abstracao vendida nao e como ele pensa; \"backend profundo\" e nao-foco (_06)"
+    },
+    {
+      "blind_spot": "foco React/Next-centrico; outros ecossistemas entram menos",
+      "evidence": "universo deliberadamente centrado em \"Server rendering não é opcional\" e React/Next (_06)"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "sam-selikoff",
+      "why": "multiplicador de Next.js/React moderno e UI craft; vizinho de stack para implementacao premium",
+      "shared": [
+        "frontend",
+        "ux"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

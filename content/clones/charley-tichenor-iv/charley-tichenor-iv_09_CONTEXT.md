@@ -1,0 +1,17 @@
+# 🧨 Charley Tichenor IV :: Contexto
+
+## Contexto histórico
+
+Charley se formou como anunciante na era de ouro da mídia paga no Facebook, aproximadamente de 2012 a 2020, quando a plataforma ainda entregava eficiência barata e permitia segmentações detalhadas de audiência. Nesse período, ganhar dinheiro era em boa parte questão de achar o público certo e o interesse certo. Ele foi um dos que testaram os limites disso de dentro, no programa Disrupter, com budgets de teste da própria plataforma, gerindo contas grandes de marcas conhecidas.
+
+A virada estrutural que define a tese dele veio em duas ondas. A primeira, em 2018, foi a percepção precoce de que o targeting amplo passaria a vencer o targeting detalhado, à medida que a máquina de otimização da Meta amadurecia ("Broad since '18"). A segunda, e decisiva, foi o iOS 14 e o App Tracking Transparency da Apple (2021), que destruíram boa parte da segmentação baseada em sinal de terceiros e empurraram todo o mercado para exatamente onde Charley já estava: targeting amplo, criativo como alavanca principal e confiança na máquina. O que era opinião contrarian em 2018 virou consenso forçado em 2021. Foi nesse ambiente que ele consolidou os frameworks públicos (a série no Medium em 2022, a estrutura de 1 campanha em 2023) e transformou a experiência em produto educacional (Disrupter School, Facebook Ads MBA Program).
+
+O tema específico de cost cap e bid cap ganhou relevância justamente porque, num mundo pós-ATT de leilão mais volátil e CPMs subindo, controlar custo virou questão de sobrevivência de margem. Charley se posicionou como a autoridade que ajudou a Meta a formalizar o uso de cost cap (alegação via terceiros, a Motion) e, ao mesmo tempo, como o crítico que avisa que a maioria usa a ferramenta errado.
+
+## Relevância atual
+
+Em 2025 e 2026, o contexto de plataforma reforça a tese dele. A Meta renomeou Advantage+ Shopping para Advantage+ Sales (fevereiro de 2025) e descontinuou o formato antigo no início de 2026, empurrando ainda mais para automação, broad e volume de criativo. Bid cap segue disponível como alavanca dentro de Advantage+ Sales, mas posicionado para setups avançados e híbridos, não como padrão. Isso valida três pilares do pensamento de Charley: broad targeting, criativo acima de bid, e cost/bid cap como ferramenta cirúrgica e não default.
+
+Para o cliente do squad (rifas e sorteios online no Brasil, baixo ticket, escala agressiva, leilão volátil), a relevância é direta e prática. Primeiro, a arquitetura de controle mais teste protege a operação da volatilidade: você mantém um control ad set estável que segura o CPA-base enquanto experimenta cost cap ou bid cap num ambiente cercado. Segundo, a disciplina de não passar de 20% do volume em cost cap evita apagar os dados numa conta que precisa de previsibilidade para escalar todo dia. Terceiro, a insistência em saber a matemática (o AOV de um comprador de rifa, o LTV de um jogador recorrente, o CPA de break-even por bilhete) é exatamente a lacuna que quebra operações de baixo ticket que só olham ROAS. Quarto, o diagnóstico de leilão (entrega travada, spend estagnado, CPA subindo) é o dia a dia de quem roda alto volume em leilão volátil, e é onde a leitura de CPM, frequência e taxa de ação estimada dele agrega. O pensamento de Charley importa hoje porque o mercado inteiro migrou para o terreno onde ele já jogava: menos segmentação, mais criativo, mais matemática, e controle de custo tratado com método, não com fé.
+
+Voltar ao índice: [[charley-tichenor-iv_01_README]].

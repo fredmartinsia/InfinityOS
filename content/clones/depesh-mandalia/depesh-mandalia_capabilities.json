@@ -1,0 +1,53 @@
+{
+  "slug": "depesh-mandalia",
+  "name": "Depesh Mandalia",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-18",
+  "source_files": {
+    "knowledge": "depesh-mandalia_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "depesh-mandalia_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["trafego-pago", "growth", "ecommerce", "marketing"],
+  "thinking_models": [
+    {"name": "leaky-bucket", "one_liner": "Orçamento em conta com fundação fraca é água em balde furado.", "evidence": "despejar água num balde furado"},
+    {"name": "analogia-dos-carros", "one_liner": "Cada estratégia de lance é um veículo com perfil de risco e manutenção próprio.", "evidence": "cada estratégia de lance é um veículo com perfil de risco e manutenção próprio"},
+    {"name": "cambio-manual-vs-automatico", "one_liner": "Bid cap é dirigir de câmbio manual: mais controle, mais atenção.", "evidence": "bidding manual é dirigir de câmbio manual"}
+  ],
+  "heuristics": [
+    {"name": "fundacao-antes-de-spend", "one_liner": "AC-4 de 17 ou mais antes de escalar, senão conserta a base.", "evidence": "an AC-4 grading of 17 or more out of 20 means a product/brand is in a strong position for scaling"},
+    {"name": "so-bid-cap-e-lance-manual", "one_liner": "Só o bid cap é lance manual; cost cap e ROAS control são parâmetros.", "evidence": "There's only ONE true manual bidding strategy, Bid Cap."},
+    {"name": "automatico-por-padrao", "one_liner": "Bidding automático como padrão, manual como exceção deliberada.", "evidence": "ele prefere bidding automático 9 de cada 10 vezes"},
+    {"name": "criativo-antes-do-lance", "one_liner": "CPA subindo é fadiga de criativo, não problema de lance.", "evidence": "the biggest mistake folks make is trying to optimize the bid"},
+    {"name": "descubra-com-bid-cap-escale-com-cost-cap", "one_liner": "Ache o CPA-piso com bid cap, depois escale em volume com cost cap.", "evidence": "use o teto rígido para achar o CPA-piso eficiente"},
+    {"name": "cost-cap-acima-do-cpa-real", "one_liner": "Cost cap se seta acima do CPA real de 30 dias, nunca no CPA-alvo.", "evidence": "setar cost cap 10 a 20 por cento acima do CPA dos últimos 30 dias"},
+    {"name": "simplifique-e-de-a-meta-o-que-quer", "one_liner": "Simplificar a operação reduz risco, ansiedade e melhora o delivery.", "evidence": "I found the key to reduced stress and anxiety with Facebook was by simplifying"}
+  ],
+  "decision_style": "Prioriza fundação, dados e margem, e só depois velocidade. Entre crescer rápido e proteger lucro, protege lucro (cicatriz da perda de 2012). Testa pequeno, mede pela margem real e só escala o que provou.",
+  "primary_roles": ["media-buyer"],
+  "auxiliary_roles": [
+    {"role": "estrategista", "why": "Ex-CMO e VP of Growth, pensa o funil e a estratégia de crescimento inteira, não só o lance.", "evidence": "Como ex-CMO e VP of Growth, ele pensa estratégia de crescimento inteira", "confidence": "high"},
+    {"role": "analista-financeiro", "why": "Lê a conta pela margem e unit economics (marginal CPA, break-even), não pelo ROAS de vitrine.", "evidence": "ele lê a conta pela margem, não pelo ROAS de vitrine", "confidence": "high"},
+    {"role": "instrutor", "why": "Vocação de professor com frameworks nomeados e ensináveis; treina times e donos de agência.", "evidence": "a vocação de professor, com frameworks nomeados e ensináveis, faz dele um instrutor natural", "confidence": "high"},
+    {"role": "marketeiro", "why": "O lado Brand do BPM: cria desejo maior que o produto para multiplicar performance.", "evidence": "the power of brand marketing is in creating desire bigger than the product or service itself", "confidence": "medium"}
+  ],
+  "strengths": [
+    "arquitetura de estratégia de lance (bid cap para cost cap)",
+    "diagnóstico de fundação com o AC-4",
+    "escala lucrativa de e-commerce no Meta Ads",
+    "disciplina de unit economics e proteção de margem",
+    "testagem sistemática com o GT Framework"
+  ],
+  "anti_patterns": [
+    {"blind_spot": "Régua de e-commerce DTC com AOV pode não encaixar direto em baixo ticket puro como rifas, exige adaptação.", "evidence": "o negócio-base dele é e-commerce DTC com produto físico e AOV, não infoproduto de lançamento nem baixo ticket puro"},
+    {"blind_spot": "Preferência forte por bidding automático pode subestimar casos onde o teto rígido do bid cap é a única proteção viável.", "evidence": "ele prefere bidding automático 9 de cada 10 vezes"}
+  ],
+  "connects_to": [
+    {"slug": "pedro-sobral", "why": "Sobral entrega a mecânica conceitual do leilão que fundamenta o bid cap; Depesh entrega a execução e a escala em cima disso.", "shared": ["trafego-pago"], "confidence": "high"},
+    {"slug": "charley-tichenor-iv", "why": "Autoridade histórica em cost cap; complementa o núcleo de lance manual com foco em estrutura de campanha.", "shared": ["trafego-pago"], "confidence": "medium"},
+    {"slug": "andrew-faris", "why": "Defensor de cost controls; contraponto de grau, já que Depesh prefere automático na maioria dos casos.", "shared": ["trafego-pago", "ecommerce"], "confidence": "medium"},
+    {"slug": "jon-loomer", "why": "Educador técnico que também trata bid cap como ferramenta avançada; aliado na cautela sobre lance.", "shared": ["trafego-pago"], "confidence": "medium"},
+    {"slug": "cody-plofker", "why": "Praticante pró bid cap e anti-dogmatismo; alinha com a escolha de estratégia por contexto.", "shared": ["trafego-pago", "ecommerce"], "confidence": "medium"},
+    {"slug": "lucas-viana", "why": "Generalista de tráfego pago no Brasil; ponte para adaptar a régua ao mercado e à linguagem brasileira.", "shared": ["trafego-pago"], "confidence": "low"}
+  ]
+}

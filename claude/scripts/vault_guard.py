@@ -9,7 +9,7 @@ inclua VAULT_GUARD_CODE=<codigo> e esse código bata com o hash salvo em
 ~/.claude/vault_guard.sha256.
 
 O código real nunca é armazenado — só o hash SHA-256. Quem sabe o código
-é o usuário. Isso força uma confirmação humana antes de qualquer destruição.
+é o usuÃ¡rio. Isso força uma confirmação humana antes de qualquer destruição.
 
 Setup do código: python3 ~/.claude/scripts/vault_guard_setup.py
 
@@ -23,10 +23,9 @@ import re
 import json
 import time
 import hashlib
+import shlex
 
-VAULT = os.path.expanduser(
-    os.environ.get("CLAUDE_VAULT_PATH", "~/Documents/Obsidian Vault")
-)
+VAULT = os.environ.get("INFINITY_VAULT_PATH") or os.path.expanduser("~/Documents/Obsidian Vault")
 HASH_FILE = os.path.expanduser("~/.claude/vault_guard.sha256")
 UNLOCK_FILE = os.path.expanduser("~/.claude/vault_unlock.json")
 
@@ -39,8 +38,15 @@ DESTRUCTIVE = [
     r"-delete\b",          # find ... -delete
     r"-exec\s+rm\b",       # find ... -exec rm
     r"\bshred\b",
-    r">\s*['\"]?[^|]*Obsidian Vault",  # truncar arquivo do vault via redirect
+    # truncar arquivo do vault via redirect. [^|\n] em vez de [^|]: sem o \n o
+    # padrao atravessa linhas e um comando multi-linha casa por acidente.
+    r">\s*['\"]?[^|\n]*Obsidian Vault",
 ]
+
+# Redirects que descartam saida nao tocam em arquivo nenhum (2>/dev/null, >&2,
+# 2>&1). Ficavam casando como "redirect para o vault" quando o comando tambem
+# mencionava o vault, bloqueando leitura pura. Sao neutralizados antes do teste.
+NOISE_REDIRECTS = re.compile(r"\d?>>?\s*/dev/null|\d?>&\d")
 
 # Move-pra-fora: mv com origem no vault e destino fora — detectado à parte
 
@@ -72,6 +78,9 @@ def touches_vault(command: str) -> bool:
 
 
 def is_destructive(command: str) -> bool:
+    # descarta redirects de saida antes de procurar padrao destrutivo: eles nao
+    # escrevem em arquivo e so geravam falso positivo em comando de leitura
+    command = NOISE_REDIRECTS.sub(" ", command)
     for pat in DESTRUCTIVE:
         if re.search(pat, command):
             return True
@@ -83,7 +92,13 @@ def is_destructive(command: str) -> bool:
                 return True
             # heurística: mv que tira algo do vault pra fora
             # (origem vault, e existe um token de destino que NÃO é vault)
-            tokens = command.split()
+            # shlex respeita as aspas: "Obsidian Vault" tem espaco no nome, e um
+            # split() simples partia o caminho em dois, fazendo a origem no vault
+            # nunca ser reconhecida e o mv para fora passar batido.
+            try:
+                tokens = shlex.split(command)
+            except ValueError:
+                tokens = command.split()
             try:
                 idx = next(i for i, t in enumerate(tokens) if t == "mv")
             except StopIteration:
@@ -185,21 +200,21 @@ def main():
         block(
             "\n🛑 VAULT GUARD: operação destrutiva no Obsidian Vault BLOQUEADA.\n"
             "O código de proteção ainda NÃO foi configurado.\n"
-            "Peça ao usuário para rodar:  python3 ~/.claude/scripts/vault_guard_setup.py\n"
+            "Peça ao usuÃ¡rio para rodar:  python3 ~/.claude/scripts/vault_guard_setup.py\n"
             "Enquanto isso, NÃO apague nem mova arquivos do vault.\n"
         )
 
     block(
         "\n🛑 VAULT GUARD: operação destrutiva no Obsidian Vault BLOQUEADA.\n\n"
         "Comando: " + command[:200] + "\n\n"
-        "Esta operação apaga ou move arquivos pra fora do vault. Regra: SÓ CONFIRMAÇÃO.\n\n"
+        "Esta operação apaga ou move arquivos pra fora do vault. Modelo do usuÃ¡rio: SÓ CONFIRMAÇÃO.\n\n"
         "AÇÃO CORRETA:\n"
         "  1. PARE. Não tente de novo nem contorne.\n"
-        "  2. Pergunte ao usuário via AskUserQuestion, listando exatamente o que será\n"
+        "  2. Pergunte ao usuÃ¡rio via AskUserQuestion, listando exatamente o que será\n"
         "     apagado/movido, com opções 'Sim, apagar / Não'.\n"
         "  3. SÓ se ele responder 'Sim': rode  python3 ~/.claude/scripts/vault_grant.py\n"
         "     e na sequência re-execute este comando.\n\n"
-        "NUNCA rode vault_grant.py sem uma resposta 'Sim' do usuário nesta conversa, nem\n"
+        "NUNCA rode vault_grant.py sem uma resposta 'Sim' do usuÃ¡rio nesta conversa, nem\n"
         "preventivamente, em lote, ou dentro de squad/loop. É a confirmação humana que protege.\n"
     )
 

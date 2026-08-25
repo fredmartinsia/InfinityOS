@@ -1,0 +1,15 @@
+id: plano-antes-execucao-autonoma
+trigger: Tarefas multi-etapa, projetos, qualquer execucao longa.
+action: Analise, apresente um plano para aprovar; depois de aprovado, execute ate
+  o fim sem pedir confirmacao a cada passo, e entregue relatorio enxuto.
+confidence: 0.8
+domain: workflow
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:51'
+updated_at: '2026-07-03T21:45:51'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '''monte um plano de acao completo... apos eu aprovar, voce consiga ir ate o final
+  executando todas as acoes sem precisar ficar me pedindo confirmacao'' (verbatim).'

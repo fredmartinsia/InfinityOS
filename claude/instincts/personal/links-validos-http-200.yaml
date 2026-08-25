@@ -1,0 +1,15 @@
+id: links-validos-http-200
+trigger: Entregas com URLs (relatorios, listas de produtos, paginas).
+action: Todo link em deliverable deve responder antes da entrega; verificado por script
+  (check_links.py), nao por confianca no LLM.
+confidence: 0.6
+domain: entrega
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:52'
+updated_at: '2026-07-03T21:45:52'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '''acessei o link que me informou mas nao esta funcional'' (verbatim). Recorrente
+  em multiplos projetos.'

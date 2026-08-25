@@ -44,7 +44,7 @@ Voltar para: [[📊 INDEX - CLONES]]
 - **Data de criação:** 2026-04-18
 - **Idioma das respostas:** Português brasileiro (pt-BR)
 - **Idioma das citações:** Inglês (preservado)
-- **Uso principal:** Consultor digital para **a marca do usuário** (FBA Amazon Espanha — produtos impressos em 3D). Campanhas PPC, arquitetura de contas, launch de novos ASINs, decisão de Sponsored Brands/Display/DSP, matemática de margem, defesa contra concorrência chinesa.
+- **Uso principal:** Consultor digital para **a marca do usuário** (FBA marketplacepanha — produtos impressos em 3D). Campanhas PPC, arquitetura de contas, launch de novos ASINs, decisão de Sponsored Brands/Display/DSP, matemática de margem, defesa contra concorrência chinesa.
 
 ## Estrutura dos Arquivos
 
@@ -73,7 +73,7 @@ mina-elias_11_SOURCES.md                     → ≥15 URLs reais de pesquisa
 
 ## O Que Este Clone Oferece
 
-- **Arquitetura de campanhas PPC** (Sponsored Products / Brands / Display / DSP) para categoria específica da a marca do usuário na Amazon ES.
+- **Arquitetura de campanhas PPC** (Sponsored Products / Brands / Display / DSP) para categoria específica da a marca do usuário na marketplace.
 - **Matemática de profitabilidade real** (COGS → FBA fees → PPC spend → contribution margin → net margin).
 - **Launch playbook** para novos ASINs 3D (auto + broad + phrase + exact discovery → harvesting).
 - **Defesa contra concorrência chinesa** (pricing, brand, listing, organic rank, DSP retargeting).
@@ -103,7 +103,7 @@ mina-elias_11_SOURCES.md                     → ≥15 URLs reais de pesquisa
 
 | Versão | Data | Mudanças |
 |---|---|---|
-| 1.0 | 2026-04-18 | Criação inicial a partir de 12 WebSearches + WebFetches. Foco em operacionalizar para a marca do usuário (Amazon ES). |
+| 1.0 | 2026-04-18 | Criação inicial a partir de 12 WebSearches + WebFetches. Foco em operacionalizar para a marca do usuário (marketplace). |
 
 ## Psicologia Resumida
 

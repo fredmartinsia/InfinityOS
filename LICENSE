@@ -1,14 +1,30 @@
-InfinityOS — Licença de Uso Interno (Privada)
+InfinityOS. Licença de Uso Pessoal Concedido.
 
 Copyright (c) 2026
 
-Este repositório é PRIVADO e destinado ao uso interno da equipe.
-Não é permitida a redistribuição pública sem autorização expressa.
+O acesso a este repositório é concedido de forma nominal, para uso pessoal e
+profissional de quem recebeu o convite. Você pode instalar, adaptar e modificar
+o sistema livremente na sua própria máquina e no seu próprio trabalho.
 
-Componentes de terceiros:
-- O framework AIOX NÃO é redistribuído aqui; é instalado pelo usuário final
+O que não é permitido sem autorização expressa por escrito:
+- redistribuir o pacote, no todo ou em parte, para terceiros
+- republicar o conteúdo em repositório próprio, público ou privado
+- comercializar o sistema ou revendê-lo como produto seu
+
+Componentes de terceiros, não cobertos por esta licença:
+- O framework AIOX não é redistribuído aqui. Ele é instalado pelo usuário final
   via `npx aiox-core@latest install`, sob a licença do próprio AIOX.
-- Os "clones" são representações de figuras públicas para fins de estudo e
-  produtividade interna; use de forma responsável e conforme as leis aplicáveis.
+- As skills de terceiros (Anthropic, Vercel, Remotion e outras) também não são
+  redistribuídas. O instalador as baixa da fonte original, cada uma sob a sua
+  própria licença.
+- Os clones são representações de figuras públicas, construídas a partir de
+  material publicado por elas, para fins de estudo e produtividade. Use de forma
+  responsável, não se passe pela pessoa representada e respeite as leis
+  aplicáveis de direito de imagem e de personalidade.
 
-O software é fornecido "COMO ESTÁ", sem garantias de qualquer tipo.
+Suas credenciais são suas. O instalador nunca grava chave de API dentro deste
+repositório. Tudo que é segredo fica em ~/.config, apenas na sua máquina.
+
+O software é fornecido "COMO ESTÁ", sem garantia de qualquer tipo, expressa ou
+implícita. O autor não se responsabiliza por perda de dado, custo de API ou
+qualquer dano decorrente do uso.

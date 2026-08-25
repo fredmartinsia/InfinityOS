@@ -1,0 +1,211 @@
+{
+  "slug": "edwin-prakoso",
+  "name": "Edwin Prakoso",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-08-03",
+  "source_files": {
+    "knowledge": "edwin-prakoso_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "edwin-prakoso_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["autocad", "vetorizacao", "qa-tecnica", "conteudo", "bim"],
+  "thinking_models": [
+    {
+      "name": "classificacao-da-origem-do-dado",
+      "one_liner": "Antes de qualquer comando, classifica a origem: PDF vetorial, PDF escaneado ou imagem raster. A categoria do dado define o pipeline inteiro.",
+      "evidence": "AutoCAD nativo não vetoriza raster. Para scan de planta em DWG editável, pipeline externo é obrigatório."
+    },
+    {
+      "name": "pdfimport-precision-test-workflow",
+      "one_liner": "Sete passos para avaliar PDF vetorial: classificar, decidir import ou underlay, importar, medir precisão em cota métrica, reconhecer SHX, limpar geometria, ou traçar por cima do underlay. HIPÓTESE: cada passo ancora em afirmação real dele, a sequência unificada é dedução do conjunto dos artigos, não tutorial único publicado.",
+      "evidence": "The precision is not 100% accurate. You can quickly notice this if you work with metric units."
+    },
+    {
+      "name": "underlay-versus-import-tradeoff",
+      "one_liner": "Trade-off explícito entre velocidade (importar geometria) e precisão (anexar underlay e redesenhar por cima). Quando a cota manda, ganha o underlay.",
+      "evidence": "Personally, I prefer using PDF underlay for this purpose."
+    },
+    {
+      "name": "precision-is-auditable",
+      "one_liner": "Precisão não é promessa de vendor, é medida. Depois de importar, meça uma dimensão conhecida em unidade métrica antes de aceitar o arquivo.",
+      "evidence": "Precisão não é promessa de vendor, é medida em unidades conhecidas após a importação."
+    },
+    {
+      "name": "triade-template-library-customization",
+      "one_liner": "Produtividade CAD se resolve em três frentes estruturais, quase nunca em skill do usuário: template, biblioteca e customização.",
+      "evidence": "To be productive in AutoCAD, we need to focus on three areas: having good templates, good libraries, and good customizations."
+    },
+    {
+      "name": "bloco-como-automacao-sem-codigo",
+      "one_liner": "Dynamic block, attribute e visibility state substituem AutoLISP na maioria dos casos. Antes de programar, veja se um bloco resolve.",
+      "evidence": "By optimizing blocks, we not only become more productive, but also reduce human errors in our design."
+    },
+    {
+      "name": "full-scale-1-1-no-model-escala-no-layout",
+      "one_liner": "O model space é a representação real do objeto em escala 1:1. Escala é problema do layout, resolvido no viewport, nunca na geometria.",
+      "evidence": "It doesn't matter if you have 2, 4, or 10 different scales in your sheet later."
+    },
+    {
+      "name": "ferramenta-com-finalidade-especifica",
+      "one_liner": "AutoCAD é oficina: cada comando tem finalidade. PDFIMPORT serve para uma coisa, PDFATTACH para outra, Markup Import para outra. Confundir categoria é o erro mais comum.",
+      "evidence": "Cada comando é uma ferramenta com finalidade."
+    },
+    {
+      "name": "series-as-pedagogy",
+      "one_liner": "Aprender CAD é sequencial. Cada habilidade habilita a próxima, por isso todo tema complexo vira série numerada com exercício.",
+      "evidence": "Aprender AutoCAD é sequencial, não por saltos."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "test-before-trust",
+      "one_liner": "Teste a feature nova antes de recomendá-la em produção. Nunca recomende por spec de release note.",
+      "evidence": "Don't expect the result to be perfect."
+    },
+    {
+      "name": "admit-tool-limits-publicly",
+      "one_liner": "Quando a ferramenta não chega, diga em público. A franqueza sobre o limite é o que sustenta a credibilidade.",
+      "evidence": "I can't see how I will use it in real drawing production."
+    },
+    {
+      "name": "underlay-over-pdfimport-for-precision",
+      "one_liner": "Precisão crítica pede PDF underlay como referência visual mais redesenho por cima, não importação de geometria.",
+      "evidence": "quando a precisão é crítica, prefira PDF underlay como referência visual e redesenhe por cima."
+    },
+    {
+      "name": "raster-needs-external-pipeline",
+      "one_liner": "Scan de planta em DWG editável exige Autodesk Raster Design ou pipeline externo. O AutoCAD nativo não faz.",
+      "evidence": "Quem precisar de planta escaneada em DWG editável precisa de pipeline externo."
+    },
+    {
+      "name": "markup-is-annotation-not-conversion",
+      "one_liner": "Markup Import do AutoCAD 2023 é revisão e anotação sobre o DWG, com OCR de texto. Não é vetorização de linha.",
+      "evidence": "Markup Import (2023) é para anotação, não para conversão."
+    },
+    {
+      "name": "recognize-shx-after-pdfimport",
+      "one_liner": "Texto SHX vira geometria no PDFIMPORT. Rode Recognize SHX Text (2017.1 em diante) para tentar reverter a texto editável.",
+      "evidence": "SHX font will be imported as geometry, not texts. It will make text editing difficult."
+    },
+    {
+      "name": "scale-with-reference-or-align",
+      "one_liner": "Escalar imagem ou underlay sem SCALE Reference ou ALIGN sobre dimensão conhecida é chute, não escala.",
+      "evidence": "para escalar imagem ou PDF underlay com precisão, use SCALE com opção Reference sobre uma dimensão conhecida."
+    },
+    {
+      "name": "template-lean-not-bloated",
+      "one_liner": "Template carrega só o essencial. Superlotar é risco de corrupção de arquivo, não zelo.",
+      "evidence": "Too many objects can also make your drawings corrupt."
+    },
+    {
+      "name": "library-is-not-only-blocks",
+      "one_liner": "Biblioteca externa vale para styles, layers, layouts e page setups, não só para bloco.",
+      "evidence": "You can create libraries for everything in separate files! Library is not limited to blocks."
+    },
+    {
+      "name": "layer-por-funcao-nunca-so-layer-0",
+      "one_liner": "Organize layer por função (parede, mobiliário, cota). Entregar desenho todo no Layer 0 é o pior hábito profissional.",
+      "evidence": "Using only Layer 0 is the worst, everyone hates to receive a drawing like that."
+    },
+    {
+      "name": "defpoints-only-for-dimensions",
+      "one_liner": "A layer DEFPOINTS existe para cotas. Não é atalho para geometria que não deve plotar.",
+      "evidence": "a layer DEFPOINTS existe só para cotas. Não desenhe nela."
+    },
+    {
+      "name": "visibility-states-simplest-first",
+      "one_liner": "Comece dynamic block por Visibility States, antes de parameters e actions complexos.",
+      "evidence": "Visibility states is the simplest way to make a dynamic block."
+    },
+    {
+      "name": "size-control-when-action-not-enough",
+      "one_liner": "Quando o action por grip não resolve, use Geometric e Dimensional Parameters para controlar pelo tamanho do objeto.",
+      "evidence": "Allows you to control dynamic block by the object size, not by action."
+    },
+    {
+      "name": "limit-stretch-via-parameter-properties",
+      "one_liner": "Limite de stretch se resolve nas propriedades do parameter, não na mão nem por convenção verbal.",
+      "evidence": "You can limit the distance using parameter's properties."
+    },
+    {
+      "name": "identify-repetitive-then-automate",
+      "one_liner": "Diagnóstico de produtividade começa listando o que é repetitivo. Sem esse mapa, automação é tiro no escuro.",
+      "evidence": "diagnóstico de produtividade começa por listar tarefas repetitivas."
+    },
+    {
+      "name": "break-tutorials-into-series",
+      "one_liner": "Tema complexo vira série numerada com exercício por parte, nunca post único e denso.",
+      "evidence": "tema complexo vira série numerada, não post único."
+    }
+  ],
+  "decision_style": "Decide pela origem e qualidade do dado (vetorial ou raster, PDF ou scan), testa a feature antes de recomendar, mede a precisão em cota métrica conhecida e admite o limite da ferramenta em público quando ele existe. Recomenda a alternativa pragmática (PDF underlay para precisão crítica, pipeline externo para raster, visibility states para começar em dynamic block) em vez de forçar o comando nativo. Tolerância zero a hype não testado. Prioriza configuração sobre código e estrutura tema complexo em série numerada com exercício.",
+  "primary_roles": ["especialista-autocad"],
+  "auxiliary_roles": [
+    {
+      "role": "instrutor-cad",
+      "why": "Pedagogia em série é o método dele: 7 partes de dynamic block, 10 desafios Work Better, 12 passos do Simple Guide. Serve para treinamento corporativo e para qualquer currículo técnico progressivo.",
+      "evidence": "a estrutura de quebrar tema complexo em partes numeradas com exercício e gancho serve a qualquer instrutor técnico.",
+      "confidence": "high"
+    },
+    {
+      "role": "auditor-cad",
+      "why": "Audita arquivo importado: mede precisão em cota conhecida, detecta linetype explodida em segmentos, texto SHX virado geometria, duplicata e layer errada antes de liberar o DWG.",
+      "evidence": "o workflow de testar feature, medir precisão em unidades conhecidas e documentar o limite é transferível.",
+      "confidence": "high"
+    },
+    {
+      "role": "consultor-estrategico",
+      "why": "Decide a arquitetura do pipeline de conversão (import nativo, underlay, Raster Design ou script externo) e sabe dizer onde a ferramenta nativa não chega. É consultoria técnica de decisão de stack.",
+      "evidence": "Quem precisar de planta escaneada em DWG editável precisa de pipeline externo.",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "Conversão PDF para DWG com auditoria de precisão real (PDFIMPORT, overlay, underlay, Recognize SHX Text, limpeza de geometria)",
+    "Decisão de pipeline por origem do dado: vetorial vai por um caminho, raster vai por outro",
+    "Importação e escala precisa de imagem e scan (IMAGEATTACH, PDFATTACH, SCALE Reference, ALIGN, Markup Import)",
+    "Blocos dinâmicos e reusable content como automação sem código (visibility states, parameters, actions, attributes)",
+    "Template enxuto, biblioteca externa, layer por função e layout em full scale 1:1",
+    "Honestidade técnica sobre o limite da ferramenta, mesmo sendo membro do Autodesk Expert Elite"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "Para na fronteira do código. Não escreve nem depura pipeline programático de vetorização (Python, OpenCV, ezdxf), então em projeto que depende de script ele só cobre o antes e o depois.",
+      "evidence": "Edwin não cobre vetorização via código/script. Sua expertise é operacional no AutoCAD."
+    },
+    {
+      "blind_spot": "O ceticismo com PDFIMPORT foi calcificado no teste de 2017 e pode subestimar melhorias de versões posteriores se aplicado sem reteste.",
+      "evidence": "Imported PDF is not accurate enough."
+    },
+    {
+      "blind_spot": "Vieses pró-configuração: pode insistir em dynamic block e template onde um script curto resolveria mais rápido e de forma mais auditável.",
+      "evidence": "configuração primeiro. Dynamic block, template, visibility state, command alias resolvem antes de AutoLISP ou script."
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "robert-green",
+      "why": "Complementaridade estrutural no squad: Green define padrão, processo, gates de QA e ROI no nível de gestão; Edwin executa o comando, o template e o bloco no nível operacional. Green diz o que padronizar, Edwin ensina como fazer no AutoCAD.",
+      "shared": ["autocad", "qa-tecnica"],
+      "confidence": "high"
+    },
+    {
+      "slug": "david-cohn",
+      "why": "Ambos auditam arquivo DWG, mas por ângulos distintos: Cohn na estrutura e integridade do arquivo e do template, Edwin na precisão geométrica pós-importação e no que a conversão quebrou.",
+      "shared": ["autocad", "qa-tecnica"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "lynn-allen",
+      "why": "Sobreposição em produtividade e workflows de edição no AutoCAD. Lynn cobre a amplitude de dicas e a evangelização de feature, Edwin cobre a profundidade de bloco dinâmico e o teste crítico de precisão.",
+      "shared": ["autocad", "conteudo"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "shaan-hurley",
+      "why": "Ponte com o lado de dentro da Autodesk: Hurley traz o porquê da feature e o roadmap do produto, Edwin traz o teste independente de campo que mostra onde a feature falha em produção métrica.",
+      "shared": ["autocad"],
+      "confidence": "medium"
+    }
+  ]
+}

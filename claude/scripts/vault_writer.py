@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Vault Writer — Stop hook do InfinityOS.
+Vault Writer — Stop hook.
 Lê o transcript e lança o worker em background sem bloquear o Claude.
 """
 import sys
@@ -8,7 +8,6 @@ import json
 import os
 import subprocess
 from pathlib import Path
-
 
 def main():
     try:
@@ -20,6 +19,14 @@ def main():
         bg_script = Path(__file__).parent / 'vault_writer_bg.py'
         log_file = Path.home() / '.claude/scripts/vault_writer.log'
 
+        # Rotacao simples: se o log passar de 1 MB, mantem so as ultimas 500 linhas.
+        try:
+            if log_file.exists() and log_file.stat().st_size > 1_048_576:
+                lines = log_file.read_text(errors='ignore').splitlines()[-500:]
+                log_file.write_text("\n".join(lines) + "\n")
+        except Exception:
+            pass
+
         subprocess.Popen(
             ['python3', str(bg_script), transcript_path],
             stdout=subprocess.DEVNULL,
@@ -28,7 +35,6 @@ def main():
         )
     except Exception:
         pass  # Nunca bloquear o Claude
-
 
 if __name__ == '__main__':
     main()

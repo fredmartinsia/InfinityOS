@@ -1,0 +1,15 @@
+id: deterministico-vira-codigo
+trigger: Sempre que uma orientacao se repete de forma identica e verificavel.
+action: Regra fixa ou verificavel deve ser executada por hook/script (custo zero de
+  token, sempre roda); reserve o LLM e o modelo caro para o que exige julgamento.
+confidence: 0.8
+domain: arquitetura
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:51'
+updated_at: '2026-07-03T21:45:51'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '''pense no que da pra gente fazer em situacoes deterministicas sem perder a qualidade,
+  pro Codex e pro Gemini CLI'' (verbatim).'

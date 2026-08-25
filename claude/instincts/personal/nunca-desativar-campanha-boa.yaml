@@ -1,0 +1,15 @@
+id: nunca-desativar-campanha-boa
+trigger: Gestao de campanhas de trafego (Meta, Google, etc).
+action: Em trafego pago, nunca pause ou desative uma campanha com bom desempenho sem
+  autorizacao explicita do usuÃ¡rio; ele pediu essa regra apos perder performance.
+confidence: 0.85
+domain: trafego
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:52'
+updated_at: '2026-07-03T21:45:52'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '''cria uma regra ai pra nunca mais desativar uma campanha boa igual aconteceu com
+  essa da Alexa para nao ferrar o desempenho'' (verbatim, Qwen).'

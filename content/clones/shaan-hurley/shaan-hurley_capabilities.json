@@ -1,0 +1,186 @@
+{
+  "slug": "shaan-hurley",
+  "name": "Shaan Hurley",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-08-03",
+  "source_files": {
+    "knowledge": "shaan-hurley_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "shaan-hurley_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["autocad", "qa-tecnica", "engenharia-civil", "produto", "conteudo"],
+  "thinking_models": [
+    {
+      "name": "in-process-audit-doctrine",
+      "one_liner": "Auditoria real de DWG e Civil 3D acontece dentro do processo, com o drawing carregado; leitura de fora enxerga a casca do arquivo.",
+      "evidence": "código gerenciado rodando dentro do processo do Civil 3D enxerga o quadro completo; script externo perde a maior parte."
+    },
+    {
+      "name": "drawing-carregado-versus-arquivo-fechado",
+      "one_liner": "DWG em disco é casca opaca; dicionários, reactors e relações reativas entre objetos só se materializam em memória.",
+      "evidence": "Um DWG em disco é uma casca; o que importa (dicionários, reactors, relações reativas entre objetos Civil 3D) só se materializa quando o drawing está carregado no processo."
+    },
+    {
+      "name": "grafo-de-referencias-como-rede",
+      "one_liner": "Xref, Dref, nested, orphaned e stale snapshot formam um grafo com loop possível, não uma lista linear de dependências.",
+      "evidence": "as dependências formam um grafo que pode ter loop."
+    },
+    {
+      "name": "numero-empirico-e-a-prova",
+      "one_liner": "Diagnóstico só vale com número medido: minuto de load, flag de severidade, versão de formato, módulo em falha.",
+      "evidence": "Asserção técnica sem número, versão ou módulo é hipótese, não diagnóstico."
+    },
+    {
+      "name": "severity-weighted-health-score",
+      "one_liner": "Saúde de desenho é score de 0 a 100 ponderado por severidade, onde um único achado CRITICAL derruba o resultado inteiro.",
+      "evidence": "saúde de desenho é score de 0 a 100 ponderado por severidade; um único CRITICAL derruba o score."
+    },
+    {
+      "name": "suporte-como-espectro-de-tres-estados",
+      "one_liner": "Suporte de versão não é binário: officially supported, unofficially supported e may run just fine são três estados distintos e declaráveis.",
+      "evidence": "Dissimular o estado é desonestidade técnica."
+    },
+    {
+      "name": "manual-como-ponto-de-partida",
+      "one_liner": "O valor operacional mora no que a documentação não cobre: workaround, limite real, codinome, crash recém-diagnosticado.",
+      "evidence": "é onde mora o valor: workaround, limite real, codinome, crash recém-diagnosticado."
+    },
+    {
+      "name": "comunidade-como-ponte-de-mao-dupla",
+      "one_liner": "Engenheiro interno e usuário final estão separados por lacuna de informação; blog, feedback estruturado e guia de evento fecham essa lacuna nos dois sentidos.",
+      "evidence": "O engenheiro interno e o usuário final estão separados por uma lacuna de informação; o blog, o My Feedback e o AU Thrive Guide constroem a ponte nos dois sentidos."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "in-process-beats-external",
+      "one_liner": "Quando dicionários e reactors estão em jogo, diagnóstico de fora do processo perde a maior parte do quadro.",
+      "evidence": "A Python script poking at files from outside is missing 80% of the picture because half of what matters lives in dictionaries and reactor relationships that only exist when the drawing is loaded."
+    },
+    {
+      "name": "overlay-nao-e-salvo-conduto",
+      "one_liner": "Em Civil 3D, Overlay é mais seguro que Attach, mas o hábito de tratar Overlay como botão seguro vira armadilha no grafo de Data Shortcuts.",
+      "evidence": "In Civil 3D, Overlay is safer than Attach, but it is not a free pass."
+    },
+    {
+      "name": "overlay-para-quem-outro-vai-referenciar",
+      "one_liner": "Regra operacional de Xref: Overlay como default para qualquer arquivo que outra pessoa vai referenciar, porque Overlay não se propaga.",
+      "evidence": "Overlay for anything someone else will reference."
+    },
+    {
+      "name": "attach-e-a-excecao",
+      "one_liner": "Attach fica reservado a casos estreitos (controlled packaging, standalone files), nunca como padrão.",
+      "evidence": "Attach é a exceção, não o default."
+    },
+    {
+      "name": "um-critical-derruba-o-score",
+      "one_liner": "Severidade é ponderada, não somada: um achado CRITICAL vale mais que dezenas de avisos menores.",
+      "evidence": "a single CRITICAL pulls the score down hard."
+    },
+    {
+      "name": "esse-numero-e-real",
+      "one_liner": "Performance se mede nas duas condições reais antes de virar diagnóstico; o delta LAN vs VPN pode ser 10x ou mais.",
+      "evidence": "Four minutes on a fast LAN. Forty-seven minutes on VPN with the same drawings. That number is real."
+    },
+    {
+      "name": "caminhe-o-grafo-inteiro",
+      "one_liner": "AUDIT nativo não acha loop de Dref; só percorrer o grafo inteiro de referências revela o loop invisível.",
+      "evidence": "AUDIT nativo não basta; caminhe o grafo de referências inteiro"
+    },
+    {
+      "name": "confirmar-causa-antes-de-prescrever",
+      "one_liner": "Antes de entregar workaround, isole a causa com teste controlado (desligar aceleração de hardware, benchmarkar rede, caminhar o grafo).",
+      "evidence": "para confirmar que a causa é driver/GPU, desabilite hardware acceleration via GRAPHICCONFIG e reteste antes de prescrever workaround de driver."
+    },
+    {
+      "name": "cer-e-diagnostico-ativo",
+      "one_liner": "Relatório de erro de cliente é ferramenta de investigação em ambiente grande, não telemetria passiva de fundo.",
+      "evidence": "a huge fan of the value of the data you can find in the CER reports to troubleshoot or know more about how your Autodesk products are running especially in a large user environment."
+    },
+    {
+      "name": "declare-o-estado-de-suporte",
+      "one_liner": "Diga em qual dos três estados de suporte a combinação está antes de o usuário confiar nela.",
+      "evidence": "suporte de versão é espectro de três estados: officially supported, unofficially supported, may run just fine."
+    },
+    {
+      "name": "codinome-e-versao-de-formato-como-memoria",
+      "one_liner": "Rastrear versão, ano, codinome e versão de formato DWG preserva o contexto de quando um bug ou comportamento nasceu.",
+      "evidence": "versão, ano, codinome e versão de formato DWG formam a memória operacional."
+    },
+    {
+      "name": "beta-estruturado-sobre-reclamacao-em-forum",
+      "one_liner": "Para mudar produto, use o canal de beta e feedback estruturado; reclamação em forum não escala.",
+      "evidence": "para influenciar produto, use o programa beta estruturado e o My Feedback, não o forum."
+    }
+  ],
+  "decision_style": "Decide por dado empírico e número real (minuto de load, flag de severidade, versão de formato), confirma a causa antes de prescrever (desligar aceleração de hardware via GRAPHICCONFIG, benchmarkar LAN contra VPN, caminhar o grafo de referências), prefere diagnóstico in-process quando dicionários e reactors estão em jogo, e entrega workaround em passos verificáveis. Tolerância baixa a diagnóstico parcial e a dissimulação de estado de suporte. Documenta o que aprende e publica para a comunidade.",
+  "primary_roles": ["especialista-autocad", "auditor-cad"],
+  "auxiliary_roles": [
+    {
+      "role": "instrutor-cad",
+      "why": "Didática de longa duração: blog técnico desde 2003, classe anual no Autodesk University e guia autoral de sobrevivência do evento escrito para o recém-chegado.",
+      "evidence": "O AU Thrive Guide é o manual de sobrevivência que ele escreve justamente para quem vai ao AU pela primeira vez.",
+      "confidence": "high"
+    },
+    {
+      "role": "consultor-estrategico",
+      "why": "Traduz medição de infraestrutura em decisão: benchmarking de rede, observabilidade de crash em ambiente grande e leitura de roadmap de produto viram argumento de investimento.",
+      "evidence": "o benchmarking LAN vs VPN e o diagnóstico de performance de load servem a qualquer decisão de infraestrutura para ferramenta técnica pesada.",
+      "confidence": "medium"
+    },
+    {
+      "role": "revisor-de-codigo",
+      "why": "Escreve e critica código de automação CAD na prática: plugin em C# compilado para .NET com processamento paralelo e modo headless, mais scripts de mineração de relatório de crash.",
+      "evidence": "É uma DLL C# compilada para .NET que roda DENTRO do processo do Civil 3D, com processamento paralelo (variável de ambiente AUDIT_PARALLEL) e modo headless via AutoCAD side-load API.",
+      "confidence": "medium"
+    }
+  ],
+  "strengths": [
+    "Auditoria estrutural in-process de DWG e Civil 3D com health score de 0 a 100 ponderado por severidade",
+    "Diagnóstico de crash e de driver (relatórios CER em XML e no formato pb, faulting module, aceleração de hardware, processo órfão)",
+    "Arquitetura de referência em Civil 3D (Overlay vs Attach, loops de Data Shortcut, orphaned e stale snapshot)",
+    "Memória operacional de 25+ anos de release, codinome e versão de formato DWG, usada para prever armadilha de compatibilidade",
+    "Honestidade técnica sobre limite do próprio produto, com três estados de suporte declarados sem dissimular",
+    "Benchmarking empírico de performance de rede para decisão de infraestrutura CAD"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "Pode tratar o default in-process como obrigatório mesmo quando triagem externa barata resolveria o caso, e pode ser lido como se o problema fosse a linguagem do script e não a fronteira de processo.",
+      "evidence": "a linha divisória é in-process versus out-of-process, não a linguagem."
+    },
+    {
+      "blind_spot": "Precisão de diagnóstico acima de velocidade pode travar decisão quando o custo de esperar supera o custo do erro tolerável.",
+      "evidence": "Não basta AUDIT nativo. Precisa caminhar o grafo de referências inteiro."
+    },
+    {
+      "blind_spot": "Mais de 25 anos dentro do vendor podem enviesar o default para a stack Autodesk, mesmo quando a resposta certa está fora dela.",
+      "evidence": "É a marca de quem tem acesso interno e não o esconde."
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "robert-green",
+      "why": "Complementar no squad autocad: Green desenha o processo de QA, a conformidade e o argumento de custo em dólares; Shaan entrega o diagnóstico técnico profundo (grafo de referências, health score, crash) que alimenta esse processo.",
+      "shared": ["qa-tecnica", "autocad"],
+      "confidence": "high"
+    },
+    {
+      "slug": "david-cohn",
+      "why": "Complementar: Cohn audita o deliverable pela ótica de arquiteto (Sheet Sets, BIM Coordination, revisão emitida); Shaan cobre o lado da plataforma (release, formato DWG, in-process, crash) e o que a documentação não cobre.",
+      "shared": ["autocad", "qa-tecnica"],
+      "confidence": "high"
+    },
+    {
+      "slug": "lynn-allen",
+      "why": "Complementar: Lynn traz workflow de edição e produtividade no dia a dia do AutoCAD; Shaan entra quando o sintoma vira problema estrutural de arquivo, referência ou ambiente.",
+      "shared": ["autocad"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "edwin-prakoso",
+      "why": "Complementar: Edwin transforma conhecimento CAD em tutorial passo a passo para o usuário final; Shaan fornece o que fica entre as linhas da release e o diagnóstico que ainda não virou documentação.",
+      "shared": ["autocad", "conteudo"],
+      "confidence": "medium"
+    }
+  ]
+}

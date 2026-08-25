@@ -1,0 +1,16 @@
+id: premium-anti-ia
+trigger: 'Qualquer entrega visual: landing, site, relatorio, logo, brand.'
+action: Design tem que ser premium e sob medida (Apple-like, tipografia cuidada, animacoes,
+  Magic UI/Framer, responsivo); rejeitar tudo que pareca generico, boilerplate ou
+  feito por IA; em relatorio interno, HTML visual e melhor que markdown cru.
+confidence: 0.75
+domain: design
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:52'
+updated_at: '2026-07-03T21:45:52'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '''quero uma experiencia premium, nao aqueles sites que parece que foi criado com
+  IA'' (verbatim).'

@@ -1,0 +1,14 @@
+id: link-direto-na-entrega
+trigger: Pesquisas de voos, produtos, ferramentas, servicos.
+action: Em qualquer pesquisa (voo, produto, ferramenta), entregue o link de compra/acesso
+  ja na primeira resposta, para ser pratico.
+confidence: 0.7
+domain: entrega
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:52'
+updated_at: '2026-07-03T21:45:52'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- 167 prompts tocam link/compra/acesso. Memoria dedicada 'feedback-entregar-link-em-pesquisas'.

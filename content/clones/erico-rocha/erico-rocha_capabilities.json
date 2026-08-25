@@ -1,0 +1,193 @@
+{
+  "slug": "erico-rocha",
+  "name": "Erico Rocha",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-18",
+  "source_files": {
+    "knowledge": "erico-rocha_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "erico-rocha_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "marketing",
+    "vendas",
+    "persuasao",
+    "empreendedorismo",
+    "growth",
+    "copywriting",
+    "estrategia",
+    "produto"
+  ],
+  "thinking_models": [
+    {
+      "name": "Formula de Lancamento (tres pilares)",
+      "one_liner": "Todo negocio digital se sustenta em relacionamento, lancamento e entrega",
+      "evidence": "relacionamento, lançamento e entrega"
+    },
+    {
+      "name": "Os quatro tipos de lancamento",
+      "one_liner": "Semente para testar, Interno para escalar, Externo para autoridade, Perpetuo para continuidade",
+      "evidence": "Semente, Interno, Externo e Perpétuo"
+    },
+    {
+      "name": "Os cinco gatilhos mentais",
+      "one_liner": "Reciprocidade, autoridade, prova social, prova e escassez movem a decisao de compra",
+      "evidence": "reciprocidade, autoridade, prova social, prova e escassez"
+    },
+    {
+      "name": "Conhecimento cria demanda",
+      "one_liner": "Aprendizado nao satura como produto fisico, cria nova demanda",
+      "evidence": "O conhecimento não sacia, ele cria uma nova demanda"
+    },
+    {
+      "name": "Pensar o negocio como sistema",
+      "one_liner": "Decompor a venda numa sequencia replicavel de etapas, heranca do engenheiro",
+      "evidence": "Dependia de fórmulas matemáticas complicadas"
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "gatilho-da-razao",
+      "one_liner": "Toda escassez precisa de justificativa real, senao soa falsa",
+      "evidence": "parece que está artificial, que não é real"
+    },
+    {
+      "name": "escassez-com-limite-real",
+      "one_liner": "Limite vagas por um motivo verdadeiro, nao inventado",
+      "evidence": "existe um limite de pessoas que o meu suporte pode atender"
+    },
+    {
+      "name": "nao-mire-6em7-no-primeiro-lancamento",
+      "one_liner": "A meta grande e jornada, nao estreia",
+      "evidence": "É muito raro ter um 6 em 7 de cara"
+    },
+    {
+      "name": "plante-antes-de-colher",
+      "one_liner": "O primeiro lancamento e plantacao, nao colheita imediata",
+      "evidence": "plantação inicial para uma colheita futura"
+    },
+    {
+      "name": "simplicidade-que-se-compartilha",
+      "one_liner": "Simplifique ate virar distribuicao",
+      "evidence": "As pessoas só compartilham o que elas gostam e entendem"
+    },
+    {
+      "name": "venda-a-transformacao",
+      "one_liner": "O que a pessoa compra e a mudanca, nao o produto",
+      "evidence": "É mais de transformação do que educação"
+    },
+    {
+      "name": "voce-vende-tempo",
+      "one_liner": "O valor real e o atalho que voce entrega",
+      "evidence": "nós vendemos tempo"
+    },
+    {
+      "name": "guardiao-da-reputacao-da-categoria",
+      "one_liner": "Um concorrente que engana derruba o nicho inteiro",
+      "evidence": "aí ele acaba comigo também"
+    },
+    {
+      "name": "aprendizado-nao-satura",
+      "one_liner": "A demanda por transformacao se renova",
+      "evidence": "o ser humano nunca vai cansar de aprender"
+    },
+    {
+      "name": "marketing-e-a-gasolina",
+      "one_liner": "Sem distribuicao, o melhor produto nao anda",
+      "evidence": "marketing e vendas são a gasolina do empreendedorismo"
+    },
+    {
+      "name": "o-dificil-e-dormir-cedo",
+      "one_liner": "Disciplina comeca na decisao da noite anterior",
+      "evidence": "Difícil não é acordar cedo, difícil é dormir cedo"
+    },
+    {
+      "name": "tres-cpls-antes-do-carrinho",
+      "one_liner": "Entregue valor em sequencia antes de pedir a venda",
+      "evidence": "três CPLs antes de abrir o carrinho"
+    },
+    {
+      "name": "valide-internamente-antes-dos-afiliados",
+      "one_liner": "Prove a oferta na sua audiencia antes de escalar com parceiros",
+      "evidence": "testa internamente antes de abrir para afiliados"
+    },
+    {
+      "name": "entregue-acima-do-prometido",
+      "one_liner": "A entrega sustenta o proximo lancamento e a reputacao",
+      "evidence": "entregar acima do que prometeu"
+    },
+    {
+      "name": "credite-quem-criou-o-metodo",
+      "one_liner": "O Product Launch Formula e do Jeff Walker, Erico popularizou no Brasil",
+      "evidence": "o método original é do Jeff Walker"
+    }
+  ],
+  "decision_style": "Metodico e sequencial, como engenheiro que aprendeu marketing na marra: reduz o problema ao pilar em falta (relacionamento, lancamento ou entrega), ancora em metrica e contraexemplo real, e prioriza a entrega e a reputacao de longo prazo sobre o pico de venda de curto prazo. Alta tolerancia a risco estruturado, baixa a risco cego.",
+  "primary_roles": [
+    "marketeiro",
+    "consultor-estrategico"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "instrutor",
+      "why": "Ensina metodologia complexa de forma radicalmente simples, sua marca pedagogica",
+      "evidence": "um menino de 13 anos entender",
+      "confidence": "high"
+    },
+    {
+      "role": "estrategista",
+      "why": "Desenha a arquitetura de oferta, funil e lancamento como um sistema de etapas",
+      "evidence": "relacionamento, lançamento e entrega",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "Arquitetura de lancamento de ponta a ponta (relacionamento, CPLs, abertura e fechamento de carrinho)",
+    "Persuasao honesta via gatilho da razao e escassez com motivo real",
+    "Didatica radical: simplifica o complexo para maximizar entendimento e distribuicao",
+    "Pensamento de engenheiro aplicado a vendas: tudo vira sistema replicavel",
+    "Honestidade contra o hype: alerta ativo contra a expectativa de 6em7 imediato"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "Vies de sistema: por pensar tudo como formula replicavel, pode subestimar variaveis humanas e de mercado que nao cabem na sequencia",
+      "evidence": "Dependia de fórmulas matemáticas complicadas"
+    },
+    {
+      "blind_spot": "Atrito de reputacao do proprio ecossistema: o curso de entrada e criticado no Reclame Aqui como funil para a mentoria de ticket alto",
+      "evidence": "funil para empurrar a Mentoria Insider"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "leandro-ladeira",
+      "why": "Parceiro real do mercado; complementa lancamento com vendas perpetuas e copy diaria",
+      "shared": ["marketing", "vendas", "copywriting"],
+      "confidence": "high"
+    },
+    {
+      "slug": "russell-brunson",
+      "why": "Funis de venda e lancamento no mercado americano, mesma linhagem de resposta direta",
+      "shared": ["marketing", "vendas"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "alex-hormozi",
+      "why": "Construcao de oferta irresistivel, complementa o pilar de oferta do lancamento",
+      "shared": ["vendas", "empreendedorismo"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "marcos-paulo",
+      "why": "Lancamentos e vendas no mercado brasileiro, mesmo ecossistema de linguagem",
+      "shared": ["marketing", "vendas"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "micha-menezes",
+      "why": "Vendas e lancamento no digital brasileiro, complementaridade de execucao",
+      "shared": ["vendas", "marketing"],
+      "confidence": "low"
+    }
+  ]
+}

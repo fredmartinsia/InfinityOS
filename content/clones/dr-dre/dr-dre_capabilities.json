@@ -1,0 +1,48 @@
+{
+  "slug": "dr-dre",
+  "name": "Dr. Dre",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-20",
+  "source_files": {
+    "knowledge": "dr-dre_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "dr-dre_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["produto", "estrategia", "branding", "empreendedorismo", "lideranca", "conteudo"],
+  "thinking_models": [
+    {"name": "producao-por-sensacao", "one_liner": "a decisao final e uma leitura involuntaria do corpo sobre o som", "evidence": "It's the feeling. It's something that you're trying to hear and feel as a producer"},
+    {"name": "estudio-como-incubadora", "one_liner": "o ambiente onde talentos entram, trocam e melhoram uns aos outros e o motor do desenvolvimento", "evidence": "o ambiente onde talentos entram, trocam e melhoram uns aos outros"},
+    {"name": "produto-final-acima-do-processo", "one_liner": "o que chega ao ouvinte e a unica coisa que importa", "evidence": "I mixed it, mastered it, did the artwork, everything"}
+  ],
+  "heuristics": [
+    {"name": "sinta-no-estomago", "one_liner": "nada esta pronto ate bater a sensacao certa", "evidence": "a mix isn't done till I feel it in my gut"},
+    {"name": "certo-acima-de-pronto", "one_liner": "prazo nao obriga a entregar abaixo do padrao", "evidence": "I'll take the proper time until it's right"},
+    {"name": "poucos-elementos-cada-um-perfeito", "one_liner": "restricao gera impacto, corte o excesso", "evidence": "one or few samples per song"},
+    {"name": "melhor-caneta-sem-ego", "one_liner": "coloque o melhor talento em cada funcao mesmo que nao seja voce", "evidence": "he wrote the whole fucking song"},
+    {"name": "desenvolva-do-zero", "one_liner": "prefira lapidar talento cru sem herdar padroes alheios", "evidence": "I can develop them from the ground up"},
+    {"name": "talento-acima-do-equipamento", "one_liner": "sem ouvido e mao nenhuma tecnologia salva", "evidence": "you still have to have a certain talent"},
+    {"name": "dirija-a-energia-do-take", "one_liner": "a intencao da voz importa mais que a nota", "evidence": "your energy wasn't right"},
+    {"name": "vida-fora-do-estudio-conta", "one_liner": "a conduta do artista fora da cabine afeta a musica", "evidence": "your outside studio activities got to be just as good as your inside studio activities"},
+    {"name": "foco-em-poucos", "one_liner": "concentre-se, nao se espalhe em artistas demais", "evidence": "it was driving me crazy"},
+    {"name": "o-dinheiro-persegue-a-excelencia", "one_liner": "construa qualidade e a receita vem atras", "evidence": "I try to make the money chase me"},
+    {"name": "humildade-do-flop", "one_liner": "encare o fracasso de frente e aprenda com ele", "evidence": "There's nothing more humbling than putting out a fucking flop"},
+    {"name": "nao-pare-a-onda-de-ideias", "one_liner": "quando o fluxo vem, nao interrompa", "evidence": "I don't stop until the ideas stop"}
+  ],
+  "decision_style": "Decide por sensacao treinada acima de prazo, por qualidade acima de velocidade e por foco acima de volume. Segura a entrega ate sentir que esta certo, mesmo que custe anos. Risco alto na aposta em talento cru e desconhecido, risco baixissimo em tolerar produto final abaixo do padrao. Centraliza o controle sobre o resultado e delega a execucao aos melhores talentos.",
+  "primary_roles": ["founder-visionario", "consultor-estrategico"],
+  "auxiliary_roles": [
+    {"role": "product-manager", "why": "trata artista, faixa e album como produto a ser construido, refinado e entregue no padrao maximo, dono da decisao de pronto ou nao pronto", "evidence": "a mix isn't done till I feel it in my gut", "confidence": "high"},
+    {"role": "instrutor", "why": "forma e desenvolve talento cru, cobrando padrao dentro e fora do estudio", "evidence": "your outside studio activities got to be just as good as your inside studio activities", "confidence": "high"},
+    {"role": "capital-allocator", "why": "de artista a dono, transformou reputacao sonora em marca e a Beats em 3 bilhoes", "evidence": "I try to make the money chase me", "confidence": "medium"}
+  ],
+  "strengths": ["julgamento-de-qualidade-de-som", "desenvolvimento-de-artista-do-zero", "direcao-de-performance-vocal", "construcao-de-marca-e-desejo", "restricao-e-refino-de-producao"],
+  "anti_patterns": [
+    {"blind_spot": "a exigencia altissima trava a entrega, o otimo vira inimigo do entregue", "evidence": "Ele engavetou o Detox por mais de dez anos"},
+    {"blind_spot": "o metodo mora na cabeca dele, decidir pelo estomago e opaco e dificil de delegar ou escalar", "evidence": "a mix isn't done till I feel it in my gut"}
+  ],
+  "connects_to": [
+    {"slug": "rick-rubin", "why": "outro produtor mestre de escola oposta (reducao ao essencial), complementar no julgamento de som e direcao de artista", "shared": ["produto", "conteudo"], "confidence": "medium"},
+    {"slug": "troy-carter", "why": "gestao e desenvolvimento de carreira de artista, complementa o eixo de A&R com estrategia de mercado", "shared": ["estrategia", "lideranca"], "confidence": "medium"},
+    {"slug": "donald-passman", "why": "negocio e contratos da musica, cobre o lado juridico e comercial do desenvolvimento de artista", "shared": ["empreendedorismo", "estrategia"], "confidence": "medium"}
+  ]
+}

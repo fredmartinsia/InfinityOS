@@ -92,11 +92,11 @@ Citação dela sobre a era:
 
 ---
 
-## AMAZON EUA vs AMAZON ES (relevante para a marca do usuário)
+## AMAZON EUA vs marketplace (relevante para a marca do usuário)
 
 ### Diferenças estruturais
 
-| Dimensão | Amazon US | Amazon ES |
+| Dimensão | Amazon US | marketplace |
 |---|---|---|
 | Maturidade | Super maduro (desde 2012) | Crescimento rápido (2018+) |
 | CPC médio | Alto ($1-3+) | Médio ($0.30-1) |
@@ -107,14 +107,14 @@ Citação dela sobre a era:
 | Brand Analytics | Completo | Parcial |
 | Language | English | Spanish (Castilian) |
 
-### Implicação para a marca do usuário Amazon ES
+### Implicação para a marca do usuário marketplace
 - **CPC mais barato** = margem maior para experimentação
 - **Menos competição** em keywords long-tail
 - **Oportunidade de 1st-mover** em nichos (produtos 3D é nicho)
 - **DSP pode não fazer sense ainda** (lower volume threshold)
 - **Frameworks Destaney aplicam, com locale adjustments**
 
-### O que Destaney diria sobre Amazon ES
+### O que Destaney diria sobre marketplace
 Baseado no approach dela (extrapolado dos frameworks):
 - "Use o CPC baixo como vantagem — invista em impression share agressivo"
 - "Constrói brand (Sponsored Brands video + SD defense) enquanto o mercado ainda é barato"
@@ -233,7 +233,7 @@ Ela ocupa o meio técnico-pragmático, que é relativamente vazio: gente que com
 
 ---
 
-## RELEVÂNCIA PARA marca-usuario (Amazon ES FBA)
+## RELEVÂNCIA PARA marca-usuario (marketplace FBA)
 
 ### Onde frameworks Destaney aplicam diretamente
 - **Account structure** — SKAG funciona igual em ES

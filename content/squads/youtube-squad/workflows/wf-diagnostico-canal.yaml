@@ -1,0 +1,201 @@
+workflow:
+  id: wf-diagnostico-canal
+  name: "Diagnostico de Canal (Consultoria Inicial)"
+  version: "1.0.0"
+  description: |
+    Workflow de consultoria inicial de canal de YouTube/podcast do sua comunidade.
+    O youtube-chief orquestra: coleta contexto, dispara pesquisa de mercado cross-cultural
+    (5 canais BR + 5 USA + 3 PT/EU), aciona channel audit do derral-eves se o canal ja
+    existe, modela os padroes dos top com matt-gielen e sintetiza recomendacoes concretas
+    de capa, foto, bio com SEO, link primario, formato preferencial e frequencia. Entrega
+    um plano de canal estruturado com acoes de 7 / 30 / 90 dias. Pesquisa SEMPRE antes de
+    recomendar. Nada de achismo sem dados.
+  trigger: "*diagnosticar-canal"
+  entry_agent: youtube-chief
+  estimated_duration: "60-90 minutes"
+  type: sequential
+  sequence:
+    - agent: youtube-chief
+      action: coletar-contexto
+      creates: briefing_canal
+    - agent: youtube-researcher
+      action: pesquisa-mercado
+      creates: relatorio_mercado
+    - agent: derral-eves
+      action: channel-audit
+      creates: audit_canal
+    - agent: matt-gielen
+      action: modelagem-padroes
+      creates: modelagem_top
+    - agent: youtube-chief
+      action: sintetizar-recomendacoes
+      creates: recomendacoes_canal
+    - agent: youtube-chief
+      action: montar-plano-acao
+      creates: plano_canal
+
+phases:
+  - id: phase_0
+    name: "Contexto (Coleta do Briefing)"
+    agent: youtube-chief
+    task: tasks/decisao-estrategica.md
+    elicit: true
+    description: |
+      O youtube-chief coleta o contexto do canal antes de acionar qualquer especialista.
+      Confirma se o canal e novo ou existente (e o link, se existente), o nicho/tema central
+      e sub-nichos, o tipo (individual, podcast, vlog, hibrido, empresa), a regiao alvo
+      (Portugal, Brasil, Europa, internacional) e o idioma, a audiencia alvo (idade, dores,
+      o que consome hoje), o objetivo principal (autoridade, audiencia, vendas, monetizacao),
+      as restricoes (tempo por semana, equipe, equipamento) e 3 a 5 referencias que o criador
+      admira. Identidade visual de partida do sua comunidade: laranja sobre preto.
+    outputs:
+      - briefing_canal: "markdown"
+      - canal_existente: "boolean"
+      - nicho: "string"
+      - regiao_alvo: "string"
+      - objetivo_principal: "string"
+      - referencias_admiradas: "list"
+    checkpoint:
+      gate: "Briefing completo: status do canal (novo/existente), nicho, regiao, audiencia, objetivo, restricoes e referencias capturados"
+      veto: "Nicho ou objetivo nao definidos. Sem nicho claro nao ha pesquisa direcionada possivel; sem objetivo nao ha como priorizar recomendacoes"
+
+  - id: phase_1
+    name: "Pesquisa de Mercado (Cross-Cultural)"
+    agent: youtube-researcher
+    task: tasks/analisar-conteudo.md
+    depends_on: [phase_0]
+    description: |
+      O youtube-researcher faz o scan de mercado do nicho antes de qualquer recomendacao.
+      Mapeia top 5 canais BR + 5 canais USA + 3 canais PT/EU do nicho, registrando para cada
+      um: formato dominante, frequencia de publicacao, padrao de thumbnail, padrao de titulo
+      e angulo. Lista os top 10 videos do nicho (qualquer canal) com hooks, retencao aparente
+      e thumbnail. Faz comment mining trazendo as top 20 duvidas, dores e desejos do publico
+      (YouTube + Instagram + Reddit + Quora). Levanta tendencias do nicho subindo nos ultimos
+      90 dias. Princpio do squad: modelar BR + USA, que estao um passo a frente, para adaptar
+      a PT/EU.
+    outputs:
+      - relatorio_mercado: "markdown"
+      - canais_br: "list"
+      - canais_usa: "list"
+      - canais_pt_eu: "list"
+      - comment_mining: "list"
+      - tendencias_90d: "list"
+    checkpoint:
+      gate: "Relatorio cobre 5 BR + 5 USA + 3 PT/EU com formato, frequencia, thumbnail, titulo e angulo de cada; comment mining com 20+ itens; tendencias listadas"
+      veto: "Pesquisa ausente ou incompleta (menos de 5+5+3 canais ou sem comment mining). Sem dados de mercado o squad nao recomenda nada"
+
+  - id: phase_2
+    name: "Channel Audit (Se Canal Existente)"
+    agent: derral-eves
+    task: tasks/decisao-estrategica.md
+    depends_on: [phase_1]
+    description: |
+      O derral-eves audita o canal SE ele ja existe (campo canal_existente = true na phase_0).
+      Analisa os ultimos 20 videos: curva de retencao media, CTR medio, AVD (Average View
+      Duration), videos outliers positivos e negativos e padroes algoritmicos (o que o YouTube
+      esta empurrando ou ignorando). Conecta os achados aos padroes de mercado da phase_1.
+      Se o canal e novo (canal_existente = false), esta fase e PULADA por completo e o workflow
+      segue direto para a phase_3, sem audit (nao ha historico para auditar).
+    outputs:
+      - audit_canal: "markdown"
+      - ctr_medio: "string"
+      - retencao_media: "string"
+      - avd_medio: "string"
+      - videos_outliers: "list"
+    checkpoint:
+      gate: "Canal existente: audit dos ultimos 20 videos entregue com CTR, retencao, AVD e outliers. Canal novo: fase pulada e registrada como N/A"
+      veto: "Canal marcado como existente mas sem link/acesso para auditar. Nao inventar metricas: ou ha dados reais ou a fase nao roda"
+
+  - id: phase_3
+    name: "Modelagem de Padroes (Top do Nicho)"
+    agent: matt-gielen
+    task: tasks/analise-formato.md
+    depends_on: [phase_1, phase_2]
+    description: |
+      O matt-gielen modela os padroes dos canais top a partir do relatorio de mercado (e do
+      audit, quando existir). Identifica 2 a 3 formatos vencedores cross-canal (BR + USA),
+      cada um com 5+ casos validados, e mapeia as adaptacoes necessarias para PT/EU. Define
+      estrutura tipica (duracao, segmentos, hooks de abertura, padrao de retencao) de cada
+      formato vencedor e recomenda um formato primario + um formato secundario de teste.
+      Calibra a frequencia otima cruzando o padrao dos top com a capacidade declarada do
+      criador (restricoes da phase_0). Formato inedito sem casos comprovados e sinalizado como
+      hipotese de teste, nunca como recomendacao firme.
+    outputs:
+      - modelagem_top: "markdown"
+      - formato_primario: "string"
+      - formato_secundario: "string"
+      - estrutura_recomendada: "markdown"
+      - frequencia_modelada: "string"
+    checkpoint:
+      gate: "2-3 formatos vencedores identificados com 5+ casos cada; formato primario e secundario definidos; estrutura e frequencia modeladas vs capacidade do criador"
+      veto: "Formato primario recomendado sem 5+ casos validados, ou inedito apresentado como recomendacao firme em vez de hipotese de teste"
+
+  - id: phase_4
+    name: "Recomendacoes Estruturadas (Sintese)"
+    agent: youtube-chief
+    task: tasks/decisao-estrategica.md
+    depends_on: [phase_3]
+    description: |
+      O youtube-chief sintetiza pesquisa + audit + modelagem em recomendacoes concretas e
+      acionaveis, cobrindo os seis pilares da consultoria inicial:
+      (1) Capa do canal: mensagem central que o viewer entende em 3 segundos, elementos
+          visuais (laranja sobre preto como base sua comunidade, rosto, prop, texto),
+          modelagem de 3 referencias cross-cultural e CTA visual.
+      (2) Foto de perfil: estilo (foto, ilustracao ou logo), contraste e legibilidade em
+          mobile, coerencia com a capa e reconhecibilidade.
+      (3) Biografia com SEO: estrutura de 3 linhas (linha 1 = o que faz; linha 2 = para quem
+          e dor que resolve; linha 3 = prova social ou diferencial), palavras-chave extraidas
+          do researcher e CTA final.
+      (4) Link primario: estrategia de trafego (lead magnet, pagina de venda ou agregador de
+          links) coerente com o objetivo principal da phase_0.
+      (5) Formato preferencial: formato primario (5+ casos) + secundario de teste, com a
+          justificativa de por que faz sentido para este canal.
+      (6) Frequencia: videos por semana realista, baseada na capacidade do criador e no padrao
+          dos top, evitando ritmo heroico insustentavel.
+    outputs:
+      - recomendacoes_canal: "markdown"
+      - capa_recomendacao: "markdown"
+      - foto_recomendacao: "markdown"
+      - bio_recomendacao: "markdown"
+      - link_recomendacao: "markdown"
+      - formato_recomendacao: "markdown"
+      - frequencia_recomendacao: "string"
+    checkpoint:
+      gate: "Os 6 pilares cobertos com recomendacao especifica: capa + foto + bio (com SEO) + link primario + formato preferencial + frequencia. Cada recomendacao ancorada em dado da pesquisa/modelagem"
+      veto: "Algum dos 6 pilares ausente ou generico (sem ancoragem em dado). Bio sem palavras-chave SEO. Recomendacao baseada em achismo sem referencia de mercado"
+
+  - id: phase_5
+    name: "Plano de Acao (7 / 30 / 90 dias)"
+    agent: youtube-chief
+    task: tasks/decisao-estrategica.md
+    depends_on: [phase_4]
+    description: |
+      O youtube-chief converte as recomendacoes em um plano de acao temporizado e valida o
+      pacote pelo checklist de qualidade antes de entregar.
+      Proximos 7 dias (quick wins): atualizar capa, foto, bio e link; publicar/re-otimizar o
+        primeiro video no formato modelado; configurar o tracking basico no YouTube Analytics.
+      Proximos 30 dias (estabelecer ritmo): publicar X videos no formato primario; coletar
+        dados de retencao e CTR; iterar com base em dados, nao em achismo.
+      Proximos 90 dias (escalar): validar o formato primario contra a baseline; testar o
+        formato secundario; decidir sobre monetizacao acionando o roberto-blake.
+      Fecha sinalizando as 3 acoes prioritarias com responsavel e prazo, os riscos a monitorar
+      e persistindo os aprendizados em _memory/memories.md (data, canal, demanda, decisoes).
+    outputs:
+      - plano_canal: "markdown"
+      - acoes_7_dias: "list"
+      - acoes_30_dias: "list"
+      - acoes_90_dias: "list"
+      - acoes_prioritarias: "list"
+      - riscos_monitorar: "list"
+    checkpoint:
+      gate: "Plano 7/30/90 dias entregue; 3 acoes prioritarias com responsavel e prazo; riscos sinalizados; pacote aprovado por checklists/output-quality.md; memoria persistida em _memory/memories.md"
+      veto: "Plano sem horizonte 7/30/90 completo, ou sem acoes prioritarias com responsavel/prazo, ou pacote reprovado no checklist de qualidade"
+
+completion_criteria:
+  - "Briefing de contexto coletado com canal, nicho, regiao, audiencia, objetivo, restricoes e referencias (youtube-chief)"
+  - "Pesquisa de mercado cross-cultural entregue: 5 BR + 5 USA + 3 PT/EU + comment mining + tendencias (youtube-researcher)"
+  - "Channel audit feito se o canal existe (CTR, retencao, AVD, outliers) ou fase pulada/registrada como N/A se novo (derral-eves)"
+  - "Modelagem dos padroes dos top com formato primario + secundario e frequencia calibrada a capacidade (matt-gielen)"
+  - "Recomendacoes estruturadas cobrindo capa + foto + bio com SEO + link primario + formato preferencial + frequencia (youtube-chief)"
+  - "Plano de acao 7 / 30 / 90 dias com 3 acoes prioritarias, riscos sinalizados e aprovacao no checklist de qualidade (youtube-chief)"
+  - "Plano de canal estruturado entregue e aprendizados persistidos em _memory/memories.md"

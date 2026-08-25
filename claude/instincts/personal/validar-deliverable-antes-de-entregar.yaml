@@ -1,0 +1,15 @@
+id: validar-deliverable-antes-de-entregar
+trigger: Entrega de paginas, sites, relatorios HTML, qualquer artefato navegavel.
+action: 'Antes de dizer que esta pronto, exercite o deliverable: link abre (HTTP 200),
+  HTML e responsivo em mobile, o conteudo esta completo e sem truncamento.'
+confidence: 0.7
+domain: entrega
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:52'
+updated_at: '2026-07-03T21:45:52'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '''o HTML em mobile nao ta funcionando, preciso que corrija pra ficar responsivo''
+  (verbatim, Qwen).'

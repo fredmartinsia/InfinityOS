@@ -1,0 +1,42 @@
+{
+  "slug": "pj-accetturo",
+  "name": "PJ Accetturo (PJ Ace)",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-07",
+  "source_files": {
+    "knowledge": "pj-accetturo_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "pj-accetturo_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["inteligencia-artificial", "marketing", "conteudo", "storytelling", "branding"],
+  "thinking_models": [
+    {"name": "corrida-do-ouro", "one_liner": "janela curta de vantagem desproporcional para quem entra cedo e sabe garimpar", "evidence": "The biggest gold rush of all time."},
+    {"name": "vantagem-do-veterano", "one_liner": "ofício antigo mais ferramenta nova vence quem só tem a ferramenta", "evidence": "whether you're a traditional filmmaker for 10, 15 years, you can learn the tools in a few days"},
+    {"name": "commoditizacao-em-cascata", "one_liner": "cada camada técnica vira commodity e o valor sobe para o julgamento e o gosto", "evidence": "gosto e julgamento humano continuam decisivos mesmo com a máquina fazendo o pixel"},
+    {"name": "deslocamento-inevitavel", "one_liner": "as funções que a IA absorve encolhem e ficar parado é escolher o deslocamento", "evidence": "To anyone who's not wanting to adapt quickly, displacement's coming."}
+  ],
+  "heuristics": [
+    {"name": "mais-inputs-mais-demanda", "one_liner": "mais input criativo é diretamente proporcional à demanda inbound", "evidence": "The more inputs you put in correlates directly to the amount of inbound demand you'll get."},
+    {"name": "se-cabe-num-prompt-nao-e-seu", "one_liner": "se qualquer um faz numa frase, não há autoria nem defensibilidade", "evidence": "if you can do it in one sentence, anyone can."},
+    {"name": "aprenda-e-esqueca-a-ferramenta", "one_liner": "a ferramenta é commodity, o que dura é o ofício", "evidence": "you can learn the tools in a few days, two weeks max."},
+    {"name": "encadeie-ferramentas", "one_liner": "o resultado vem de combinar chat, geradores e refino, não de um app só", "evidence": "workflow com ChatGPT, Midjourney, Gemini, Veo 3, Kling, Freepik"},
+    {"name": "cobre-pelo-resultado-produza-pelo-minimo", "one_liner": "cinco dígitos de valor, poucos milhares de custo, dias de prazo", "evidence": "Cinco dígitos de valor entregue, poucos milhares de custo, dias de prazo"},
+    {"name": "publique-rapido-o-mercado-e-o-teste", "one_liner": "protótipo barato publicado cedo bate polimento infinito", "evidence": "virou o contrato da Kalshi"},
+    {"name": "abra-o-processo", "one_liner": "transparência do prompt ao corte constrói autoridade e demanda", "evidence": "breakdowns do prompt ao corte"}
+  ],
+  "decision_style": "Viés de ação sob incerteza: prototipa barato, publica cedo, lê a reação do mercado e itera. Prioriza conceito e hook primeiro, depois defensibilidade, depois execução na ferramenta.",
+  "primary_roles": ["marketeiro", "narrador"],
+  "auxiliary_roles": [
+    {"role": "consultor-estrategico", "why": "dá direção criativa para tráfego, lançamento e conteúdo fora da produção de anúncio", "evidence": "a lei dos inputs vira critério de qual criativo escalar e o teste do slop protege o feed", "confidence": "high"},
+    {"role": "media-buyer", "why": "informa qual criativo merece budget pela lógica de defensibilidade e conversão, não de views", "evidence": "a lei dos inputs vira critério de qual criativo escalar", "confidence": "medium"}
+  ],
+  "strengths": ["conceito e hook de anúncio viral", "produção audiovisual rápida e barata com IA", "julgamento de defensibilidade de criativo", "encadeamento de ferramentas de geração"],
+  "anti_patterns": [
+    {"blind_spot": "viés do vencedor, subestima quanto o timing e os quinze anos prévios pesaram ao dizer que se aprende em duas semanas", "evidence": "you can learn the tools in a few days, two weeks max"},
+    {"blind_spot": "tensão não resolvida entre democratizar a ferramenta e erguer a barreira da autoria, quer os dois ao mesmo tempo", "evidence": "A IA vai democratizar a produção de IP"}
+  ],
+  "connects_to": [
+    {"slug": "pedro-sobral", "why": "o criativo defensável alimenta diretamente a estratégia de tráfego pago", "shared": ["trafego-pago", "marketing"], "confidence": "medium"},
+    {"slug": "alex-hormozi", "why": "hook e oferta convergem no criativo de anúncio", "shared": ["marketing", "persuasao"], "confidence": "medium"}
+  ]
+}

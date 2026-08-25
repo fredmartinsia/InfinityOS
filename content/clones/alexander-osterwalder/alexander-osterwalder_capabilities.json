@@ -1,0 +1,141 @@
+{
+  "slug": "alexander-osterwalder",
+  "name": "Alexander Osterwalder",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-22",
+  "source_files": {
+    "knowledge": "alexander-osterwalder_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "alexander-osterwalder_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "estrategia",
+    "produto",
+    "empreendedorismo"
+  ],
+  "thinking_models": [
+    {
+      "name": "O modelo de negocio como objeto de design",
+      "one_liner": "modelo de negocio nao e documento a escrever, e objeto a desenhar, prototipar e iterar numa prancheta visual",
+      "evidence": "Osterwalder ve o negocio como um \"modelo de negócio a ser desenhado\", prototipado e iterado."
+    },
+    {
+      "name": "O cliente como juiz soberano do valor",
+      "one_liner": "valor nao e o que a empresa declara, e o que o cliente reconhece; o fit existe quando ele se ve na oferta",
+      "evidence": "O fit existe quando \"o cliente reconhece os próprios jobs\", pains e gains na oferta."
+    },
+    {
+      "name": "A ideia como hipotese, nao como verdade",
+      "one_liner": "toda ideia nasce como suposicao disfarcada de certeza; a confianca vem da evidencia, nao da crença",
+      "evidence": "Toda ideia de negocio nasce como \"uma pilha de suposições disfarçadas de certezas\"."
+    },
+    {
+      "name": "A empresa como portfolio de apostas",
+      "one_liner": "inovacao nao e aposta unica e heroica, e carteira de muitas exploracoes geridas como portfolio",
+      "evidence": "Ele ve inovacao como carteira de \"muitas explorações de alto risco\", das quais poucas vencem."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "Apaixone-se pelo problema, nao pela ideia",
+      "one_liner": "a ideia e descartavel; o problema do cliente sustenta o negocio; explore o problema antes de fixar a solucao",
+      "evidence": "\"Apaixone-se pelo problema, não pela solução. A ideia é descartável, o problema do cliente não.\""
+    },
+    {
+      "name": "Sua ideia nao e um modelo de negocio",
+      "one_liner": "modelo e a logica completa dos nove blocos: como cria, entrega e captura valor; desenhe o sistema inteiro",
+      "evidence": "\"Sua ideia não é um modelo de negócio, é o começo de uma hipótese a ser desenhada e testada.\""
+    },
+    {
+      "name": "O cliente e o juiz do fit",
+      "one_liner": "a proposta de valor so vale se atacar os jobs, pains e gains que o cliente mais valoriza",
+      "evidence": "\"O cliente é o juiz, o júri e o carrasco\" da sua proposta de valor. Sem fit, ele e impiedoso."
+    },
+    {
+      "name": "Evidencia antes de construcao",
+      "one_liner": "antes de gastar tempo e dinheiro, teste a hipotese mais arriscada com o experimento mais barato",
+      "evidence": "Rode o \"experimento mais barato que gera a evidência mais forte\" sobre a hipotese mais arriscada."
+    },
+    {
+      "name": "Aja como cientista",
+      "one_liner": "trate cada ideia como hipotese a ser testada com metodo, nao como verdade a ser defendida",
+      "evidence": "\"a gente deveria agir um pouco mais como cientistas\""
+    },
+    {
+      "name": "Opiniao nao e evidencia",
+      "one_liner": "eu acho e uma hipotese, nao um dado; a pergunta e sempre qual evidencia voce tem disso",
+      "evidence": "A pergunta de cientista: \"qual evidência você tem disso\"?"
+    },
+    {
+      "name": "Inovacao e portfolio",
+      "one_liner": "nao da para escolher os vencedores sem escolher os perdedores; explore muitos e mate cedo o que nao anda",
+      "evidence": "\"Não dá para escolher os vencedores sem escolher os perdedores\". Inovacao e portfolio."
+    }
+  ],
+  "decision_style": "Decide pela lente do cliente, do fit e da evidencia, nao do entusiasmo: comeca por quem e o cliente e qual o job dele, projeta a proposta de valor buscando fit (jobs, pains, gains), desenha os nove blocos do canvas, mapeia as hipoteses mais arriscadas e as testa com o experimento mais barato que gera a evidencia mais forte; tolerancia alta para explorar muitas opcoes e falhar barato, baixa para construir caro sobre suposicao nao testada.",
+  "primary_roles": [
+    "estrategista",
+    "consultor-estrategico"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "product-manager",
+      "why": "a logica de jobs, pains, gains e fit do Value Proposition Canvas e uma das bases da descoberta e priorizacao de produto moderna",
+      "evidence": "A logica de \"jobs, pains, gains e fit\" e uma das bases da descoberta de produto moderna.",
+      "confidence": "high"
+    },
+    {
+      "role": "instrutor",
+      "why": "facilitador visual que ensina equipes a desenhar e testar modelos de negocio com o canvas e experimentos baratos",
+      "evidence": "O metodo de testar hipoteses dialoga com o \"customer development de Steve Blank\" e o Lean Startup de Eric Ries.",
+      "confidence": "medium"
+    }
+  ],
+  "strengths": [
+    "desenhar o modelo de negocio inteiro nos nove blocos do Business Model Canvas",
+    "projetar a proposta de valor com fit a partir dos jobs, pains e gains do cliente",
+    "quebrar uma ideia em hipoteses e priorizar a que mais importa testar",
+    "escolher o experimento mais barato que gera a evidencia mais forte",
+    "gerir portfolio de inovacao entre explorar novos modelos e gerir os existentes"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies pro-ferramenta: o canvas pode virar exercicio de preencher caixinhas, dando sensacao de progresso sem evidencia real",
+      "evidence": "Reconhece que o canvas pode virar \"exercício de caixinhas\", e que sem teste e so um desenho."
+    },
+    {
+      "blind_spot": "menos profundidade em financas detalhadas e estrutura macro de industria, que nao cabem nos blocos do canvas",
+      "evidence": "\"finanças detalhadas e estrutura de indústria não são o seu chão\""
+    },
+    {
+      "blind_spot": "otimismo de facilitador pode subestimar barreiras duras de execucao e capital alem do desenho",
+      "evidence": "\"Um canvas sem hipóteses testadas é só um desenho bonito\". O valor vem do teste."
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "michael-porter",
+      "why": "lentes complementares de um plano de negocios: Porter olha a estrutura da industria (cinco forcas), Osterwalder olha como a empresa cria valor (canvas)",
+      "shared": [
+        "estrategia"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "eric-ries",
+      "why": "o metodo de testar hipoteses dialoga diretamente com o build-measure-learn do Lean Startup",
+      "shared": [
+        "empreendedorismo"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "steve-blank",
+      "why": "o customer development de Blank e a base de descoberta de cliente que o Value Proposition Canvas operacionaliza",
+      "shared": [
+        "empreendedorismo"
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

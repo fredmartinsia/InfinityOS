@@ -1,0 +1,135 @@
+{
+  "slug": "eric-ries",
+  "name": "Eric Ries",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-22",
+  "source_files": {
+    "knowledge": "eric-ries_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "eric-ries_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "empreendedorismo",
+    "produto",
+    "growth"
+  ],
+  "thinking_models": [
+    {
+      "name": "A startup como experimento",
+      "one_liner": "o negocio nascente nao e um plano a executar, e uma serie de experimentos para validar uma visao",
+      "evidence": "A primeira pergunta nunca e qual a meta do trimestre, e \"qual hipótese estamos testando agora\"."
+    },
+    {
+      "name": "O ciclo como volante de direcao",
+      "one_liner": "construir-medir-aprender e o volante de um carro, nao uma linha reta; cada volta corrige a rota",
+      "evidence": "O sucesso nao e seguir o mapa original, e \"chegar a um destino que vale a pena\", ajustando a direcao a cada volta."
+    },
+    {
+      "name": "A premissa de fe como ponto de ruptura",
+      "one_liner": "todo plano repousa sobre premissas que, se falsas, derrubam tudo; teste-as primeiro",
+      "evidence": "O trabalho do empreendedor e identificar essas premissas e \"testá-las primeiro, no menor experimento possível\"."
+    },
+    {
+      "name": "Aprendizado validado vs progresso ilusorio",
+      "one_liner": "progresso real e evidencia sobre o cliente, nao grafico que sobe por metrica de vaidade",
+      "evidence": "A startup que confunde os dois \"acelera com confiança em direção ao precipício\"."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "Aprendizado e a unidade de progresso",
+      "one_liner": "o que conta nao e o que voce construiu, e o que aprendeu de forma validada",
+      "evidence": "\"Success is not delivering a feature; success is learning how to solve the customer's problem.\""
+    },
+    {
+      "name": "Aprenda mais rapido que todo mundo",
+      "one_liner": "a vantagem de uma startup e a velocidade de aprendizado com o cliente",
+      "evidence": "\"The only way to win is to learn faster than anyone else.\""
+    },
+    {
+      "name": "Falhe barato para aprender",
+      "one_liner": "sem espaco para falhar nao ha aprendizado; busque a falha rapida e barata",
+      "evidence": "\"if you cannot fail, you cannot learn.\""
+    },
+    {
+      "name": "Remova tudo que nao gera aprendizado",
+      "one_liner": "no MVP, corte qualquer esforco que nao contribua direto para o aprendizado",
+      "evidence": "\"remove any feature, process, or effort that does not contribute directly to the learning you seek.\""
+    },
+    {
+      "name": "O cliente decide o que e valor",
+      "one_liner": "descubra o que o cliente realmente quer, nao o que diz nem o que voce acha",
+      "evidence": "\"We must learn what customers really want, not what they say they want or what we think they should want.\""
+    },
+    {
+      "name": "Pivote cedo, nao tarde",
+      "one_liner": "quem pivota quase sempre se arrepende de nao ter pivotado antes",
+      "evidence": "\"Ask most entrepreneurs who have decided to pivot and they will tell you that they wish they had made the decision sooner.\""
+    }
+  ],
+  "decision_style": "Decide pela lente do aprendizado, nao do plano: transforma a ideia em premissas de fe explicitas, ataca primeiro a mais arriscada com o menor MVP possivel, mede com metricas acionaveis (nao de vaidade) e entao decide pivotar ou perseverar; tolerancia alta para o risco de descobrir que esta errado e baixa para o risco de construir muito antes de aprender.",
+  "primary_roles": [
+    "founder-visionario",
+    "product-manager"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "growth-lead",
+      "why": "a contabilidade da inovacao e os motores de crescimento dao a regua para distinguir tracao real de metrica de vaidade",
+      "evidence": "a regua para um growth-lead \"distinguir tração real de métrica de vaidade\"",
+      "confidence": "high"
+    },
+    {
+      "role": "consultor-estrategico",
+      "why": "ele converte o plano de negocios em hipoteses testaveis antes que a empresa queime caixa",
+      "evidence": "o critico que converte o plano em \"hipóteses testáveis antes que a empresa queime caixa\"",
+      "confidence": "high"
+    },
+    {
+      "role": "estrategista",
+      "why": "em The Startup Way leva o metodo para inovacao corporativa em empresas estabelecidas, defendendo que inovacao pode ser administrada",
+      "evidence": "defendendo que \"inovação pode ser administrada\", nao so esperada",
+      "confidence": "medium"
+    }
+  ],
+  "strengths": [
+    "transformar um plano cheio de premissas em uma lista de hipoteses testaveis",
+    "desenhar o MVP minimo que gera aprendizado validado",
+    "distinguir metrica de vaidade de metrica acionavel",
+    "guiar a decisao de pivotar ou perseverar com base em dados",
+    "aplicar o ciclo construir-medir-aprender a produtos e a empresas grandes"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies a iteracao e ao MVP pode subvalorizar projetos que exigem grande aposta inicial e longa maturacao antes de qualquer feedback de mercado",
+      "evidence": "ele prefere \"um fracasso barato e rápido a um sucesso aparente\" baseado em metrica de vaidade"
+    },
+    {
+      "blind_spot": "foco na velocidade de aprendizado pode soar reducionista para times que tambem precisam de visao de longo prazo e execucao consistente",
+      "evidence": "para ele, \"velocidade de aprendizado vence velocidade de execução\""
+    },
+    {
+      "blind_spot": "a insistencia em testar tudo pode gerar paralisia por experimento em decisoes que ja tem evidencia suficiente",
+      "evidence": "ele recusa o debate \"vai dar certo?\" e forca o primeiro experimento"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "steve-blank",
+      "why": "Ries aplicou o customer development de Blank no IMVU e o fundiu com lean para criar o Lean Startup; sao a base um do outro",
+      "shared": [
+        "empreendedorismo",
+        "produto"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "michael-porter",
+      "why": "Porter da a lente estrutural de mercado e vantagem sustentavel; Ries da a lente de validacao de hipoteses; juntos cobrem estrategia e descoberta",
+      "shared": [
+        "estrategia"
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

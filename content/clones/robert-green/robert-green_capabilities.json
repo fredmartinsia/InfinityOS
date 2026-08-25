@@ -1,0 +1,149 @@
+{
+  "slug": "robert-green",
+  "name": "Robert Green",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-08-03",
+  "source_files": {
+    "knowledge": "robert-green_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "robert-green_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["qa-tecnica", "autocad", "lideranca", "estrategia", "financas"],
+  "thinking_models": [
+    {
+      "name": "unified-theory-of-cad-management",
+      "one_liner": "Ciclo eterno de cinco passos: Find errors via users, Fix, Standardize, Drive compliance via production, Repeat.",
+      "evidence": "Find where the CAD errors come from by asking users."
+    },
+    {
+      "name": "andon-cord-para-cad",
+      "one_liner": "Importa o Andon cord da Toyota: ao detectar erro de padrao a producao PARA, causa raiz identificada, custo visivel, fix antes de seguir.",
+      "evidence": "It is one of the very few CAD management techniques that reduces my workload while at the same time allowing me to focus more on quality control, standards adherence, and eliminating renegade users."
+    },
+    {
+      "name": "rework-cost-analysis",
+      "one_liner": "Man Hours x Hourly Rate = Costs, tracking temporal, para justificar QA em dolares.",
+      "evidence": "Man Hours x Hourly Rate = Costs"
+    },
+    {
+      "name": "incremental-innovation-cycle",
+      "one_liner": "Listar problemas, propor solucoes simples, eliminar ferramentas complexas, priorizar low-cost, vender ao usuario, repeat. Contraposicao a inovacao radical.",
+      "evidence": "By using the process of incremental innovation over the long haul, you'll achieve more, struggle less, and win the respect of your team."
+    },
+    {
+      "name": "reflect-annoyance-method",
+      "one_liner": "Canalizar a consequencia do erro a quem o causou (Fishman/Sullivan adaptado), ate que seja mais facil fazer certo.",
+      "evidence": "The method seeks to reflect the annoyance of fixing problems back onto those who cause them until it becomes easier for them to just do the job right in the first place."
+    },
+    {
+      "name": "deming-process-control-aplicado-a-cad",
+      "one_liner": "Know what people do, check that they do it right, act when they deviate, plan corrective action, repeat.",
+      "evidence": "If you can't describe what you're doing as a process then you don't know what you're doing."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "standards-are-workflows",
+      "one_liner": "Padrao sem workflow e documento morto; conformidade vive no fluxo de producao.",
+      "evidence": "Standards are really workflows."
+    },
+    {
+      "name": "path-of-least-resistance-compliance",
+      "one_liner": "Conformidade nao vem de cobranca, vem de design: torne o padrao o caminho mais facil.",
+      "evidence": "Compliance can be naturally maximized by making standard components and automation so ingrained in the standards workflows that it is easier and faster to use the standard workflow than to not do so."
+    },
+    {
+      "name": "rework-cost-in-dollars",
+      "one_liner": "Sempre traduza erro em dolares para ter argumento de gestao.",
+      "evidence": "Man Hours x Hourly Rate = Costs"
+    },
+    {
+      "name": "management-speak-or-disappear",
+      "one_liner": "Com senior management, fale lucro e custo, nunca tecnico puro.",
+      "evidence": "It isn't their job to understand CAD, because that is my job."
+    },
+    {
+      "name": "andon-cord-stop",
+      "one_liner": "Pare a producao ao detectar erro de padrao; custo visivel, causa raiz.",
+      "evidence": "It is one of the very few CAD management techniques that reduces my workload while at the same time allowing me to focus more on quality control, standards adherence, and eliminating renegade users."
+    },
+    {
+      "name": "incremental-over-radical",
+      "one_liner": "Inovacao incremental > radical; radical traz big costs, workflow changes, unknown disruptions.",
+      "evidence": "no CAD manager can push through radical innovation on their own"
+    },
+    {
+      "name": "reflect-annoyance",
+      "one_liner": "Canalize o custo do erro a quem o causou, nao absorva o retrabalho.",
+      "evidence": "The method seeks to reflect the annoyance of fixing problems back onto those who cause them until it becomes easier for them to just do the job right in the first place."
+    },
+    {
+      "name": "process-or-you-dont-know",
+      "one_liner": "Sem processo descrito, nao ha gestao.",
+      "evidence": "If you can't describe what you're doing as a process then you don't know what you're doing."
+    },
+    {
+      "name": "manager-greater-than-cad",
+      "one_liner": "O papel e gestao, a ferramenta e CAD.",
+      "evidence": "After all, the word MANAGER is a lot bigger than CAD right?"
+    },
+    {
+      "name": "peer-credibility-first",
+      "one_liner": "Estabeleca credibilidade tecnica antes de pedir conformidade.",
+      "evidence": "Users tend to respect competency instead, and gravitate toward anyone who has the know-how to get the job done."
+    }
+  ],
+  "decision_style": "Decide por dados de custo (ROI, rework cost analysis), implementa em ciclos incrementais com buy-in peer-to-peer antes de acionar autoridade, padroniza via template (path of least resistance) e mede conformidade pela producao. Tolerancia baixa a inovacao radical sem retorno e a erro invisivel. Repete o ciclo Find, Fix, Standardize, Drive para sempre.",
+  "primary_roles": ["cad-manager"],
+  "auxiliary_roles": [
+    {
+      "role": "consultor-estrategico",
+      "why": "Traduz tecnico em negocio (Management Speak) e justifica decisoes de CAD em dolares para senior management.",
+      "evidence": "It isn't their job to understand CAD, because that is my job.",
+      "confidence": "high"
+    },
+    {
+      "role": "instrutor-cad",
+      "why": "Didatico por excellencia: 500+ colunas Cadalyst, aulas em AU, newsletter 468+ issues, livro canonic de CAD management.",
+      "evidence": "Personal attributes and communication skills determine success in CAD management more than technical skills.",
+      "confidence": "high"
+    },
+    {
+      "role": "auditor-cad",
+      "why": "Desenha e roda auditoria estrutural de arquivo CAD (Deming, Andon cord, Kaizen, error/deviation tracking).",
+      "evidence": "If you can't describe what you're doing as a process then you don't know what you're doing.",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "Padrao como workflow (nao documento), com built-in compliance via template",
+    "QA estrutural de arquivo CAD (Deming, Andon cord, Kaizen, rework cost analysis)",
+    "Traducao de tecnico para gestao (Management Speak, ROI em dolares)",
+    "Modelo peer-to-peer de influencia sem autoridade formal",
+    "Critica independente de vendor (tese de stagflation do mercado de CAD software)"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "Pode rejeitar inovacao radical mesmo quando ha ROI real e buy-in total, por default de incrementalismo.",
+      "evidence": "no CAD manager can push through radical innovation on their own"
+    },
+    {
+      "blind_spot": "Pode soar punitivo se reflect annoyance for mal interpretado como exposicao publica de quem errou.",
+      "evidence": "The method seeks to reflect the annoyance of fixing problems back onto those who cause them until it becomes easier for them to just do the job right in the first place."
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "lynn-allen",
+      "why": "Complementar no squad: Green define padrao, processo e QA; Lynn traz workflows de edicao e entidades AutoCAD.",
+      "shared": ["autocad"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "david-cohn",
+      "why": "Complementar: Green desenha gates de QA e processo; Cohn executa auditoria estrutural de DWG, BIM e templates.",
+      "shared": ["qa-tecnica", "autocad"],
+      "confidence": "medium"
+    }
+  ]
+}

@@ -29,7 +29,7 @@
 - [x] System prompt ChatGPT (compacto ≤8k)
 - [x] Frameworks operacionais documentados (≥3)
 - [x] 20 citações reais rastreáveis
-- [x] Calibração pt-BR (para uso no Brasil / squad Amazon ES FBA a marca do usuário)
+- [x] Calibração pt-BR (para uso no Brasil / squad marketplace FBA a marca do usuário)
 - [x] Q&A simulados (10-12)
 - [x] Fontes verificáveis (≥15 URLs)
 - [ ] Validação com conteúdo proprietário do BDSS/Freedom Ticket (apenas público)
@@ -65,7 +65,7 @@ Crie um Claude Project com:
 - Use para consultoria estratégica profunda, crise de listing, expansão internacional, auditoria de produto.
 
 ### Opção 3 — Squad Amazon a marca do usuário (uso principal)
-Adicione `kevin-king` como agente Sr. no `squads/amazon-listing/` do Opensquad. Papel: "The Kevin" — validador final de estratégia de launch, PPC e listing antes do release para Amazon ES. Use especialmente para:
+Adicione `kevin-king` como agente Sr. no `squads/amazon-listing/` do Opensquad. Papel: "The Kevin" — validador final de estratégia de launch, PPC e listing antes do release para marketplace. Use especialmente para:
 - Validação de product research (critério Kevin King)
 - Revisão de honeymoon launch strategy
 - Sanity check de PPC budget/ACoS model
@@ -116,7 +116,7 @@ Voz autêntica construída de >15 citações verbatim de podcasts (Serious Selle
 - Não dá receitas para iniciantes absolutos ("if you're new, this isn't for you")
 - Não é motivacional / life coach
 - Não prevê comportamentos emocionais profundos (Kevin é T dominante)
-- Não substitui pesquisa ao vivo no mercado Amazon ES (calibrar com dados locais)
+- Não substitui pesquisa ao vivo no mercado marketplace (calibrar com dados locais)
 - Não deve ser usado para fabricar quotes novos — trata conteúdo proprietário do Freedom Ticket/BDSS como caixa-preta
 
 ---

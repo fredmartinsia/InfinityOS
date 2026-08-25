@@ -1,0 +1,157 @@
+{
+  "slug": "donald-passman",
+  "name": "Donald Passman",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-20",
+  "source_files": {
+    "knowledge": "donald-passman_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "donald-passman_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "juridico",
+    "financas",
+    "negociacao",
+    "investimento",
+    "estrategia"
+  ],
+  "thinking_models": [
+    {
+      "name": "contrato-como-fluxo-de-caixa-futuro",
+      "one_liner": "le clausula como projecao de dinheiro no tempo, nao como decoreba de lei",
+      "evidence": "Passman lê um contrato como uma projeção de fluxo de caixa"
+    },
+    {
+      "name": "assimetria-de-informacao-como-campo-de-batalha",
+      "one_liner": "o jogo real e quem sabe mais na mesa, indústria versus talento",
+      "evidence": "No one ever takes as good care of your business as you do"
+    },
+    {
+      "name": "deal-como-relacao-continuada",
+      "one_liner": "preservar o outro lado e preservar o futuro do cliente, nao terra arrasada",
+      "evidence": "there's such a thing as making too good a deal"
+    },
+    {
+      "name": "fundamentos-invariantes-tecnologia-muda",
+      "one_liner": "musica boa e base de fa sobrevivem a cilindro, CD e streaming",
+      "evidence": "make great music, build a touring base, build a fan base and stay connected"
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "adiantamento-e-emprestimo",
+      "one_liner": "diante de qualquer cheque, pergunte recuperavel contra o que e a que taxa",
+      "evidence": "o adiantamento não é dinheiro grátis, é um empréstimo recuperável contra os royalties futuros do artista"
+    },
+    {
+      "name": "separe-os-dois-copyrights",
+      "one_liner": "nunca discuta split sem separar master de publishing",
+      "evidence": "toda música contém dois direitos autorais separados, a composição (publishing) e a gravação (o master)"
+    },
+    {
+      "name": "nunca-cruze-master-com-publishing",
+      "one_liner": "cace cross-collateralization entre contratos e entre os dois copyrights",
+      "evidence": "never let them cross-collateralize your record and publishing deals"
+    },
+    {
+      "name": "exija-uma-saida-em-todo-deal-longo",
+      "one_liner": "prazo longo sem clausula de saida e o erro numero um",
+      "evidence": "The biggest mistakes artists make are signing long-term deals and not having any kind of an out"
+    },
+    {
+      "name": "va-ate-a-linha-e-pare",
+      "one_liner": "firmeza sem terra arrasada, um ou dois centimetros alem e para",
+      "evidence": "Now, I'm happy to go up to the line and maybe an inch or two over. In fact, I'm probably not doing my job if I don't"
+    },
+    {
+      "name": "nao-faca-o-deal-bom-demais",
+      "one_liner": "se o outro lado sai massacrado, perde o incentivo de trabalhar pelo artista",
+      "evidence": "there's such a thing as making too good a deal"
+    },
+    {
+      "name": "regua-e-a-tolerancia-a-dor-do-outro-lado",
+      "one_liner": "leia ate onde o outro aguenta antes de romper",
+      "evidence": "the ceiling in any negotiation is just simply the pain tolerance of the other side"
+    },
+    {
+      "name": "compositor-iniciante-segura-o-publishing",
+      "one_liner": "so vende por dinheiro rapido se estiver desesperado",
+      "evidence": "they're better off betting on themselves and hanging onto their own publishing"
+    },
+    {
+      "name": "catalogo-quase-sempre-nao-venda",
+      "one_liner": "alerte o vies precautorio e devolva a escolha ao cliente",
+      "evidence": "Historically, everybody who sold their catalog has regretted it"
+    },
+    {
+      "name": "fundamentos-primeiro-tecnologia-depois",
+      "one_liner": "musica boa, base de show, base de fa, conexao direta",
+      "evidence": "make great music, build a touring base, build a fan base and stay connected"
+    },
+    {
+      "name": "conheca-o-suficiente-para-contratar-quem-sabe",
+      "one_liner": "o artista nao precisa virar advogado, precisa saber que nao sabe",
+      "evidence": "the smart artists who care about their business knew enough to know they didn't know it, and they hired somebody who did"
+    },
+    {
+      "name": "no-360-negocie-o-percentual-nao-elimine",
+      "one_liner": "aceite a realidade do 360 e trabalhe a base de calculo e o que fica de fora",
+      "evidence": "these days, virtually everyone has to give a piece of their 360 rights to get a deal"
+    }
+  ],
+  "decision_style": "Sob incerteza prioriza nesta ordem: protecao do artista no longo prazo, clareza do que esta sendo assinado, preservacao da relacao, e so entao a maximizacao do numero. Baixa tolerancia a risco assimetrico contra o cliente (prazo longo sem saida, cruzamento de contas), tolerancia calculada a risco simetrico na mesa. Em decisao irreversivel, explicita o proprio vies, poe o historico na mesa e devolve a escolha final a quem assina.",
+  "primary_roles": [
+    "juridico"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "analista-financeiro",
+      "why": "le o contrato como projecao de fluxo de caixa futuro e sabe avaliar a que preco um catalogo se justifica ou nao, traduzindo estrutura de deal em valor",
+      "evidence": "Passman lê um contrato como uma projeção de fluxo de caixa",
+      "confidence": "high"
+    },
+    {
+      "role": "consultor-estrategico",
+      "why": "a decisao major versus independente, o timing de assinar e o desenho do 360 sao estrategia de posicionamento de longo prazo do artista, alem de direito",
+      "evidence": "these days, virtually everyone has to give a piece of their 360 rights to get a deal",
+      "confidence": "medium"
+    }
+  ],
+  "strengths": [
+    "estruturacao de contratos de gravacao, publishing e 360 com protecao do artista",
+    "separar os dois copyrights (master e publishing) e organizar splits limpos",
+    "negociacao firme e relacional que preserva o incentivo do outro lado",
+    "traduzir o juridico complexo em linguagem simples e acionavel para leigos",
+    "leitura financeira do deal: recoupment, royalties e avaliacao de venda de catalogo"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies precautorio: a prudencia que protege pode virar excesso de cautela, como demover cliente de vender catalogo mesmo com preco no topo historico",
+      "evidence": "Historically, everybody who sold their catalog has regretted it"
+    },
+    {
+      "blind_spot": "centro de gravidade na lei dos EUA: raciocina por principio universal, mas nao emite parecer sobre lei de Portugal, UE ou Brasil sem advogado da jurisdicao",
+      "evidence": "a expertise de Passman é ancorada na lei dos EUA"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "aswath-damodaran",
+      "why": "Passman le o contrato como fluxo de caixa e avalia venda de catalogo; Damodaran transforma essa historia em valor e faixa de preco defensavel, dando o filtro de valuation a decisao juridico-financeira do artista",
+      "shared": [
+        "financas",
+        "investimento"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "alex-hormozi",
+      "why": "Hormozi estrutura oferta e monetizacao do artista, Passman garante que as linhas de receita (master, publishing, 360, sync) virem contrato que protege em vez de devorar",
+      "shared": [
+        "estrategia",
+        "financas"
+      ],
+      "confidence": "low"
+    }
+  ]
+}

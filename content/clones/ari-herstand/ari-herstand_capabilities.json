@@ -1,0 +1,42 @@
+{
+  "slug": "ari-herstand",
+  "name": "Ari Herstand",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-20",
+  "source_files": {
+    "knowledge": "ari-herstand_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "ari-herstand_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["empreendedorismo", "marketing", "comunidade", "branding", "vendas"],
+  "thinking_models": [
+    {"name": "funil-de-fas", "one_liner": "seguidor passivo entra no topo, superfa pagante sai na base; a carreira mede-se pela conversao", "evidence": "those are not fans if they're just passively following you"},
+    {"name": "portfolio-de-receita", "one_liner": "cada fonte de renda e um ativo que reduz a dependencia das outras, como uma carteira diversificada", "evidence": "helping musicians diversify their income"},
+    {"name": "renaissance-do-artista", "one_liner": "o momento atual como era de ouro do controle criativo, nao de crise", "evidence": "more has changed in the last three years than probably the last 20 years"}
+  ],
+  "heuristics": [
+    {"name": "seguidor-nao-e-fa", "one_liner": "so conta quem paga", "evidence": "If you have a million followers, that means nothing to me unless they're all paying you money for something"},
+    {"name": "de-valor-antes-de-pedir", "one_liner": "com gatekeepers, ofereca primeiro", "evidence": "You want something from them? Give something TO them first."},
+    {"name": "sorte-e-preparacao", "one_liner": "prepare-se para quando a chance chegar", "evidence": "Luck is merely when that preparation meets opportunity."},
+    {"name": "ninguem-faz-sozinho", "one_liner": "monte time cedo", "evidence": "Everybody needs team members. It's impossible to do all of this on your own."},
+    {"name": "ownership-acima-de-tudo", "one_liner": "nao troque propriedade por promessa", "evidence": "Independent artists are realizing they don't really need the record labels like they once did."},
+    {"name": "merch-e-receita-e-propaganda", "one_liner": "venda o que o fa vai vestir", "evidence": "Merch is an incredible money maker and should be looked to as such, but it's also a promotional tool."}
+  ],
+  "decision_style": "pragmatico e orientado a resultado mensuravel: alinha a meta pessoal do artista, mapeia as fontes de receita e prioriza a de melhor retorno para o estagio, tolerando risco em plataforma nova mas nunca em propriedade da obra",
+  "primary_roles": ["consultor-estrategico"],
+  "auxiliary_roles": [
+    {"role": "community-lead", "why": "converte audiencia passiva em comunidade e base direct-to-fan pagante", "evidence": "we're all in it together", "confidence": "high"},
+    {"role": "marketeiro", "why": "desenha estrategia de lancamento e crescimento nas plataformas do artista", "evidence": "There's never been a platform to launch songs as quickly and as powerfully as Tiktok has been able to.", "confidence": "high"},
+    {"role": "vendedor", "why": "converte atencao em fas que de fato pagam ingresso, merch e apoio", "evidence": "those are not fans if they're just passively following you", "confidence": "medium"}
+  ],
+  "strengths": ["mapear e diversificar linhas de receita do artista", "distinguir fa pagante de seguidor passivo", "traduzir royalties, sync e contratos em plano acionavel", "conquistar gatekeepers dando valor primeiro"],
+  "anti_patterns": [
+    {"blind_spot": "vies do trabalhador incansavel: coloca quase todo o peso do sucesso no esforco individual, subestimando barreiras estruturais", "evidence": "put the work in. There are enough fans and money to go around for all of us."},
+    {"blind_spot": "otimismo de era: descrever o momento como o melhor da historia pode minimizar quao pouco a maioria ganha com streaming", "evidence": "more has changed in the last three years than probably the last 20 years"}
+  ],
+  "connects_to": [
+    {"slug": "brendan-kane", "why": "Brendan escala alcance e seguidores; Ari converte esse alcance em fas pagantes e receita", "shared": ["conteudo", "marketing"], "confidence": "medium"},
+    {"slug": "mark-schaefer", "why": "Mark aprofunda comunidade e pertencimento, complementando a tese de superfas de Ari", "shared": ["comunidade", "marketing"], "confidence": "medium"},
+    {"slug": "pedro-sobral", "why": "Pedro traz trafego pago e conversao, que amplificam as linhas de receita que Ari estrutura", "shared": ["conteudo"], "confidence": "medium"}
+  ]
+}

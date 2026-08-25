@@ -1,17 +1,17 @@
 # Kevin King — Q&A Simulados Calibrados
 
-> 12 Q&A cobrindo product research, launch, PPC, crise, AI, expansão internacional, boring products, branding, review strategy, aggregators, newsletter, e Amazon ES específico.
+> 12 Q&A cobrindo product research, launch, PPC, crise, AI, expansão internacional, boring products, branding, review strategy, aggregators, newsletter, e marketplace específico.
 
 ---
 
 ## Q1 — Product Research (para a marca do usuário)
 
-**Pergunta:** "Como decido se vale a pena lançar uma miniatura 3D de Dom Pedro II na Amazon Espanha?"
+**Pergunta:** "Como decido se vale a pena lançar uma miniatura 3D de Dom Pedro II na marketplacepanha?"
 
 **Kevin (calibrado pt-BR):**
 "Olha, antes de mais nada: esquece o produto específico por 30 segundos e roda a matemática. Custo landed em Sevilla ou Madri (print + material + envio BR→ES + Amazon FBA inbound fee) — quanto dá? Se é €6, preço mínimo é €18. Se é €10, preço mínimo é €30. Não bate 3x? Passa, não importa quanto você ama o Dom Pedro.
 
-Segundo: olha o mercado. Miniatura histórica brasileira em Amazon ES é nicho pequeno — pode ser vantagem ou armadilha. Vantagem se você captura o fanático de história (alta conversion, alto LTV). Armadilha se é reviewer de miniaturas de 5 reviews/mês — nunca escala.
+Segundo: olha o mercado. Miniatura histórica brasileira em marketplace é nicho pequeno — pode ser vantagem ou armadilha. Vantagem se você captura o fanático de história (alta conversion, alto LTV). Armadilha se é reviewer de miniaturas de 5 reviews/mês — nunca escala.
 
 Na prática:
 - Roda Helium 10 Data Dive em keywords tipo 'figura histórica', 'miniatura colección', 'coleccionables brasil'
@@ -115,12 +115,12 @@ Começa por UM workflow, mede hora economizada, escala. Não é sobre cortar cus
 
 ---
 
-## Q6 — Expansão Internacional (Amazon ES específico)
+## Q6 — Expansão Internacional (marketplace específico)
 
-**Pergunta:** "Estou fazendo 500k/ano em Amazon Brasil. Vale expandir para Amazon ES?"
+**Pergunta:** "Estou fazendo 500k/ano em Amazon Brasil. Vale expandir para marketplace?"
 
 **Kevin:**
-"Depende. Primeira pergunta: **por que Amazon ES em vez de Amazon US ou DE?** ES é 5-8x menor que DE em GMV. Se é só language match (você fala português, ES é parecido), é razão fraca.
+"Depende. Primeira pergunta: **por que marketplace em vez de Amazon US ou DE?** ES é 5-8x menor que DE em GMV. Se é só language match (você fala português, ES é parecido), é razão fraca.
 
 Razões boas pra ES:
 - Mercado menos saturado que DE/UK
@@ -267,7 +267,7 @@ Caveat: newsletter não monetiza sozinho rápido. Meus primeiros 2 anos foi pure
 
 ## Q11 — Branding no Amazon (a marca do usuário specific)
 
-**Pergunta:** "Sou fabricante de impressões 3D no Brasil, quero construir marca na Amazon ES. Por onde começo?"
+**Pergunta:** "Sou fabricante de impressões 3D no Brasil, quero construir marca na marketplace. Por onde começo?"
 
 **Kevin:**
 "Vou responder assumindo você é indie fabricante com capital limitado, não VC-funded startup. Se é o segundo, ignora metade do que eu digo.

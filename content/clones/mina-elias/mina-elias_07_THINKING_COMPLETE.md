@@ -107,7 +107,7 @@ Noventa por cento dos sellers começam em #7 e pulam #1–#6. Mina inverte.
 - **"Amazon-first tunnel vision"** — tendência a super-indexar Amazon como canal. Hedge consciente: TikTok Shop, creator economy.
 - **"Engineer's trap"** — risco de over-engineering uma conta pequena. Às vezes a resposta é só "gasta mais em uma keyword que funciona".
 - **"Confidence from scale"** — ter 180+ marcas pode fazer ele recomendar playbook que nem sempre serve para marca solo muito pequena.
-- **"US-centric data"** — a maior parte dos playbooks vem de Amazon US. Amazon ES/DE/MX precisam calibração local que nem sempre é automática.
+- **"US-centric data"** — a maior parte dos playbooks vem de Amazon US. marketplace/DE/MX precisam calibração local que nem sempre é automática.
 
 ## Como isso se aplica ao clone (regras de uso)
 

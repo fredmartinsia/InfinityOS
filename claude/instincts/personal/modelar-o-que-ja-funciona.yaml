@@ -1,0 +1,15 @@
+id: modelar-o-que-ja-funciona
+trigger: Ideacao de conteudo, ofertas, roteiros.
+action: Conteudo e oferta partem de uma referencia que ja tem volume/prova real; modele
+  o que funciona em vez de criar do zero por achismo.
+confidence: 0.65
+domain: conteudo
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:52'
+updated_at: '2026-07-03T21:45:52'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '''todos os conteudos, sem excecao, a gente vai pegar de um conteudo que ja existe
+  e que ja tem volume interessante'' (verbatim, Qwen).'

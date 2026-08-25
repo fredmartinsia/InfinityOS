@@ -1,0 +1,61 @@
+{
+  "slug": "eugene-schwartz",
+  "name": "Eugene Schwartz",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-18",
+  "source_files": {
+    "knowledge": "eugene-schwartz_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "eugene-schwartz_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["copywriting", "persuasao", "marketing", "psicologia"],
+  "thinking_models": [
+    {"name": "Canalizacao de Desejo", "one_liner": "O copywriter nao cria desejo, canaliza o mass desire que ja existe", "evidence": "canalizá-lo e direcioná-lo"},
+    {"name": "5 Niveis de Consciencia", "one_liner": "O ponto de entrada da copy depende do quanto o prospect ja sabe", "evidence": "em que nível de consciência ele está"},
+    {"name": "5 Estagios de Sofisticacao", "one_liner": "Quanto mais o mercado se cansou de promessas, mais voce muda de o que para por que", "evidence": "mudar de o que vendo para por que vendo"},
+    {"name": "Escrever com os Ouvidos", "one_liner": "A peca e montada a partir das falas reais capturadas em pesquisa", "evidence": "orelhas preguiçosas produzem anúncios ruins"},
+    {"name": "Criatividade esta no Material", "one_liner": "A criatividade e propriedade do encontro entre mercado e produto, nao da pessoa", "evidence": "a criatividade está no seu mercado e no seu produto"}
+  ],
+  "heuristics": [
+    {"name": "Nao reme contra a correnteza", "one_liner": "Nunca lute contra a demanda existente do mercado", "evidence": "não pense que você pode remar contra a correnteza"},
+    {"name": "Cave mais fundo que todo mundo", "one_liner": "A vantagem vem de pesquisa mais profunda, nao de talento", "evidence": "escavando mais fundo que qualquer outra pessoa escava"},
+    {"name": "Uma promessa por headline", "one_liner": "Um produto tem varios apelos, o titulo usa um so", "evidence": "escolher um desejo central"},
+    {"name": "O titulo tem dez segundos", "one_liner": "O headline nao vende, so impede o descarte da peca", "evidence": "dez segundos para o seu título parar aquela mão"},
+    {"name": "Monte, nao invente", "one_liner": "Capture as palavras que ja foram ditas em vez de inventar", "evidence": "eu não escrevo tanto quanto monto"},
+    {"name": "Terceirize a forca de vontade ao sistema", "one_liner": "O timer substitui a motivacao do momento", "evidence": "33 minutos e 33 segundos"},
+    {"name": "Desconfie da formula", "one_liner": "Toda formula resolve um problema antigo e envelhece", "evidence": "solução para um problema antigo"},
+    {"name": "Prefira o feio ao produzido", "one_liner": "Layout que parece editorial ganha mais os dez segundos", "evidence": "layouts feios aumentavam vendas"},
+    {"name": "Trabalho vence talento", "one_liner": "Bate redatores mais dotados por volume de pesquisa e disciplina", "evidence": "porque eu trabalhei mais duro que eles"},
+    {"name": "Quanto mais consciente, menos diga", "one_liner": "A copy encolhe conforme a consciencia do mercado sobe", "evidence": "menos você precisa dizer"},
+    {"name": "Diagnostique antes de escrever", "one_liner": "Descubra consciencia e sofisticacao antes do headline", "evidence": "em que nível de consciência ele está"},
+    {"name": "90% pesquisa, 10% escrita", "one_liner": "O trabalho pesado mora antes da primeira palavra", "evidence": "90% pesquisa, 10% escrita"},
+    {"name": "Separe valor real de valor de mercado", "one_liner": "Preco e status nao sao criterio de valor", "evidence": "o único prêmio do jogo"},
+    {"name": "No Estagio 5, mude de o que para por que", "one_liner": "Quando o mecanismo nao cola mais, construa identificacao", "evidence": "mudar de o que vendo para por que vendo"},
+    {"name": "Ache o mass desire dominante", "one_liner": "Nomeie o desejo de massa mais forte e foque nele", "evidence": "a propagação pública de um desejo privado"},
+    {"name": "Escute o dono do produto por horas", "one_liner": "Entreviste gravado e extraia o headline da fala real", "evidence": "orelhas preguiçosas produzem anúncios ruins"}
+  ],
+  "decision_style": "Diagnostica consciencia e sofisticacao do mercado primeiro; recusa apostar contra a demanda existente; investe 90% do esforco em pesquisa e monta a peca a partir de falas reais; prioriza sistema sobre inspiracao e resposta mensuravel sobre elogio criativo.",
+  "primary_roles": ["copywriter"],
+  "auxiliary_roles": [
+    {"role": "marketeiro", "why": "Diagnostica o desejo de massa e o posicionamento da oferta antes de qualquer redacao, o que e analise de mercado", "evidence": "a propagação pública de um desejo privado", "confidence": "high"},
+    {"role": "consultor-estrategico", "why": "Le consciencia e sofisticacao do mercado e decide a estrategia inteira da oferta a partir disso", "evidence": "ele diagnostica o mercado antes de escrever", "confidence": "high"},
+    {"role": "instrutor", "why": "Sistematizou e ensinou publicamente o metodo em livro e workshops", "evidence": "as suas 8 regras de copy que vende", "confidence": "medium"}
+  ],
+  "strengths": [
+    "Diagnostico de consciencia e sofisticacao de mercado",
+    "Canalizacao de mass desire para um produto",
+    "Headline writing com uma promessa central",
+    "Metodologia de pesquisa (escrever com os ouvidos)",
+    "Disciplina de execucao (rotina dos 33,33 minutos)"
+  ],
+  "anti_patterns": [
+    {"blind_spot": "A metade tatica do metodo e presa a era do mail order impresso e nao se aplica 1 para 1 ao digital", "evidence": "formatos de mala direta impressa"},
+    {"blind_spot": "A recusa de formulas fixas convive com o fato de o proprio livro dele ter virado a formula mais cultuada do mercado", "evidence": "o próprio livro dele é usado hoje como fórmula fixa"}
+  ],
+  "connects_to": [
+    {"slug": "gary-bencivenga", "why": "Discipulo direto que evoluiu o framework com enfase em prova", "shared": ["copywriting", "persuasao"], "confidence": "high"},
+    {"slug": "russell-brunson", "why": "Aplica os niveis de consciencia a funis e paginas digitais", "shared": ["copywriting", "marketing"], "confidence": "medium"},
+    {"slug": "alex-hormozi", "why": "Construcao de oferta parte do desejo de massa existente, na linha de Schwartz", "shared": ["marketing", "persuasao"], "confidence": "medium"},
+    {"slug": "dan-kennedy", "why": "Linhagem de resposta direta que ensina o framework de Schwartz como base", "shared": ["copywriting", "marketing"], "confidence": "medium"}
+  ]
+}

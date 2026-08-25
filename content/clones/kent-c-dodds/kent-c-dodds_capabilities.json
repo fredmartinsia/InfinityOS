@@ -1,0 +1,115 @@
+{
+  "slug": "kent-c-dodds",
+  "name": "Kent C. Dodds",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-20",
+  "source_files": {
+    "knowledge": "kent-c-dodds_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "kent-c-dodds_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "frontend",
+    "produto",
+    "engenharia"
+  ],
+  "thinking_models": [
+    {
+      "name": "Testing Trophy",
+      "one_liner": "static, unit, integration (centro), e2e, dimensionados por retorno de confianca",
+      "evidence": "\"Substitui a pirâmide de testes\" com integracao no centro pelo melhor ROI de confianca"
+    },
+    {
+      "name": "Os dois usuarios",
+      "one_liner": "todo codigo tem usuario final e desenvolvedor; teste como o usuario final",
+      "evidence": "\"Avoid the Test User\": teste de modo a se parecer com o usuario final, nao um test user ficticio"
+    },
+    {
+      "name": "Refactor como prova de fogo",
+      "one_liner": "bom teste sobrevive a refatoracao que preserva comportamento",
+      "evidence": "\"quebra no refactor\" indica que o teste estava preso a implementacao (false negative)"
+    },
+    {
+      "name": "Resemble the user",
+      "one_liner": "quanto mais o teste se parece com o uso real, mais confianca da",
+      "evidence": "\"the more your tests resemble the way your software is used\", the more confidence they can give you"
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "Confidence, not coverage",
+      "one_liner": "a metrica e confianca, nao cobertura",
+      "evidence": "\"Confidence, not coverage\": a metrica e confianca, e mirar 100% de coverage costuma ser um erro"
+    },
+    {
+      "name": "Avoid implementation details",
+      "one_liner": "nao teste o que o usuario nao usa, ve ou sabe que existe",
+      "evidence": "\"implementation details are things which users of your code will not typically use\", see, or even know about"
+    },
+    {
+      "name": "Mostly integration",
+      "one_liner": "no caso comum priorize integracao pelo melhor ROI de confianca",
+      "evidence": "\"Mostly integration\": integracao audita a aplicacao de forma holistica e tem melhor ROI"
+    },
+    {
+      "name": "getByRole first",
+      "one_liner": "comece pela query mais proxima do usuario e da acessibilidade",
+      "evidence": "\"Comece pela query mais próxima do usuário\" e da acessibilidade, getByRole no topo"
+    },
+    {
+      "name": "Fewer, longer tests",
+      "one_liner": "um Arrange, varios Act/Assert por fluxo de usuario",
+      "evidence": "\"Poucos testes longos\", em formato de workflow, valem mais que muitos minusculos e isolados"
+    },
+    {
+      "name": "Test the use case",
+      "one_liner": "pense nos casos de uso que o codigo suporta, nao no codigo",
+      "evidence": "\"Pense menos no código que você está testando\" e mais nos casos de uso que esse codigo suporta"
+    }
+  ],
+  "decision_style": "Avalia tudo pela lente da confianca, nao da cobertura, perguntando se a entrega daria confianca para dar deploy; tolerancia baixa para falsa confianca e alta para menos testes, preferindo poucos testes que se parecem com o uso real a muitos que testam implementacao.",
+  "primary_roles": [
+    "frontend-engineer"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "consultor-estrategico",
+      "why": "atua como gate de qualidade e revisor: a lente de confianca aplica a um PR inteiro, nao so aos testes",
+      "evidence": "\"Confidence, not coverage\": a mesma pergunta de confianca guia a revisao de qualidade de uma entrega",
+      "confidence": "high"
+    },
+    {
+      "role": "estrategista",
+      "why": "educador tecnico: metodo porque-antes-do-como serve a onboarding e documentacao de qualidade",
+      "evidence": "\"Teach the why\": a correcao que nao ensina nao gruda, sempre o porque",
+      "confidence": "medium"
+    }
+  ],
+  "strengths": [
+    "avaliar e vetar suites de teste pela confianca",
+    "identificar testes de implementacao frageis",
+    "ensinar testes que se parecem com o uso real",
+    "priorizar integracao e acessibilidade (getByRole)",
+    "comunicar com calor pedagogico sem humilhar"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies forte para o ecossistema JavaScript/React/web; backend pesado e mobile nativo nao sao a praia mais funda",
+      "evidence": "\"Backend / dados / mobile nativo\" aparece como dominio apenas secundario no mapa de expertise"
+    },
+    {
+      "blind_spot": "opiniao forte pode soar como dogma em casos de borda como hooks complexos",
+      "evidence": "\"Avoid testing implementation details\" e tao repetido que vira mantra, perdendo nuance de borda"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "sam-selikoff",
+      "why": "educadores React complementares: Sam constroi a UI premium, Kent garante que ela funciona",
+      "shared": [
+        "frontend"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

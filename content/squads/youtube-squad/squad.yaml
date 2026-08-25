@@ -1,0 +1,362 @@
+name: youtube-squad
+version: "2.0"
+description: >
+  Squad robusto de YouTube composto por 6 especialistas reais clonados + 1 chefe orquestrador
+  + 1 pesquisador técnico multi-plataforma. Cobertura completa: consultoria de canal,
+  pesquisa de conteúdo validado, modelagem cross-cultural BR/USA → PT/EU, thumbnails,
+  SEO/GEO, monetização e anúncios. Squad agnóstico de canal, replicável para qualquer
+  contexto (canal individual, podcast, vlog, formato híbrido).
+
+language: pt-BR
+created: "2026-04-30"
+project: "sua comunidade (multi-canal: {{USER_NAME}}, Infinity Cast, outros)"
+
+# Entry point
+entry_agent: youtube-chief
+
+# Comando principal
+command_aliases:
+  - /chefeyoutube
+  - /youtube-squad
+
+# Tier architecture
+tiers:
+  tier_0_orchestrator:
+    agents: [youtube-chief]
+  tier_1_pesquisa_estrategia:
+    agents: [youtube-researcher, derral-eves, matt-gielen]
+  tier_2_execucao:
+    agents: [paddy-galloway, brian-dean]
+  tier_3_monetizacao:
+    agents: [roberto-blake, tom-breeze]
+
+# Routing matrix
+handoffs:
+  youtube-chief:
+    routes_to: [youtube-researcher, derral-eves, matt-gielen, paddy-galloway, brian-dean, roberto-blake, tom-breeze]
+  youtube-researcher:
+    feeds_to: [matt-gielen, derral-eves, paddy-galloway, brian-dean]
+    escalates_to: [youtube-chief]
+  derral-eves:
+    feeds_to: [matt-gielen, roberto-blake]
+    escalates_to: [youtube-chief]
+  matt-gielen:
+    feeds_to: [paddy-galloway, brian-dean, derral-eves]
+    escalates_to: [youtube-chief]
+  paddy-galloway:
+    feeds_to: [brian-dean, youtube-chief]
+    escalates_to: [youtube-chief]
+  brian-dean:
+    feeds_to: [youtube-chief]
+    escalates_to: [youtube-chief]
+  roberto-blake:
+    feeds_to: [youtube-chief]
+    escalates_to: [youtube-chief]
+  tom-breeze:
+    feeds_to: [youtube-chief]
+    escalates_to: [youtube-chief]
+
+# Routing por tipo de demanda
+# REGRA CRÍTICA: nada começa em Tier 2 sem passar antes por Tier 1 (pesquisa)
+routing_logic:
+  diagnostico_canal_novo:
+    descricao: "Consultoria inicial completa, capa, foto, bio, link, formato, frequência"
+    sequencia: [youtube-researcher, derral-eves, matt-gielen]
+    sintese_por: youtube-chief
+    checkpoint: aprovacao-plano
+    estimativa: "60-90min"
+    output: "Plano de canal estruturado + recomendações de capa/foto/bio/link"
+
+  planejamento_mensal:
+    descricao: "Calendário completo de conteúdo do mês com vídeos modelados"
+    sequencia: [youtube-researcher, matt-gielen, derral-eves, brian-dean]
+    sintese_por: youtube-chief
+    checkpoint: aprovacao-calendario
+    estimativa: "120-180min"
+    output: "Calendário mensal com tema, formato modelado, título, descrição SEO/GEO, thumbnail conceitual"
+
+  planejamento_video_unico:
+    descricao: "Planejamento de um vídeo novo, pergunta tema/ideia, pesquisa, modela, entrega"
+    sequencia: [youtube-researcher, matt-gielen, paddy-galloway, brian-dean]
+    sintese_por: youtube-chief
+    perguntas_iniciais:
+      - "Você já tem tema definido?"
+      - "Você já tem ideia/ângulo?"
+    estimativa: "30-45min"
+    output: "Vídeo: título + descrição (SEO+GEO) + estrutura sugerida + thumbnail conceitual + referências modeladas"
+
+  analise_formato_proposto:
+    descricao: "Validação se formato proposto funciona em canais semelhantes"
+    sequencia: [youtube-researcher, matt-gielen]
+    sintese_por: youtube-chief
+    estimativa: "20-30min"
+    output: "Análise data-driven: vai/não-vai + 5 casos de sucesso comprovados (ou alternativa)"
+
+  sugestao_novos_formatos:
+    descricao: "Recomendação de formatos baseado em benchmark de canais semelhantes"
+    sequencia: [youtube-researcher, matt-gielen]
+    sintese_por: youtube-chief
+    estimativa: "25-35min"
+    output: "Top 3 formatos modelados com canais referência (BR/USA/PT)"
+
+  decisao_estrategica:
+    descricao: "Dúvidas estratégicas como podcast junto/separado, frequência, vertical/horizontal"
+    sequencia: [derral-eves, matt-gielen, roberto-blake]
+    sintese_por: youtube-chief
+    estimativa: "30-45min"
+    output: "Recomendação fundamentada com prós/contras de cada cenário"
+
+  otimizacao_seo_video_existente:
+    descricao: "Reotimizar título, descrição e thumbnail de vídeo já publicado"
+    sequencia: [youtube-researcher, brian-dean, paddy-galloway]
+    sintese_por: youtube-chief
+    estimativa: "15-20min"
+    output: "Novo título, nova descrição (SEO/GEO), thumbnail revisada"
+
+  analise_metricas:
+    descricao: "Análise profunda de métricas via YouTube API (após integração)"
+    sequencia: [derral-eves, matt-gielen]
+    sintese_por: youtube-chief
+    estimativa: "30-45min"
+    output: "Channel audit: o que funcionou, o que não funcionou, próximos passos"
+
+  analise_anuncios:
+    descricao: "Análise/otimização de anúncios YouTube (TrueView, In-stream, Discovery)"
+    sequencia: [tom-breeze]
+    sintese_por: youtube-chief
+    estimativa: "20-30min"
+    output: "Diagnóstico de campanhas + recomendações de scaling/cutting"
+
+  plano_monetizacao:
+    descricao: "Estratégia de receita: AdSense, afiliados, infoprodutos, brand deals"
+    sequencia: [roberto-blake, derral-eves]
+    sintese_por: youtube-chief
+    estimativa: "30-45min"
+    output: "Plano de monetização stackeado com prioridades e prazos"
+
+  consultoria_completa:
+    descricao: "Estratégia completa de canal, diagnóstico + planejamento + monetização + ads"
+    sequencia: [youtube-researcher, derral-eves, matt-gielen, paddy-galloway, brian-dean, roberto-blake, tom-breeze]
+    sintese_por: youtube-chief
+    checkpoint: aprovacao-plano-completo
+    estimativa: "90-120min"
+    output: "Plano integrado de 90 dias para o canal"
+
+# Clones, referências ao Obsidian Vault
+clones:
+  paddy-galloway:
+    vault: "{{VAULT_PATH}}/CLONES/paddy-galloway/"
+    status: agent_ready
+    especialidade: "Thumbnails, virality, retenção, modelagem viral"
+
+  tom-breeze:
+    vault: "{{VAULT_PATH}}/CLONES/tom-breeze/"
+    status: pending_deep_clone
+    especialidade: "YouTube Ads, performance de anúncios, ROI"
+
+  derral-eves:
+    vault: "{{VAULT_PATH}}/CLONES/derral-eves/"
+    status: pending_deep_clone
+    especialidade: "Consultoria de canal, analytics avançado, channel audits"
+
+  matt-gielen:
+    vault: "{{VAULT_PATH}}/CLONES/matt-gielen/"
+    status: pending_deep_clone
+    especialidade: "Modelagem data-driven, análise de formato, channel research"
+
+  brian-dean:
+    vault: "{{VAULT_PATH}}/CLONES/brian-dean/"
+    status: pending_deep_clone
+    especialidade: "SEO/GEO, keyword research, otimização de título e descrição"
+
+  roberto-blake:
+    vault: "{{VAULT_PATH}}/CLONES/roberto-blake/"
+    status: pending_deep_clone
+    especialidade: "Monetização, revenue streams, decisões estratégicas de formato"
+
+# Capacidades técnicas do youtube-researcher (multi-plataforma)
+researcher_sources:
+  buscadores:
+    - google
+    - duckduckgo
+    - brave
+    - google_trends
+  youtube:
+    - search_videos
+    - related_videos
+    - top_comments
+    - channel_analytics
+  social:
+    - instagram
+    - facebook
+    - twitter_x
+    - linkedin
+  comunidades:
+    - reddit
+    - quora
+  apis:
+    - youtube_data_api_v3
+    - duckduckgo_duck5
+    - brave_search
+    - reddit_praw
+    - apify_actors
+
+# Premissas inegociáveis (codificadas no chief)
+non_negotiables:
+  - "Nenhum planejamento sem pesquisa prévia"
+  - "Toda thumbnail vem com modelagem de referências validadas"
+  - "Comment mining obrigatório antes de definir tema/ângulo"
+  - "Modelagem cross-cultural BR + USA aplicada em PT/EU"
+  - "Formatos validados primeiro, só planeja vídeo se formato JÁ funcionou"
+  - "Consultoria inicial sempre cobre: capa, foto, bio, link, formato, frequência"
+  - "Workflow de vídeo novo sempre pergunta: tema? ideia?"
+  - "Output completo: título + descrição SEO/GEO + estrutura + thumbnail + modelagem"
+
+# Templates de briefing
+briefings:
+  consultoria_inicial: "_briefings/consultoria-inicial-template.md"
+  planejamento_mensal: "_briefings/planejamento-mensal-template.md"
+  planejamento_video: "_briefings/planejamento-video-template.md"
+  modelagem_cross_cultural: "_briefings/modelagem-cross-cultural.md"
+
+# Contexto do projeto
+project_context:
+  company_file: "{{HOME}}/PROJETOS/sua comunidade/_opensquad/_memory/company.md"
+  brand_file: "{{HOME}}/PROJETOS/sua comunidade/marca/guidelines/brand-map.md"
+  canais_alvo:
+    - nome: "{{USER_NAME}}"
+      tipo: "canal individual"
+      regiao: "Portugal/Brasil"
+    - nome: "Infinity Cast"
+      tipo: "podcast"
+      regiao: "Portugal/Brasil"
+      status: "a_definir_canal_proprio_ou_compartilhado"
+
+# Output
+output_base_dir: "squads/youtube-squad/output"
+
+# Memory
+memory_file: "_memory/memories.md"
+
+# QA
+qa:
+  agent: youtube-chief
+  focus: pesquisa_e_modelagem_obrigatorias
+  mandatory: true
+  skip_allowed: false
+  checklist:
+    - "Pesquisa prévia foi feita?"
+    - "Comment mining incluído (top dúvidas/dores/desejos)?"
+    - "Formato proposto tem 5+ casos validados?"
+    - "Modelagem cross-cultural (BR/USA → PT/EU) aplicada?"
+    - "Thumbnail tem referências modeladas?"
+    - "Título e descrição com SEO + GEO?"
+    - "Output entrega o pacote completo?"
+
+# ============================================================
+# CAMADA DE EXECUÇÃO (v2.0), tasks, workflows, checklists, data
+# ============================================================
+
+# Componentes invocáveis do squad
+components:
+  workflows:
+    - workflows/wf-publicacao-podcast.yaml
+    - workflows/wf-planejamento-video.yaml
+    - workflows/wf-diagnostico-canal.yaml
+  tasks:
+    - tasks/transcrever-episodio.md
+    - tasks/extrair-frames.md
+    - tasks/analisar-conteudo.md
+    - tasks/gerar-prompt-thumbnail.md
+    - tasks/gerar-frases-thumbnail.md
+    - tasks/gerar-titulo.md
+    - tasks/gerar-descricao.md
+    - tasks/gerar-tags.md
+    - tasks/empacotar-publicacao.md
+    - tasks/modelar-thumbnail.md
+    - tasks/otimizar-seo.md
+    - tasks/analise-formato.md
+    - tasks/plano-monetizacao.md
+    - tasks/analise-anuncios.md
+    - tasks/planejamento-mensal.md
+    - tasks/decisao-estrategica.md
+  checklists:
+    - checklists/output-quality.md
+    - checklists/publicacao-podcast.md
+  data:
+    - data/thumbnail-briefing.yaml
+    - data/formatos-validados.yaml
+    - data/referencias-cross-cultural.yaml
+    - data/routing-catalog.yaml
+  config: config/config.yaml
+  scripts_pipeline: _scripts/pipeline/   # run_pipeline.py + wrappers (ffmpeg/mlx_whisper/opencv)
+
+# Mapa comando -> arquivo (o youtube-chief despacha estes)
+commands:
+  # Workflows (multi-fase)
+  - name: "*publicar-episodio"
+    descricao: "Pipeline completo de publicação de um episódio: transcrição → frames → prompt ChatGPT → 3 frases → título → descrição (com links) → tags"
+    workflow: workflows/wf-publicacao-podcast.yaml
+  - name: "*planejar-video"
+    descricao: "Planejamento de um vídeo novo (pesquisa → modelagem → thumbnail → metadados)"
+    workflow: workflows/wf-planejamento-video.yaml
+  - name: "*diagnosticar-canal"
+    descricao: "Consultoria/diagnóstico inicial de canal (capa, foto, bio, link, formato, frequência)"
+    workflow: workflows/wf-diagnostico-canal.yaml
+  # Tasks, pipeline de publicação
+  - name: "*transcrever"
+    descricao: "Extrai áudio e transcreve o episódio (mlx_whisper)"
+    task: tasks/transcrever-episodio.md
+  - name: "*extrair-frames"
+    descricao: "Extrai, pontua e faz curadoria de frames para thumbnail"
+    task: tasks/extrair-frames.md
+  - name: "*analisar-conteudo"
+    descricao: "Analisa a transcrição (temas, ganchos, ângulo, capítulos)"
+    task: tasks/analisar-conteudo.md
+  - name: "*prompt-thumbnail"
+    descricao: "Gera o prompt de thumbnail para o ChatGPT"
+    task: tasks/gerar-prompt-thumbnail.md
+  - name: "*frases-thumbnail"
+    descricao: "Gera 3 frases de thumbnail rankeadas por CTR"
+    task: tasks/gerar-frases-thumbnail.md
+  - name: "*gerar-titulo"
+    descricao: "Gera o título do vídeo (SEO/GEO) + 2 alternativos A/B"
+    task: tasks/gerar-titulo.md
+  - name: "*gerar-descricao"
+    descricao: "Gera a descrição com os links/CTAs da gravação"
+    task: tasks/gerar-descricao.md
+  - name: "*gerar-tags"
+    descricao: "Gera as tags do vídeo"
+    task: tasks/gerar-tags.md
+  - name: "*empacotar"
+    descricao: "Empacota a publicação e valida pelo checklist"
+    task: tasks/empacotar-publicacao.md
+  # Tasks, estratégia
+  - name: "*modelar-thumbnail"
+    descricao: "Modelagem cross-cultural de thumbnail (referências validadas)"
+    task: tasks/modelar-thumbnail.md
+  - name: "*otimizar-seo"
+    descricao: "Reotimiza título/descrição/tags de vídeo já publicado"
+    task: tasks/otimizar-seo.md
+  - name: "*analise-formato"
+    descricao: "Valida se um formato funciona (5+ casos comprovados)"
+    task: tasks/analise-formato.md
+  - name: "*plano-monetizacao"
+    descricao: "Plano de monetização stackeado"
+    task: tasks/plano-monetizacao.md
+  - name: "*analise-anuncios"
+    descricao: "Análise/otimização de YouTube Ads"
+    task: tasks/analise-anuncios.md
+  - name: "*planejamento-mensal"
+    descricao: "Calendário mensal de conteúdo modelado"
+    task: tasks/planejamento-mensal.md
+  - name: "*decisao-estrategica"
+    descricao: "Decisão estratégica (podcast junto/separado, frequência, etc.)"
+    task: tasks/decisao-estrategica.md
+  # Utilitários do chief
+  - name: "*help"
+    descricao: "Lista todos os comandos do squad"
+  - name: "*roster"
+    descricao: "Mostra os especialistas do squad"
+  - name: "*exit"
+    descricao: "Sai do modo squad"

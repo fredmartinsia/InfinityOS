@@ -1,0 +1,155 @@
+{
+  "slug": "david-cohn",
+  "name": "David Cohn",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-08-03",
+  "source_files": {
+    "knowledge": "david-cohn_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "david-cohn_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["qa-tecnica", "autocad", "bim", "arquitetura", "estrategia"],
+  "thinking_models": [
+    {
+      "name": "sheet-set-framework",
+      "one_liner": "Sheet set como colecao organizada de sheets (ponteiros para layouts em DWG) gerenciada, transmitida e publicada como unidade, via arquivo .dst, com fields automaticos no title block.",
+      "evidence": "the best practice for using sheet sets is to have one sheet per drawing file for each sheet in your set."
+    },
+    {
+      "name": "bim-coordination-5-camadas",
+      "one_liner": "Pipeline canônico de coordenação multidisciplinar em Revit: File Linking, Shared Coordinates de uma fonte, Manage Links com Overlay default, Copy/Monitor só de key objects, Coordination Review item por item, mais Interference Check.",
+      "evidence": "you should derive shared coordinates from only one file"
+    },
+    {
+      "name": "revision-tracking-issued-irreversible",
+      "one_liner": "Revision Tracking com checkbox Issued como trava irreversivel que separa rascunho de documento emitido, com numeração By Project ou By Sheet e descrição comprehensive yet concise.",
+      "evidence": "Once the revision has been issued, you can no longer make any modifications to that revision."
+    },
+    {
+      "name": "coordination-review-loop",
+      "one_liner": "Protocolo de decisão item por item (Postpone, Reject, Accept Difference, Modify) quando o Copy/Monitor detecta mudança no link, até a lista ficar clear e o projeto coordinated.",
+      "evidence": "Once you have dealt with all of the items in the Coordination Review dialog, the list should be clear and your project is coordinated."
+    },
+    {
+      "name": "microlearning-immediately-actionable",
+      "one_liner": "Framework pedagógico da 4D Technologies: conteúdo curto, direto, aplicável agora, com retenção medida, em vez de curso longo teórico.",
+      "evidence": "develops content standards and creates microlearning that is immediately actionable and leads to better knowledge retention."
+    },
+    {
+      "name": "interference-check-obrigatorio-pre-obra",
+      "one_liner": "Interference Check (clash detection) é obrigatório antes da obra, roda entre current e linked, gera relatório exportável a HTML; descobrir conflito na construção vira change order caro.",
+      "evidence": "Used efficiently, there is no longer any reason to remain unaware of conflicts until during construction, when solving them is likely to result in a costly change order."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "one-sheet-per-dwg",
+      "one_liner": "1 sheet = 1 DWG para liberar concorrência multiusuário; dois layouts do mesmo DWG como duas sheets reintroduz o lock que o SSM veio resolver.",
+      "evidence": "the best practice for using sheet sets is to have one sheet per drawing file for each sheet in your set."
+    },
+    {
+      "name": "single-source-coordinates",
+      "one_liner": "Coordenadas compartilhadas derivadas de um único arquivo fonte (em geral o arquiteto); acquire do fonte, publish para os demais.",
+      "evidence": "you should derive shared coordinates from only one file"
+    },
+    {
+      "name": "monitor-only-key-objects",
+      "one_liner": "Copy/Monitor só em levels, grids, columns estruturais, walls estruturais, floors, openings; monitorar tudo degrada performance e complica tracking.",
+      "evidence": "You should only monitor key objects."
+    },
+    {
+      "name": "clash-before-construction",
+      "one_liner": "Interference Check obrigatório pré-obra; change order na construção é falha de processo, não imprevisível.",
+      "evidence": "Used efficiently, there is no longer any reason to remain unaware of conflicts until during construction, when solving them is likely to result in a costly change order."
+    },
+    {
+      "name": "issued-is-irreversible",
+      "one_liner": "Revisão emitida fica travada por design (nem clouds, nem sketch, nem properties); é a trava de integridade documental.",
+      "evidence": "Once the revision has been issued, you can no longer make any modifications to that revision."
+    },
+    {
+      "name": "incremental-implementation",
+      "one_liner": "Implementação incremental contra paralisia: começar pelo básico e evoluir, cada estágio entrega ganho.",
+      "evidence": "you do not need to implement all the functionality at once"
+    },
+    {
+      "name": "comprehensive-yet-concise",
+      "one_liner": "Descrições de revisão completas e concisas; padrão de qualidade de documentação antes de marcar Issued.",
+      "evidence": "revision descriptions should be comprehensive, yet as concise as possible."
+    },
+    {
+      "name": "one-hint-only",
+      "one_liner": "O SSM só grava um hint no DWG, nada mais muda; tranquiliza quem teme modificação do arquivo original.",
+      "evidence": "This hint is the only change the program makes to your original drawing."
+    },
+    {
+      "name": "honest-about-limitations",
+      "one_liner": "Citar o que a ferramenta não faz (não resolve conflito automaticamente, não roda entre dois linked files); honestidade é marca de confiança.",
+      "evidence": "Revit will not automatically solve interference conditions."
+    },
+    {
+      "name": "coordination-review-clears-the-list",
+      "one_liner": "O projeto está coordenado quando a lista do Coordination Review fica vazia; se não ficou, não está coordenado.",
+      "evidence": "Once you have dealt with all of the items in the Coordination Review dialog, the list should be clear and your project is coordinated."
+    }
+  ],
+  "decision_style": "Decide pelo critério de qualidade (accurate, coordinated, complete), implementa em pipeline encadeado de fonte única de verdade (shared coordinates de um arquivo, template .dwt, fields automáticos), monitora só key objects para não degradar performance, roda verificação (Interference Check, Coordination Review item por item) e trava revisão emitida com Issued irreversível. Tolerância zero a conflito descoberto na obra. Implementação incremental contra paralisia. Sempre cita limitações da ferramenta honestamente.",
+  "primary_roles": ["arquiteto", "auditor-cad"],
+  "auxiliary_roles": [
+    {
+      "role": "especialista-autocad",
+      "why": "Domínio nativo da ferramenta: Autodesk Certified Professional para AutoCAD (e Revit), 35+ anos de AutoCAD como user, developer, author e consultant. Audita DWG com profundidade certificada.",
+      "evidence": "He has more than 35 years of hands-on experience with AutoCAD and 20 years with Revit as a user, developer, author and consultant, and is an Autodesk Certified Professional for both AutoCAD and Revit.",
+      "confidence": "high"
+    },
+    {
+      "role": "instrutor-cad",
+      "why": "Didático por excelência: Senior Content Manager CADLearning na 4D Technologies, desenvolve content standards e microlearning imediatamente acionável, AIA Registered Provider, palestrante top-rated no AU há três décadas.",
+      "evidence": "develops content standards and creates microlearning that is immediately actionable and leads to better knowledge retention.",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "Auditoria estrutural de DWG (camadas, entidades LWPOLYLINE/CIRCLE/ARC/INSERT/HATCH, versão R2013/R27, zero erros ezdxf)",
+    "BIM Coordination em 5 camadas (File Linking, Shared Coordinates, Copy/Monitor, Coordination Review, Interference Check)",
+    "Sheet Set Manager como disciplina de coordenação (1-sheet-1-DWG, fields automáticos, eTransmit e publish como unidade)",
+    "Revision Tracking com integridade documental (Issued irreversível, By Project vs By Sheet)",
+    "Certificação dupla rara: Autodesk Certified Professional para AutoCAD E para Revit"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "Pode adiar implementação completa em nome do incrementalismo, mesmo quando o contexto pede rollout total e o ROI justifica.",
+      "evidence": "you do not need to implement all the functionality at once"
+    },
+    {
+      "blind_spot": "Sendo ex-insider de vendor (Autodesk, 4D Technologies/CADLearning), pode subestimar viés de produto nas próprias recomendações de feature, embora seja honesto sobre limitações técnicas pontuais.",
+      "evidence": "Revit will not automatically solve interference conditions."
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "robert-green",
+      "why": "Complementar no squad autocad: Green desenha gates de QA e processo e cobra ROI de gestão; Cohn executa auditoria estrutural de DWG, BIM Coordination, Sheet Sets e templates na ponta do deliverable.",
+      "shared": ["qa-tecnica", "autocad"],
+      "confidence": "high"
+    },
+    {
+      "slug": "lynn-allen",
+      "why": "Complementar: Cohn define frameworks de coordenação e auditoria (Sheet Sets, BIM Coordination); Lynn traz workflows de edição e entidades AutoCAD no detalhe operacional.",
+      "shared": ["autocad"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "shaan-hurley",
+      "why": "Complementar: Cohn audita o deliverable DWG/RVT; Shaan (Autodesk) cobre between the lines de release, roadmap e adoption de produto CAD/BIM.",
+      "shared": ["autocad", "bim"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "edwin-prakoso",
+      "why": "Complementar: Cohn fornece framework canônico de Sheet Sets e BIM Coordination; Edwin (CAD Notes) traduz o mesmo conhecimento em tutorial operacional passo a passo.",
+      "shared": ["autocad", "bim"],
+      "confidence": "medium"
+    }
+  ]
+}

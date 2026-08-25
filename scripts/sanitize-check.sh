@@ -28,11 +28,11 @@ else
 fi
 
 # --- 2) PII / dados de projeto ----------------------------------------------
-# Padrões do Fred/projetos. 'nobres' sozinho é palavra comum em PT → só pegamos
+# Padrões do usuÃ¡rio/projetos. 'nobres' sozinho é palavra comum em PT → só pegamos
 # as formas de MARCA (nobres 3d / nobrestech).
 PII_RE='fredmartins|fmartins|3d\.nobresamz|nobres[ ._-]?3d|nobrestech|clube ?infinit|vv group|morrinhos|marciano martins|fred martins|infizap'
 # Falsos-positivos conhecidos a ignorar:
-ALLOW='Fred Hahn'
+ALLOW='usuÃ¡rio Hahn'
 if grep -rInE "${EXCLUDES[@]}" -i "$PII_RE" . 2>/dev/null | grep -vE "$ALLOW" >/tmp/aos_pii 2>/dev/null; then
   if [ -s /tmp/aos_pii ]; then
     echo "[PII/projeto] encontrados:"; cat /tmp/aos_pii; report "PII/projeto acima"
@@ -44,8 +44,8 @@ else
 fi
 
 # --- 2b) Nome próprio do autor ----------------------------------------------
-# 'Fred' como nome próprio. Allowlist: 'Fred Hahn' (revisor real do livro do Caples).
-if grep -rInE "${EXCLUDES[@]}" "\bFred\b" . 2>/dev/null | grep -vE "Fred Hahn" >/tmp/aos_name 2>/dev/null; then
+# 'usuÃ¡rio' como nome próprio. Allowlist: 'usuÃ¡rio Hahn' (revisor real do livro do Caples).
+if grep -rInE "${EXCLUDES[@]}" "\bFred\b" . 2>/dev/null | grep -vE "usuÃ¡rio Hahn" >/tmp/aos_name 2>/dev/null; then
   if [ -s /tmp/aos_name ]; then
     echo "[nome do autor] encontrados:"; cat /tmp/aos_name; report "nome do autor acima"
   else

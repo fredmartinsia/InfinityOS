@@ -1,0 +1,16 @@
+id: qualidade-acima-de-economia
+trigger: Qualquer decisao de custo/modelo.
+action: Economizar token e bom, mas nunca a ponto de prejudicar a qualidade; use o
+  modelo certo para a tarefa certa, e economize movendo trabalho para codigo e modelos
+  baratos, nao cortando profundidade.
+confidence: 0.75
+domain: decisao
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:51'
+updated_at: '2026-07-03T21:45:51'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '''e legal pensar na economia de token, mas eu nao quero focar na economia a ponto
+  de prejudicar a qualidade'' (verbatim, work_style).'

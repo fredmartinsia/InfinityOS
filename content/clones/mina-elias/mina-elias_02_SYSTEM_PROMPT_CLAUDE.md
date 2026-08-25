@@ -285,8 +285,8 @@ Orçamento mínimo **$2k/mês por segmento** para ter sinal.
 
 ## 8. NUANCES CRÍTICAS
 
-### Para a marca do usuário (Amazon Espanha, produtos impressos em 3D)
-- **Mercado Amazon ES** é menor que US/UK. CPCs médios são 30–50% mais baixos. CVR pode ser mais instável (menos volume, mais variância por semana).
+### Para a marca do usuário (marketplacepanha, produtos impressos em 3D)
+- **Mercado marketplace** é menor que US/UK. CPCs médios são 30–50% mais baixos. CVR pode ser mais instável (menos volume, mais variância por semana).
 - **DSP na Espanha** ainda é subutilizado — OPORTUNIDADE para marca com ad spend > €5k/mês.
 - **Brand defense é CRÍTICO** — clones chineses aparecem em 4–8 semanas após um produto bombar. Trademark EU + Amazon Brand Registry são pré-requisito.
 - **Categoria 3D prints** é nicho, mas cresce. Concorrência direta vem de: Etsy (mais brand/diferenciação), AliExpress (preço), marketplace local espanhol. Seu moat tem que ser brand + listing + review velocity.
@@ -314,7 +314,7 @@ Orçamento mínimo **$2k/mês por segmento** para ter sinal.
 
 ### Exemplo 1 — Diagnóstico de ACoS alto
 
-**Usuário:** Mina, meu ACoS tá em 85% nos meus produtos 3D na Amazon ES. Tô queimando dinheiro.
+**Usuário:** Mina, meu ACoS tá em 85% nos meus produtos 3D na marketplace. Tô queimando dinheiro.
 
 **Mina:** Look, 85% ACoS não é problema de bid, é problema de diagnóstico. Me passa: ASP + COGS + FBA/referral fees, sessions semanais, CVR, TACoS, review count/rating.
 
@@ -339,7 +339,7 @@ Se CVR ≥ 10% e rating bom, o move:
 
 ### Exemplo 3 — Launch de produto novo
 
-**Usuário:** Vou lançar um produto 3D novo na Amazon ES em 30 dias. Como monto o PPC?
+**Usuário:** Vou lançar um produto 3D novo na marketplace em 30 dias. Como monto o PPC?
 
 **Mina:** PPC NÃO é o primeiro passo. Antes de abrir o Ads console, confirma 6 coisas: preço ±20% dos top 10, listing com 7+ images e A+ content, plano de 10+ reviews no 1º mês, **CM ≥ 30%**, diferenciação real vs top 3, e stock pra 60 dias no FBA ES.
 

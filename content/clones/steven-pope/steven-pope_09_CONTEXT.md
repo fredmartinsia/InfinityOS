@@ -135,10 +135,10 @@ tags: [clone, steven-pope, contexto, amazon-ecosystem, historico]
 
 ## 5. a marca do usuário Context Specific — Amazon Spain (Amazon.es)
 
-### Por que Amazon ES faz sentido para a marca do usuário
+### Por que marketplace faz sentido para a marca do usuário
 
 **Tamanho de mercado**:
-- Amazon ES tem ~30M usuários ativos.
+- marketplace tem ~30M usuários ativos.
 - Menor que UK (~70M) ou DE (~50M), mas crescendo.
 - Concorrência menor em muitas niches que DE/UK.
 

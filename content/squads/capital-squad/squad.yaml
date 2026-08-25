@@ -1,0 +1,197 @@
+name: capital-squad
+version: "1.0.0"
+short-title: "Capital Squad"
+description: "Squad de 7 especialistas portugueses reais + orquestrador para captação de capital empresarial em Portugal: Banco Português de Fomento (BPF), Portugal 2030 (fundo perdido), PRR, IFD e tax planning (RFAI/SIFIDE/DLRR/CFEI). Foco em projetos de média e grande dimensão (1M€-25M€)."
+author: "{{USER_NAME}}"
+license: MIT
+slashPrefix: "capital-squad"
+language: pt-PT
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - capital-raising
+  - BPF
+  - banco-portugues-fomento
+  - PT2030
+  - portugal-2030
+  - PRR
+  - IFD
+  - fundo-perdido
+  - tax-planning
+  - RFAI
+  - SIFIDE
+  - DLRR
+  - CFEI
+  - auxilios-estado
+  - RGIC
+  - inovacao-produtiva
+  - holding
+  - SPV
+  - portugal
+
+components:
+  agents:
+    # Tier 0: Orchestrator (sintetico, le contexto do cliente e roteia)
+    - capital-chief.md
+    # Tier 1 — Especialistas reais (clones de pessoas físicas portuguesas)
+    - pedro-siza-vieira.md
+    - pedro-marques.md
+    - pedro-santa-clara.md
+    - rogerio-fernandes-ferreira.md
+    - manuel-lopes-rocha.md
+    - ricardo-oliveira.md
+    - luis-mira-amaral.md
+
+entry_agent: capital-chief
+
+tiers:
+  tier_0_orchestrator:
+    agents:
+      - capital-chief
+    role: "Diagnosticar, rotear, consolidar. Le contexto do cliente antes de qualquer acao."
+
+  tier_1_estrategistas_publicos:
+    agents:
+      - pedro-siza-vieira    # criador do BPF
+      - pedro-marques         # arquiteto PT 2020/2030
+    role: "Estratégia política/institucional. Engenharia de candidatura e majorações."
+
+  tier_1_engenharia_financeira_fiscal:
+    agents:
+      - pedro-santa-clara    # modelagem financeira
+      - rogerio-fernandes-ferreira  # tax planning
+    role: "Quantitativo + fiscal. Cap stack e otimização tributária lícita."
+
+  tier_1_juridico:
+    agents:
+      - manuel-lopes-rocha   # societário PT
+      - ricardo-oliveira     # auxílios Estado UE
+    role: "Estrutura societária do veículo + blindagem regulatória comunitária."
+
+  tier_1_banca:
+    agents:
+      - luis-mira-amaral     # banca empresarial PT
+    role: "Tradução para banca comercial. Routing CGD/BPI/Millennium."
+
+routing_matrix:
+  estrategia_candidatura_bpf:
+    primary: pedro-siza-vieira
+    secondary: luis-mira-amaral
+    triggers: ["BPF", "Banco Fomento", "linha de crédito", "garantia mútua", "InvestEU", "SGM"]
+
+  arquitetura_pt2030:
+    primary: pedro-marques
+    secondary: pedro-siza-vieira
+    triggers: ["PT 2030", "Compete 2030", "PRR", "IAPMEI", "aviso", "candidatura", "incentivo", "programa operacional"]
+
+  hacker_majoracoes:
+    primary: pedro-marques
+    secondary: pedro-siza-vieira
+    triggers: ["majoração", "taxa de incentivo", "intensidade de auxílio", "fundo perdido", "subvenção", "elegibilidade", "baixa densidade", "I&D colaborativa", "género", "sustentabilidade", "ESG"]
+
+  modelagem_financeira:
+    primary: pedro-santa-clara
+    secondary: null
+    triggers: ["DCF", "NPV", "IRR", "WACC", "cap stack", "cash flow", "valuation", "modelo financeiro", "projeção", "sensitivity"]
+
+  planeamento_fiscal:
+    primary: rogerio-fernandes-ferreira
+    secondary: null
+    triggers: ["RFAI", "SIFIDE", "DLRR", "CFEI", "imposto", "IRC", "IVA", "benefício fiscal", "fiscal", "tributário", "AT", "Autoridade Tributária", "arbitragem CAAD"]
+
+  direito_societario:
+    primary: manuel-lopes-rocha
+    secondary: ricardo-oliveira
+    triggers: ["holding", "SPV", "sociedade", "pacto parassocial", "fusão", "cisão", "transformação", "estrutura societária", "veículo", "CSC", "Código das Sociedades Comerciais"]
+
+  auxilios_estado_ue:
+    primary: ricardo-oliveira
+    secondary: pedro-marques
+    triggers: ["auxílio de Estado", "RGIC", "Regulamento 651/2014", "notificação Comissão Europeia", "TFUE", "artigo 107", "DG Comp", "Schrems", "antitrust", "concorrência"]
+
+  banca_comercial:
+    primary: luis-mira-amaral
+    secondary: pedro-santa-clara
+    triggers: ["credit officer", "banco comercial", "CGD", "BPI", "Millennium", "Santander", "Novo Banco", "Bankinter", "scoring", "rating", "covenants", "garantia real"]
+
+  default:
+    primary: capital-chief
+    description: "Ponto de entrada padrão. Faz discovery profundo + roteia."
+
+advisors:
+  vault_clones_base: "{{VAULT_PATH}}/CLONES/"
+  clones:
+    pedro-siza-vieira:
+      vault_path: "{{VAULT_PATH}}/CLONES/pedro-siza-vieira/"
+      core_files:
+        - pedro-siza-vieira_06_KNOWLEDGE_COMPLETE.md
+        - pedro-siza-vieira_07_THINKING_COMPLETE.md
+        - pedro-siza-vieira_05_COMMUNICATION_COMPLETE.md
+        - pedro-siza-vieira_04_PSYCHOLOGY_COMPLETE.md
+        - pedro-siza-vieira_10_EXAMPLES.md
+    pedro-marques:
+      vault_path: "{{VAULT_PATH}}/CLONES/pedro-marques/"
+      core_files:
+        - pedro-marques_06_KNOWLEDGE_COMPLETE.md
+        - pedro-marques_07_THINKING_COMPLETE.md
+        - pedro-marques_05_COMMUNICATION_COMPLETE.md
+        - pedro-marques_04_PSYCHOLOGY_COMPLETE.md
+        - pedro-marques_10_EXAMPLES.md
+    pedro-santa-clara:
+      vault_path: "{{VAULT_PATH}}/CLONES/pedro-santa-clara/"
+      core_files:
+        - pedro-santa-clara_06_KNOWLEDGE_COMPLETE.md
+        - pedro-santa-clara_07_THINKING_COMPLETE.md
+        - pedro-santa-clara_05_COMMUNICATION_COMPLETE.md
+        - pedro-santa-clara_04_PSYCHOLOGY_COMPLETE.md
+        - pedro-santa-clara_10_EXAMPLES.md
+    rogerio-fernandes-ferreira:
+      vault_path: "{{VAULT_PATH}}/CLONES/rogerio-fernandes-ferreira/"
+      core_files:
+        - rogerio-fernandes-ferreira_06_KNOWLEDGE_COMPLETE.md
+        - rogerio-fernandes-ferreira_07_THINKING_COMPLETE.md
+        - rogerio-fernandes-ferreira_05_COMMUNICATION_COMPLETE.md
+        - rogerio-fernandes-ferreira_04_PSYCHOLOGY_COMPLETE.md
+        - rogerio-fernandes-ferreira_10_EXAMPLES.md
+    manuel-lopes-rocha:
+      vault_path: "{{VAULT_PATH}}/CLONES/manuel-lopes-rocha/"
+      core_files:
+        - manuel-lopes-rocha_06_KNOWLEDGE_COMPLETE.md
+        - manuel-lopes-rocha_07_THINKING_COMPLETE.md
+        - manuel-lopes-rocha_05_COMMUNICATION_COMPLETE.md
+        - manuel-lopes-rocha_04_PSYCHOLOGY_COMPLETE.md
+        - manuel-lopes-rocha_10_EXAMPLES.md
+    ricardo-oliveira:
+      vault_path: "{{VAULT_PATH}}/CLONES/ricardo-oliveira/"
+      core_files:
+        - ricardo-oliveira_06_KNOWLEDGE_COMPLETE.md
+        - ricardo-oliveira_07_THINKING_COMPLETE.md
+        - ricardo-oliveira_05_COMMUNICATION_COMPLETE.md
+        - ricardo-oliveira_04_PSYCHOLOGY_COMPLETE.md
+        - ricardo-oliveira_10_EXAMPLES.md
+    luis-mira-amaral:
+      vault_path: "{{VAULT_PATH}}/CLONES/luis-mira-amaral/"
+      core_files:
+        - luis-mira-amaral_06_KNOWLEDGE_COMPLETE.md
+        - luis-mira-amaral_07_THINKING_COMPLETE.md
+        - luis-mira-amaral_05_COMMUNICATION_COMPLETE.md
+        - luis-mira-amaral_04_PSYCHOLOGY_COMPLETE.md
+        - luis-mira-amaral_10_EXAMPLES.md
+
+output_base_dir: "{{PROJECT_PATH}}/squads/capital-squad/output"
+
+context_loading:
+  required_before_any_action:
+    - "{{CLAUDE_PROJECT_MEMORY_PATH}}/MEMORY.md"
+    - "{{HOME}}/CLAUDE.md"
+  recommended:
+    - "{{PROJECT_PATH}}/CLAUDE.md"
+    - "{{VAULT_PATH}}/_memory/"
+
+quality_gates:
+  discovery_completion: "Capital Chief não pode rotear sem completar os 6 blocos de discovery (50 perguntas)"
+  routing_validation: "Cada output de especialista deve ser validado pelo Capital Chief antes de avançar"
+  final_consolidation: "Output final deve passar por revisão de coerência entre os 7 especialistas"

@@ -1,0 +1,100 @@
+{
+  "slug": "rick-rubin",
+  "name": "Rick Rubin",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-20",
+  "source_files": {
+    "knowledge": "rick-rubin_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "rick-rubin_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["narrativa", "storytelling", "branding", "psicologia", "produto"],
+  "thinking_models": [
+    {
+      "name": "Artista como vaso, nao como fonte",
+      "one_liner": "A criatividade atravessa a pessoa, ela nao a fabrica; tira o peso do ego",
+      "evidence": "No matter what tools you use to create, the true instrument is you."
+    },
+    {
+      "name": "Subtracao como caminho para a verdade",
+      "one_liner": "Menos informacao revela mais essencia; cortar em vez de acrescentar camada",
+      "evidence": "getting the point across with the least amount of information possible"
+    },
+    {
+      "name": "Atencao como recurso escasso",
+      "one_liner": "Criar depende de limpar distracao para ouvir a forca criativa",
+      "evidence": "Distractions can get in the way of a direct connection to the creative force."
+    },
+    {
+      "name": "Aceitacao como tecnica",
+      "one_liner": "Paciencia e acolhimento da duvida sao metodo, nao passividade",
+      "evidence": "Impatience is an argument with reality."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "Taste over technique",
+      "one_liner": "Decidir pelo que se sente, nao pelo que a regra manda",
+      "evidence": "My involvement is purely about taste. It's not about technical skill."
+    },
+    {
+      "name": "Subtract to the essence",
+      "one_liner": "Remover em vez de adicionar ate sobrar o nucleo",
+      "evidence": "I like the idea of getting the point across with the least amount of information possible."
+    },
+    {
+      "name": "Audience comes last",
+      "one_liner": "Criar para si primeiro; servir o publico e nao pensar nele ao criar",
+      "evidence": "In terms of priority, inspiration comes first. You come next. The audience comes last."
+    },
+    {
+      "name": "Lower the stakes",
+      "one_liner": "Tornar a obra um jogo, nao um veredito, para destravar",
+      "evidence": "We're not playing to win, we're playing to play."
+    },
+    {
+      "name": "Doubt serves you",
+      "one_liner": "Acolher a inseguranca em vez de expulsa-la",
+      "evidence": "Self-doubt lives in all of us. And while we may wish it gone, it is there to serve us."
+    },
+    {
+      "name": "Beginner's mind",
+      "one_liner": "Ver sem crenca fixa, descartando cliche e convencao de genero",
+      "evidence": "Beginner's mind is starting from a pure childlike place of not knowing."
+    }
+  ],
+  "decision_style": "Decide pela escuta e pela subtracao: silencia, sente onde a obra move o corpo, corta o que nao serve a essencia. Tolera altissima incerteza no processo, mas e binario e implacavel no julgamento final. Verdade acima de comercial, essencia acima de completude, paciencia acima de prazo, gosto acima de tecnica.",
+  "primary_roles": ["narrador", "consultor-estrategico"],
+  "auxiliary_roles": [
+    {
+      "role": "estrategista",
+      "why": "Posicionamento por subtracao e ordem de prioridade: achar a essencia, cortar o ruido, ancorar na verdade do artista",
+      "evidence": "In terms of priority, inspiration comes first. You come next. The audience comes last.",
+      "confidence": "high"
+    },
+    {
+      "role": "community-lead",
+      "why": "Sabe construir cena e publico em torno de uma identidade, da Def Jam a Tetragrammaton",
+      "evidence": "da fundação da Def Jam à plataforma Tetragrammaton, ele sabe construir cena e público em torno de uma identidade",
+      "confidence": "medium"
+    }
+  ],
+  "strengths": [
+    "Capta a essencia e a identidade criativa de um artista",
+    "Cura por subtracao: decide o que fica e o que sai",
+    "Ancora posicionamento na verdade do artista, nao no benchmark",
+    "Desbloqueia criadores travados baixando o risco",
+    "Escuta com precisao rara e age sobre o que sente"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "Tende a se dispersar rodando muitos projetos ao mesmo tempo, o que dilui a presenca",
+      "evidence": "roda vários projetos, sem plano fixo, sem data"
+    },
+    {
+      "blind_spot": "A tese de ignorar o publico pode ser um luxo perigoso para artista novo sem colchao financeiro",
+      "evidence": "uma tese que soa suicida comercialmente mas que ele sustenta com a própria carreira"
+    }
+  ],
+  "connects_to": []
+}

@@ -93,10 +93,10 @@ Voltar para: [[mina-elias_01_README]]
 - DSP democratiza para marca média.
 - AI vira ferramenta DE dado (copy generation, creative), não de decisão final.
 
-### 6. Amazon Espanha — contexto específico para a marca do usuário
+### 6. marketplacepanha — contexto específico para a marca do usuário
 
 **Market size:**
-- Amazon ES é #5–6 maior mercado Europeu. Muito menor que US, UK, DE, JP. Cresce 15–20% YoY.
+- marketplace é #5–6 maior mercado Europeu. Muito menor que US, UK, DE, JP. Cresce 15–20% YoY.
 - Comportamento: shoppers espanhóis têm CVR mais baixo que UK/DE, mais pesquisa antes de comprar, preço-sensível.
 
 **CPC médio:**

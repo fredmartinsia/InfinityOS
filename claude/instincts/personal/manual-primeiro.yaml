@@ -1,0 +1,15 @@
+id: manual-primeiro
+trigger: Pedidos de automacao, pipeline, escala de processo novo.
+action: So automatize o que voce ja fez a mao e validou; nao construa automacao para
+  um processo que ainda nao foi provado manualmente.
+confidence: 0.7
+domain: decisao
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:51'
+updated_at: '2026-07-03T21:45:51'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- 'LightRAG: ''Manual Primeiro. Principio: so automatiza o que ja fez a mao; regra
+  pedagogica do usuÃ¡rio''.'

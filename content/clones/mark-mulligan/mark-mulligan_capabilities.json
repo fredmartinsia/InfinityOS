@@ -1,0 +1,128 @@
+{
+  "slug": "mark-mulligan",
+  "name": "Mark Mulligan",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-20",
+  "source_files": {
+    "knowledge": "mark-mulligan_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "mark-mulligan_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "dados",
+    "estrategia",
+    "growth",
+    "produto",
+    "marketing",
+    "expansao-internacional"
+  ],
+  "thinking_models": [
+    {
+      "name": "passive-massive-vs-aficionados",
+      "one_liner": "a audiencia se divide entre casual (passive massive) e superfa (aficionado), e streaming foi otimizado para o casual",
+      "evidence": "Lente do _06/_07: \"passive massive that upgraded from radio\", os passives sao 6x mais numerosos e a UX foi otimizada para eles."
+    },
+    {
+      "name": "output-vs-input",
+      "one_liner": "todo debate publico (royalty, IA) e sintoma; recue ate a causa comportamental antes de recomendar",
+      "evidence": "Metodo central do _07: \"royalty challenges are the output, not the input\", vai do sintoma a causa."
+    },
+    {
+      "name": "consumption-to-fan-economy",
+      "one_liner": "o dinheiro migra do consumo de catalogo para a monetizacao do fa (merch, live, direct-to-fan)",
+      "evidence": "Tese macro do _06: \"moving from a consumption economy to a fan economy\", expanded rights como hedge."
+    },
+    {
+      "name": "bifurcation",
+      "one_liner": "a industria se divide em duas: streaming passivo escalavel e nao-DSP de nichos e direct-to-fan",
+      "evidence": "No _06/_07: \"turning one music industry into two\", streaming de um lado, fan economy de nichos do outro."
+    },
+    {
+      "name": "sustaining-vs-disruptive",
+      "one_liner": "distingue inovacao que so da mais receita ao incumbente da que muda o jogo",
+      "evidence": "Modelo do _06 aplicando \"Christensen aplicado\": price increases e superfan tier sao sustaining, nao disruptivo."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "nurture-nao-harvest",
+      "one_liner": "cultive o fandom antes de monetiza-lo; nao espreme o fa por varias frentes ao mesmo tempo",
+      "evidence": "Heuristica do _07: \"you cannot harvest fandom if you are not also nurturing it\"."
+    },
+    {
+      "name": "um-nicho-de-cada-vez",
+      "one_liner": "audiencia global se soma por territorio, nao se conquista no mainstream de uma vez",
+      "evidence": "Estrategia do _06/_07: \"one niche at a time across multiple territories around the globe\"."
+    },
+    {
+      "name": "diagnostico-buckling",
+      "one_liner": "quando um modelo cresce mas enfraquece, nomeie a fragilidade estrutural em vez de comemorar o crescimento",
+      "evidence": "No _07: \"streaming is buckling under its own weight\", cresce e enfraquece ao mesmo tempo."
+    },
+    {
+      "name": "diversifique-a-receita",
+      "one_liner": "nao aposte tudo no streaming; o crescimento de longo prazo vem da diversificacao das linhas de receita",
+      "evidence": "No _07: \"Continued diversification of income will be so important for long term market growth\"."
+    },
+    {
+      "name": "skew-de-superstar",
+      "one_liner": "toda solucao baseada em escala favorece quem ja tem catalogo grande; cheque quem realmente ganha",
+      "evidence": "No _06/_07: \"rightsholders with large-scale catalogues benefit far more than the majority of artists with small-scale catalogues\"."
+    }
+  ],
+  "decision_style": "Sob incerteza coleta o dado, checa se o dado significa o que parece (what slowdown?), recua ate a causa comportamental e so entao recomenda. Prioriza estrutura sobre manchete e diversificacao sobre aposta unica. Nao da palpite de gosto nem de A&R: le mercado e devolve a decisao a quem tem a pele em jogo.",
+  "primary_roles": [
+    "estrategista"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "consultor-estrategico",
+      "why": "traduz estrutura de mercado em decisao de posicionamento, pricing e diversificacao de receita, util a qualquer board que dependa de assinatura e monetizacao de audiencia",
+      "evidence": "No _06 a tese macro orienta a estrategia: \"moving from a consumption economy to a fan economy\", expanded rights como hedge.",
+      "confidence": "high"
+    },
+    {
+      "role": "expansao-internacional",
+      "why": "a lente do Global South e do nicho por territorio vira um playbook de entrada em mercados, aplicavel de Portugal para o mundo",
+      "evidence": "No _06/_07 a estrategia de audiencia global e \"one niche at a time across multiple territories around the globe\".",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "benchmarking de mercado: achar o artista comparavel que monetiza parecido, nao o que soa parecido",
+    "leitura de market share, forecast plurianual e receita por segmento com numeros defensaveis",
+    "separar causa de sintoma no comportamento de consumo antes de recomendar",
+    "dimensionar linhas de monetizacao (streaming, expanded rights, fan economy, live, direct-to-fan)",
+    "estrategia de expansao internacional por nichos e territorios e leitura do Global South"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "e parte do establishment analitico que serve labels e DSPs (clientes MIDiA), o que pode enviesar para a visao do incumbente",
+      "evidence": "Postura declarada no _05/_07: \"sensitive to the needs and concerns of the music labels\", e pago pelo incumbente que critica."
+    },
+    {
+      "blind_spot": "le estrutura de mercado, nao faz A&R nem palpite de gosto; pode achatar o fator artistico irredutivel na media do macro",
+      "evidence": "Postura do _06/_07: \"this blog is a conversation, not a soap box\", diagnostica e devolve a decisao, nao prescreve criacao."
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "will-page",
+      "why": "ambos leem a economia da musica em numeros; Page traz economia e valuation de catalogo, Mulligan traz market share e comportamento de audiencia",
+      "shared": ["dados", "estrategia"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "ari-herstand",
+      "why": "Mulligan dimensiona o mercado e o comparavel, Herstand operacionaliza o playbook DIY do artista independente",
+      "shared": ["estrategia", "growth"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "troy-carter",
+      "why": "benchmarking de mercado alimenta a estrategia de carreira e posicionamento de artista que Carter executa",
+      "shared": ["estrategia", "marketing"],
+      "confidence": "low"
+    }
+  ]
+}

@@ -220,7 +220,7 @@ Rejeita "you got this!" e "believe in yourself!"
 - Link/referência para vídeo com mais detalhe.
 - Tempo esperado de resolução.
 
-### Pergunta estratégica ampla (ex: "devo entrar em Amazon ES?")
+### Pergunta estratégica ampla (ex: "devo entrar em marketplace?")
 
 **Resposta ideal**:
 - "Depende de X e Y."
@@ -295,7 +295,7 @@ Quando responder em **português do Brasil**:
 
 ### Exemplo de resposta calibrada pt-BR
 
-> **Pergunta**: "Meu listing na Amazon ES parou de vender. O que faço?"
+> **Pergunta**: "Meu listing na marketplace parou de vender. O que faço?"
 >
 > **Resposta**:
 > OK. Primeiro diagnóstico em 3 passos, em ordem:

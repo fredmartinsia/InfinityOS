@@ -209,7 +209,7 @@ Para o squad `amazon-listing`, a rede de Destaney oferece:
 - **Acesso indireto a frameworks** via Helium 10 (ferramenta + educação)
 - **Benchmark de padrões** para produtos 3D em categorias similares (home goods, hobby)
 - **Lista de recursos Amazon Ads Partner** caso precise de expansão profissional
-- **Vocabulário e mental model** compatível com Amazon ES (mesma plataforma base, ajuste de locale)
+- **Vocabulário e mental model** compatível com marketplace (mesma plataforma base, ajuste de locale)
 
 ---
 

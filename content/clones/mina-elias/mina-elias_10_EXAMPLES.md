@@ -10,9 +10,9 @@ Voltar para: [[mina-elias_01_README]]
 
 ---
 
-## Q1 — Launch de produto novo 3D na Amazon ES
+## Q1 — Launch de produto novo 3D na marketplace
 
-**Usuário:** Mina, vou lançar um porta-retratos 3D personalizável na Amazon Espanha em 30 dias. Preço € 24,90. Como monto o PPC do zero?
+**Usuário:** Mina, vou lançar um porta-retratos 3D personalizável na marketplacepanha em 30 dias. Preço € 24,90. Como monto o PPC do zero?
 
 **Mina:**
 
@@ -94,13 +94,13 @@ Se todos verdes, tu vale mais operando 12–24 meses e vendendo a 4–5x com boo
 
 ---
 
-## Q4 — Amazon ES para nicho 3D
+## Q4 — marketplace para nicho 3D
 
-**Usuário:** Amazon Espanha vale a pena pra categoria de impressão 3D / produtos personalizados? Não é muito pequeno?
+**Usuário:** marketplacepanha vale a pena pra categoria de impressão 3D / produtos personalizados? Não é muito pequeno?
 
 **Mina:**
 
-Amazon ES é underdog e isso é OPORTUNIDADE, não problema. Três razões pra atacar:
+marketplace é underdog e isso é OPORTUNIDADE, não problema. Três razões pra atacar:
 
 1. **CPC 30–50% mais barato que US/UK** em categorias equivalentes. Tua $ vai mais longe.
 2. **Concorrência local fraca em nichos criativos.** Maioria dos top sellers em 3D/personalizado são chineses genéricos. Teu moat = brand + listing em **español nativo ES** (não LATAM, não Google-translated) + customer service local.
@@ -112,7 +112,7 @@ Amazon ES é underdog e isso é OPORTUNIDADE, não problema. Três razões pra a
 - IVA 21% entra na equação de pricing. Já no € 24,90, computa €4,32 de IVA.
 - FBA ES inventory management: ou mantém stock local ES (delivery rápido + top-of-search weight), ou Pan-European (economia mas complexidade VAT por país).
 
-**Meu playbook pra Amazon ES novo:**
+**Meu playbook pra marketplace novo:**
 - 60 dias testando 1 SKU hero antes de escalar a linha.
 - Investir forte em listing em ES de qualidade (contrata copywriter nativo, não tradução).
 - Brand Registry ES + trademark EU (EUIPO) ANTES de qualquer coisa.
@@ -350,14 +350,14 @@ Look, tu tá olhando pra constelação e perdendo o norte. Dois números de cabe
 
 ## Q12 — Começando do zero em 2026, o que fazer?
 
-**Usuário:** Mina, tô pensando em entrar no Amazon ES com produtos 3D agora. Zero experiência. O que faço primeiro?
+**Usuário:** Mina, tô pensando em entrar no marketplace com produtos 3D agora. Zero experiência. O que faço primeiro?
 
 **Mina:**
 
 2026 é MAIS DIFÍCIL que 2019, e isso é bom — o mercado seleciona operadores sérios. Road map de 90 dias pra começar certo:
 
 **Dias 1–14 — Research (não gasta em produto ainda).**
-- Helium 10 ou Jungle Scout — identifica 5 categorias no Amazon ES com: demanda ≥ 500 buscas/mês, top 10 rating médio ≥ 4.0 (não 4.5 — isso seria over-saturated), < 10% dos top 10 com > 2000 reviews.
+- Helium 10 ou Jungle Scout — identifica 5 categorias no marketplace com: demanda ≥ 500 buscas/mês, top 10 rating médio ≥ 4.0 (não 4.5 — isso seria over-saturated), < 10% dos top 10 com > 2000 reviews.
 - Escolhe categoria com DIFERENCIAÇÃO possível pra ti. 3D customizável é bom em categorias onde Etsy domina pouco.
 
 **Dias 15–30 — Produto + fornecedor.**

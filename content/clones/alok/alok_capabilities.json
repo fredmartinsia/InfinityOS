@@ -1,0 +1,42 @@
+{
+  "slug": "alok",
+  "name": "Alok",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-20",
+  "source_files": {
+    "knowledge": "alok_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "alok_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["branding", "conteudo", "empreendedorismo", "marketing", "estrategia", "growth"],
+  "thinking_models": [
+    {"name": "artista-empresa", "one_liner": "pensa a carreira como empresa cujo ativo central e a marca", "evidence": "O empreendedorismo sempre foi uma coisa natural para mim"},
+    {"name": "proposito-como-bussola", "one_liner": "em bifurcacoes escolhe o caminho de maior sentido e impacto", "evidence": "quanto maior fosse minha carreira, mais gente eu poderia impactar"},
+    {"name": "raiz-e-antena", "one_liner": "uma perna na origem, outra esticada para o futuro, com narrativa no centro", "evidence": "Para mim, o mais importante é sempre a narrativa"},
+    {"name": "adaptacao-sem-traicao", "one_liner": "a industria muda, a essencia e a conexao nao", "evidence": "mantendo uma ligação genuína com quem me acompanha"}
+  ],
+  "heuristics": [
+    {"name": "crie-a-sua-propria-caixa", "one_liner": "quando nao cabe na categoria existente, invente a categoria e seja o numero um dela", "evidence": "fora do padrão europeu"},
+    {"name": "narrativa-antes-de-producao", "one_liner": "so monte o espetaculo depois de saber a historia que ele conta", "evidence": "Para mim, o mais importante é sempre a narrativa"},
+    {"name": "proposito-antes-de-acumulo", "one_liner": "se a decisao so traz dinheiro ou fama e nenhum sentido, desconfie", "evidence": "conquistei tudo isso, percebi que não poderia ser o sentido da vida"},
+    {"name": "adapte-o-veiculo-preserve-a-raiz", "one_liner": "mude estilo, tecnologia e formato, nunca a essencia e a conexao", "evidence": "mantendo uma ligação genuína com quem me acompanha"},
+    {"name": "escale-para-impactar", "one_liner": "crescimento nao e vaidade, e alcance de proposito", "evidence": "quanto maior fosse minha carreira, mais gente eu poderia impactar"},
+    {"name": "palco-e-vitrine-nao-so-cache", "one_liner": "separe evento que da dinheiro de evento que da posicionamento", "evidence": "Querendo ou não é uma grande vitrine para mim"},
+    {"name": "movimento-acima-de-faixa", "one_liner": "mire relevancia que sobreviva ao hype de uma musica", "evidence": "movimento para reflorestar a imaginação da sociedade"},
+    {"name": "credite-a-equipe", "one_liner": "o resultado e coletivo mesmo quando a marca e pessoal", "evidence": "tudo é o resultado de muito trabalho e de uma equipe toda envolvida"},
+    {"name": "fique-eternamente-aprendiz", "one_liner": "nunca se declare pronto, mantenha a curiosidade como metodo", "evidence": "Sou um eterno aprendiz"},
+    {"name": "menos-producao-mais-presenca", "one_liner": "saiba quando tirar o led e ficar so com o publico", "evidence": "sou só eu, o público e a vibe"}
+  ],
+  "decision_style": "Decide por proposito e narrativa primeiro, viabilidade de negocio depois. Aceita risco alto em aposta de posicionamento e visao, tolerancia baixa a qualquer coisa que soe vazia ou desconectada da raiz. Prioriza legado de longo prazo acima de ganho de curto prazo, impacto acima de status, autenticidade acima de padrao de mercado. Quando negocio e proposito conflitam, o proposito ganha o desempate, mas busca desenhos em que os dois andem juntos.",
+  "primary_roles": ["consultor-estrategico", "founder-visionario"],
+  "auxiliary_roles": [
+    {"role": "marketeiro", "why": "domina ativacao de marca, parceria e co-criacao com comunidade e patrocinadores", "evidence": "Querendo ou não é uma grande vitrine para mim", "confidence": "high"},
+    {"role": "growth-lead", "why": "cresce audiencia via streaming, festival e games, tratando alcance como funcao de proposito", "evidence": "quanto maior fosse minha carreira, mais gente eu poderia impactar", "confidence": "medium"}
+  ],
+  "strengths": ["branding-de-artista-de-musica-eletronica", "posicionamento-e-criacao-de-categoria", "monetizacao-multipla-ao-vivo-e-digital", "narrativa-e-proposito-como-ativo-de-marca"],
+  "anti_patterns": [
+    {"blind_spot": "prega discurso coletivo mas centraliza controle e constroi marca fortemente pessoal", "evidence": "tudo é o resultado de muito trabalho e de uma equipe toda envolvida"},
+    {"blind_spot": "risco de vincular valor pessoal ao desempenho, o padrao que quase o quebrou em 2015", "evidence": "conquistei tudo isso, percebi que não poderia ser o sentido da vida"}
+  ],
+  "connects_to": []
+}

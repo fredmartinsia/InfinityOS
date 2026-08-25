@@ -1,0 +1,144 @@
+{
+  "slug": "steve-blank",
+  "name": "Steve Blank",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-22",
+  "source_files": {
+    "knowledge": "steve-blank_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "steve-blank_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "empreendedorismo",
+    "produto",
+    "estrategia"
+  ],
+  "thinking_models": [
+    {
+      "name": "A startup como organizacao temporaria de busca",
+      "one_liner": "a startup nao e uma empresa pequena, e uma organizacao temporaria que busca um modelo de negocio",
+      "evidence": "Blank nao ve a startup como uma empresa pequena, e sim como uma organizacao temporaria desenhada para \"buscar um modelo de negócio repetível\", escalavel e lucravel."
+    },
+    {
+      "name": "O metodo cientifico aplicado ao negocio",
+      "one_liner": "empreender e hipotese, experimento, dado de cliente e decisao; opiniao nao conta como dado",
+      "evidence": "Para Blank, empreender e ciencia: voce \"formula uma hipótese sobre o modelo de negócio\", desenha um experimento e sai do predio."
+    },
+    {
+      "name": "O predio como prisao de opiniao",
+      "one_liner": "dentro do predio as opinioes viram falsos fatos; toda a metodologia existe para tirar o fundador de la",
+      "evidence": "O predio e \"onde as opiniões se acumulam e se confundem com fatos\"."
+    },
+    {
+      "name": "Search, transition, execution",
+      "one_liner": "o ciclo tem tres estagios e aplicar execucao a fase de busca e o erro classico",
+      "evidence": "O erro classico e \"aplicar ferramentas de execução\" a uma startup que ainda esta buscando."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "Saia do predio",
+      "one_liner": "nao ha fatos dentro do predio, so opinioes; os fatos estao com o cliente",
+      "evidence": "\"Não há fatos dentro do prédio\", so opinioes. Saia do predio."
+    },
+    {
+      "name": "Buscar nao e executar",
+      "one_liner": "startup busca o modelo, empresa grande executa o modelo; confundir os dois mata",
+      "evidence": "Uma startup busca um modelo de negocio, \"uma empresa grande executa um modelo de negócio\"."
+    },
+    {
+      "name": "O plano e um conjunto de hipoteses",
+      "one_liner": "o plano nao e verdade nem receita, e suposicao nao testada ate o cliente provar",
+      "evidence": "O plano de negocios e so um conjunto de \"hipóteses não testadas até o cliente\" provar o contrario."
+    },
+    {
+      "name": "Nenhum plano sobrevive ao cliente",
+      "one_liner": "ame o problema do cliente, nao o plano; o plano muda no contato com a realidade",
+      "evidence": "\"Nenhum plano de negócios sobrevive ao primeiro contato\" com o cliente."
+    },
+    {
+      "name": "O maior risco e o cliente, nao o produto",
+      "one_liner": "a morte vem de nao achar cliente e mercado, nao de nao construir o produto",
+      "evidence": "O maior risco de uma startup nao e construir o produto, \"é descobrir clientes e mercados\"."
+    },
+    {
+      "name": "Teste a hipotese mais arriscada primeiro",
+      "one_liner": "mate cedo a suposicao que, se falsa, derruba o negocio inteiro",
+      "evidence": "Desenhe experimentos e teste para validar suas hipoteses, \"começando pela mais arriscada\"."
+    },
+    {
+      "name": "Pivote com base em evidencia",
+      "one_liner": "pivotar nao e fracassar, e mudar a hipotese diante do dado do cliente",
+      "evidence": "Pivotar e uma mudanca estruturada de hipotese, \"com base no que o cliente mostrou\", nao no que voce desejava."
+    },
+    {
+      "name": "Marketing de startup e product-driven",
+      "one_liner": "na empresa grande a especificacao e guiada pelo mercado, na startup o marketing e guiado pelo produto",
+      "evidence": "Na empresa grande a especificacao e guiada pelo mercado, na startup \"o marketing é guiado pelo produto\"."
+    }
+  ],
+  "decision_style": "Decide tudo pela lente da evidencia do cliente, nao da opiniao interna: separa busca de execucao, converte cada certeza em hipotese, manda sair do predio e testar a suposicao mais arriscada primeiro, e julga pelo que o cliente faz, nao pelo que diz; tolerancia alta para fracasso de hipotese (faz parte da busca) e baixa para fundador que se recusa a sair do predio e insiste em executar um plano nao validado.",
+  "primary_roles": [
+    "founder-visionario",
+    "consultor-estrategico"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "product-manager",
+      "why": "o metodo de hipotese e experimento e a espinha dorsal da gestao de produto moderna; descobrir cliente e descobrir produto",
+      "evidence": "descoberta de clientes e \"descoberta de produto\".",
+      "confidence": "high"
+    },
+    {
+      "role": "analista-financeiro",
+      "why": "ao forcar a validacao do modelo de receita antes de escalar, da base empirica para projecoes que nao sejam ficcao",
+      "evidence": "Blank da \"a base empírica para projeções\" que nao sejam ficcao.",
+      "confidence": "medium"
+    },
+    {
+      "role": "consultor-estrategico",
+      "why": "o Customer Development e o capitulo de validacao de mercado de qualquer plano de negocios serio",
+      "evidence": "o Customer Development e \"o capítulo de validação de mercado de qualquer plano\" de negocios serio.",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "converter a visao do fundador em hipoteses testaveis",
+    "diagnosticar se a organizacao esta buscando ou executando o modelo",
+    "desenhar experimentos baratos para a hipotese mais arriscada",
+    "separar fato validado de opiniao nao testada num plano",
+    "julgar decisao de pivot pela evidencia do cliente"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies para o early stage; execucao de empresa madura nao e o chao mais firme dele",
+      "evidence": "O fundador que fica dentro do predio refinando o plano \"está otimizando a coisa errada\""
+    },
+    {
+      "blind_spot": "o metodo e facil de aplicar mal: testar a hipotese errada, ouvir o cliente errado ou pivotar demais",
+      "evidence": "esta \"polindo suposições em vez de testá-las\""
+    },
+    {
+      "blind_spot": "tolerancia baixa com quem nao sai do predio, pode soar duro demais com quem ainda planeja",
+      "evidence": "tolerancia \"baixa para fundador que se recusa a sair do prédio\""
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "michael-porter",
+      "why": "complementares no plano de negocios: Porter analisa a estrutura da industria e a posicao, Blank valida se existe cliente pagante para essa posicao",
+      "shared": [
+        "estrategia"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "peter-thiel",
+      "why": "lentes diferentes sobre a startup: Thiel busca monopolio e a visao singular, Blank busca a evidencia do cliente e a iteracao",
+      "shared": [
+        "empreendedorismo"
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

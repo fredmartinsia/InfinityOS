@@ -1,0 +1,26 @@
+# 💰 Will Page :: Perfil Completo
+
+## Quem é
+
+Will Page é um economista britânico especializado na indústria da música, autor, podcaster e DJ. Ficou conhecido como o primeiro Chief Economist (economista-chefe) da Spotify, cargo que ocupou de 2012 a 2019, e antes disso como Chief Economist da PRS for Music, a sociedade de gestão coletiva do Reino Unido que representa autores, compositores e editoras musicais, entre 2006 e 2012. É Fellow da Royal Society of the Arts (RSA) e Visiting Fellow na London School of Economics (LSE) e no Edinburgh Futures Institute. Hoje toca a Pivotal Economics, sua própria plataforma de análise e consultoria, de onde publica pesquisas e o relatório anual mais citado da indústria: o Global Value of Music Copyright.
+
+A marca registrada de Will Page é transformar o funcionamento invisível do dinheiro da música em números que ninguém mais junta. Ele pega fontes que a indústria apresenta separadamente (o relatório da IFPI sobre música gravada, o relatório da CISAC sobre arrecadação das sociedades de gestão coletiva, e os dados de publishing da Music & Copyright), remove a dupla contagem e mostra o tamanho real do mercado. Como ele mesmo diz, "in music, this is the biggest number there is" (na música, esse é o maior número que existe). Foi ele quem popularizou o termo Rockonomics no Reino Unido e quem cunhou análises que viraram vocabulário da indústria, como a crítica aos conceitos de "catalogue" (catálogo) e "frontline" (lançamento recente) como categorias obsoletas.
+
+## Timeline
+
+- 2002: conclui o MSc em Economia na University of Edinburgh. A tese "Germany's Mezzogiorno Revisited" analisa a Alemanha Oriental dez anos após a reunificação, é publicada pelo Deutsche Bank em 2003 e citada por Martin Wolf no Financial Times em 2005.
+- 2002 a 2006: trabalha no Government Economic Service, no Scottish Executive (Office of the Chief Economic Adviser e Department of Finance). Publica "Infrastructure Investment & Economic Growth" (2005). Nas horas vagas, escreve como jornalista de música para a revista Straight No Chaser.
+- 2006 a 2012: Chief Economist na PRS for Music. Em 2008 rebate a teoria da Long Tail de Chris Anderson, mostrando que a demanda por música digital segue uma distribuição log-normal, não uma cauda longa. Publica "In Rainbows, On Torrents" (com Eric Garland), provando que o álbum pay-what-you-want do Radiohead foi amplamente pirateado (cerca de 2 milhões de cópias compartilhadas em um mês). Em maio de 2010 ajuda a salvar a BBC 6 Music com o texto "A songwriter's perspective on 6 Music".
+- 2012 a 2019: primeiro Chief Economist da Spotify. Conduz estudos sobre pirataria (Holanda, Austrália), demonstra no estudo do Imagine Dragons que muitos artistas veem mais streams no segundo ano de lançamento do que no primeiro, e atua como testemunha especialista no US Copyright Royalty Board (processo "Phonorecords III") sobre taxas mecânicas de streaming.
+- 2015 em diante: publica anualmente o Global Value of Music Copyright, estimativa que cresce de cerca de 25 bilhões de dólares (2014) para 47,2 bilhões (2024).
+- 2019: deixa a Spotify para virar autor, com contrato na Simon & Schuster (Reino Unido) e Little, Brown (EUA). Assina como produtor executivo o documentário "Black Stars of Highlife", sobre o Highlife de Gana.
+- Maio de 2021: lança "Tarzan Economics: Eight Principles for Pivoting Through Disruption" e estreia o podcast "Bubble Trouble" com Richard Kramer, na rede Magnificent Noise.
+- 2023: publica com Chris Dalla Riva o paper sobre Glocalisation na LSE (EIQ Paper No. 182), mostrando como artistas locais cantando na língua materna dominam charts em plataformas globais.
+
+## Por que é referência no campo
+
+Will Page é referência porque ocupou os dois lados da mesa que decidem o dinheiro da música: a sociedade de gestão coletiva (o lado dos compositores e editoras, na PRS) e a plataforma de streaming (o lado da distribuição, na Spotify). Poucas pessoas no mundo entenderam de dentro tanto como os royalties de execução pública são arrecadados quanto como o pote de assinaturas do streaming é dividido. Ele é procurado como palestrante e testemunha por reguladores, gravadoras e parlamentos (submeteu evidência escrita ao inquérito do Parlamento britânico sobre a economia do streaming em 2020). Seu livro foi traduzido em cinco línguas (chinês, taiwanês, japonês, coreano e alemão) e reeditado em brochura sob o título "Pivot", com elogios de Scott Galloway e Adam Grant. Contribui regularmente para a BBC, o Financial Times e a The Economist. O relatório Global Value of Music Copyright virou a base sobre a qual analistas medem se a música cresce mais que o cinema (em 2023, os 45,5 bilhões da música superaram os 33,2 bilhões da bilheteria global). Nada disso é opinião: é aritmética verificável, e é essa disciplina de juntar os números certos que o torna a autoridade que é.
+
+Uma nota de fidelidade: o ano de nascimento de Will Page não consta em fontes públicas confiáveis, e por isso não é afirmado aqui. Sua ligação com a Escócia (formação em Edimburgo e anos no Scottish Executive) é documentada, mas o rótulo de nacionalidade fina fica como hipótese: as fontes o descrevem como economista britânico.
+
+Voltar ao índice: [[will-page_01_README]]. Ver também: [[📊 INDEX - CLONES]].

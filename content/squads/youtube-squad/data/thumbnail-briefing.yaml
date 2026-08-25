@@ -1,0 +1,223 @@
+# ============================================================
+# thumbnail-briefing.yaml: Knowledge base de THUMBNAIL
+# Squad: youtube-squad · Projeto: sua comunidade (Infinity Cast / {{USER_NAME}})
+# ------------------------------------------------------------
+# Destilacao executavel do briefing-mestre de thumbnail, para
+# consumo direto pelas tasks do squad (sem reabrir o doc longo).
+# Consumido por:
+#   - tasks/gerar-prompt-thumbnail.md   (*prompt-thumbnail)
+#   - tasks/gerar-frases-thumbnail.md   (*frases-thumbnail)
+#   - tasks/extrair-frames.md           (*extrair-frames)
+#   - tasks/modelar-thumbnail.md        (*modelar-thumbnail)
+#   - checklists/output-quality.md
+#   - checklists/publicacao-podcast.md
+# Identidade sua comunidade: laranja sobre preto.
+# Regra de escrita: portugues do Brasil, nunca usar travessao (em dash).
+# ============================================================
+
+meta:
+  id: thumbnail-briefing
+  versao: "1.0"
+  squad: youtube-squad
+  canais: [Infinity Cast, {{USER_NAME}}]
+  mercados: [BR, PT]
+  atualizado: "2026-06-19"
+  validado_por: [youtube-researcher, matt-gielen, paddy-galloway]
+  resumo: >
+    Em menos de 1 segundo e em tamanho de miniatura no celular, a thumbnail
+    precisa gerar curiosidade somada a autoridade o suficiente para o clique.
+    Nao e arte decorativa: e uma isca de atencao.
+
+# ------------------------------------------------------------
+# 1. specs: requisitos tecnicos inegociaveis do arquivo final
+# ------------------------------------------------------------
+specs:
+  proporcao: "16:9"           # formato obrigatorio do YouTube
+  resolucao: "1280x720"       # minimo aceito; ideal gerar em 1920x1080 e exportar 1280x720
+  formato_arquivo: [PNG, JPG] # alta qualidade
+  peso_max_mb: 2              # limite do YouTube (<2MB)
+  peso_max: "<2MB"
+  # canto inferior direito e coberto pelo timestamp do player: nao por rosto/texto la
+  zona_segura: canto_inferior_direito
+  zona_segura_descricao: >
+    Manter rostos e texto longe do canto inferior direito, onde o YouTube
+    sobrepoe o tempo do video.
+  teste_120px: true           # reduzir a ~120px de largura e confirmar que a frase ainda le
+  teste_120px_descricao: >
+    Teste obrigatorio: reduzir a thumbnail a aproximadamente 120px de largura
+    e confirmar que a frase-gancho continua legivel.
+
+# ------------------------------------------------------------
+# 2. paleta: cores oficiais sua comunidade (laranja sobre preto)
+# Hex SEM cerquilha para uso direto; campo hex com cerquilha quando util.
+# ------------------------------------------------------------
+paleta:
+  preto_infinity:
+    hex: "0D0D0D"
+    uso: "Fundo base escura (cor dominante da imagem)"
+  charcoal:
+    hex: "1A1A1A"
+    uso: "Fundo, variacao mais clara que o preto puro"
+  laranja_infinity:
+    hex: "FF6B00"
+    uso: "Marca e destaque principal; caixa da palavra-chave, asterisco, rim light"
+  laranja_cast:
+    hex: "FF5500"
+    uso: "Cor dedicada do Infinity Cast"
+  laranja_queimado:
+    hex: "E65100"
+    uso: "Variacao Clube mais escura; fim do gradiente da marca"
+  laranja_claro:
+    hex: "FF8C42"
+    uso: "Variacao clara, brilho e highlights"
+  branco:
+    hex: "FFFFFF"
+    uso: "Texto principal das frases"
+  gold:
+    hex: "FFD600"
+    uso: "Acento premium pontual (ex.: numero-heroi), com parcimonia, sem competir com o laranja"
+  preto_contorno:
+    hex: "000000"
+    uso: "Contorno e sombra do texto para legibilidade sobre qualquer fundo"
+  efeitos:
+    glow_laranja_central: "rgba(255,107,0,0.24)"   # brilho atras do convidado
+    vinheta_bordas: "escurecimento radial nas bordas para dar profundidade"
+    gradiente_marca: "FF6B00 -> E65100 a 135 graus"
+  regra_dominancia: >
+    O preto domina o fundo; o laranja entra como destaque, nunca chapado ou em
+    excesso. Substitui o verde de referencias do nicho. Gold so como toque
+    premium pontual.
+
+# ------------------------------------------------------------
+# 3. layout_3_zonas: composicao classica do nicho (3 zonas horizontais)
+# host na esquerda, tema no centro, convidado na direita, frase na faixa inferior
+# ------------------------------------------------------------
+layout_3_zonas:
+  estrutura: "host_esquerda + centro_tematico + convidado_direita + faixa_inferior_frase"
+  host_esq:
+    posicao: "canto esquerdo"
+    largura: "~1/3 da largura"
+    conteudo: "Host ({{USER_NAME}}), recorte do busto, expressao forte, rim light laranja"
+    rim_light: true
+  centro_tematico:
+    posicao: "terco superior-central, atras/entre os dois rostos"
+    conteudo: "Imagem tematica cinematografica e escura, luz/brilho laranja-quente"
+    nota: "Casa com a marca e contrasta com a frase clara na frente"
+  convidado_dir:
+    posicao: "canto direito"
+    largura: "~1/3 da largura"
+    conteudo: "Convidado, recorte do busto, expressao forte, rim light laranja"
+    rim_light: true
+    foco: "Seta laranja aponta do texto para o convidado (foco no convidado)"
+  faixa_inferior_frase:
+    posicao: "faixa inferior, sobre o centro/base"
+    conteudo: "Frase-gancho grande; palavra-chave em caixa laranja"
+    regra: "Nunca cobrir os olhos/rosto dos apresentadores"
+  ascii_referencia: |
+    +---------------------------------------------+
+    | [host esq.]      *(asterisco laranja)       |
+    |   FRED          IMAGEM         CONVIDADO     |
+    |  (recorte    TEMATICA CENTRAL   (recorte     |
+    |   busto)     (silhuetas/luz)     busto)      |
+    |                                (seta laranja)|
+    |        #### FRASE-GANCHO GRANDE ####         |
+    |        ## [PALAVRA] em caixa laranja ##      |
+    +---------------------------------------------+
+
+# ------------------------------------------------------------
+# 4. marca: elementos de assinatura do Infinity Cast
+# ------------------------------------------------------------
+marca:
+  asterisco_laranja:
+    cor_hex: "FF6B00"
+    posicao: "canto superior direito"
+    descricao: "Asterisco / sparkle laranja, assinatura do canal"
+  seta_laranja:
+    cor_hex: "FF6B00"
+    estilo: "curva, discreta"
+    descricao: "Aponta do texto para o convidado, dirigindo o foco"
+    cuidado: "Discreta. Nao imitar caixa vermelha + seta estilo news/drama"
+  palavra_chave_em_caixa_laranja:
+    cor_hex: "FF6B00"
+    descricao: >
+      A palavra entre colchetes vai dentro de uma caixa retangular laranja
+      com texto branco ou preto (o que tiver mais contraste).
+  rim_light:
+    cor_hex: "FF6B00"
+    descricao: >
+      Luz de contorno laranja nos recortes dos rostos para descolar do fundo
+      escuro; combinar com sombra para dar dimensao.
+  moldura_cantos:
+    cor_hex: "FF6B00"
+    estilo: "fina, estilo colchete, discreta"
+    descricao: "Moldura laranja sutil nos cantos (opcional)"
+  micro_badge_ia:
+    rotulo: "+ IA"
+    status: "opcional / teste"
+    descricao: "Diferenciador inedito no nicho fe+negocios; usar com parcimonia"
+
+# ------------------------------------------------------------
+# 5. regra_editorial: linha editorial obrigatoria da copy da thumb
+# ------------------------------------------------------------
+regra_editorial:
+  usar_pergunta_tabu: true
+  pergunta_tabu_descricao: >
+    Copy de pergunta-tabu performa mais no cruzamento fe+dinheiro. Usar sempre
+    como pergunta (ex.: "E PECADO PROSPERAR?"), nunca como afirmacao do tipo
+    "fe garante riqueza".
+  evitar_teologia_prosperidade_exploratoria: true
+  evitar_teologia_descricao: >
+    Nao prometer riqueza garantida pela fe. Dor sensivel, principalmente em PT.
+    Manter autoridade serena e paleta premium (laranja+preto, sem vermelho gritante).
+  sem_travessao: true
+  sem_travessao_descricao: >
+    Nunca usar travessao (em dash). Usar virgula, dois-pontos, parenteses ou
+    reescrever a frase.
+  copy_regras:
+    fonte_estilo: "bold condensada, MAIUSCULAS"
+    fontes_sugeridas: [Anton, "Archivo Black", "Montserrat Black"]
+    max_palavras_grandes: 5
+    quebra_linhas: "ate 2 linhas se necessario"
+    contraste: "branco com contorno e/ou sombra preta forte"
+    palavra_chave: "a palavra entre colchetes vai na caixa laranja FF6B00"
+    proibido_cobrir_rosto: true
+  numero_heroi:
+    usar: true
+    descricao: "Quantificacao aumenta CTR; numeros prontos do tema: 40, 147, 6"
+  evitar:
+    - "Texto pequeno ou com mais de ~5 palavras grandes"
+    - "Rostos sem expressao (olhar perdido, boca neutra)"
+    - "Fundo poluido ou claro demais (mata o contraste do texto)"
+    - "Roxo ou verde como cor principal (a marca e laranja sobre preto)"
+    - "Laranja em excesso ou chapado (preto deve dominar o fundo)"
+    - "Caixa vermelha + seta estilo news/drama"
+    - "Travessao (em dash) em qualquer texto"
+    - "Rosto gerado por IA quando da pra usar o rosto real"
+    - "Usar testemunho sensivel (violencia/perdao) como gancho de clique"
+
+# ------------------------------------------------------------
+# 6. modelagem_referencia: sintese da validacao cross-cultural (BR/USA/PT)
+# Resumo executavel; evidencia completa fica na fonte apontada.
+# ------------------------------------------------------------
+modelagem_referencia:
+  formula_vencedora: "2 rostos + fundo escuro + 1 palavra destacada"
+  diferenciacao_laranja: >
+    Laranja sobre preto esta livre no cruzamento fe+negocios (concorrentes usam
+    verde ou dourado). Manter como cor-assinatura.
+  referencias_observadas: ["Ed Mylett", "Jota Jota", "Flow", "PrimoCast", "Diary of a CEO", "Deive Leonardo"]
+  calibracao_portugal: >
+    Estilo BR ainda e diferenciador (nao saturado) em PT, mas evitar clickbait
+    gritante. Solucao: paleta premium e autoridade serena.
+  conceito_recomendado: >
+    Host (esq, sorriso) + Convidado (dir, serio) sobre fundo preto com glow
+    laranja atras do convidado; frase tabu com palavra-chave em caixa laranja.
+
+# ------------------------------------------------------------
+# 7. fonte: ponteiro para o documento-mestre (fonte de verdade)
+# ------------------------------------------------------------
+fonte:
+  ponteiro: "conteudo/miniaturas/BRIEFING-THUMBNAIL.md"
+  observacao: >
+    Documento-mestre detalhado de thumbnail. Em caso de divergencia, este
+    arquivo YAML e o destilado para as tasks; o ponteiro guarda a evidencia
+    completa, frases, assets e fluxo de producao.

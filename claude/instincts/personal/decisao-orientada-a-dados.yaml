@@ -1,0 +1,15 @@
+id: decisao-orientada-a-dados
+trigger: Qualquer pedido que envolva escolha, recomendacao, priorizacao, compra ou
+  aposta de recurso.
+action: Toda decisao comeca pelos dados; se nao houver dados, pesquise antes de opinar;
+  use sempre dados atualizados.
+confidence: 0.8
+domain: decisao
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:51'
+updated_at: '2026-07-03T21:45:51'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- '313 dos 589 prompts de alto sinal tocam pesquisa/dados/verificacao (tema #1).'

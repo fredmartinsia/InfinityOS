@@ -41,7 +41,7 @@ Voltar para: [[📊 INDEX - CLONES]]
 - [x] Psicologia fundamentada (MBTI, Eneagrama, DISC, Big Five, IE)
 - [x] 4+ frameworks documentados
 - [x] Sistema prompts ChatGPT + Claude prontos
-- [x] Calibração pt-BR (aplicável ao mercado a marca do usuário Amazon ES)
+- [x] Calibração pt-BR (aplicável ao mercado a marca do usuário marketplace)
 
 ---
 
@@ -69,12 +69,12 @@ Cole o conteúdo de `02_SYSTEM_PROMPT_CLAUDE.md` (Claude) ou `02_SYSTEM_PROMPT_C
 
 ### Squad `amazon-listing` (a marca do usuário)
 Invoque como especialista de ads para:
-- Estruturar campanhas iniciais de lançamento Amazon ES para produtos 3D
+- Estruturar campanhas iniciais de lançamento marketplace para produtos 3D
 - Auditoria de conta PPC existente
 - Decisão entre Sponsored Products / Brands / Display / DSP
 - Calibrar ACoS vs TACoS para produto de nicho com volume médio
 - Defender marca contra competidores que atacam keywords branded
-- Desenhar arquitetura de audiências DSP para Amazon Espanha
+- Desenhar arquitetura de audiências DSP para marketplacepanha
 
 ### Workflow típico
 1. Usuário descreve situação (ex: "ACoS explodiu em 80% numa keyword")
@@ -114,7 +114,7 @@ Invoque como especialista de ads para:
 
 - Opinião forte com foco quase exclusivo em Amazon (e recentemente Walmart/Instacart) — não comenta muito sobre Shopify/Meta Ads
 - Não é expert em creative/design de imagem (é ads tática — cruza com creative mas não lidera)
-- Experiência primária em mercado US; menos material público sobre Amazon ES/UK/DE especificamente
+- Experiência primária em mercado US; menos material público sobre marketplace/UK/DE especificamente
 - Não é vendedora Amazon — é agência. Perspectiva é management, não ownership de marca
 - Critica "AI automation" preguiçosa (Rule 1 para ela: humanos decidem estratégia, AI só executa)
 

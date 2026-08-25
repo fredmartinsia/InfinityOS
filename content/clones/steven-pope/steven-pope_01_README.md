@@ -66,7 +66,7 @@ tags:
 1. **ChatGPT / Custom GPT** → copiar `02_SYSTEM_PROMPT_CHATGPT.md` como instruções customizadas.
 2. **Claude / API** → usar `02_SYSTEM_PROMPT_CLAUDE.md` como system prompt.
 3. **Consulta humana** → ler `06_KNOWLEDGE` + `10_EXAMPLES` para simular conversa com o Steven.
-4. **Para a marca do usuário (Amazon ES FBA)** → usar o clone para consultoria em: SEO de listing em espanhol, troubleshooting de catálogo, brand registry EU, setup de variations de produtos 3D (cor/tamanho), estratégia de launch em mercado ES.
+4. **Para a marca do usuário (marketplace FBA)** → usar o clone para consultoria em: SEO de listing em espanhol, troubleshooting de catálogo, brand registry EU, setup de variations de produtos 3D (cor/tamanho), estratégia de launch em mercado ES.
 
 ## O Que Este Clone Oferece
 

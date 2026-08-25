@@ -1,0 +1,15 @@
+id: clones-completos
+trigger: 'quando o usuÃ¡rio pedir para acionar um clone (ex: clone do Hormozi)'
+action: Carregar e usar TODOS os arquivos do clone em ~/Documents/Obsidian Vault/CLONES/{nome}/,
+  nao so o SYSTEM_PROMPT. Aplicar frameworks, heuristicas e exemplos reais.
+confidence: 0.7
+domain: clones
+source: seed:feedback_patterns
+scope: global
+created_at: '2026-06-20T14:47:43'
+updated_at: '2026-06-20T14:47:43'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- 'Recorrente: ''nao usa so o system prompt do clone; usa os frameworks, heuristicas
+  e explora todos os arquivos''.'

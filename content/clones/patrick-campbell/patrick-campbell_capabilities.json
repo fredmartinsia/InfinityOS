@@ -1,0 +1,175 @@
+{
+  "slug": "patrick-campbell",
+  "name": "Patrick Campbell",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-18",
+  "source_files": {
+    "knowledge": "patrick-campbell_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "patrick-campbell_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "produto",
+    "estrategia",
+    "dados",
+    "financas",
+    "growth"
+  ],
+  "thinking_models": [
+    {
+      "name": "Preço como taxa de câmbio do valor",
+      "one_liner": "o preço não sai do custo nem do concorrente, sai do valor percebido pelo cliente",
+      "evidence": "\"preço é a taxa de câmbio do valor que você entrega\""
+    },
+    {
+      "name": "Substituir opinião por dado",
+      "one_liner": "toda decisão de preço reduz a incerteza com pesquisa antes de decidir; opinião interna é hipótese, não fato",
+      "evidence": "\"a decisão de preço sai do achismo interno e vira dado de willingness-to-pay\""
+    },
+    {
+      "name": "Pricing como sistema da empresa inteira",
+      "one_liner": "preço toca aquisição, retenção, expansão e posicionamento, então é decisão de produto, marketing, vendas e gestão juntos",
+      "evidence": "\"pricing é um problema da empresa inteira, não só do produto\""
+    },
+    {
+      "name": "Pricing como processo, não evento",
+      "one_liner": "preço é revisado em cadência, como desenvolvimento de produto; tratar como decisão única é onde a receita se perde",
+      "evidence": "\"pricing é um processo contínuo, não um projeto de uma vez só\""
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "Cobre pela value metric certa",
+      "one_liner": "escolha a unidade de cobrança mais próxima do valor entregue e a expansão vem sozinha",
+      "evidence": "\"cobre pela métrica de valor mais próxima do valor que o cliente recebe\""
+    },
+    {
+      "name": "Segmente, nunca tire média",
+      "one_liner": "escolha uma persona e precifique para ela; média geral não captura o valor de ninguém",
+      "evidence": "\"você precisa escolher um cliente em vez de tirar a média geral\""
+    },
+    {
+      "name": "Nunca pergunte o preço direto",
+      "one_liner": "perguntar quanto a pessoa pagaria gera resposta subvalorizada; use perguntas indiretas",
+      "evidence": "\"nunca pergunte direto quanto a pessoa pagaria, porque ela subvaloriza\""
+    },
+    {
+      "name": "Use as quatro perguntas de Van Westendorp",
+      "one_liner": "a pesquisa de willingness-to-pay se faz com as quatro perguntas, não com uma pergunta direta de preço",
+      "evidence": "\"use as quatro perguntas de Van Westendorp em vez de perguntar o preço direto\""
+    },
+    {
+      "name": "A regra do add-on de 40%",
+      "one_liner": "feature de baixa penetração não pertence ao core, vira add-on vendável à parte",
+      "evidence": "\"qualquer feature usada por 40% ou menos da base é candidata a add-on\""
+    },
+    {
+      "name": "Expansion revenue primeiro",
+      "one_liner": "extraia expansão da base existente antes de caçar cliente novo, porque é mais barato e previsível",
+      "evidence": "\"expansion revenue é a alavanca de crescimento mais subutilizada\""
+    },
+    {
+      "name": "Sem grandfathering automático",
+      "one_liner": "ao subir preço, comunique valor adicionado em vez de congelar o cliente antigo só por ser antigo",
+      "evidence": "\"não proteja os clientes antigos do reajuste só por serem antigos\""
+    },
+    {
+      "name": "Desconto destrói LTV",
+      "one_liner": "desconto pesado enche a base de cliente sensível a preço, que dá mais churn e menos upgrade",
+      "evidence": "\"desconto pesado atrai cliente pior e derruba o LTV em cerca de 30%\""
+    },
+    {
+      "name": "Freemium é canal, não receita",
+      "one_liner": "trate o grátis como aquisição barata e de alta retenção, monetizada depois",
+      "evidence": "\"freemium é um modelo de aquisição, não um modelo de receita\""
+    },
+    {
+      "name": "Revise o pricing todo trimestre",
+      "one_liner": "preço parado é receita perdida porque produto, concorrência e mercado mudam sempre",
+      "evidence": "\"revise o pricing a cada trimestre, no máximo a cada seis meses\""
+    },
+    {
+      "name": "Não suba preço com a casa quebrada",
+      "one_liner": "se suporte ou NPS estão ruins, conserte a base antes de qualquer reajuste",
+      "evidence": "\"se você tem problema de suporte ou de NPS, não é hora de subir preço\""
+    }
+  ],
+  "decision_style": "Decide toda questão de preço pela lente do valor e do dado, não da opinião interna: reformula quanto cobrar em quanto o cliente paga pelo valor percebido, escolhe a value metric, segmenta a persona e roda pesquisa de willingness-to-pay (Van Westendorp, Max Diff) antes de cravar o número; prioriza expansion revenue e revisão trimestral; tolerância alta para tese contraintuitiva ancorada em dado e baixa para decisão de preço tomada sem pesquisa ou para desconto que compra receita de curto prazo destruindo LTV.",
+  "primary_roles": [
+    "consultor-estrategico",
+    "product-manager"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "analista-financeiro",
+      "why": "popularizou o painel de metricas de assinatura e o usa como base de qualquer leitura financeira honesta de um SaaS",
+      "evidence": "\"MRR, LTV, churn e NRR são o painel financeiro central de um SaaS\"",
+      "confidence": "high"
+    },
+    {
+      "role": "instrutor",
+      "why": "a filosofia de Help Sells faz dele um professor natural de monetização, capaz de destilar método replicável para operadores pequenos e Micro SaaS",
+      "evidence": "\"ajudar vende, ensinar o mercado é a melhor forma de aquisição\"",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "reformular quanto cobrar em quanto o cliente paga pelo valor percebido",
+    "escolher a value metric mais alinhada ao valor entregue",
+    "desenhar pesquisa de willingness-to-pay com Van Westendorp e Max Diff",
+    "extrair expansion revenue da base via add-ons e combate a delinquencia",
+    "simplificar o processo de pricing para SaaS e Micro SaaS sem equipe dedicada"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "o eixo dele e recorrencia; fora de SaaS/assinatura, o ferramental de retencao e expansion revenue perde peso",
+      "evidence": "\"meu chão é SaaS e assinatura, negócio de recorrência\""
+    },
+    {
+      "blind_spot": "prega ser quantitativo mas defende decidir com amostra pequena, e nem sempre marca a linha entre orientar e cravar",
+      "evidence": "\"com 30 respostas você fica numa margem de mais ou menos 20 a 25%\""
+    },
+    {
+      "blind_spot": "prospera em urgencia a ponto de admitir que cria crise desnecessaria, um vies de intensidade a vigiar",
+      "evidence": "\"às vezes eu fabrico uma crise sem necessidade só pela urgência\""
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "alex-hormozi",
+      "why": "complementares na oferta: Hormozi maximiza o valor percebido e a irresistibilidade da oferta, Campbell mede com dado quanto o cliente paga por esse valor e estrutura o pricing",
+      "shared": [
+        "estrategia",
+        "growth"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "alexander-osterwalder",
+      "why": "o value metric e as personas quantificadas de Campbell instrumentam com dado os blocos de revenue streams e customer segments do Business Model Canvas de Osterwalder",
+      "shared": [
+        "estrategia",
+        "produto"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "eric-ries",
+      "why": "lentes complementares sobre o SaaS: Ries valida o produto por experimento e aprendizado, Campbell valida a monetizacao por pesquisa de willingness-to-pay",
+      "shared": [
+        "produto",
+        "growth"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "steve-blank",
+      "why": "sequencia natural: Blank descobre e valida quem e o cliente fora do predio, Campbell descobre com dado quanto esse cliente paga pelo valor que percebe",
+      "shared": [
+        "produto",
+        "estrategia"
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

@@ -77,7 +77,7 @@
 - **Idioma:** DE (barreira real, listings precisam nativas)
 - **Estilo consumidor:** mais cético, valoriza qualidade declarada
 
-### Amazon ES (nosso mercado — a marca do usuário)
+### marketplace (nosso mercado — a marca do usuário)
 - **GMV estimado:** €8-12B (menor que UK/DE)
 - **Competição:** média — beachhead viável
 - **Prime:** ~35-40% households, crescendo
@@ -166,7 +166,7 @@ Mass events viraram commodity. Value real está em VIP networks onde peers troca
 7. **Privacy laws** (GDPR mantido, CCPA US expande)
 
 ### Implicação a marca do usuário especificamente
-- Fabricar no Brasil (a marca do usuário) para Amazon ES = arbitragem de custo + tempo logístico maior
+- Fabricar no Brasil (a marca do usuário) para marketplace = arbitragem de custo + tempo logístico maior
 - VAT IOSS é obrigatório para shipments < €150 direto ao consumidor
 - Representante fiscal na UE se faturamento > €10k/ano
 
@@ -174,7 +174,7 @@ Mass events viraram commodity. Value real está em VIP networks onde peers troca
 
 ## 7. Competitive Landscape (sellers a marca do usuário poderia enfrentar)
 
-### Na categoria 3D print / miniaturas / figurines Amazon ES
+### Na categoria 3D print / miniaturas / figurines marketplace
 - **Local players** — small Spanish printers com presença Amazon limitada
 - **EU printers** — alemães, italianos mais agressivos
 - **China direct** — Alibaba sellers com preço imbatível mas sem branding
@@ -210,7 +210,7 @@ Produtos são copy-able; brands são trust-able. Defensibilidade vem do emociona
 
 ---
 
-## 9. Contexto Específico para a marca do usuário (Amazon ES FBA)
+## 9. Contexto Específico para a marca do usuário (marketplace FBA)
 
 Aplicando lentes Kevin:
 
@@ -230,7 +230,7 @@ Aplicando lentes Kevin:
 ## 10. Resumo do Contexto em 5 Bullets
 
 - **Amazon FBA 2026** não é mais gold rush — é operação profissional que exige capital, skill e stack omnichannel
-- **Amazon ES** é beachhead viável — menor que DE/UK mas menos saturado, com VAT simplificada via IOSS
+- **marketplace** é beachhead viável — menor que DE/UK mas menos saturado, com VAT simplificada via IOSS
 - **AI é sobrevivência**, não diferencial premium — 1 em 3 sellers sobrevive os próximos 3 anos sem adotar agentic AI
 - **Brand > Product** é tese dominante — defensibilidade vem de moat emocional (story, comunidade, lista), não de feature funcional
 - **Creator economy + live commerce** são próximos 2 eixos de growth para brands Amazon-based — early movers capturam advantage

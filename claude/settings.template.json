@@ -9,7 +9,16 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 ~/.claude/scripts/vault_guard.py"
+            "command": "python3 {{HOME}}/.claude/scripts/vault_guard.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 {{HOME}}/.claude/scripts/no_emdash_guard.py"
           }
         ]
       }
@@ -19,7 +28,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 ~/.claude/scripts/vault_rag.py"
+            "command": "python3 {{HOME}}/.claude/scripts/vault_rag.py"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 {{HOME}}/.claude/scripts/mcp_lean.py autodetect"
           }
         ]
       }
@@ -29,32 +46,44 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 ~/.claude/scripts/vault_writer.py"
+            "command": "python3 {{HOME}}/.claude/scripts/vault_writer.py"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh {{HOME}}/.claude/scripts/claude_mem_pid_guard.sh"
+          },
+          {
+            "type": "command",
+            "command": "python3 {{HOME}}/.claude/scripts/instincts.py inject --hook"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 {{HOME}}/.claude/scripts/mcp_lean.py clean"
           }
         ]
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "python3 {{HOME}}/.claude/scripts/statusline.py",
+    "padding": 1,
+    "refreshInterval": 30
+  },
   "env": {
-    "CLAUDE_VAULT_PATH": "{{VAULT_PATH}}"
-  },
-  "enabledPlugins": {
-    "claude-mem@thedotmack": true,
-    "ui-ux-pro-max@nextlevelbuilder": true
-  },
-  "extraKnownMarketplaces": {
-    "thedotmack": {
-      "source": {
-        "source": "github",
-        "repo": "thedotmack/claude-mem"
-      }
-    },
-    "nextlevelbuilder": {
-      "source": {
-        "source": "github",
-        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
-      }
-    }
+    "INFINITY_VAULT_PATH": "{{VAULT_PATH}}"
   },
   "language": "{{LANGUAGE}}",
   "skipDangerousModePermissionPrompt": true,

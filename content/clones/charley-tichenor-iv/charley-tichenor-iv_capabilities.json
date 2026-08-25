@@ -1,0 +1,51 @@
+{
+  "slug": "charley-tichenor-iv",
+  "name": "Charley Tichenor IV",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-18",
+  "source_files": {
+    "knowledge": "charley-tichenor-iv_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "charley-tichenor-iv_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["trafego-pago", "ecommerce", "growth", "estrategia", "dados"],
+  "thinking_models": [
+    {"name": "metodo-cientifico-aplicado-a-midia", "one_liner": "toda conta tem um controle projetavel e um teste uniforme", "evidence": "The one campaign ad account is built on the concept of the scientific method."},
+    {"name": "psm-margem-real", "one_liner": "decide escala pela margem, nao por ROAS ou MER", "evidence": "PSM is calculated as the ratio of lifetime value (LTV) to the sum of cost of goods sold (COGS) and cost per acquisition (CPA)."},
+    {"name": "meritocracia-de-entrega", "one_liner": "criativo e relevancia vencem lance bruto no leilao", "evidence": "Our success will be determined by our ability to weaponize the scientific method in order to amplify our business model."}
+  ],
+  "heuristics": [
+    {"name": "otimize-o-criativo-nao-o-lance", "one_liner": "diante de CPA ruim, mexa em criativo e publico antes do bid", "evidence": "The biggest mistake folks make, is trying to optimize the bid"},
+    {"name": "broad-is-a-noun", "one_liner": "segmente so idade, genero e localizacao e deixe o criativo criar o publico", "evidence": "Broad is a noun, not an adjective."},
+    {"name": "cost-cap-teto-de-20-por-cento", "one_liner": "nao deixe cost cap passar de cerca de 20% do volume de transacoes", "evidence": "They are not sustainable, at more than 20% of the transaction volume for the store"},
+    {"name": "controle-mais-teste-na-mesma-campanha", "one_liner": "mantenha um control ad set estavel ao lado do ambiente de teste", "evidence": "The most important part of the one campaign ad account is our control ad set."},
+    {"name": "saber-a-matematica", "one_liner": "sem AOV, LTV, COGS e CPA qualquer decisao de lance e chute", "evidence": "You have to know this math."},
+    {"name": "nao-apague-seus-dados", "one_liner": "cost cap agressivo corroi os ganhos de eficiencia da conta", "evidence": "you quickly delete your data and start to erase efficiency gains."}
+  ],
+  "decision_style": "Decide pela matematica e nao pela emocao, priorizando integridade de dados e crescimento de longo prazo sobre vitoria tatica de curto prazo. Experimenta cost cap e bid cap, mas cerca o experimento com limites duros (20% do volume, controle intacto). Sem o dado (AOV, CPA de break-even), para e vai buscar o dado antes de decidir.",
+  "primary_roles": ["media-buyer"],
+  "auxiliary_roles": [
+    {"role": "estrategista", "why": "desenha a arquitetura de conta (One Campaign, controle mais teste, sequencia de graduacao de lance)", "evidence": "This entire campaign is CBO & targets broad only", "confidence": "high"},
+    {"role": "analista-financeiro", "why": "pensa como CFO de aquisicao, com unit economics (PSM, AOV, LTV, COGS, CPA) como regua de decisao", "evidence": "Not knowing the average order value of a lead is arguably criminally negligent", "confidence": "high"},
+    {"role": "instrutor", "why": "transforma caos em metodo replicavel e ensina (Disrupter School, Facebook Ads MBA Program)", "evidence": "a habilidade central dele é transformar caos em método replicável", "confidence": "high"},
+    {"role": "marketeiro", "why": "opera na fronteira entre midia e oferta, tratando o criativo como alavanca que cria o publico", "evidence": "This allows our ads to be unobstructed with the audiences that they create for themselves.", "confidence": "medium"}
+  ],
+  "strengths": [
+    "arquitetura de campanha para cost cap e bid cap",
+    "diagnostico de leilao (entrega travada, CPA subindo, spend estagnado)",
+    "disciplina de controle mais teste e integridade de dados",
+    "unit economics de aquisicao (PSM, AOV, LTV, CPA de break-even)",
+    "estrategia de criativo e targeting broad"
+  ],
+  "anti_patterns": [
+    {"blind_spot": "retorica absoluta de que audiencias nunca importam pode ser cedo demais em conta pequena ou muito nichada", "evidence": "audiences don't matter ever again."},
+    {"blind_spot": "despreza ROAS e MER que ainda sao a lingua franca de clientes e plataformas de atribuicao, o que gera atrito de comunicacao", "evidence": "He hates ROAS & MER."}
+  ],
+  "connects_to": [
+    {"slug": "depesh-mandalia", "why": "par proximo na tese de que bid cap e a unica estrategia de lance verdadeiramente manual; Mandalia detalha a mecanica de bid manual e trade-offs", "shared": ["trafego-pago", "ecommerce"], "confidence": "high"},
+    {"slug": "andrew-faris", "why": "defensor extremo de cost controls; tensao saudavel com o limite de 20% e a defesa de integridade de dados de Charley", "shared": ["trafego-pago", "ecommerce"], "confidence": "medium"},
+    {"slug": "jon-loomer", "why": "enciclopedia tecnica que define a mecanica de bidding (marginal cost, predicted conversion rate) que Charley aplica dentro de estrutura nomeada", "shared": ["trafego-pago", "dados"], "confidence": "medium"},
+    {"slug": "cody-plofker", "why": "praticante DTC que usa mais bid cap que cost cap em escala e prega antidogmatismo, dialogo direto com tratar cost cap como experimento", "shared": ["trafego-pago", "ecommerce"], "confidence": "medium"},
+    {"slug": "pedro-sobral", "why": "referencia pt-BR do framework de leilao (lance, qualidade, taxa de acao estimada) que fundamenta a mecanica de bid cap", "shared": ["trafego-pago"], "confidence": "medium"}
+  ]
+}

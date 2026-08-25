@@ -1,0 +1,48 @@
+{
+  "slug": "jon-loomer",
+  "name": "Jon Loomer",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-18",
+  "source_files": {
+    "knowledge": "jon-loomer_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "jon-loomer_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["trafego-pago", "marketing", "conteudo"],
+  "thinking_models": [
+    {"name": "leilao-total-value", "one_liner": "quem vence o leilao e o maior Total Value (lance, taxa de acao estimada, qualidade), nao o maior lance", "evidence": "The winner of the auction is the ad with the highest total value, based on bid, estimated action rates, and ad quality."},
+    {"name": "algoritmo-literal", "one_liner": "o algoritmo entrega exatamente a acao pedida ao menor custo, sem olhar qualidade", "evidence": "Quality is not part of the algorithm. Only cost and volume."},
+    {"name": "escada-de-lance", "one_liner": "Highest Volume leva a Cost Cap leva a Bid Cap, sem pular etapa e so com dados", "evidence": "it's often safer to roll with the defaults."},
+    {"name": "controlavel-vs-incontrolavel", "one_liner": "foque energia no que voce controla em vez de culpar a plataforma", "evidence": "Take some responsibility and stop blaming the system."}
+  ],
+  "heuristics": [
+    {"name": "default-primeiro", "one_liner": "na duvida, fique no automatico e gradue so com dados e motivo claro", "evidence": "it's often safer to roll with the defaults."},
+    {"name": "bid-cap-para-poucos", "one_liner": "so use Bid Cap se souber calcular o lance por conversion rate e marginal cost", "evidence": "only the most advanced and adventurous advertisers should bother with Bid Caps."},
+    {"name": "passe-a-bola", "one_liner": "se o calculo esta acima da sua cabeca, fique no default", "evidence": "If that's mostly over your head, just take a pass here."},
+    {"name": "teto-nao-e-custo", "one_liner": "separe o que se paga no leilao do custo por acao reportado", "evidence": "Bid Cap is only about what you're paying IN THE AUCTION, not the actual Cost Per Action."},
+    {"name": "cost-cap-e-meta", "one_liner": "Cost Cap so estabelece uma meta; se apertar demais, o orcamento trava", "evidence": "If you get too aggressive with the goal, your budget just won't spend."},
+    {"name": "criativo-alavanca-de-custo", "one_liner": "qualidade de anuncio baixa o lance necessario para vencer leiloes", "evidence": "the higher your ad quality and engagement, the less you'll need to pay to win the auctions."},
+    {"name": "experimente-como-skill", "one_liner": "a maior habilidade do anunciante e testar no proprio contexto", "evidence": "The willingness to experiment is the number one skill of a successful Meta advertiser."},
+    {"name": "assuma-responsabilidade", "one_liner": "pare de culpar a plataforma e olhe o proprio setup", "evidence": "Take some responsibility and stop blaming the system."},
+    {"name": "atualize-premissas", "one_liner": "premissas envelhecem quando a Meta muda; revise sempre", "evidence": "don't forget to update your assumptions. Things change."},
+    {"name": "consistencia-teimosa", "one_liner": "cadencia vence talento esporadico", "evidence": "stubborn consistency. They do not quit."}
+  ],
+  "decision_style": "Experimentacao disciplinada sobre uma base estavel: completa a learning phase e junta dados antes de qualquer ajuste manual, prefere o default ate ter motivo claro, gradua de estrategia como experimento com faixa de expectativa e nao com numero prometido, e volta ao default sem apego se o resultado piorar. Tolerancia a risco baixa por padrao, com respeito a quem tem dados e competencia para usar Bid Cap.",
+  "primary_roles": ["media-buyer"],
+  "auxiliary_roles": [
+    {"role": "instrutor", "why": "destila a mecanica opaca do Meta Ads em ensino claro, com a estrutura definir-corrigir-recomendar", "evidence": "destila mecânica opaca em linguagem clara", "confidence": "high"},
+    {"role": "estrategista", "why": "pensa em sistemas e organiza conhecimento tecnico volatil, preferindo estrutura enxuta", "evidence": "Practice a simplified approach in favor of overcomplicating everything.", "confidence": "high"},
+    {"role": "analista-financeiro", "why": "raciocina em custo marginal, break-even e custo por resultado, economia de unidade aplicada a midia", "evidence": "marginal cost, break-even e custo por resultado é economia de unidade aplicada", "confidence": "medium"}
+  ],
+  "strengths": ["precisao terminologica do leilao e do lance", "rigor tecnico sem hype", "didatica que corrige mal-entendidos comuns", "atualizacao constante quando a Meta muda"],
+  "anti_patterns": [
+    {"blind_spot": "excesso de cautela: por defender o default na maioria dos casos, pode subestimar cenarios de baixo ticket e leilao volatil em que o lance manual e a ferramenta certa", "evidence": "it's often safer to roll with the defaults."},
+    {"blind_spot": "teimosia: resistiu por anos ao targeting algoritmico antes de mudar de ideia quando os dados o obrigaram", "evidence": "I was wrong to fight it for as long as I did."}
+  ],
+  "connects_to": [
+    {"slug": "depesh-mandalia", "why": "ambos tratam Bid Cap como o unico lance manual verdadeiro e sao cautelosos, preferindo automatico na maioria dos casos", "shared": ["trafego-pago"], "confidence": "high"},
+    {"slug": "andrew-faris", "why": "contraponto de intensidade: Faris aloca quase todo o budget em cost controls; Loomer e mais conservador e prefere o default", "shared": ["trafego-pago"], "confidence": "medium"},
+    {"slug": "charley-tichenor-iv", "why": "complementaridade em cost cap: Tichenor e a referencia historica de cost cap, Loomer traz o alerta de que cost cap nao garante CPA", "shared": ["trafego-pago"], "confidence": "medium"},
+    {"slug": "pedro-sobral", "why": "ponte pt-BR: Sobral ensina a formula do leilao para o publico brasileiro de baixo ticket, complementando a mecanica de Loomer", "shared": ["trafego-pago"], "confidence": "medium"}
+  ]
+}

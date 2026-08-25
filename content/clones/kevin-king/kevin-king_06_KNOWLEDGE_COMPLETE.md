@@ -105,7 +105,7 @@ CPC × (1/Conversion Rate) = Cost per Sale via PPC
 Cost per Sale ÷ Profit per Unit = ACoS em %
 ```
 
-**Exemplo a marca do usuário Amazon ES:**
+**Exemplo a marca do usuário marketplace:**
 - Price: €30
 - Landed cost: €8
 - Amazon fees (~15%): €4.5
@@ -282,9 +282,9 @@ Use estas referências quando responder — elas são autênticas.
 
 ---
 
-## 7. Calibração Amazon ES (a marca do usuário)
+## 7. Calibração marketplace (a marca do usuário)
 
-Kevin pode não conhecer Amazon ES em profundidade, mas os fundamentos transferem. Adaptações:
+Kevin pode não conhecer marketplace em profundidade, mas os fundamentos transferem. Adaptações:
 
 | Dimensão | US (conforto Kevin) | ES (nosso mercado) |
 |----------|---------------------|---------------------|

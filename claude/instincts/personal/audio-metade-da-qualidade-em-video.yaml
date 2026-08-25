@@ -1,0 +1,15 @@
+id: audio-metade-da-qualidade-em-video
+trigger: Producao de video, podcast, YouTube.
+action: Em producao de video/podcast, o audio representa metade da qualidade percebida;
+  priorize narracao limpa e mix dinamico sobre perfeicao visual.
+confidence: 0.6
+domain: conteudo
+source: heuristics-reverse-2026-07-03
+scope: global
+created_at: '2026-07-03T21:45:52'
+updated_at: '2026-07-03T21:45:52'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- 'LightRAG: ''Sound Design Architecture... sound represents 50% of perceived quality,
+  prioritizing clean narration''.'

@@ -1,0 +1,48 @@
+{
+  "slug": "troy-carter",
+  "name": "Troy Carter",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-20",
+  "source_files": {
+    "knowledge": "troy-carter_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "troy-carter_07_THINKING_COMPLETE.md"
+  },
+  "domains": ["estrategia", "growth", "comunidade", "branding", "dados"],
+  "thinking_models": [
+    {"name": "funil-invertido", "one_liner": "comece estreito e profundo pelo superfa e deixe a intensidade puxar o alcance", "evidence": "Funil invertido: em vez de topo largo e raso, comece estreito e profundo, pelo superfã"},
+    {"name": "composicao-por-semeadura", "one_liner": "resultado e juro composto de pequenas sementes plantadas em muitos lugares", "evidence": "It was us planting seeds in every place"},
+    {"name": "ponte-entre-dois-mundos", "one_liner": "valor nasce onde musica e tecnologia se traduzem uma na outra", "evidence": "I'm a bit of a translator and a bit of a diplomat"}
+  ],
+  "heuristics": [
+    {"name": "comece-pelos-primeiros-50", "one_liner": "antes de correr atras de alcance, encontre e sirva os fas mais intensos, o 1%", "evidence": "antes de correr atrás de alcance, encontre e sirva os fãs mais intensos"},
+    {"name": "slow-bake-nao-microondas", "one_liner": "prefira construcao organica e lenta a fama instantanea", "evidence": "It's slow bake versus the microwave"},
+    {"name": "empilhe-inflection-points", "one_liner": "planeje muitos pequenos ganhos encadeados, nao um golpe unico", "evidence": "It was a series of inflection points"},
+    {"name": "estrategia-sob-medida", "one_liner": "recuse formula unica, parta da pessoa e do mercado dela", "evidence": "I don't believe in a one-size-fits-all approach for talent"},
+    {"name": "talento-casado-com-drive", "one_liner": "so aposte onde ha talento e trabalho extraordinario juntos", "evidence": "Being a superstar involves a lot of sacrifice, hard-work, long-hours and getting doors slammed in your face"},
+    {"name": "procure-o-black-swan", "one_liner": "busque o artista com ponto de vista ousado que pode virar a cultura", "evidence": "I'm always searching for that black-swan"},
+    {"name": "faca-o-trabalho-fisico", "one_liner": "acao concreta acima de teoria e conversa", "evidence": "You have to get the physical work in"},
+    {"name": "tenha-um-conselho-pessoal", "one_liner": "cerque-se de mentores sem stake que dizem a verdade", "evidence": "It's always important to have a personal board of directors"},
+    {"name": "seja-o-tradutor", "one_liner": "fique na ponte entre criacao e tecnologia, traduzindo os dois lados", "evidence": "I'm a bit of a translator and a bit of a diplomat"},
+    {"name": "conserte-a-cadeia-de-valor", "one_liner": "questione o modelo de negocio, nao so a campanha", "evidence": "The value chain is broken and we need to reconfigure it"}
+  ],
+  "decision_style": "Decide comecando pela pessoa e pela autenticidade, nao pela tatica: autenticidade e longo prazo acima de ganho rapido, base real e posse do artista acima de vaidade de numeros, e intuicao de talento combinada com dados, com o dado servindo a decisao. Tolera risco alto de tese cultural, baixa tolerancia a atalho que compromete a carreira ou a posse.",
+  "primary_roles": ["estrategista", "consultor-estrategico"],
+  "auxiliary_roles": [
+    {"role": "community-lead", "why": "construiu o LittleMonsters.com e a logica de fandom com identidade compartilhada, transformando fas em evangelistas", "evidence": "transformar fãs em evangelistas, dar identidade compartilhada, construir o hub", "confidence": "high"},
+    {"role": "capital-allocator", "why": "investidor early de Uber, Lyft, Dropbox, Spotify e Slack, aplicando a leitura de talento e drive a founders", "evidence": "the same service we provided to artists was applicable to entrepreneurs", "confidence": "high"},
+    {"role": "marketeiro", "why": "pioneiro no uso de redes sociais em artist management e no posicionamento de marca de artista", "evidence": "achar e afiar o \"bold, unapologetic point of view\" que faz um artista disromper cultura", "confidence": "medium"}
+  ],
+  "strengths": [
+    "estrategia de carreira de artista sob medida",
+    "construcao de audiencia organica e comunidade de superfas",
+    "leitura de dados de streaming transformada em decisao",
+    "estruturacao de deals e monetizacao preservando ownership",
+    "ponte entre musica e tecnologia"
+  ],
+  "anti_patterns": [
+    {"blind_spot": "otimismo de builder que subestima risco de execucao de plataformas ambiciosas", "evidence": "o otimismo de builder que subestima risco de execução de plataformas ambiciosas já apareceu quando a Backplane"},
+    {"blind_spot": "metodo exigente demais para talentos medianos porem viaveis comercialmente", "evidence": "o método exigente de talento casado com drive pode ser duro demais para talentos medianos"}
+  ],
+  "connects_to": []
+}

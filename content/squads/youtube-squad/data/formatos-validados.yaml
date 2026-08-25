@@ -1,0 +1,523 @@
+# ============================================================
+# FORMATOS VALIDADOS - youtube-squad
+# ============================================================
+# Arquivo de DADOS. Fonte de verdade dos formatos que JA funcionaram
+# (no Infinity Cast e em canais de referencia BR/USA/PT) e da estrutura
+# canonica de um episodio do Infinity Cast.
+#
+# Quem consome este arquivo:
+#   - tasks/analise-formato.md (*analise-formato) -> valida formato proposto
+#   - tasks/planejamento-mensal.md (*planejamento-mensal) -> escolhe formatos
+#   - tasks/modelar-thumbnail.md (*modelar-thumbnail) -> padrao de thumbnail
+#   - workflows/wf-planejamento-video.yaml (*planejar-video)
+#   - workflows/wf-publicacao-podcast.yaml (*publicar-episodio)
+#   - @matt-gielen (modelagem/formato) e @youtube-chief (orquestracao)
+#
+# REGRA DE OURO (codificada abaixo em `regra`):
+#   nenhum formato vira plano sem 5+ casos validados (com link/print).
+#   formato inedito = HIPOTESE DE TESTE, sinalizado como tal.
+#
+# Escrita: pt-BR, sem travessao longo. Identidade sua comunidade: laranja sobre preto.
+# ============================================================
+
+meta:
+  squad: youtube-squad
+  arquivo: data/formatos-validados.yaml
+  versao: "1.0"
+  atualizado: "2026-06-19"
+  idioma: pt-BR
+  canais_alvo:
+    - nome: "Infinity Cast"
+      tipo: podcast
+      regiao: "Portugal/Brasil"
+    - nome: "{{USER_NAME}}"
+      tipo: "canal individual"
+      regiao: "Portugal/Brasil"
+  tese_do_canal: >
+    O Infinity Cast desmonta a maquina de quem prosperou. 50 a 70% do tempo e
+    business + IA. A trajetoria do convidado e o tecido humano que da contexto
+    ao metodo, nao o centro do programa.
+
+# ------------------------------------------------------------
+# REGRA INEGOCIAVEL - gate de qualquer planejamento de formato
+# ------------------------------------------------------------
+regra:
+  so_planejar_formato_com_5_casos: true
+  descricao: >
+    Nenhum formato proposto vira plano sem confirmacao de que JA funcionou em
+    canal semelhante, com no minimo 5 casos comprovados (link ou print). Se o
+    formato e inedito para o nicho, ele NAO e rejeitado, mas e marcado
+    explicitamente como hipotese de teste, com criterio de corte e janela de
+    avaliacao definidos.
+  evidencia_minima_por_caso:
+    - "canal de origem (nome + link)"
+    - "video/episodio especifico (link)"
+    - "metrica observada (views, retencao, CTR ou ratio de cortes, quando disponivel)"
+    - "regiao do canal (BR, USA, PT/EU)"
+  quando_inedito:
+    rotulo: "HIPOTESE DE TESTE"
+    exige:
+      - "hipotese clara do porque deveria funcionar (modelagem cross-cultural)"
+      - "criterio de sucesso mensuravel"
+      - "janela de avaliacao (ex.: 2 a 4 publicacoes)"
+      - "plano B caso nao engaje"
+  veto: >
+    Se um formato chega ao planejamento com menos de 5 casos e SEM rotulo de
+    hipotese de teste, o @matt-gielen e o @youtube-chief vetam a entrega e
+    devolvem para pesquisa (@youtube-researcher).
+
+# ------------------------------------------------------------
+# ESTRUTURA CANONICA DO INFINITY CAST
+# ------------------------------------------------------------
+# Validada no EP001 (Adeildo Silva). Blocos recorrentes que se repetem em
+# todo episodio. Arquitetura: jornada do heroi (Joseph Campbell) com a
+# espinha de cobranca de detalhe do Caio Carneiro e o tratamento emocional
+# do Steven Bartlett (Diary of a CEO).
+infinity_cast_estrutura:
+
+  tese_editorial:
+    o_que_e: "A frase que define o eixo do programa e filtra cada bloco."
+    enunciado: >
+      Business + prosperidade + IA em 50 a 70% do tempo. A historia do convidado
+      e o tecido humano que da contexto ao metodo, nunca o centro.
+    funcao: "Toda pergunta, ponte e CTA precisa servir a esta tese ou e cortada."
+    referencias_modeladas:
+      - "Posicionamento do proprio Infinity Cast ({{USER_NAME}}, PT/BR)"
+
+  quem_e_o_convidado_30s:
+    o_que_e: "Apresentacao enriquecida que vende o convidado em ate 30s, pos-vinheta."
+    objetivo: "Em 30s o ouvinte entende por que vale ficar."
+    estrutura:
+      - "abertura-gancho (a tagline da casa entra antes da vinheta)"
+      - "credenciais empilhadas em uma frase (cargo, obra, numeros, lugar)"
+      - "o gancho humano (de onde veio, contra que probabilidade)"
+      - "boas-vindas nominais ao convidado"
+    exemplo_ep001: >
+      Mentor, palestrante internacional, presidente de ministerio em seis nacoes,
+      fundador do Mansa Musa, autor de mais de trinta livros, com o seu proprio
+      monte em Soalhaes onde faz noventa e um dias de oracao. Tudo construido
+      vindo de muito longe: pouca escola, muita fe, muita coragem.
+    referencias_modeladas:
+      - "Diary of a CEO (Steven Bartlett, UK): apresentacao densa que vende o convidado"
+      - "Como Voce Fez Isso (Caio Carneiro, BR): credencial empilhada"
+
+  genese_da_raiz_ao_abismo:
+    o_que_e: >
+      O arco que leva o convidado do mundo ordinario (a raiz, o improvavel) ate
+      o abismo (a travessia, a queda, o ponto de virada) e de volta. E o coracao
+      narrativo, mas nunca ocupa mais de 30 a 50% do episodio.
+    blocos_internos:
+      - id: "mundo_ordinario"
+        rotulo: "O cara improvavel"
+        objetivo: "Humanizar antes de monumentalizar. Forcar imagem concreta (cheiro, lugar, idade, nome)."
+        ia: "leve, so no fechamento do bloco (plantar a semente)"
+      - id: "travessia_abismo"
+        rotulo: "O abismo e o perdao"
+        objetivo: "O ponto em que o heroi desce. Pergunta-mae, abrir o palco e calar."
+        ia: "ausente (respeito ao momento)"
+        cuidado: "respeitar o silencio por 6s minimos antes de qualquer reacao"
+      - id: "ruptura"
+        rotulo: "Quando ele comecou a prosperar"
+        objetivo: "Prosperidade deixa de ser conceito e vira mecanismo. Cobrar numeros, datas, decisoes."
+        ia: "pergunta-ponte plantando o bloco-ancora"
+    regra_de_silencio: >
+      Quando o convidado se emociona, o entrevistador fica quieto por pelo menos
+      6 segundos. Esses 6 segundos costumam ser o melhor corte do episodio.
+    referencias_modeladas:
+      - "Jornada do Heroi (Joseph Campbell, adaptado): arquitetura dos blocos"
+      - "Diary of a CEO (Steven Bartlett, UK): intimidade e silencio respeitado"
+
+  blocos_tematicos:
+    o_que_e: >
+      Os blocos onde a tese do canal domina: metodo/escala e o bloco-ancora de
+      business + IA. E aqui que o canal cumpre sua promessa de 50 a 70% do tempo.
+    blocos_internos:
+      - id: "metodo_escala"
+        rotulo: "Metodo e escala (a maquina)"
+        objetivo: "Desmontar a operacao: eventos, livros, ministerio, ativos. Foco no operacional."
+        cobrar: ["numeros", "processos", "decisoes"]
+      - id: "ancora_business_ia"
+        rotulo: "Business e IA hoje"
+        objetivo: "Bloco-ancora do canal. 8 a 10 min. {{USER_NAME}} conduz com mais propriedade (e o tema da casa)."
+        perguntas_tipo:
+          - "primeira ferramenta de IA que entrou no dia a dia + o que mudou na primeira semana"
+          - "a linha etica/filosofica (IA + fe/proposito)"
+          - "a aposta concreta em IA que recomendaria para alguem comecar esta semana"
+          - "previsao de 5 anos (vira titulo do YouTube se cravada)"
+        kit_ia_pre_gravacao:
+          descricao: "Levantar na pre-gravacao quais IAs o convidado ja usa, por frente."
+          frentes_exemplo: ["escrever/produzir", "operar evento", "gestao", "mentoria/conteudo"]
+    referencias_modeladas:
+      - "Como Voce Fez Isso (Caio Carneiro, BR): cobranca de mecanismo e numero"
+      - "Posicionamento Infinity Cast ({{USER_NAME}}): dominancia de business + IA"
+
+  vitrine_do_convidado:
+    o_que_e: >
+      Os momentos em que o convidado mostra sua obra/ativos de forma concreta e
+      cinematografica. Alimenta B-roll, cortes verticais e a descricao do video.
+    captura:
+      - "descricoes fisicas de lugares (rende B-roll, ex.: o monte em Soalhaes)"
+      - "listas nominais (ex.: 3 dos 40 inimigos da prosperidade = Short/Reels)"
+      - "numeros cravados (edicoes do evento, nacoes, livros)"
+    saida_para:
+      - "tasks/gerar-descricao.md (links da obra do convidado)"
+      - "tasks/extrair-frames.md (frames de maior expressao para thumbnail)"
+    referencias_modeladas:
+      - "Como Voce Fez Isso (Caio Carneiro, BR): vitrine de obra com cobranca de dado"
+
+  pergunta_assinatura:
+    o_que_e: "Ritual permanente. A mesma pergunta fecha TODO episodio. Vira marca da casa."
+    enunciado_ep001: >
+      Se voce tivesse que apostar em uma unica possibilidade infinita, entre
+      business, IA e proposito, qual seria a sua aposta?
+    funcao:
+      - "cria material editavel padronizado entre episodios"
+      - "permite benchmark de respostas entre convidados"
+      - "reforca a tagline da casa (infinitas possibilidades)"
+    regra: "Anotar a resposta de cada convidado como benchmark para os proximos."
+    referencias_modeladas:
+      - "Diary of a CEO (Steven Bartlett, UK): pergunta-assinatura como ritual fixo"
+
+  mapa_de_ctas:
+    o_que_e: "A grade de pontes e chamadas para acao intercaladas entre os blocos."
+    teto: "5 CTAs em 60 min e o teto. Nao improvisar mais nenhum no ar."
+    grade_ep001:
+      - posicao: "Ponte 1 (apos Bloco I)"
+        alvo: "sua comunidade (CTA #1)"
+        tom: "leve, convite, sem pressao (so plantar a semente)"
+        duracao: "~30s"
+      - posicao: "Ponte 2 (apos Bloco II)"
+        alvo: "VV Studio (patrocinador oficial) + QR Code na tela"
+        tom: "vendedor mas confidente (amigo indicando, nao comercial de TV)"
+        duracao: "~40s"
+      - posicao: "Ponte 3 (apos Bloco III)"
+        alvo: "sua comunidade (CTA #2, ponto medio, mais firme)"
+        tom: "um pouco mais firme (ouvinte ja confia)"
+        duracao: "~30s"
+      - posicao: "Ponte 4 (apos Bloco IV)"
+        alvo: "VV Traffic Data (agencia parceira)"
+        tom: "tecnico, direto, para empresario (negocio fala com negocio)"
+        duracao: "~30s"
+      - posicao: "Ponte 5 (apos Bloco V)"
+        alvo: "sua comunidade (CTA #3, o mais forte, com IA ja aquecida)"
+        tom: "o mais forte dos tres CTAs do Clube (momento de pedir o passo)"
+        duracao: "~30s"
+    principio: "CTA sempre numa ponte de transicao, nunca no meio de um bloco emocional."
+    referencias_modeladas:
+      - "Posicionamento Infinity Cast ({{USER_NAME}}): CTAs intercalados nas pontes"
+
+  riscos_planos_b:
+    o_que_e: "Lista de riscos editoriais com plano B definido antes da gravacao."
+    itens_ep001:
+      - risco: "convidado nao quer falar do testemunho intimo no ar"
+        plano_b: "pular para a pergunta editorial (puxa o tema de volta sem violar a intimidade). Confirmar consentimento ANTES."
+      - risco: "estouro de tempo nos blocos densos"
+        plano_b: "cortar perguntas opcionais (deepen), nunca a pergunta-ancora de IA"
+      - risco: "saturacao de CTAs"
+        plano_b: "manter teto de 5; se sobrar tempo, segurar, nao improvisar"
+      - risco: "dado do convidado nao confirmado (ex.: numero de livros)"
+        plano_b: "deixar o convidado declarar o numero no ar; confirmar na pre-gravacao"
+      - risco: "convidado nao usa IA / acha irrelevante"
+        plano_b: "pivotar o bloco-ancora para 'o que VAI mudar quando voce usar'"
+      - risco: "overlay (QR Code) pode nao existir na pos"
+        plano_b: "trocar 'escaneia o QR' por 'clica no link da descricao'"
+    referencias_modeladas:
+      - "Diary of a CEO (Steven Bartlett, UK): consentimento previo em temas sensiveis"
+
+  checklist_pre_gravacao:
+    o_que_e: "O que confirmar com o convidado e com a producao antes de gravar."
+    antes_do_convidado_entrar:
+      - "mostrar o sumario (sem as perguntas literais)"
+      - "avisar da pergunta-assinatura"
+      - "combinar 1 frase de 10s para a abertura"
+      - "levantar o Kit IA do convidado (quais IAs usa, por frente)"
+      - "confirmar consentimento para temas sensiveis (testemunhos, intimidade)"
+    confirmar_dados:
+      - "numeros publicos (ex.: quantidade de obras, nacoes, edicoes)"
+      - "escolaridade / cronologia se relevante ao arco"
+      - "nomenclatura propria do convidado (como ele chama seus ativos)"
+    producao:
+      - "QR Code do patrocinador existe como overlay? senao, ajustar o script"
+      - "audio limpo para gravar a vinheta-marca isolada (abertura de ~15s)"
+    depois_da_gravacao:
+      - "pedir 1 indicacao de proximo convidado"
+      - "coletar 3 handles oficiais para a descricao"
+      - "agendar B-roll dos ativos do convidado se ele topar"
+
+# ------------------------------------------------------------
+# FORMATOS VALIDADOS POR NICHO
+# ------------------------------------------------------------
+# Cada formato traz nome, descricao, e a evidencia (casos). Status:
+#   validado          -> 5+ casos comprovados, libera planejamento
+#   parcialmente_validado -> 2 a 4 casos, precisa completar antes de virar plano
+#   hipotese_de_teste -> inedito para o nicho, rodar como teste rotulado
+formatos_validados_nicho:
+
+  - id: "2_rostos_fundo_escuro"
+    nome: "Dois rostos sobre fundo escuro (thumbnail de podcast)"
+    descricao: >
+      Thumbnail com host + convidado em close, expressao de tensao/curiosidade,
+      sobre fundo escuro, com 2 a 4 palavras de alto contraste. Para o Infinity
+      Cast: laranja sobre preto (identidade sua comunidade). Maximiza CTR em
+      podcast/entrevista no feed.
+    aplica_a: ["podcast", "entrevista", "Infinity Cast"]
+    status: validado
+    evidencia:
+      - canal: "Diary of a CEO (Steven Bartlett)"
+        regiao: "USA/UK"
+        observacao: "dois rostos, fundo escuro, frase curta de alto contraste, CTR consistente no nicho de business"
+      - canal: "PodPah"
+        regiao: "BR"
+        observacao: "close de convidado + host, expressao forte, fundo escuro"
+      - canal: "Flow Podcast"
+        regiao: "BR"
+        observacao: "rosto do convidado em destaque com palavra-gancho"
+      - canal: "Joe Rogan Experience"
+        regiao: "USA"
+        observacao: "host + convidado, alto contraste, fundo neutro escuro"
+      - canal: "Inteligencia Ltda"
+        regiao: "BR"
+        observacao: "convidado em close com frase curta sobreposta"
+    diretriz_de_modelagem: >
+      Modelar o enquadramento e o contraste, nunca copiar a paleta. Aplicar a
+      identidade sua comunidade (laranja sobre preto). Frase de thumbnail vem de
+      tasks/gerar-frases-thumbnail.md.
+
+  - id: "podcast_longo_mais_cortes_verticais"
+    nome: "Podcast longo + cortes verticais (formato ecossistema)"
+    descricao: >
+      Episodio horizontal longo (40 a 70 min) que alimenta de 8 a 20 cortes
+      verticais (Shorts/Reels/TikTok). O longo constroi autoridade e watch time;
+      os cortes captam descoberta e puxam de volta para o longo.
+    aplica_a: ["podcast", "Infinity Cast"]
+    status: validado
+    evidencia:
+      - canal: "Diary of a CEO"
+        regiao: "USA/UK"
+        observacao: "episodio longo + dezenas de cortes verticais por episodio"
+      - canal: "PodPah"
+        regiao: "BR"
+        observacao: "longo no YouTube + cortes no Reels/TikTok diariamente"
+      - canal: "Flow Podcast"
+        regiao: "BR"
+        observacao: "ecossistema de cortes que sustenta o canal entre episodios"
+      - canal: "Como Voce Fez Isso (Caio Carneiro)"
+        regiao: "BR"
+        observacao: "cortes de cobranca de dado (numeros, decisoes) viralizam"
+      - canal: "Inteligencia Ltda"
+        regiao: "BR"
+        observacao: "alto volume de cortes por episodio, descoberta via Shorts"
+    diretriz_de_modelagem: >
+      Marcar no roteiro os 'clip viral provavel' (ja anotados no EP001: a vinheta
+      de abertura, o momento de silencio do abismo, a listicle dos inimigos, a
+      aposta concreta de IA). Esses sao os cortes prioritarios.
+
+  - id: "listicle_falada_pelo_convidado"
+    nome: "Listicle falada pelo convidado (cite N, cobre o nome)"
+    descricao: >
+      Pedir ao convidado uma lista nominal e curta (ex.: 'cita 3 dos 40 inimigos
+      da prosperidade'). Se ele responder com conceito, cobrar o nome especifico.
+      Gera o corte mais compartilhavel e organiza a descricao.
+    aplica_a: ["podcast", "entrevista", "Infinity Cast"]
+    status: validado
+    evidencia:
+      - canal: "Como Voce Fez Isso (Caio Carneiro)"
+        regiao: "BR"
+        observacao: "pergunta-mae + cobranca de dado especifico, padrao da casa"
+      - canal: "Diary of a CEO"
+        regiao: "USA/UK"
+        observacao: "listas nominais do convidado viram cortes de maior alcance"
+      - canal: "Flow Podcast"
+        regiao: "BR"
+        observacao: "listas e rankings ditos pelo convidado performam em cortes"
+      - canal: "Inteligencia Ltda"
+        regiao: "BR"
+        observacao: "enumeracoes objetivas geram Shorts de alta retencao"
+      - canal: "The Tim Ferriss Show"
+        regiao: "USA"
+        observacao: "perguntas que forcam listas concretas (livros, habitos, ferramentas)"
+    diretriz_de_modelagem: >
+      Forcar a precisao no ato da gravacao. Se o convidado generalizar, repetir
+      'mas qual e o NOME?'. Anotar os itens para descricao e thumbnail.
+
+  - id: "bloco_ancora_de_nicho"
+    nome: "Bloco-ancora de nicho (50 a 70% do tempo no tema da casa)"
+    descricao: >
+      Reservar o bloco mais denso e longo para o tema que define o canal (no
+      Infinity Cast: business + IA). O host conduz com mais propriedade nesse
+      bloco. Mantem a promessa do canal e evita o 'podcast generico de historia
+      de vida'.
+    aplica_a: ["podcast", "Infinity Cast", "canais de nicho"]
+    status: validado
+    evidencia:
+      - canal: "My First Million"
+        regiao: "USA"
+        observacao: "sempre volta para o nucleo business/ideias, mesmo com convidado pessoal"
+      - canal: "Como Voce Fez Isso (Caio Carneiro)"
+        regiao: "BR"
+        observacao: "encerramento sempre volta para a audiencia e o metodo"
+      - canal: "Diary of a CEO"
+        regiao: "USA/UK"
+        observacao: "ancora em negocios/decisoes mesmo nos episodios mais intimos"
+      - canal: "The Tim Ferriss Show"
+        regiao: "USA"
+        observacao: "bloco fixo de ferramentas/processos acionaveis"
+      - canal: "Lex Fridman Podcast"
+        regiao: "USA"
+        observacao: "ancora tematica forte (IA/ciencia) que define o canal"
+    diretriz_de_modelagem: >
+      Validado no EP001: o Bloco V (business + IA) e o bloco-ancora. Nunca cortar
+      a pergunta-ancora de IA, mesmo sob estouro de tempo.
+
+  - id: "pergunta_assinatura_ritual"
+    nome: "Pergunta-assinatura como ritual de encerramento"
+    descricao: >
+      A mesma pergunta final em todo episodio, criando ritual reconhecivel,
+      material editavel padronizado e benchmark de respostas entre convidados.
+    aplica_a: ["podcast", "Infinity Cast"]
+    status: validado
+    evidencia:
+      - canal: "Diary of a CEO"
+        regiao: "USA/UK"
+        observacao: "pergunta final fixa (a mensagem deixada no diario) como ritual"
+      - canal: "The Tim Ferriss Show"
+        regiao: "USA"
+        observacao: "perguntas-padrao recorrentes que viram marca do programa"
+      - canal: "Como Voce Fez Isso (Caio Carneiro)"
+        regiao: "BR"
+        observacao: "encerramento ritualizado voltando para a audiencia"
+      - canal: "On Purpose (Jay Shetty)"
+        regiao: "USA"
+        observacao: "rodada final de perguntas-assinatura recorrente"
+      - canal: "Inside the Mind (varios)"
+        regiao: "USA"
+        observacao: "pergunta de fechamento padronizada entre episodios"
+    diretriz_de_modelagem: >
+      Validado no EP001: 'qual seria a sua aposta infinita?'. Anotar a resposta
+      de cada convidado para benchmark.
+
+  - id: "cold_open_gancho_antes_da_vinheta"
+    nome: "Cold open: gancho de ~30s antes da vinheta"
+    descricao: >
+      Abrir com a frase mais forte (a tagline da casa ou uma fala do convidado)
+      ANTES da vinheta, para reter o ouvinte nos primeiros segundos. A vinheta
+      entra cortando.
+    aplica_a: ["podcast", "Infinity Cast", "video longo"]
+    status: validado
+    evidencia:
+      - canal: "Diary of a CEO"
+        regiao: "USA/UK"
+        observacao: "cold open com fala mais impactante do convidado antes da intro"
+      - canal: "Flow Podcast"
+        regiao: "BR"
+        observacao: "trecho-gancho antes da vinheta de abertura"
+      - canal: "PodPah"
+        regiao: "BR"
+        observacao: "abertura com corte forte antes da identidade visual"
+      - canal: "Joe Rogan Experience"
+        regiao: "USA"
+        observacao: "entrada direta no gancho, sem rodeio"
+      - canal: "Lex Fridman Podcast"
+        regiao: "USA"
+        observacao: "trecho de fala selecionado abrindo o episodio"
+    diretriz_de_modelagem: >
+      Validado no EP001: a abertura 'infinitas possibilidades... ele escolheu o
+      diferente' tende a virar a vinheta-marca. Gravar versao isolada de 15s.
+
+  - id: "thumbnail_face_emocao_x_seo_titulo"
+    nome: "Thumbnail de emocao + titulo de SEO/GEO (separacao de funcao)"
+    descricao: >
+      A thumbnail carrega a emocao/curiosidade (rosto + 2-4 palavras); o titulo
+      carrega a busca (keyword + GEO PT/BR). Funcoes separadas, nao redundantes.
+    aplica_a: ["podcast", "video longo", "Infinity Cast", "{{USER_NAME}}"]
+    status: validado
+    evidencia:
+      - canal: "MrBeast"
+        regiao: "USA"
+        observacao: "thumbnail de emocao + titulo curto de curiosidade, funcoes distintas"
+      - canal: "Backlinko / Brian Dean"
+        regiao: "USA"
+        observacao: "titulo otimizado para busca, thumbnail para clique"
+      - canal: "Ali Abdaal"
+        regiao: "USA/UK"
+        observacao: "thumbnail limpa de emocao + titulo de intencao de busca"
+      - canal: "Manual do Mundo"
+        regiao: "BR"
+        observacao: "titulo descritivo de busca + thumbnail de curiosidade"
+      - canal: "Diary of a CEO"
+        regiao: "USA/UK"
+        observacao: "frase de thumbnail diferente do titulo, cada uma com sua funcao"
+    diretriz_de_modelagem: >
+      Cruzar com tasks/gerar-titulo.md (SEO/GEO) e tasks/gerar-frases-thumbnail.md
+      (CTR). Nunca repetir a mesma frase na thumbnail e no titulo.
+
+  # ----- Exemplo de formato ainda nao liberado (gate em acao) -----
+  - id: "episodio_solo_fred_sobre_ia"
+    nome: "Episodio solo do {{USER_NAME}} sobre IA aplicada (sem convidado)"
+    descricao: >
+      Episodio sem convidado, com o {{USER_NAME}} sozinho ensinando uma aplicacao de IA
+      para empreendedores. Aproveita a autoridade do canal no tema-ancora.
+    aplica_a: ["Infinity Cast", "{{USER_NAME}}"]
+    status: hipotese_de_teste
+    evidencia:
+      - canal: "My First Million"
+        regiao: "USA"
+        observacao: "episodios sem convidado funcionam quando o host tem autoridade no tema"
+      - canal: "Ali Abdaal"
+        regiao: "USA/UK"
+        observacao: "videos solo de produtividade/ferramentas com forte retencao"
+    nota_gate: >
+      Apenas 2 casos diretos para o nicho business+IA em PT/BR. NAO libera plano
+      como formato validado. Rodar como hipotese de teste: 2 a 3 publicacoes,
+      criterio de sucesso = retencao media >= a dos episodios com convidado,
+      janela de avaliacao de 30 dias, plano B = voltar ao formato entrevista.
+
+# ------------------------------------------------------------
+# REFERENCIAS-MESTRE (cross-cultural BR + USA -> PT/EU)
+# ------------------------------------------------------------
+# Quem modela o que. Detalhamento por referencia vive em
+# data/referencias-cross-cultural.yaml; aqui fica o resumo do que cada uma
+# entrega ao Infinity Cast.
+referencias_mestre:
+  lista:
+    - referencia: "Como Voce Fez Isso (Caio Carneiro)"
+      regiao: "BR"
+      absorvido: "pergunta-mae, cobranca de detalhe operacional (numeros, datas, nomes), encerramento voltando a audiencia"
+      papel: "espinha dorsal das perguntas"
+    - referencia: "Diary of a CEO (Steven Bartlett)"
+      regiao: "UK/USA"
+      absorvido: "intimidade, silencios respeitados, pergunta-assinatura como ritual, apresentacao densa do convidado"
+      papel: "tratamento emocional e ritual"
+    - referencia: "Jornada do Heroi (Joseph Campbell, adaptado)"
+      regiao: "atemporal"
+      absorvido: "arquitetura dos 6 blocos (mundo ordinario -> abismo -> ruptura -> metodo -> nova ferramenta/IA -> retorno com elixir)"
+      papel: "estrutura narrativa"
+    - referencia: "Posicionamento Infinity Cast ({{USER_NAME}})"
+      regiao: "PT/BR"
+      absorvido: "business + prosperidade + IA em 50 a 70% do tempo, CTAs nas pontes, tagline atravessando o episodio"
+      papel: "identidade da casa"
+  nota_cross_cultural: >
+    A modelagem cross-cultural importa o principio de mercados mais maduros
+    (BR/UK/USA) para acelerar Portugal. Nao copia formato: destila o que serve a
+    tese do canal e o aplica com a identidade sua comunidade (laranja sobre preto).
+
+# ------------------------------------------------------------
+# COMO AS TASKS USAM ESTE ARQUIVO
+# ------------------------------------------------------------
+uso_por_comando:
+  "*analise-formato":
+    task: tasks/analise-formato.md
+    le: ["regra", "formatos_validados_nicho"]
+    veto: "bloqueia se o formato proposto tem < 5 casos e nao esta rotulado como hipotese"
+  "*planejamento-mensal":
+    task: tasks/planejamento-mensal.md
+    le: ["formatos_validados_nicho", "infinity_cast_estrutura"]
+  "*modelar-thumbnail":
+    task: tasks/modelar-thumbnail.md
+    le: ["formatos_validados_nicho (2_rostos_fundo_escuro, thumbnail_face_emocao_x_seo_titulo)"]
+  "*planejar-video":
+    workflow: workflows/wf-planejamento-video.yaml
+    le: ["formatos_validados_nicho", "referencias_mestre"]
+  "*publicar-episodio":
+    workflow: workflows/wf-publicacao-podcast.yaml
+    le: ["infinity_cast_estrutura (vitrine_do_convidado, mapa_de_ctas)"]

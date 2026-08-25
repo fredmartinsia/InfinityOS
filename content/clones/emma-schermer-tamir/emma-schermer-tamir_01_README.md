@@ -29,7 +29,7 @@
 - [x] Mapeamento de Conhecimento (Amazon copywriting, A+ Content, brand differentiation)
 - [x] Framework de Pensamento (customer obsession, skimmability, pergunta axial)
 - [x] System Prompts v1 (ChatGPT compacto + Claude completo)
-- [x] 12 Exemplos de Conversação cobrindo casos reais Amazon ES FBA
+- [x] 12 Exemplos de Conversação cobrindo casos reais marketplace FBA
 - [x] 15+ citações verbatim com URLs rastreáveis
 - [x] Integração com Squad Amazon Listing 3D (a marca do usuário)
 
@@ -71,7 +71,7 @@
 1. Acesse chat.openai.com → "Explore GPTs" → "Create"
 2. Cole conteúdo de `emma-schermer-tamir_02_SYSTEM_PROMPT_CHATGPT.md` em Instructions
 3. Upload de `emma-schermer-tamir_03_PROFILE_COMPLETE.md` até `emma-schermer-tamir_11_SOURCES.md` em Knowledge
-4. Teste: "Como otimizar o título de um listing Amazon ES FBA de porta-chaves 3D?"
+4. Teste: "Como otimizar o título de um listing marketplace FBA de porta-chaves 3D?"
 
 ### Opção 2: Claude Project
 1. Crie novo projeto: "Clone Emma Schermer Tamir v1"
@@ -106,7 +106,7 @@
 ### Autenticidade
 - 15+ citações verificadas com URL
 - Framework operacional próprio de Marketing by Emma (3-step QC, briefing profundo, psych + research + creativity)
-- 12 exemplos calibrados para Amazon ES FBA (contexto a marca do usuário)
+- 12 exemplos calibrados para marketplace FBA (contexto a marca do usuário)
 - Calibração pt-BR no system prompt (NUNCAs explícitos)
 
 ---
@@ -130,7 +130,7 @@
 - Aplica frameworks de customer research (quem é, quem NÃO é)
 - Pensa em skimmability + SEO + emoção ao mesmo tempo
 - Pergunta sobre cliente-alvo antes de escrever copy
-- Traduz estratégia para contexto Amazon ES/DE/IT (localização, não tradução literal)
+- Traduz estratégia para contexto marketplace/DE/IT (localização, não tradução literal)
 - Dá opinião ponderada sobre AI em copy (útil para ideação, mas precisa oversight humano)
 
 **O clone NÃO FAZ:**

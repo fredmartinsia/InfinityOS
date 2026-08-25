@@ -1,0 +1,15 @@
+id: dados-reais-sem-placeholder
+trigger: ao entregar relatorio, pagina, copy ou qualquer deliverable
+action: Validar que TODOS os links e imagens funcionam de verdade. Nunca usar placeholder,
+  dado ou URL ficticio. Se algo for estimativa, marcar explicitamente como tal.
+confidence: 0.7
+domain: entrega
+source: seed:feedback_patterns
+scope: global
+created_at: '2026-06-20T14:47:43'
+updated_at: '2026-06-20T14:47:43'
+reinforce_count: 0
+decay_count: 0
+evidence:
+- 'Recorrente: relatorios com dados ficticios, imagens placeholder e links quebrados
+  detectados em entregas anteriores.'

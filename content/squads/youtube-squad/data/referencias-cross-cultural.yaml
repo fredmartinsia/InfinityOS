@@ -1,0 +1,299 @@
+# ============================================================
+# referencias-cross-cultural.yaml
+# Base de referencias de thumbnail/copy/layout por mercado
+# Extraida do dossie EP001 (infinity-cast-ep001-thumbnail-modelagem.md)
+# ============================================================
+#
+# Para que serve:
+#   Banco de canais-modelo, separado por mercado (BR, USA_UK, PT_EU),
+#   com "o que modelar" de cada um (cores, layout, copy). Alimenta as tasks
+#   *modelar-thumbnail (tasks/modelar-thumbnail.md), *prompt-thumbnail
+#   (tasks/gerar-prompt-thumbnail.md) e *frases-thumbnail
+#   (tasks/gerar-frases-thumbnail.md), e a regra de routing do squad
+#   "modelagem cross-cultural BR + USA aplicada em PT/EU".
+#
+# Como ler "o_que_modelar":
+#   cores  -> paleta e cor de marca a observar/evitar
+#   layout -> arranjo de rostos, fundo, hierarquia visual
+#   copy   -> padrao de texto na thumbnail (pergunta, numero, palavra-gatilho)
+#
+# Regra de uso (codificada no chief):
+#   1) BR e USA_UK = fontes de PADRAO (o que funciona / alto CTR).
+#   2) PT_EU = mercado-ALVO; toda modelagem passa pela calibracao_PT antes de virar conceito.
+#   3) Numeros de views nem sempre confirmaveis ao vivo: tratar como direcional.
+#
+# Identidade sua comunidade: laranja sobre preto (ver bloco "diferenciacao").
+# Regra de escrita: pt-BR, sem travessao longo, nada de achismo sem dado.
+
+meta:
+  versao: "1.0"
+  fonte_primaria: "squads/youtube-squad/output/infinity-cast-ep001-thumbnail-modelagem.md"
+  nicho_referencia: "entrevista / podcast no cruzamento fe + negocios + propósito"
+  canais_alvo:
+    - "{{USER_NAME}} (canal individual, PT/BR)"
+    - "Infinity Cast (podcast, PT/BR)"
+  consumido_por:
+    tasks:
+      - tasks/modelar-thumbnail.md        # *modelar-thumbnail
+      - tasks/gerar-prompt-thumbnail.md   # *prompt-thumbnail
+      - tasks/gerar-frases-thumbnail.md   # *frases-thumbnail
+      - tasks/gerar-titulo.md             # *gerar-titulo
+    workflows:
+      - workflows/wf-publicacao-podcast.yaml   # *publicar-episodio
+      - workflows/wf-planejamento-video.yaml   # *planejar-video
+  agentes_responsaveis:
+    pesquisa: youtube-researcher   # levanta canais e links ao vivo
+    modelagem: matt-gielen         # extrai o padrao recorrente
+    conceito: paddy-galloway       # converte padrao em thumbnail/copy
+  limitacao_honesta: >
+    Views por video nem sempre confirmaveis ao vivo (YouTube carrega via JS,
+    consent wall, WebSearch US-only). Numeros citados vem de fontes externas
+    (Aos Fatos, us.youtubers.me, agregadores). Layouts refletem o template
+    recorrente e o publico de cada canal, nao uma garantia por video.
+
+# ============================================================
+# MERCADO 1, BRASIL (BR)
+# Papel: fonte de PADRAO de alto CTR no nicho fe + negocios (mercado quente, saturado).
+# ============================================================
+mercados:
+  BR:
+    nome: "Brasil"
+    papel: "fonte de padrao (alto CTR, mercado quente e saturado)"
+    leitura_de_mercado: >
+      Feed agressivo e competitivo. Pergunta-tabu, palavra-gatilho em cor quente
+      e numero redondo sao norma. O estilo BR e o que mais ensina sobre CTR, mas
+      precisa ser dosado antes de ir para PT (ver calibracao_PT).
+    canais:
+      - canal: "Jota Jota (Tiago Brunet)"
+        videos_ref:
+          - titulo: 'Jota Jota #024, POR QUE TER FE?'
+            link: "https://www.youtube.com/watch?v=WdHJgvHItMA"
+          - titulo: 'Jota Jota #275, Como MUDAR sua MENTALIDADE'
+            link: "https://www.youtube.com/watch?v=KEFT4PUViWk"
+          - titulo: 'Jota Jota #100, VOCE TEM FE NA VIDA?'
+            link: "https://www.youtube.com/watch?v=Be1xxj1UJUA"
+        o_que_modelar:
+          cores: "fundo escuro dominante, texto branco com verbo destacado"
+          layout: "2 rostos (host + convidado), busto recortado, fundo escuro"
+          copy: "pergunta-tabu curta como headline; verbo ou substantivo destacado; numero redondo do episodio (024, 100, 275)"
+        por_que_importa: "referencia mais direta de fe + negocios no BR; valida 2 rostos e pergunta-tabu"
+
+      - canal: "PrimoCast (Thiago Nigro / Primo Rico)"
+        videos_ref:
+          - titulo: 'PrimoCast 172, conversao do Thiago Nigro'
+            link: "https://www.youtube.com/watch?v=g2cXW_0CGQo"
+          - titulo: 'PrimoCast 251, FICOU MILIONARIO ANTES DO PRIMO RICO'
+            link: "https://www.youtube.com/watch?v=YI8IeDXKc0g"
+        o_que_modelar:
+          cores: "fundo escuro + VERDE de marca; palavra-gatilho em cor quente (MILIONARIO)"
+          layout: "rosto grande / 1-2 rostos, numero do episodio visivel"
+          copy: "1 palavra destacada (CONVERSAO, MILIONARIO); aspiracional financeiro"
+        por_que_importa: "prova o uso de cor de marca como assinatura (verde) e palavra unica de alto impacto"
+
+      - canal: "Deive Leonardo"
+        videos_ref:
+          - titulo: "Ter Dinheiro e Pecado ou Nao?"
+            link: "https://www.youtube.com/watch?v=nkf7OiTrH7k"
+        metricas_externas: "canal 10,3 mi subs / 734 mi views (fonte externa, direcional)"
+        o_que_modelar:
+          cores: "luz dramatica sobre fundo escuro; tom premium pregacao"
+          layout: "1 rosto, close emotivo, pregacao"
+          copy: "pergunta-tabu pura sobre fe x dinheiro (Ter Dinheiro e Pecado?)"
+        por_que_importa: "modelo do padrao 1 rosto + pergunta-tabu que bate na dor #1 (e pecado prosperar?)"
+
+      - canal: "Flow Podcast"
+        videos_ref:
+          - titulo: "Flow Podcast (canal)"
+            link: "https://www.youtube.com/@FlowPodcast"
+        metricas_externas: "ep. Marcal +2,3 mi; ep. Lula +8 mi (fonte Aos Fatos, direcional)"
+        o_que_modelar:
+          cores: "alto contraste, VERDE-LIMAO de marca"
+          layout: "2+ rostos, alto contraste, branding consistente"
+          copy: "minima na thumbnail; forca no convidado e na cor de marca"
+        por_que_importa: "prova de cor de marca como assinatura forte (verde-limao ocupado no BR)"
+
+  # ============================================================
+  # MERCADO 2, USA / UK (USA_UK)
+  # Papel: fonte de PADRAO global de alto CTR; valida formato entrevista premium.
+  # ============================================================
+  USA_UK:
+    nome: "Estados Unidos / Reino Unido"
+    papel: "fonte de padrao global (alto CTR, formato entrevista premium)"
+    leitura_de_mercado: >
+      Define o teto de qualidade visual do nicho business/mindset. Fundo escuro,
+      glow quente atras do convidado, numero de choque e 1 palavra destacada.
+      Prova que IA + futuro tem CTR alto e ainda esta pouco cruzado com fe.
+    canais:
+      - canal: "Ed Mylett"
+        videos_ref:
+          - titulo: "Ed Mylett & Joe Dispenza, Unlock the Power of Your Mind"
+            link: "https://www.youtube.com/@EdMylett"
+        metricas_externas: "~2,4 mi views (top do canal, direcional)"
+        o_que_modelar:
+          cores: "fundo escuro com GLOW quente; 1 palavra destacada"
+          layout: "2 rostos, busto recortado, glow atras do convidado"
+          copy: "1 palavra-gatilho (UNLOCK, POWER); promessa de transformacao"
+        por_que_importa: "modelo direto do glow quente atras do convidado = autoridade + calor (base do conceito EP001)"
+
+      - canal: "Diary of a CEO (Steven Bartlett)"
+        videos_ref:
+          - titulo: 'Diary of a CEO, Mo Gawdat (IA, "3 anos")'
+            link: "https://www.youtube.com/watch?v=RwlgFC6S-OE"
+        o_que_modelar:
+          cores: "fundo escuro sobrio, texto branco, numero em destaque"
+          layout: "1 rosto, fundo escuro, numero de choque (3 YEARS)"
+          copy: "numero de choque + curiosity gap; tema IA/futuro"
+        por_que_importa: "prova que IA + futuro gera CTR alto; sustenta o micro-badge +IA como trunfo inedito"
+
+      - canal: "Impact Theory (Tom Bilyeu)"
+        videos_ref:
+          - titulo: "Impact Theory, Joe Dispenza"
+            link: "https://www.youtube.com/c/TomBilyeu"
+        metricas_externas: "~1,99 mi views (direcional)"
+        o_que_modelar:
+          cores: "cor de marca LARANJA (no contexto mindset)"
+          layout: "2 rostos / close dramatico"
+          copy: "1 palavra-tema; tom de mentalidade/superacao"
+        por_que_importa: "unico grande que usa laranja, mas no nicho mindset (nao fe+negocios); sustenta o achado de que laranja esta livre no nosso cruzamento"
+
+      - canal: "Valuetainment (Patrick Bet-David)"
+        videos_ref:
+          - titulo: "Valuetainment (canal)"
+            link: "https://www.youtube.com/user/patrickbetdavid"
+        o_que_modelar:
+          cores: "vermelho de drama/news (caixa e seta)"
+          layout: "2 rostos nas pontas, caixa/seta vermelha"
+          copy: "tom news/drama, confronto"
+        por_que_importa: "ANTI-PADRAO para o nosso caso: caixa/seta vermelha sinaliza news/drama, nao prosperidade premium. Modelar para EVITAR (ver diferenciacao.anti_padroes)"
+
+  # ============================================================
+  # MERCADO 3, PORTUGAL / EU (PT_EU)
+  # Papel: mercado-ALVO. Feed sobrio/editorial. Nicho fe+negocios incipiente.
+  # ============================================================
+  PT_EU:
+    nome: "Portugal / Europa"
+    papel: "mercado-alvo (feed sobrio/editorial; nicho fe+negocios incipiente)"
+    leitura_de_mercado: >
+      Feed PT e mais sobrio e televisivo que o BR. O estilo BR vira diferenciador
+      (nao saturado), MAS o excesso de clickbait soa exploratorio e ha rejeicao a
+      "teologia da prosperidade". O alvo e premium: laranja sobre preto, autoridade
+      serena, pergunta em vez de promessa. Toda modelagem PT passa por calibracao_PT.
+    canais:
+      - canal: "45 Graus (Jose Maria Pimentel)"
+        videos_ref:
+          - titulo: "45 Graus (canal)"
+            link: "https://www.youtube.com/@45_graus"
+        metricas_externas: "Premio Podes 2022 (direcional)"
+        o_que_modelar:
+          cores: "fundo neutro, paleta sobria/editorial"
+          layout: "1 rosto, fundo neutro, numero do episodio"
+          copy: "titulo editorial, sem grito; numero do episodio"
+        por_que_importa: "define o piso de sobriedade do feed PT; nosso premium deve dialogar com esse tom"
+
+      - canal: "Maps Podcast (Vasco Palmeirim)"
+        videos_ref:
+          - titulo: "Maps Podcast (canal)"
+            link: "https://www.youtube.com/@MapsPodcast"
+        o_que_modelar:
+          cores: "branding consistente, paleta de estudio"
+          layout: "host + convidado em estudio"
+          copy: "branding antes de copy agressiva"
+        por_que_importa: "modelo de consistencia de marca em estudio para o publico PT"
+
+      - canal: "Firmados Podcast"
+        videos_ref:
+          - titulo: "Firmados Podcast (canal)"
+            link: "https://www.youtube.com/@FirmadosPodCast"
+        o_que_modelar:
+          cores: "paleta sobria/generica"
+          layout: "sobrio, sem grande diferenciacao visual"
+          copy: "tema fe + empreendedorismo + proposito, sem agressividade"
+        por_que_importa: "a referencia PT mais proxima do nicho (fe+negocios+proposito); mostra a LACUNA visual que o Infinity Cast pode ocupar com laranja+preto"
+
+      - canal: "Goucha, Grandes Entrevistas (TVI)"
+        videos_ref:
+          - titulo: "Goucha, Grandes Entrevistas (playlist)"
+            link: "https://www.youtube.com/playlist?list=PLj_xQVY_zNhODpIEMGlovuPXnzaIbPur6"
+        o_que_modelar:
+          cores: "estudio escuro elegante, paleta sobria-televisiva"
+          layout: "2 rostos, estudio escuro, enquadramento de entrevista"
+          copy: "sobrio-televisivo, autoridade, sem clickbait"
+        por_que_importa: "prova que fundo escuro elegante + 2 rostos funciona e e aceito em PT; aproxima o premium BR do gosto televisivo PT"
+
+# ============================================================
+# DIFERENCIACAO, assinatura visual do sua comunidade
+# Achado-chave da modelagem EP001: laranja sobre preto esta LIVRE no cruzamento fe+negocios.
+# ============================================================
+diferenciacao:
+  assinatura: "laranja sobre preto (identidade sua comunidade)"
+  fundamento: >
+    Mapeamento de cores de marca por canal mostra o laranja desocupado no nicho
+    fe + negocios. Flow usa verde-limao; Primo usa verde; canais cristaos tendem
+    ao dourado; Impact Theory usa laranja MAS no nicho mindset (nao fe+negocios).
+    Logo, laranja sobre preto e diferenciacao defensavel e ja e a identidade da marca.
+  cores_ocupadas_no_nicho:
+    verde_limao: "Flow Podcast (BR)"
+    verde: "PrimoCast / Primo Rico (BR)"
+    dourado: "tendencia geral de canais cristaos"
+    laranja_mindset: "Impact Theory (USA, nicho mindset, nao fe+negocios)"
+    vermelho_drama: "Valuetainment (USA, news/drama, anti-padrao)"
+  espaco_livre: "laranja sobre preto no cruzamento fe + negocios + proposito"
+  paleta_padrao:
+    fundo: "preto / charcoal #0D0D0D -> #1A1A1A"
+    palavra_gatilho: "laranja (1 palavra destacada por thumbnail)"
+    texto_base: "branco bold caixa-alta"
+    glow: "laranja quente atras do convidado (autoridade + calor)"
+  regras_de_assinatura:
+    - "Fundo escuro domina (R1): preto/charcoal sempre."
+    - "2 rostos = formato entrevista de alto CTR (R2): {{USER_NAME}} a esquerda, convidado a direita."
+    - "1 palavra destacada em laranja (R4): substantivo-gatilho (PROSPERIDADE, DINHEIRO, RICO)."
+    - "Cor de marca como assinatura (R5): laranja sobre preto, sempre."
+    - "Numero/quantificacao quando a frase permitir (R6): 40 inimigos, 147 leis, 6 paises."
+    - "Micro-badge +IA opcional no canto (R10): angulo inedito no nicho fe+negocios."
+  anti_padroes:
+    - regra: "Sem caixa/seta vermelha de drama (R9)"
+      motivo: "sinaliza news/drama (estilo Valuetainment), nao prosperidade premium"
+    - regra: "Sem expressao neutra ou apatica (R3)"
+      motivo: "olhos dirigidos e expressao intensa; convidado em autoridade serena, host em sorriso confiante"
+    - regra: "Sem mais de 1 palavra destacada por thumbnail"
+      motivo: "competir por atencao com varias palavras quebra a hierarquia visual"
+
+# ============================================================
+# CALIBRACAO PT, filtro obrigatorio antes de aplicar padrao BR/USA em PT/EU
+# Toda saida das tasks de thumbnail/copy para os canais PT passa por aqui.
+# ============================================================
+calibracao_PT:
+  principio: >
+    O estilo BR/USA e a fonte do padrao, mas o publico PT nativo e mais sobrio e
+    desconfia de clickbait e de teologia da prosperidade. Calibrar: manter o CTR,
+    remover a agressividade. Premium, nao gritante.
+  evitar:
+    - tema: "clickbait gritante"
+      regra: "nada de vermelho de drama, caixa/seta news, multiplas palavras em maiuscula colorida"
+      em_vez_disso: "laranja discreto sobre preto, 1 palavra destacada, hierarquia limpa"
+    - tema: "teologia da prosperidade exploratoria (dor #4, mais forte em PT)"
+      regra: "NUNCA afirmar que fe garante riqueza; nada de 'ESSE PASTOR VAI TE FAZER RICO'"
+      em_vez_disso: "usar PERGUNTA (E PECADO PROSPERAR? / DEUS QUER VOCE RICO?) que gera debate, nao venda"
+    - tema: "isca sensivel"
+      regra: "nao usar testemunho intimo (violencia, doenca, perdao) como isca de clique"
+      em_vez_disso: "ancorar a copy no tema (fe x dinheiro x proposito), nao na dor pessoal do convidado"
+    - tema: "expressao agressiva"
+      regra: "evitar raiva/confronto facial; risco de soar exploratorio em PT"
+      em_vez_disso: "convidado em autoridade serena; host em sorriso confiante"
+  preferir:
+    - "copy interrogativa (pergunta-tabu) em vez de afirmacao de promessa"
+    - "paleta premium: laranja + preto, nunca vermelho gritante"
+    - "expressao de autoridade serena (mitiga o risco de teologia da prosperidade)"
+    - "numero/metodo como fallback seguro quando a pergunta soar agressiva demais"
+  fallback_seguro: >
+    Se a versao curiosidade-tabu soar agressiva para o publico PT nativo, usar a
+    versao autoridade/metodo (ex.: OS 40 INIMIGOS DA PROSPERIDADE, com numero em
+    destaque) como variacao segura. Validar A/B antes de fixar.
+  gatilho_de_veto:
+    descricao: "Conceito que viole calibracao_PT NAO pode ser empacotado."
+    referencia: "checklists/publicacao-podcast.md e checklists/output-quality.md"
+    condicoes:
+      - "afirma que fe garante riqueza"
+      - "usa vermelho de drama / caixa / seta news"
+      - "usa testemunho intimo do convidado como isca"
+      - "expressao agressiva de confronto"

@@ -1,0 +1,128 @@
+{
+  "slug": "jim-manico",
+  "name": "Jim Manico",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-20",
+  "source_files": {
+    "knowledge": "jim-manico_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "jim-manico_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "seguranca-de-aplicacao",
+    "secure-coding",
+    "engenharia"
+  ],
+  "thinking_models": [
+    {
+      "name": "dado-vira-codigo",
+      "one_liner": "vulnerabilidade nasce quando input nao confiavel cruza uma fronteira e e interpretado como instrucao",
+      "evidence": "'Onde o input não confiável encontra um interpretador, e como eu impeço que ele vire código?'"
+    },
+    {
+      "name": "seguranca-como-propriedade",
+      "one_liner": "seguranca emerge de como o codigo e construido desde o comeco, nao e recurso adicionado no fim",
+      "evidence": "'Secure applications begin with secure code'"
+    },
+    {
+      "name": "esporte-de-time",
+      "one_liner": "appsec e responsabilidade compartilhada entre dev, seguranca e negocio",
+      "evidence": "'Why Application Security is a Team Sport.'"
+    },
+    {
+      "name": "proativo-sobre-reativo",
+      "one_liner": "construir certo via Proactive Controls e mais barato que corrigir depois",
+      "evidence": "'Construir certo (Proactive Controls) é mais barato que corrigir depois'"
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "encode-na-saida-nao-filtre-na-entrada",
+      "one_liner": "defesa primaria contra XSS e output encoding contextual, nao filtrar input",
+      "evidence": "'The Past, Present and Future of XSS Defense'"
+    },
+    {
+      "name": "parametrize-nunca-concatene",
+      "one_liner": "input do usuario entra na query como parametro vinculado, nunca concatenado",
+      "evidence": "'Input do usuário nunca entra na query como string concatenada; entra como parâmetro vinculado'"
+    },
+    {
+      "name": "allowlist-sobre-denylist",
+      "one_liner": "defina o permitido e rejeite o resto; denylist e corrida que se perde",
+      "evidence": "Defina o permitido e rejeite o resto"
+    },
+    {
+      "name": "terceiros-primeiro",
+      "one_liner": "risco de dependencia e hoje o problema numero um, mais que SQLi",
+      "evidence": "'Third-party security analysis... is the number one issue more important than SQL injection now.'"
+    },
+    {
+      "name": "automatize-todo-dia",
+      "one_liner": "SAST/DAST/SCA no pipeline e ganho facil",
+      "evidence": "'It's foolish not to do automated security testing every day.'"
+    },
+    {
+      "name": "eleve-a-pessoa-ataque-a-pratica",
+      "one_liner": "codigo inseguro e problema de negocio, nao culpa do dev",
+      "evidence": "'that's not the coders problem, that's your business problem.'"
+    }
+  ],
+  "decision_style": "Identifica a fronteira de confianca, classifica o vetor, prefere a defesa estrutural que mata a classe inteira (parametrizar, encoding contextual, allowlist) ao remendo pontual, adiciona defesa em profundidade e mapeia contra OWASP. Tolerancia baixa para risco estrutural evitavel (injection, segredo no codigo, hash fraco de senha) e pragmatica para o resto.",
+  "primary_roles": [
+    "auditor-de-seguranca-appsec"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "revisor-de-codigo",
+      "why": "le PR com olhar de risco, cacando o que pode dar errado, util alem de seguranca pura",
+      "evidence": "'I'd rather have two very senior developers than 20 novices' (The Secure Developer Ep.26)",
+      "confidence": "high"
+    },
+    {
+      "role": "instrutor",
+      "why": "explica o porque pro dev nao repetir o erro; missao declarada de educar e elevar",
+      "evidence": "'I want to raise people up and inspire them to care about security and feel good about their jobs' (Virtual CISO Ep.19)",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "OWASP Top 10 / ASVS / Proactive Controls / Cheat Sheets",
+    "defesa contra XSS via output encoding contextual",
+    "defesa contra SQL injection via query parametrizada",
+    "input validation por allowlist",
+    "password storage moderno (Argon2id/bcrypt/scrypt)",
+    "defense in depth",
+    "secure coding Java",
+    "educacao de desenvolvedor em appsec"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies de educador: pode superestimar treinamento e cultura como solucao para problemas que sao arquiteturais ou organizacionais",
+      "evidence": "'I want to raise people up and inspire them to care about security and feel good about their jobs.'"
+    },
+    {
+      "blind_spot": "foco appsec web: red team de infraestrutura, exploracao binaria e seguranca de rede profunda nao sao o dominio",
+      "evidence": "Pentest ofensivo de rede / red team | **Fora do escopo** | Foco é o código da aplicação, não infraestrutura"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "sam-selikoff",
+      "why": "Sam constroi a UI premium, Jim audita a superficie de ataque (XSS no render, CSP, validacao de form)",
+      "shared": [
+        "frontend",
+        "engenharia"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "slug": "andrej-karpathy",
+      "why": "onde ha LLM, Jim cobre prompt injection e AISVS",
+      "shared": [
+        "inteligencia-artificial",
+        "seguranca-de-aplicacao"
+      ],
+      "confidence": "low"
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+# ============================================================
+# routing-catalog.yaml
+# Catalogo de roteamento do youtube-squad (sua comunidade)
+# ------------------------------------------------------------
+# Mapa: demanda -> comando -> arquivo (task/workflow) -> sequencia de agentes -> output.
+# Espelha o routing_logic do squad.yaml, mas aponta para os arquivos REAIS criados.
+# O youtube-chief (orquestrador) usa este catalogo para despachar a demanda do {{USER_NAME}}
+# ao comando certo, garantir a sequencia de agentes e validar o output esperado.
+#
+# Regra critica: nada comeca em Tier 2 (execucao) sem passar antes por Tier 1 (pesquisa).
+# Identidade sua comunidade: laranja sobre preto. Mercado: Portugal/Brasil.
+# Canais: {{USER_NAME}} (canal individual) e Infinity Cast (podcast).
+# Escrita: pt-BR, sem travessao longo, nada de achismo sem dados.
+# ============================================================
+
+catalog:
+  name: youtube-squad-routing-catalog
+  version: "1.0"
+  language: pt-BR
+  entry_agent: youtube-chief
+  description: >
+    Tabela de despacho do orquestrador. Cada entrada liga uma demanda do {{USER_NAME}} a um
+    comando exato (*nome), ao arquivo real que o implementa (workflow ou task),
+    a sequencia de agentes que o executam, ao responsavel direto e ao output esperado.
+
+# ------------------------------------------------------------
+# Tiers (de onde cada agente entra na cadeia)
+# ------------------------------------------------------------
+tiers:
+  tier_0_orquestrador:
+    agentes: [youtube-chief]
+  tier_1_pesquisa_estrategia:
+    agentes: [youtube-researcher, derral-eves, matt-gielen]
+  tier_2_execucao:
+    agentes: [paddy-galloway, brian-dean]
+  tier_3_monetizacao:
+    agentes: [roberto-blake, tom-breeze]
+
+# ------------------------------------------------------------
+# WORKFLOWS (multi-fase), orquestrados pelo youtube-chief
+# ------------------------------------------------------------
+workflows:
+
+  - command: "*publicar-episodio"
+    tipo: workflow
+    arquivo: workflows/wf-publicacao-podcast.yaml
+    demanda: >
+      Publicar um episodio do Infinity Cast: do video bruto ate o pacote pronto
+      (transcricao, frames de thumbnail, prompt ChatGPT, frases, titulo, descricao, tags).
+    trigger_examples:
+      - "Publica o episodio EP001 do Infinity Cast"
+      - "Roda o pipeline de publicacao desse episodio"
+      - "Quero o pacote completo de publicacao do podcast"
+    entry_agent: youtube-chief
+    sequencia_agentes:
+      - youtube-researcher   # transcricao, frames, analise de conteudo
+      - paddy-galloway       # prompt e frases de thumbnail
+      - brian-dean           # titulo, descricao (SEO/GEO), tags
+      - youtube-chief        # empacotamento e validacao final
+    tasks_encadeadas:
+      - "*transcrever"
+      - "*extrair-frames"
+      - "*analisar-conteudo"
+      - "*prompt-thumbnail"
+      - "*frases-thumbnail"
+      - "*gerar-titulo"
+      - "*gerar-descricao"
+      - "*gerar-tags"
+      - "*empacotar"
+    pipeline_scripts: _scripts/pipeline/run_pipeline.py
+    checkpoint: aprovacao-pacote-publicacao
+    checklists:
+      - checklists/publicacao-podcast.md
+      - checklists/output-quality.md
+    estimativa: "45-90min (depende da duracao do episodio)"
+    output_dir: "produtos/infinity-cast/episodios/{id}/"
+    output: >
+      Pacote de publicacao completo: transcricao, frames curados para thumbnail,
+      PROMPT-CHATGPT.md, FRASES.md, titulo.md, descricao.md, tags.txt, PUBLICAR.md.
+
+  - command: "*planejar-video"
+    tipo: workflow
+    arquivo: workflows/wf-planejamento-video.yaml
+    demanda: >
+      Planejar um video novo do zero: pergunta tema/ideia, pesquisa, modela formato,
+      desenha thumbnail e entrega os metadados (titulo, descricao, estrutura).
+    trigger_examples:
+      - "Quero planejar um video novo"
+      - "Me ajuda a montar esse video sobre [tema]"
+      - "Planeja um video pro canal {{USER_NAME}}"
+    entry_agent: youtube-chief
+    perguntas_iniciais:
+      - "Voce ja tem tema definido?"
+      - "Voce ja tem ideia/angulo?"
+    sequencia_agentes:
+      - youtube-researcher   # pesquisa, comment mining, referencias
+      - matt-gielen          # modelagem de formato data-driven
+      - paddy-galloway       # thumbnail (modelagem + prompt + frases)
+      - brian-dean           # titulo + descricao (SEO/GEO)
+      - youtube-chief        # sintese do plano do video
+    tasks_relacionadas:
+      - "*analise-formato"
+      - "*modelar-thumbnail"
+      - "*gerar-titulo"
+      - "*gerar-descricao"
+    checkpoint: aprovacao-plano-video
+    checklists:
+      - checklists/output-quality.md
+    estimativa: "30-45min"
+    output: >
+      Plano do video: titulo + descricao (SEO+GEO) + estrutura sugerida +
+      thumbnail conceitual (prompt + frases) + referencias modeladas (BR/USA -> PT/EU).
+
+  - command: "*diagnosticar-canal"
+    tipo: workflow
+    arquivo: workflows/wf-diagnostico-canal.yaml
+    demanda: >
+      Consultoria/diagnostico inicial de um canal: capa, foto, bio, link,
+      formato, frequencia, com recomendacoes acionaveis.
+    trigger_examples:
+      - "Faz um diagnostico do canal {{USER_NAME}}"
+      - "Quero uma consultoria inicial do canal"
+      - "Avalia capa, bio e formato do meu canal"
+    entry_agent: youtube-chief
+    sequencia_agentes:
+      - youtube-researcher   # benchmark de canais semelhantes
+      - derral-eves          # channel audit (capa, foto, bio, link)
+      - matt-gielen          # diagnostico de formato e frequencia
+      - youtube-chief        # sintese do plano de canal
+    tasks_relacionadas:
+      - "*analise-formato"
+      - "*decisao-estrategica"
+    checkpoint: aprovacao-plano-canal
+    checklists:
+      - checklists/output-quality.md
+    estimativa: "60-90min"
+    output: >
+      Plano de canal estruturado com recomendacoes de capa, foto, bio, link,
+      formato e frequencia, fundamentadas em benchmark validado.
+
+# ------------------------------------------------------------
+# TASKS, Pipeline de publicacao do podcast
+# (executadas em sequencia pelo *publicar-episodio, mas tambem chamaveis isoladas)
+# ------------------------------------------------------------
+tasks_publicacao:
+
+  - command: "*transcrever"
+    tipo: task
+    arquivo: tasks/transcrever-episodio.md
+    responsavel: youtube-researcher
+    demanda: "Extrair audio e transcrever o episodio (mlx_whisper)."
+    trigger_examples:
+      - "Transcreve o episodio EP001"
+      - "Gera a transcricao desse video"
+    sequencia_agentes: [youtube-researcher]
+    pipeline_scripts: "run_pipeline.py --steps audio,transcribe (extract_audio.sh, transcribe.sh)"
+    output: "transcricao/{id}-transcricao.txt (+ srt/vtt/json)"
+
+  - command: "*extrair-frames"
+    tipo: task
+    arquivo: tasks/extrair-frames.md
+    responsavel: youtube-researcher
+    demanda: "Extrair, pontuar e fazer curadoria de frames para thumbnail."
+    trigger_examples:
+      - "Extrai os frames de thumbnail do episodio"
+      - "Quero os melhores frames pra capa"
+    sequencia_agentes: [youtube-researcher]
+    pipeline_scripts: "run_pipeline.py --steps frames,score,crops (extract_frames.sh, score_frames.py, crop_by_side.py, facecrop.py, cutout_faces.py, contact_sheet.py)"
+    output: "frames/raw, frames/scores.csv, frames/top/{esquerda,direita}, frames/cand_{nome}, frames/qc/SHEET-{nome}.jpg, frames/entrega-chatgpt/{nome}/frame-1..5.jpg + MAPA.txt"
+
+  - command: "*analisar-conteudo"
+    tipo: task
+    arquivo: tasks/analisar-conteudo.md
+    responsavel: youtube-researcher
+    demanda: "Analisar a transcricao: temas, ganchos, angulo e capitulos."
+    trigger_examples:
+      - "Analisa o conteudo desse episodio"
+      - "Quais os ganchos e capitulos do episodio?"
+    sequencia_agentes: [youtube-researcher]
+    output: "analise/content-map.md"
+
+  - command: "*prompt-thumbnail"
+    tipo: task
+    arquivo: tasks/gerar-prompt-thumbnail.md
+    responsavel: paddy-galloway
+    demanda: "Gerar o prompt de thumbnail para o ChatGPT."
+    trigger_examples:
+      - "Gera o prompt de thumbnail pro ChatGPT"
+      - "Cria o prompt da capa desse episodio"
+    sequencia_agentes: [paddy-galloway]
+    data_referencia: data/thumbnail-briefing.yaml
+    output: "thumbnail/PROMPT-CHATGPT.md"
+
+  - command: "*frases-thumbnail"
+    tipo: task
+    arquivo: tasks/gerar-frases-thumbnail.md
+    responsavel: paddy-galloway
+    demanda: "Gerar 3 frases de thumbnail rankeadas por CTR."
+    trigger_examples:
+      - "Me da 3 frases pra thumbnail"
+      - "Quais frases colocar na capa?"
+    sequencia_agentes: [paddy-galloway]
+    data_referencia: data/thumbnail-briefing.yaml
+    output: "thumbnail/FRASES.md"
+
+  - command: "*gerar-titulo"
+    tipo: task
+    arquivo: tasks/gerar-titulo.md
+    responsavel: brian-dean
+    demanda: "Gerar o titulo do video (SEO/GEO) + 2 alternativos A/B."
+    trigger_examples:
+      - "Gera o titulo desse video"
+      - "Me da opcoes de titulo pra testar A/B"
+    sequencia_agentes: [brian-dean]
+    output: "publicacao/titulo.md"
+
+  - command: "*gerar-descricao"
+    tipo: task
+    arquivo: tasks/gerar-descricao.md
+    responsavel: brian-dean
+    demanda: "Gerar a descricao com os links/CTAs da gravacao."
+    trigger_examples:
+      - "Gera a descricao do video com os links"
+      - "Monta a descricao SEO/GEO"
+    sequencia_agentes: [brian-dean]
+    output: "publicacao/descricao.md"
+
+  - command: "*gerar-tags"
+    tipo: task
+    arquivo: tasks/gerar-tags.md
+    responsavel: brian-dean
+    demanda: "Gerar as tags do video."
+    trigger_examples:
+      - "Gera as tags desse video"
+      - "Quais tags usar na publicacao?"
+    sequencia_agentes: [brian-dean]
+    output: "publicacao/tags.txt"
+
+  - command: "*empacotar"
+    tipo: task
+    arquivo: tasks/empacotar-publicacao.md
+    responsavel: youtube-chief
+    demanda: "Empacotar a publicacao e validar pelo checklist."
+    trigger_examples:
+      - "Empacota a publicacao"
+      - "Fecha o pacote do episodio pra publicar"
+    sequencia_agentes: [youtube-chief]
+    checklists:
+      - checklists/publicacao-podcast.md
+      - checklists/output-quality.md
+    output: "publicacao/PUBLICAR.md (consolida titulo, descricao, tags, thumbnail)"
+
+# ------------------------------------------------------------
+# TASKS, Estrategia (planejamento, modelagem, monetizacao, ads)
+# ------------------------------------------------------------
+tasks_estrategia:
+
+  - command: "*modelar-thumbnail"
+    tipo: task
+    arquivo: tasks/modelar-thumbnail.md
+    responsavel: paddy-galloway
+    demanda: "Modelagem cross-cultural de thumbnail com referencias validadas."
+    trigger_examples:
+      - "Modela uma thumbnail pra esse tema"
+      - "Quais referencias de capa funcionam aqui?"
+    sequencia_agentes: [youtube-researcher, paddy-galloway]
+    data_referencia:
+      - data/thumbnail-briefing.yaml
+      - data/referencias-cross-cultural.yaml
+    output: "Conceito de thumbnail modelado (referencias BR/USA -> PT/EU) + prompt + frases."
+
+  - command: "*otimizar-seo"
+    tipo: task
+    arquivo: tasks/otimizar-seo.md
+    responsavel: brian-dean
+    demanda: "Reotimizar titulo, descricao e tags de um video ja publicado."
+    trigger_examples:
+      - "Reotimiza o SEO desse video que ja postei"
+      - "Esse video nao performa, melhora titulo e descricao"
+    sequencia_agentes: [youtube-researcher, brian-dean, paddy-galloway]
+    output: "Novo titulo, nova descricao (SEO/GEO), tags revisadas e ajuste de thumbnail."
+
+  - command: "*analise-formato"
+    tipo: task
+    arquivo: tasks/analise-formato.md
+    responsavel: matt-gielen
+    demanda: "Validar se um formato funciona (minimo 5 casos comprovados)."
+    trigger_examples:
+      - "Esse formato funciona pro meu canal?"
+      - "Vale a pena fazer esse tipo de video?"
+    sequencia_agentes: [youtube-researcher, matt-gielen]
+    data_referencia: data/formatos-validados.yaml
+    output: "Analise data-driven vai/nao-vai + 5 casos de sucesso comprovados (ou alternativa)."
+
+  - command: "*plano-monetizacao"
+    tipo: task
+    arquivo: tasks/plano-monetizacao.md
+    responsavel: roberto-blake
+    demanda: "Plano de monetizacao stackeado (AdSense, afiliados, infoprodutos, brand deals)."
+    trigger_examples:
+      - "Monta um plano de monetizacao pro canal"
+      - "Como faturar mais com esse canal?"
+    sequencia_agentes: [roberto-blake, derral-eves]
+    output: "Plano de monetizacao stackeado com prioridades e prazos."
+
+  - command: "*analise-anuncios"
+    tipo: task
+    arquivo: tasks/analise-anuncios.md
+    responsavel: tom-breeze
+    demanda: "Analise/otimizacao de YouTube Ads (TrueView, In-stream, Discovery)."
+    trigger_examples:
+      - "Analisa minhas campanhas de YouTube Ads"
+      - "Como escalar/cortar esses anuncios?"
+    sequencia_agentes: [tom-breeze]
+    output: "Diagnostico de campanhas + recomendacoes de scaling/cutting + CTAs."
+
+  - command: "*planejamento-mensal"
+    tipo: task
+    arquivo: tasks/planejamento-mensal.md
+    responsavel: matt-gielen
+    demanda: "Calendario mensal de conteudo modelado, com metadados por video."
+    trigger_examples:
+      - "Monta o calendario de conteudo do mes"
+      - "Quero o planejamento mensal do canal"
+    sequencia_agentes: [youtube-researcher, matt-gielen, derral-eves, brian-dean]
+    sintese_por: youtube-chief
+    checkpoint: aprovacao-calendario
+    estimativa: "120-180min"
+    output: >
+      Calendario mensal com tema, formato modelado, titulo, descricao SEO/GEO
+      e thumbnail conceitual por video.
+
+  - command: "*decisao-estrategica"
+    tipo: task
+    arquivo: tasks/decisao-estrategica.md
+    responsavel: derral-eves
+    demanda: "Decisao estrategica (podcast junto/separado, frequencia, vertical/horizontal)."
+    trigger_examples:
+      - "Devo separar o podcast do canal principal?"
+      - "Qual frequencia ideal de publicacao?"
+    sequencia_agentes: [derral-eves, matt-gielen, roberto-blake]
+    sintese_por: youtube-chief
+    estimativa: "30-45min"
+    output: "Recomendacao fundamentada com pros/contras de cada cenario."
+
+# ------------------------------------------------------------
+# CHECKLISTS, gates de qualidade aplicados pelo youtube-chief
+# ------------------------------------------------------------
+checklists:
+  - arquivo: checklists/output-quality.md
+    aplica_a:
+      - "*planejar-video"
+      - "*diagnosticar-canal"
+      - "*empacotar"
+      - todas_as_tasks_de_estrategia
+    foco: "Pesquisa previa, comment mining, modelagem cross-cultural, SEO+GEO, pacote completo."
+  - arquivo: checklists/publicacao-podcast.md
+    aplica_a:
+      - "*publicar-episodio"
+      - "*empacotar"
+    foco: "Integridade do pacote de publicacao (transcricao, frames, thumbnail, metadados, links)."
+
+# ------------------------------------------------------------
+# DATA, arquivos de referencia consultados pelas tasks
+# ------------------------------------------------------------
+data_referencias:
+  - arquivo: data/thumbnail-briefing.yaml
+    usado_por: ["*prompt-thumbnail", "*frases-thumbnail", "*modelar-thumbnail"]
+    conteudo: "Briefing de thumbnail: identidade sua comunidade (laranja sobre preto), regras de capa."
+  - arquivo: data/formatos-validados.yaml
+    usado_por: ["*analise-formato", "*planejamento-mensal", "*planejar-video"]
+    conteudo: "Catalogo de formatos com casos validados (BR/USA/PT)."
+  - arquivo: data/referencias-cross-cultural.yaml
+    usado_por: ["*modelar-thumbnail", "*planejar-video", "*planejamento-mensal"]
+    conteudo: "Referencias para modelagem cross-cultural BR + USA -> PT/EU."
+  - arquivo: data/routing-catalog.yaml
+    usado_por: [youtube-chief]
+    conteudo: "Este catalogo: mapa demanda -> comando -> arquivo -> agentes -> output."
+
+# ------------------------------------------------------------
+# DEMAND MAP, atalho de despacho: o que o {{USER_NAME}} pede -> qual comando
+# ------------------------------------------------------------
+demand_map:
+  - demanda: "Publicar episodio do podcast (pacote completo)"
+    comando: "*publicar-episodio"
+    arquivo: workflows/wf-publicacao-podcast.yaml
+  - demanda: "Planejar um video novo"
+    comando: "*planejar-video"
+    arquivo: workflows/wf-planejamento-video.yaml
+  - demanda: "Diagnostico/consultoria inicial de canal"
+    comando: "*diagnosticar-canal"
+    arquivo: workflows/wf-diagnostico-canal.yaml
+  - demanda: "So a transcricao"
+    comando: "*transcrever"
+    arquivo: tasks/transcrever-episodio.md
+  - demanda: "So os frames de thumbnail"
+    comando: "*extrair-frames"
+    arquivo: tasks/extrair-frames.md
+  - demanda: "Analisar o conteudo de um episodio"
+    comando: "*analisar-conteudo"
+    arquivo: tasks/analisar-conteudo.md
+  - demanda: "Prompt de thumbnail pro ChatGPT"
+    comando: "*prompt-thumbnail"
+    arquivo: tasks/gerar-prompt-thumbnail.md
+  - demanda: "Frases pra thumbnail"
+    comando: "*frases-thumbnail"
+    arquivo: tasks/gerar-frases-thumbnail.md
+  - demanda: "Titulo do video"
+    comando: "*gerar-titulo"
+    arquivo: tasks/gerar-titulo.md
+  - demanda: "Descricao do video com links"
+    comando: "*gerar-descricao"
+    arquivo: tasks/gerar-descricao.md
+  - demanda: "Tags do video"
+    comando: "*gerar-tags"
+    arquivo: tasks/gerar-tags.md
+  - demanda: "Fechar o pacote de publicacao"
+    comando: "*empacotar"
+    arquivo: tasks/empacotar-publicacao.md
+  - demanda: "Modelar uma thumbnail (referencias validadas)"
+    comando: "*modelar-thumbnail"
+    arquivo: tasks/modelar-thumbnail.md
+  - demanda: "Reotimizar SEO de video ja publicado"
+    comando: "*otimizar-seo"
+    arquivo: tasks/otimizar-seo.md
+  - demanda: "Validar se um formato funciona"
+    comando: "*analise-formato"
+    arquivo: tasks/analise-formato.md
+  - demanda: "Plano de monetizacao"
+    comando: "*plano-monetizacao"
+    arquivo: tasks/plano-monetizacao.md
+  - demanda: "Analise de anuncios (YouTube Ads)"
+    comando: "*analise-anuncios"
+    arquivo: tasks/analise-anuncios.md
+  - demanda: "Calendario mensal de conteudo"
+    comando: "*planejamento-mensal"
+    arquivo: tasks/planejamento-mensal.md
+  - demanda: "Decisao estrategica (podcast junto/separado, frequencia)"
+    comando: "*decisao-estrategica"
+    arquivo: tasks/decisao-estrategica.md
+
+# ------------------------------------------------------------
+# Regras de roteamento (codificadas no youtube-chief)
+# ------------------------------------------------------------
+routing_rules:
+  - "Nada comeca em Tier 2 (execucao) sem passar antes por Tier 1 (pesquisa)."
+  - "Toda thumbnail vem com modelagem de referencias validadas."
+  - "Comment mining obrigatorio antes de definir tema/angulo."
+  - "Modelagem cross-cultural BR + USA aplicada em PT/EU."
+  - "So planeja video se o formato ja funcionou (minimo 5 casos)."
+  - "Output completo: titulo + descricao SEO/GEO + estrutura + thumbnail + modelagem."
+  - "Todo comando passa pelo checklist de output-quality antes de entregar ao {{USER_NAME}}."
+  - "Identidade visual: laranja sobre preto. Escrita: pt-BR, sem travessao longo."

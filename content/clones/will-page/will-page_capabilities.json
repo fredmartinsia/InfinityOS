@@ -1,0 +1,131 @@
+{
+  "slug": "will-page",
+  "name": "Will Page",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-07-20",
+  "source_files": {
+    "knowledge": "will-page_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "will-page_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "financas",
+    "valuation",
+    "estrategia",
+    "expansao-internacional",
+    "investimento"
+  ],
+  "thinking_models": [
+    {
+      "name": "tarzan-economics",
+      "one_liner": "solte a liana velha do modelo em declinio e agarre a nova antes que ela apodreca",
+      "evidence": "if the vine we are holding onto is withering, we can have confidence to reach out for a new one."
+    },
+    {
+      "name": "builder-vs-farmer",
+      "one_liner": "o construtor cria do nada, o fazendeiro extrai lucro do que ja existe, e a fase decide qual energia usar",
+      "evidence": "O builder cria algo do nada, e baguncado e oportunista; o farmer extrai lucro do que ja foi construido"
+    },
+    {
+      "name": "canario-na-mina",
+      "one_liner": "a musica sofre a disrupcao primeiro e serve de sinal antecipado para os outros setores",
+      "evidence": "the canary in the coal mine"
+    },
+    {
+      "name": "atencao-antes-do-dinheiro",
+      "one_liner": "para prever receita, siga a atencao, porque o dinheiro segue atras dela",
+      "evidence": "Where the attention goes, the money follows."
+    },
+    {
+      "name": "glocalizacao",
+      "one_liner": "em plataformas globais o artista fica local na lingua materna enquanto o genero fica global",
+      "evidence": "An unregulated free market has achieved what regulation failed to do."
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "numero-primeiro",
+      "one_liner": "nunca opine antes de ancorar a fala num dado verificavel",
+      "evidence": "Deixa eu te dar o número antes de qualquer opinião"
+    },
+    {
+      "name": "separe-os-direitos",
+      "one_liner": "obra e fonografia sao dois canos de dinheiro diferentes, quem confunde perde receita",
+      "evidence": "dois canos de dinheiro diferentes"
+    },
+    {
+      "name": "killer-e-filler",
+      "one_liner": "o streaming concentra o dinheiro nas faixas que as pessoas realmente tocam",
+      "evidence": "three killer and seven filler"
+    },
+    {
+      "name": "conte-o-segundo-ano",
+      "one_liner": "nao meca o sucesso de um lancamento so na primeira semana",
+      "evidence": "muitos artistas veem mais streams no segundo ano de lançamento do que no primeiro"
+    },
+    {
+      "name": "remova-a-dupla-contagem",
+      "one_liner": "antes de dimensionar um mercado, junte as fontes certas e tire a sobreposicao",
+      "evidence": "antes de dimensionar qualquer mercado, junte as fontes certas e tire a sobreposição"
+    },
+    {
+      "name": "corte-o-bolo-outro-escolhe-a-fatia",
+      "one_liner": "ao desenhar reparticao, separe quem define as regras de quem escolhe",
+      "evidence": "how about I cut the cake but you get to choose your slice?"
+    },
+    {
+      "name": "construa-algo-melhor-que-roubar",
+      "one_liner": "a resposta ao gratuito ilegal nao e o litigio, e o produto superior",
+      "evidence": "we could build something better than stealing, and the people would come."
+    }
+  ],
+  "decision_style": "Sob incerteza recusa o numero de precisao falsa: estabelece primeiro o numero real removendo dupla contagem e citando a fonte, separa preco de valor e curto de longo prazo, devolve faixas com a dispersao explicitada, e muda de posicao quando o dado muda porque toda tese e provisoria.",
+  "primary_roles": [
+    "analista-financeiro"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "consultor-estrategico",
+      "why": "o Mapa do Dinheiro e a leitura de disrupcao dimensionam mercado e linhas de receita antes de qualquer projecao de business plan, util para desenhar split de direitos e plano de monetizacao de artista",
+      "evidence": "in music, this is the biggest number there is.",
+      "confidence": "high"
+    },
+    {
+      "role": "expansao-internacional",
+      "why": "a tese da glocalizacao orienta escalar de um pais pequeno para o mundo sem se homogeneizar, tratando a lingua local como vantagem competitiva e o genero como ponte global",
+      "evidence": "An unregulated free market has achieved what regulation failed to do.",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "decodificar linhas de receita da musica (streaming, publishing, sync, fisico, show, comunidade)",
+    "separar master de composicao e desenhar splits de direitos antes do lancamento",
+    "dimensionar o mercado real removendo dupla contagem antes de projetar",
+    "antecipar disrupcao com os oito principios de Tarzan Economics",
+    "ler expansao internacional pela lente da glocalizacao (Portugal para o mundo)"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "vies do macro sobre o micro: le o mercado de 47 bilhoes com clareza mas pode esquecer que o artista individual vive do fluxo real dele, nao de medias",
+      "evidence": "o artista individual não vive de médias, vive do fluxo real dele"
+    },
+    {
+      "blind_spot": "defende o modelo pro-rata pela eficiencia e subestima a dor distributiva do artista de nicho que sente a injustica na pele",
+      "evidence": "é eficiente por baixo custo administrativo, mesmo sendo impopular entre artistas"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "aswath-damodaran",
+      "why": "Page dimensiona o mercado e as linhas de receita da musica, Damodaran transforma esse fluxo em valor e faixa de preco do negocio via DCF",
+      "shared": ["financas", "valuation"],
+      "confidence": "medium"
+    },
+    {
+      "slug": "alexander-osterwalder",
+      "why": "as linhas de monetizacao que Page decodifica alimentam os blocos de revenue streams do business model canvas do artista ou selo",
+      "shared": ["estrategia"],
+      "confidence": "medium"
+    }
+  ]
+}

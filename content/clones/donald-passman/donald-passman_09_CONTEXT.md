@@ -1,0 +1,19 @@
+# 📜 Donald Passman :: Contexto
+
+## Contexto histórico
+
+Passman se formou como advogado de entretenimento na virada dos anos 1970 para os 1980, um momento decisivo do music business. Era o auge do modelo de gravadora como banco: a indústria funcionava vendendo objetos físicos (vinil, depois fita e CD), e o poder concentrava-se nas majors, que controlavam manufatura, distribuição e rádio. Nesse mundo, o artista dependia quase totalmente da gravadora para existir comercialmente, e a assimetria de poder era brutal. Foi contra esse pano de fundo que Passman construiu a doutrina de proteção do artista: quando um lado tem exércitos de advogados e o outro tem só o talento, alguém precisa nivelar o jogo com informação.
+
+Os anos 1980 e 1990, quando ele fechou os deals recordes de Janet Jackson e R.E.M., foram o pico econômico do CD, a era dos contratos de nove dígitos. A primeira edição do livro, no início dos anos 1990, capturou exatamente esse sistema em seu apogeu: adiantamentos, recoupment, cross-collateralization, controlled compositions, mechanicals na statutory rate. Era um vocabulário que só circulava entre iniciados, e Passman o abriu para o mundo.
+
+Depois vieram os terremotos. O Napster e a pirataria no fim dos anos 1990 e início dos 2000 desmontaram o modelo de venda física. O streaming, a partir dos anos 2010, reconstruiu o negócio sobre bases inteiramente novas. Passman descreveu o streaming como a maior mudança do setor "desde os cilindros de cera e os piano rolls", e reescreveu boa parte do livro para dar conta disso na 10a edição (2015). A 11a edição (2023) incorporou o TikTok, a venda milionária de catálogos e a música gerada por IA. Poucos autores atravessaram tantas eras tecnológicas mantendo a mesma obra viva e relevante.
+
+## Relevância atual
+
+O pensamento de Passman importa hoje mais, não menos, por uma razão contraintuitiva: quanto mais a tecnologia muda, mais os fundamentos que ele ensina viram bússola. As plataformas mudam (rádio, CD, download, streaming, TikTok), mas os dois copyrights continuam sendo dois, o adiantamento continua sendo empréstimo, e a pergunta "quem cuida do dinheiro do artista" continua sem resposta automática. Como ele diz, "make great music, build a touring base, build a fan base and stay connected". Isso valia para um artista em 1985 e vale para um MC português subindo no TikTok em 2026.
+
+A relevância atual é ainda mais aguda em três frentes que definem o momento. Primeiro, o poder deslocado para o artista: Passman argumenta que os músicos têm hoje mais poder do que em qualquer época da história, porque o acesso direto ao público via streaming e TikTok reduziu a dependência das majors. Isso muda a estratégia de negociação. Segundo, a febre de venda de catálogos com preços "at a historic high", sobre a qual ele é a voz de cautela: "everybody who sold their catalog has regretted it." Terceiro, a IA, que ele encara com pragmatismo: "We're not going to put AI back in the bottle", mas alerta que "it can dilute the money" e que "there's no copyright in AI", o que muda quem ganha o quê.
+
+Para a Pane Records, que planeja carreiras de MCs, DJs e cantores começando em Portugal e escalando para o mundo, Passman é a espinha jurídico-financeira indispensável. O contexto português e europeu tem particularidades (a receita per capita de publishing na Europa é historicamente maior que nos EUA, e o arcabouço legal difere), mas os princípios econômicos do deal que Passman codificou são universais. O clone traz esses princípios como fundação, sinaliza onde a jurisdição local exige um advogado europeu, e garante que nenhum artista da gravadora assine um contrato longo sem saída ou entregue o publishing cedo demais. Em um mercado em que o jogo virou "how do you break through the noise?", a proteção informada do artista é o que separa uma carreira que dura de um hit que evapora junto com o adiantamento não recuperado.
+
+Voltar ao índice: [[donald-passman_01_README]].

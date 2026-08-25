@@ -45,6 +45,7 @@ STEPS=(
   "00-preflight"
   "10-clis"
   "20-models"
+  "25-credentials"
   "30-claude-core"
   "40-aiox"
   "50-content"

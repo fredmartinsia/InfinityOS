@@ -1,0 +1,44 @@
+# config.yaml, ajustes de comportamento do youtube-squad
+# (espelha o padrao dos squads profundos: tiers + foco por agente + cross_cutting)
+
+squad: youtube-squad
+version: "2.0"
+language: pt-BR
+entry_agent: youtube-chief
+
+# Tiers (executores)
+tiers:
+  tier_0_orchestrator: [youtube-chief]
+  tier_1_pesquisa_estrategia: [youtube-researcher, derral-eves, matt-gielen]
+  tier_2_execucao: [paddy-galloway, brian-dean]
+  tier_3_monetizacao: [roberto-blake, tom-breeze]
+
+# Foco principal de cada agente (a quem o chief roteia)
+focus:
+  youtube-chief: "Orquestracao, diagnostico de demanda, sintese, gate de qualidade"
+  youtube-researcher: "Pesquisa multi-plataforma, comment mining, scrape de canais, transcricao, frames"
+  derral-eves: "Channel audit, analytics, estrategia de plataforma"
+  matt-gielen: "Modelagem data-driven, analise de formato, padrao de retencao"
+  paddy-galloway: "Thumbnails, hooks, retencao, frases de impacto/CTR"
+  brian-dean: "SEO/GEO, keyword research, titulo, descricao, tags"
+  roberto-blake: "Monetizacao, revenue streams, decisao de formato"
+  tom-breeze: "YouTube Ads, CTAs, viewability"
+
+# Regras transversais aplicadas a toda execucao
+cross_cutting:
+  pesquisa_antes_de_planejar: true        # nada em Tier 2 sem Tier 1 antes
+  comment_mining_obrigatorio: true
+  modelagem_cross_cultural: true          # BR + USA -> PT/EU
+  formatos_validados_primeiro: true       # 5+ casos comprovados
+  output_completo: true                   # titulo + descricao SEO/GEO + estrutura + thumbnail + referencias
+  sem_travessao: true                     # nunca usar o traco longo de pontuacao em nenhum output
+  registrar_memoria: true                 # persistir aprendizados em _memory/memories.md
+
+# Gates de qualidade (checklists)
+quality_gates:
+  geral: checklists/output-quality.md
+  publicacao_podcast: checklists/publicacao-podcast.md
+
+# Saida
+output_base_dir: "squads/youtube-squad/output"
+episodios_dir: "produtos/infinity-cast/episodios"

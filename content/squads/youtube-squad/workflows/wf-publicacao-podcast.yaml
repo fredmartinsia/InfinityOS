@@ -1,0 +1,231 @@
+workflow:
+  id: wf-publicacao-podcast
+  name: "Publicacao de Episodio (Carro-Chefe)"
+  version: "1.0.0"
+  description: |
+    Workflow carro-chefe de publicacao do Infinity Cast. Transforma um video gravado
+    em um pacote de publicacao completo e pronto para subir no YouTube. Orquestra o
+    pipeline local de midia (audio, transcricao, frames, scores, crops, contact sheets,
+    entrega-chatgpt) e a camada de copy/SEO/CTA dos especialistas.
+    Sequencia: intake do video -> transcricao (mlx_whisper) -> frames com curadoria ->
+    analise de conteudo (temas, capitulos, angulo) -> checkpoint de LINKS com o {{USER_NAME}} ->
+    thumbnail (3 frases + prompt ChatGPT) -> metadados (titulo + descricao com links + tags)
+    -> empacotar e validar pelo checklist. Tudo gravado dentro de
+    produtos/infinity-cast/episodios/{id}/.
+  trigger: "*publicar-episodio"
+  entry_agent: youtube-chief
+  estimated_duration: "40-70 minutes (transcricao e frames dominam o tempo)"
+  type: sequential
+  channel: "Infinity Cast (podcast) / {{USER_NAME}} (individual)"
+  market: "Portugal / Brasil"
+  output_dir: "produtos/infinity-cast/episodios/{id}/"
+  pipeline_scripts: "squads/youtube-squad/_scripts/pipeline/ (run_pipeline.py + manifesto episodio.yaml)"
+  sequence:
+    - agent: youtube-chief
+      action: intake-episodio
+      creates: episodio_manifesto
+    - agent: youtube-researcher
+      action: transcrever-episodio
+      creates: transcricao
+    - agent: youtube-researcher
+      action: extrair-frames
+      creates: entrega_chatgpt
+    - agent: youtube-researcher + matt-gielen
+      action: analisar-conteudo
+      creates: content_map
+    - agent: youtube-chief
+      action: checkpoint-links
+      creates: links_confirmados
+    - agent: paddy-galloway
+      action: thumbnail
+      creates: frases_e_prompt
+    - agent: brian-dean + tom-breeze
+      action: metadados
+      creates: titulo_descricao_tags
+    - agent: youtube-chief
+      action: empacotar-publicacao
+      creates: pacote_publicacao
+
+phases:
+  - id: phase_0
+    name: "Intake do Episodio"
+    agent: youtube-chief
+    task: "intake (inline no orquestrador)"
+    description: |
+      O Chefe de YouTube captura os insumos do episodio: caminho do arquivo de video,
+      id do episodio (ex: EP002), nome do convidado, e onde esta o roteiro/pauta da gravacao.
+      Cria ou atualiza o manifesto episodio.yaml (id, video, roteiro, fps, topn, output_dir,
+      pessoas[nome, lado]) que alimenta run_pipeline.py. Confirma que o video existe no disco
+      e que o roteiro foi localizado antes de liberar o pipeline.
+    inputs:
+      - video_path: "string (caminho absoluto do .mp4)"
+      - episodio_id: "string (ex: EP002)"
+      - convidado: "string"
+      - roteiro_path: "string (caminho do roteiro/pauta)"
+    outputs:
+      - episodio_manifesto: "yaml (squads/youtube-squad/_scripts/pipeline/episodio.yaml)"
+      - output_dir: "string (produtos/infinity-cast/episodios/{id}/)"
+      - pessoas: "list (nome, lado esquerda|direita)"
+    checkpoint:
+      gate: "Video existe no disco E roteiro localizado E manifesto episodio.yaml criado/atualizado com id, video, output_dir e pessoas"
+      veto: "Sem arquivo de video valido nao ha o que publicar. Bloqueia o workflow."
+
+  - id: phase_1
+    name: "Transcricao"
+    agent: youtube-researcher
+    task: tasks/transcrever-episodio.md
+    command: "*transcrever"
+    depends_on: [phase_0]
+    description: |
+      Extrai o audio (mp4 -> mp3 16kHz mono) e transcreve com mlx_whisper
+      (modelo whisper-large-v3-turbo, Apple Silicon). Gera txt, srt, vtt e json em
+      transcricao/{id}-transcricao.*. A transcricao e a materia-prima de toda a analise,
+      titulo, descricao e capitulos. Roda via run_pipeline.py --steps audio,transcribe.
+    outputs:
+      - transcricao_txt: "produtos/infinity-cast/episodios/{id}/transcricao/{id}-transcricao.txt"
+      - transcricao_srt_vtt_json: "mesmos basename, extensoes .srt/.vtt/.json"
+      - audio_mp3: "transcricao/{id}-audio.mp3"
+    checkpoint:
+      gate: "Arquivo {id}-transcricao.txt gerado e nao vazio (alem de srt/vtt/json)"
+      veto: "Falha na extracao de audio ou transcricao vazia. Sem texto nao ha analise nem metadados."
+
+  - id: phase_2
+    name: "Frames com Curadoria"
+    agent: youtube-researcher
+    task: tasks/extrair-frames.md
+    command: "*extrair-frames"
+    depends_on: [phase_1]
+    parallel_with: [phase_3]
+    description: |
+      Extrai frames do video, pontua e ranqueia (score_frames.py), separa por lado para
+      cenas de 2 pessoas (crop_by_side.py / facecrop.py), gera contact sheets de revisao
+      (qc/SHEET-{nome}.jpg) e o pacote final entrega-chatgpt/{nome}/frame-1..5.jpg + MAPA.txt.
+      Esses frames alimentam o prompt de thumbnail da phase_5. Roda via run_pipeline.py
+      --steps frames,score,crops,sheets,entrega.
+    outputs:
+      - frames_raw: "frames/raw/"
+      - frames_scores: "frames/scores.csv"
+      - frames_top: "frames/top/{esquerda,direita}/"
+      - contact_sheets: "frames/qc/SHEET-{nome}.jpg"
+      - entrega_chatgpt: "frames/entrega-chatgpt/{nome}/frame-1..5.jpg + MAPA.txt"
+    checkpoint:
+      gate: "Pasta entrega-chatgpt populada (frame-1..5 + MAPA.txt por pessoa) E contact sheets prontos"
+      veto: "0 frames aprovados na curadoria. Sem rosto utilizavel nao ha materia-prima de thumbnail."
+
+  - id: phase_3
+    name: "Analise de Conteudo"
+    agent: youtube-researcher + matt-gielen
+    task: tasks/analisar-conteudo.md
+    command: "*analisar-conteudo"
+    depends_on: [phase_1]
+    parallel_with: [phase_2]
+    description: |
+      A partir da transcricao, extrai temas centrais, ganchos, capitulos (timestamps) e o
+      angulo editorial do episodio. Matt Gielen valida o formato e marca os momentos de maior
+      retencao. Pode rodar em paralelo a phase_2 (ambas so dependem da transcricao). O resultado
+      vira o content-map que orienta thumbnail, titulo e descricao. Gera analise/content-map.md.
+    outputs:
+      - content_map: "produtos/infinity-cast/episodios/{id}/analise/content-map.md"
+      - temas: "list"
+      - capitulos: "list (timestamp + titulo)"
+      - angulo: "string (angulo editorial recomendado)"
+      - ganchos: "list (momentos de maior retencao)"
+    checkpoint:
+      gate: "content-map.md com temas + capitulos (com timestamps) + angulo editorial extraidos da transcricao"
+      veto: "Analise sem evidencia na transcricao (achismo). Toda escolha de tema/angulo deve rastrear a um trecho real."
+
+  - id: phase_4
+    name: "Checkpoint de Links"
+    agent: youtube-chief
+    task: "checkpoint de elicitacao (inline no orquestrador)"
+    command: "elicit"
+    depends_on: [phase_3]
+    elicit: true
+    description: |
+      O Chefe varre o roteiro/pauta e a transcricao em busca de links candidatos (produtos,
+      ofertas, redes sociais do convidado, lead magnets, agregador de links do sua comunidade)
+      e PERGUNTA ao {{USER_NAME}} para confirmar, corrigir ou completar a lista. Nenhum link e inventado:
+      o {{USER_NAME}} e a fonte de verdade. Esses links sao usados pela descricao na phase_6, por isso o
+      gate trava ate haver confirmacao explicita. Se nao houver links, o {{USER_NAME}} confirma "sem links".
+    inputs:
+      - links_candidatos: "list (extraidos do roteiro + transcricao, marcados como sugestao)"
+    outputs:
+      - links_confirmados: "list (rotulo + url, validados pelo {{USER_NAME}})"
+      - ctas: "list (chamadas para acao associadas a cada link)"
+    checkpoint:
+      gate: "Lista de links confirmada explicitamente pelo {{USER_NAME}} (ou marcada como 'sem links' por decisao dele)"
+      veto: "Links inventados ou nao confirmados pelo {{USER_NAME}} entrando na descricao. Bloqueia ate a confirmacao."
+
+  - id: phase_5
+    name: "Thumbnail"
+    agent: paddy-galloway
+    task: "tasks/gerar-frases-thumbnail.md depois tasks/gerar-prompt-thumbnail.md"
+    command: "*frases-thumbnail depois *prompt-thumbnail"
+    depends_on: [phase_2, phase_3]
+    description: |
+      Paddy Galloway entrega a camada visual da thumbnail. Primeiro gera 3 frases de thumbnail
+      rankeadas por CTR potencial (gerar-frases-thumbnail.md), apoiadas no angulo da phase_3.
+      Depois monta o prompt de geracao para o ChatGPT (gerar-prompt-thumbnail.md), usando os
+      frames de entrega-chatgpt da phase_2 e a identidade visual do sua comunidade (laranja
+      sobre preto). Gera thumbnail/FRASES.md e thumbnail/PROMPT-CHATGPT.md.
+    outputs:
+      - frases_thumbnail: "produtos/infinity-cast/episodios/{id}/thumbnail/FRASES.md (3 frases rankeadas)"
+      - prompt_chatgpt: "produtos/infinity-cast/episodios/{id}/thumbnail/PROMPT-CHATGPT.md"
+    checkpoint:
+      gate: "3 frases de thumbnail rankeadas por CTR E prompt ChatGPT pronto (referenciando frames + laranja sobre preto)"
+      veto: "Prompt sem referencia aos frames aprovados OU thumbnail fora da identidade laranja sobre preto."
+
+  - id: phase_6
+    name: "Metadados"
+    agent: brian-dean + tom-breeze
+    task: "tasks/gerar-titulo.md depois tasks/gerar-descricao.md depois tasks/gerar-tags.md"
+    command: "*gerar-titulo depois *gerar-descricao depois *gerar-tags"
+    depends_on: [phase_4, phase_5]
+    description: |
+      Brian Dean entrega titulo (SEO + GEO, com 2 variantes A/B) e tags; junto com Tom Breeze
+      monta a descricao com a chamada para acao e os links CONFIRMADOS na phase_4. A descricao
+      consome os capitulos da phase_3 (timestamps) e os links/CTAs da phase_4. Sem os links
+      confirmados a descricao nao fecha. Gera publicacao/titulo.md, publicacao/descricao.md e
+      publicacao/tags.txt.
+    inputs:
+      - links_confirmados: "phase_4"
+      - capitulos: "phase_3 (timestamps para a descricao)"
+      - angulo: "phase_3"
+    outputs:
+      - titulo: "produtos/infinity-cast/episodios/{id}/publicacao/titulo.md (principal + 2 A/B)"
+      - descricao: "produtos/infinity-cast/episodios/{id}/publicacao/descricao.md (com links + capitulos + CTA)"
+      - tags: "produtos/infinity-cast/episodios/{id}/publicacao/tags.txt"
+    checkpoint:
+      gate: "titulo.md (com A/B) E descricao.md (incluindo os links da phase_4 e capitulos da phase_3) E tags.txt prontos"
+      veto: "Descricao sem os links confirmados na phase_4 OU titulo sem keyword principal (SEO/GEO)."
+
+  - id: phase_7
+    name: "Empacotar e Validar"
+    agent: youtube-chief
+    task: tasks/empacotar-publicacao.md
+    command: "*empacotar"
+    depends_on: [phase_6]
+    description: |
+      O Chefe consolida todos os artefatos no diretorio publicacao/ e gera o PUBLICAR.md
+      (guia final de subida: titulo escolhido, descricao final, tags, frases de thumbnail,
+      prompt da thumbnail, checklist de upload). Valida o pacote pelo checklist
+      checklists/publicacao-podcast.md. So fecha o workflow quando o checklist da PASS.
+    inputs:
+      - todos_artefatos: "phase_1 a phase_6"
+    outputs:
+      - publicar_md: "produtos/infinity-cast/episodios/{id}/publicacao/PUBLICAR.md"
+      - checklist_resultado: "PASS | FAIL (checklists/publicacao-podcast.md)"
+    checkpoint:
+      gate: "checklists/publicacao-podcast.md retorna PASS com pacote completo em publicacao/"
+      veto: "Faltou titulo OU descricao OU links OU tags. Pacote incompleto nao publica. Retorna a fase responsavel."
+
+completion_criteria:
+  - "Manifesto episodio.yaml criado/atualizado e video validado no disco (phase_0)"
+  - "Transcricao gerada (txt/srt/vtt/json) em transcricao/ (phase_1)"
+  - "Frames curados com entrega-chatgpt e contact sheets prontos (phase_2)"
+  - "content-map.md com temas, capitulos e angulo rastreaveis a transcricao (phase_3)"
+  - "Links confirmados explicitamente pelo {{USER_NAME}} (phase_4)"
+  - "3 frases de thumbnail rankeadas + prompt ChatGPT na identidade laranja sobre preto (phase_5)"
+  - "Titulo (com A/B), descricao com links e capitulos, e tags prontos (phase_6)"
+  - "Checklist publicacao-podcast.md em PASS e PUBLICAR.md gerado (phase_7)"
+  - "Pacote completo entregue em produtos/infinity-cast/episodios/{id}/publicacao/"

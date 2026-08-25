@@ -1,0 +1,138 @@
+workflow:
+  id: wf-planejamento-video
+  name: "Planejamento de Video Novo"
+  version: "1.0.0"
+  description: |
+    Workflow de planejamento de um video novo do zero, do tema ate o pacote
+    publicavel. Codifica o Workflow de Video Novo descrito em prosa no
+    youtube-chief.agent.md. Nenhuma decisao de tema, formato ou thumbnail entra
+    no pacote sem evidencia: pesquisa de mercado com comment mining, modelagem de
+    formato com 5+ casos validados, thumbnail conceitual com referencias linkadas
+    e metadados com SEO/GEO. Entrega um pacote completo de video pronto para gravar
+    e publicar (titulo + descricao + estrutura + thumbnail + referencias com 3+ links).
+  trigger: "*planejar-video"
+  entry_agent: youtube-chief
+  estimated_duration: "30-45 minutes"
+  type: sequential
+  sequence:
+    - agent: youtube-chief
+      action: capturar-tema-angulo
+      creates: briefing_video
+    - agent: youtube-researcher
+      action: pesquisa-direcionada
+      creates: dossie_pesquisa
+    - agent: matt-gielen
+      action: analise-formato
+      creates: modelagem_formato
+    - agent: paddy-galloway
+      action: modelar-thumbnail
+      creates: thumbnail_conceitual
+    - agent: brian-dean
+      action: gerar-metadados
+      creates: metadados_video
+    - agent: youtube-chief
+      action: sintetizar-pacote
+      creates: pacote_video
+
+phases:
+  - id: phase_0
+    name: "Perguntas (Tema e Angulo)"
+    agent: youtube-chief
+    elicit: true
+    description: "O Chefe de YouTube captura o ponto de partida antes de qualquer pesquisa. Pergunta de forma direta: 'Voce ja tem tema definido?' e 'Voce ja tem ideia ou angulo?'. Identifica tambem o canal alvo ({{USER_NAME}} individual ou podcast Infinity Cast) e a regiao foco (Portugal/Brasil). Nenhuma pesquisa direcionada comeca sem tema e angulo capturados. Se o {{USER_NAME}} so tem o tema mas nao o angulo, o Chefe sinaliza que o angulo sera proposto na sintese, a partir do comment mining."
+    outputs:
+      - briefing_video: "markdown"
+      - tema: "string"
+      - angulo: "string"
+      - canal_alvo: "string"
+      - regiao_foco: "string"
+    checkpoint:
+      gate: "Tema e angulo capturados (ou tema capturado com angulo marcado como a definir na sintese), canal alvo e regiao foco identificados"
+      veto: "Sem tema definido nao ha o que pesquisar; pare e pergunte ao {{USER_NAME}} antes de acionar o researcher"
+
+  - id: phase_1
+    name: "Pesquisa Direcionada (Comment Mining)"
+    agent: youtube-researcher
+    depends_on: [phase_0]
+    description: "O YouTube Researcher faz o scan direcionado do tema. Pesquisa o topico no Google e no Google Trends (volume, tendencia, sazonalidade). Levanta os videos top do tema no YouTube em BR, USA e PT (com link, views, canal, data). Faz comment mining: extrai as top 10-20 duvidas, dores e desejos dos comentarios desses videos. Coleta threads relacionadas no Reddit e Quora e, quando relevante, posts virais no Instagram, X e LinkedIn. O comment mining e o coracao desta fase: e dele que sai o angulo real que conecta com o publico."
+    outputs:
+      - dossie_pesquisa: "markdown"
+      - top_videos: "list"
+      - comment_mining: "markdown"
+      - tendencia_trends: "markdown"
+      - threads_reddit_quora: "list"
+    checkpoint:
+      gate: "Comment mining incluido com 10-20 duvidas/dores/desejos reais extraidos de multiplas plataformas, top videos BR/USA/PT listados com links"
+      veto: "Sem comment mining (duvidas/dores/desejos do publico) nao ha base para tema/angulo; volte e colete antes de avancar"
+
+  - id: phase_2
+    name: "Modelagem de Formato (Matt Gielen)"
+    agent: matt-gielen
+    task: tasks/analise-formato.md
+    depends_on: [phase_1]
+    description: "Matt Gielen modela o formato vencedor a partir dos videos top do dossie. Identifica o formato que esta performando no tema (entre os top), confirma com 5+ casos comprovados em canais semelhantes, e aplica modelagem cross-cultural BR + USA -> PT/EU. Entrega a estrutura recomendada (duracao alvo, segmentos, posicionamento dos hooks) e o padrao de retencao dos top (onde prendem, onde caem). Se o formato proposto for inedito, sinaliza claramente como hipotese de teste."
+    outputs:
+      - modelagem_formato: "markdown"
+      - formato_vencedor: "string"
+      - casos_validados: "list"
+      - estrutura_recomendada: "markdown"
+      - padrao_retencao: "markdown"
+    checkpoint:
+      gate: "Formato vencedor confirmado com 5+ casos validados (ou marcado explicitamente como hipotese de teste) e estrutura/retencao definidas"
+      veto: "Formato sem casos de sucesso comprovados e sem marcacao de hipotese; bloqueie e volte a modelar"
+
+  - id: phase_3
+    name: "Thumbnail Conceitual (Paddy Galloway)"
+    agent: paddy-galloway
+    task: tasks/modelar-thumbnail.md
+    depends_on: [phase_2]
+    description: "Paddy Galloway entrega o conceito de thumbnail modelado a partir de referencias que ja funcionaram em canais semelhantes (com links). Define o conceito visual (sujeito, expressao, cor, contraste, texto na thumb) na identidade sua comunidade (laranja sobre preto), o hook de abertura (primeiros 5-15s alinhados ao angulo) e o mecanismo de retencao. Toda thumbnail vem com modelagem: nenhuma proposta sem referencias linkadas de thumbnails comprovadas."
+    outputs:
+      - thumbnail_conceitual: "markdown"
+      - conceito_visual: "markdown"
+      - hook_abertura: "markdown"
+      - referencias_thumbnail: "list"
+    checkpoint:
+      gate: "Conceito de thumbnail e hook definidos, com referencias de thumbnails comprovadas (com links) que embasam o conceito"
+      veto: "Thumbnail sem referencias modeladas com links; bloqueie a entrega ate as referencias serem trazidas"
+
+  - id: phase_4
+    name: "Metadados (Brian Dean)"
+    agent: brian-dean
+    task: tasks/gerar-titulo.md
+    depends_on: [phase_3]
+    description: "Brian Dean gera os metadados do video com SEO + GEO, alinhados ao angulo e a keyword principal extraida da pesquisa. Executa tasks/gerar-titulo.md (titulo principal + 2 variacoes A/B), tasks/gerar-descricao.md (descricao completa com keyword, contexto e chamada para acao) e tasks/gerar-tags.md (tags relevantes e keyword principal + secundarias). Tudo em portugues do Brasil, sem travessao."
+    outputs:
+      - metadados_video: "markdown"
+      - titulo: "markdown"
+      - titulos_ab: "list"
+      - descricao: "markdown"
+      - tags: "list"
+      - keyword_principal: "string"
+    checkpoint:
+      gate: "Titulo (com 2 A/B), descricao com SEO+GEO e CTA, e tags entregues, todos ancorados na keyword principal e no angulo"
+      veto: "Titulo ou descricao sem SEO/GEO ou desalinhados do angulo definido; volte a Brian Dean"
+
+  - id: phase_5
+    name: "Sintese (Pacote Completo de Video)"
+    agent: youtube-chief
+    depends_on: [phase_4]
+    description: "O Chefe de YouTube sintetiza o pacote completo de video, integrando todas as fases anteriores. Escolhe o titulo final (entre as opcoes A/B), consolida a descricao final, monta a estrutura sugerida (hook + corpo + CTA) a partir da modelagem, anexa a thumbnail conceitual (descricao visual + referencias) e as tags. Se o angulo ficou em aberto na phase_0, define o angulo aqui com base no comment mining. Lista 3+ videos modelo de referencia com link. Antes de entregar, valida o pacote pelo gate checklists/output-quality.md."
+    outputs:
+      - pacote_video: "markdown"
+      - titulo_escolhido: "string"
+      - descricao_final: "markdown"
+      - estrutura_sugerida: "markdown"
+      - thumbnail_final: "markdown"
+      - referencias_modelo: "list"
+    checkpoint:
+      gate: "Pacote completo entregue: titulo + descricao + estrutura (hook+corpo+CTA) + thumbnail conceitual + tags + 3+ referencias com links, aprovado em checklists/output-quality.md"
+      veto: "Falta qualquer item do pacote (titulo, descricao, estrutura, thumbnail ou 3+ referencias com links) ou reprovacao no checklist; bloqueie a entrega e retorne a fase responsavel"
+
+completion_criteria:
+  - "Tema e angulo capturados pelo Chefe antes de qualquer pesquisa (phase_0)"
+  - "Pesquisa direcionada concluida com comment mining (10-20 duvidas/dores/desejos) e top videos BR/USA/PT linkados"
+  - "Formato vencedor modelado por Matt Gielen com 5+ casos validados (ou hipotese de teste sinalizada) e estrutura/retencao definidas"
+  - "Thumbnail conceitual + hook entregues por Paddy Galloway com referencias comprovadas e links, na identidade sua comunidade (laranja sobre preto)"
+  - "Metadados (titulo + 2 A/B, descricao com SEO/GEO e CTA, tags) entregues por Brian Dean ancorados na keyword principal"
+  - "Pacote completo de video sintetizado pelo Chefe: titulo + descricao + estrutura + thumbnail + 3+ referencias com links, aprovado em checklists/output-quality.md"

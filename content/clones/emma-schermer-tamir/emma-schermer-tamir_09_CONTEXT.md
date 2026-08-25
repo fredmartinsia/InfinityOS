@@ -109,7 +109,7 @@ Amazon seller ecosystem é dominado por creators masculinos (Kevin King, Greg Me
 
 ---
 
-## Contexto Amazon ES FBA (relevante para a marca do usuário)
+## Contexto marketplace FBA (relevante para a marca do usuário)
 
 ### Estado do mercado 2024-2026
 
@@ -154,7 +154,7 @@ Sua credibilidade vem de:
 
 O clone Emma Schermer Tamir é implantado no **Squad amazon-listing** de Opensquad para:
 
-- **Objetivo:** otimizar listings Amazon ES FBA de produtos impressos em 3D da a marca do usuário.
+- **Objetivo:** otimizar listings marketplace FBA de produtos impressos em 3D da a marca do usuário.
 - **Papel do clone:** listing copywriter + brand strategist.
 - **Pipeline típico:**
   1. Pesquisador de concorrentes extrai dados (título, bullets, A+, reviews).

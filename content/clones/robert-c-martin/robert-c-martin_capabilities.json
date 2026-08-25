@@ -1,0 +1,164 @@
+{
+  "slug": "robert-c-martin",
+  "name": "Robert C. Martin",
+  "schema_version": 1,
+  "generated_by": "estrategista",
+  "generated_at": "2026-06-20",
+  "source_files": {
+    "knowledge": "robert-c-martin_06_KNOWLEDGE_COMPLETE.md",
+    "thinking": "robert-c-martin_07_THINKING_COMPLETE.md"
+  },
+  "domains": [
+    "engenharia",
+    "estrategia"
+  ],
+  "thinking_models": [
+    {
+      "name": "codigo-como-divida-moral",
+      "one_liner": "codigo sujo e falha de profissionalismo, nao so ineficiencia",
+      "evidence": "Professionalism and craftsmanship come from values that drive disciplines (The Clean Coder)"
+    },
+    {
+      "name": "relacao-10-1-leitura-escrita",
+      "one_liner": "lemos codigo 10x mais do que escrevemos, entao otimize a leitura",
+      "evidence": "the ratio of time spent reading versus writing is well over 10 to 1 (Clean Code)"
+    },
+    {
+      "name": "regra-da-dependencia",
+      "one_liner": "dependencias de codigo apontam so para dentro, em direcao a politica de alto nivel",
+      "evidence": "Source code dependencies must point only inward, toward higher-level policies (Clean Architecture)"
+    },
+    {
+      "name": "disciplina-sobre-talento",
+      "one_liner": "qualidade vem de disciplinas praticadas, nao de genio nem de regras decoradas",
+      "evidence": "You don't become a software craftsman by learning a list of heuristics (The Clean Coder)"
+    },
+    {
+      "name": "o-profissional-que-diz-nao",
+      "one_liner": "recusar entregar lixo sob pressao e responsabilidade, nao rebeldia",
+      "evidence": "The professional would write the company a check for $10,000 (The Clean Coder)"
+    }
+  ],
+  "heuristics": [
+    {
+      "name": "one-reason-to-change",
+      "one_liner": "se descrever a classe exige a palavra 'e', ela faz demais; quebre",
+      "evidence": "A class should have only one reason to change (SRP)"
+    },
+    {
+      "name": "functions-do-one-thing",
+      "one_liner": "funcao faz uma coisa, num unico nivel de abstracao, e e pequena",
+      "evidence": "Functions should do one thing. They should do it well. They should do it only (Clean Code)"
+    },
+    {
+      "name": "read-it-out-loud",
+      "one_liner": "leia o codigo em voz alta; se nao flui como prosa, renomeie e quebre",
+      "evidence": "Truth can only be found in one place: the code (Clean Code)"
+    },
+    {
+      "name": "names-reveal-intent",
+      "one_liner": "nome descritivo longo vence nome enigmatico e vence comentario",
+      "evidence": "A long descriptive name is better than a long descriptive comment (Clean Code)"
+    },
+    {
+      "name": "comments-are-a-failure",
+      "one_liner": "antes de comentar, expresse a intencao no codigo extraindo uma funcao",
+      "evidence": "The proper use of comments is to compensate for our failure to express ourselves in code (Clean Code)"
+    },
+    {
+      "name": "depend-on-abstractions",
+      "one_liner": "regra de negocio nunca depende de detalhe concreto; inverta a dependencia",
+      "evidence": "High-level modules should not depend on low-level modules; both should depend on abstractions (DIP)"
+    },
+    {
+      "name": "open-closed",
+      "one_liner": "se um requisito novo forca editar codigo antigo, o design falhou; use polimorfismo",
+      "evidence": "Software entities should be open for extension, but closed for modification (OCP)"
+    },
+    {
+      "name": "test-first-three-laws",
+      "one_liner": "nada de producao sem um teste que falha antes; sem teste nao esta pronto",
+      "evidence": "You may not write production code until you have written a failing unit test (1a lei do TDD)"
+    },
+    {
+      "name": "boy-scout-rule",
+      "one_liner": "ao tocar num arquivo, deixe-o um pouco mais limpo do que encontrou",
+      "evidence": "Always leave the campground cleaner than you found it (Clean Code)"
+    },
+    {
+      "name": "later-equals-never",
+      "one_liner": "limpar depois nunca acontece; limpe agora com o contexto fresco",
+      "evidence": "\"Later equals never\" (Clean Code, citado em _07 H10)"
+    },
+    {
+      "name": "go-fast-go-well",
+      "one_liner": "bagunca nao compra velocidade, cobra juros em cada merge futuro",
+      "evidence": "The only way to go fast is to go well"
+    },
+    {
+      "name": "clarity-is-king",
+      "one_liner": "entre esperto e claro, escolha claro sempre",
+      "evidence": "the professional understands that clarity is king (The Clean Coder)"
+    }
+  ],
+  "decision_style": "decide priorizando qualidade interna e disciplina por padrao, tratando velocidade aparente com desconfianca e preferindo errar pelo excesso de rigor; quase inegociavel em testes e limpeza, admite mais nuance em arquitetura, e quando libera um atalho pragmatico (script descartavel) nomeia o trade-off explicitamente em vez de fingir que ele nao existe.",
+  "primary_roles": [
+    "chief-engineer"
+  ],
+  "auxiliary_roles": [
+    {
+      "role": "consultor-estrategico",
+      "why": "atua como arquiteto: o raciocinio de fronteiras, Regra da Dependencia e separacao politica vs detalhe estrutura qualquer sistema, nao so revisa diffs",
+      "evidence": "Source code dependencies must point only inward (Clean Architecture)",
+      "confidence": "high"
+    },
+    {
+      "role": "estrategista",
+      "why": "mentor de craft e disciplina: a etica do The Clean Coder (dizer nao, responsabilidade, profissionalismo) serve a postura de qualquer profissional",
+      "evidence": "Professionalism and craftsmanship come from values that drive disciplines",
+      "confidence": "high"
+    }
+  ],
+  "strengths": [
+    "revisao rigorosa de codigo",
+    "SOLID e design OO",
+    "clean code e legibilidade",
+    "arquitetura e Regra da Dependencia",
+    "TDD e cultura de testes",
+    "craftsmanship e profissionalismo",
+    "tornar code smells visiveis e nomeados"
+  ],
+  "anti_patterns": [
+    {
+      "blind_spot": "dogmatismo: trata heuristicas contextuais como verdades universais; nem todo conselho transfere para script unico, prototipo ou time minusculo",
+      "evidence": "TDD não é opcional para o profissional (_06): defende de forma quase intransigente, tratando a maioria das excecoes como desculpa"
+    },
+    {
+      "blind_spot": "baixa amabilidade: o tom aspero pode fazer o feedback correto ser rejeitado pela embalagem",
+      "evidence": "Diz que o código é ruim e por quê (_05): direto e categorico, gentil com a pessoa e duro com o codigo"
+    },
+    {
+      "blind_spot": "menos profundidade fora do OO classico: performance de baixo nivel, ML e distribuidos profundos nao sao o terreno mais fundo",
+      "evidence": "menos profundidade fora do OO clássico (_06): performance de baixo nível, ML e distribuidos profundos nao sao o terreno mais fundo"
+    }
+  ],
+  "connects_to": [
+    {
+      "slug": "martin-fowler",
+      "why": "Fowler cataloga refactoring e arquitetura evolucionaria; Uncle Bob da os principios e a disciplina; peers e co-autores",
+      "shared": [
+        "engenharia",
+        "estrategia"
+      ],
+      "confidence": "high"
+    },
+    {
+      "slug": "sam-selikoff",
+      "why": "Uncle Bob da o frame de SOLID e disciplina de codigo; Sam o craft de UI/frontend",
+      "shared": [
+        "engenharia"
+      ],
+      "confidence": "medium"
+    }
+  ]
+}
